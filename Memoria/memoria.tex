@@ -1,0 +1,117 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% A template for Technical Report
+% Prof. Siraj Shaikh
+% Dr. Hoang Nga Nguyen
+% Coventry University
+% 2020
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[12pt]{article}
+\usepackage[margin=1.2in]{geometry}
+\usepackage[toc,page]{appendix}
+\usepackage{graphicx}
+\usepackage[square,numbers]{natbib}
+\usepackage{lipsum}
+\usepackage{caption}
+\usepackage{pdfpages}
+\usepackage[spanish]{babel}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{glossaries}
+
+\begin{document}
+
+\captionsetup[figure]{margin=1.5cm,font=small,labelfont={bf},name={Figure},labelsep=colon,textfont={it}}
+\captionsetup[table]{margin=1.5cm,font=small,labelfont={bf},name={Table},labelsep=colon,textfont={it}}
+
+
+\begin{center}
+\thispagestyle{empty}
+{\LARGE Universidad de Granada}\\[.5cm]
+{\Large Trabajo Fin de Grado}\\[1cm]
+\includegraphics[width=6.5cm]{img/UGR.png}\\[1cm]
+{\Large Plataforma piloto para la gestión institucionalizada de los servicios de
+	Relaciones Internacionales de la Universidad de Granada\\~\\}
+{\huge \bfseries twinX}\\[1.5cm]
+\linespread{1}
+\vspace{\fill}
+\includegraphics[width=2cm]{img/LSI.png}\hspace{1cm}
+\includegraphics[width=3.5cm]{img/ETSIIT.png}\\[1cm]
+{\Large Claudio López Carrascosa}\\[0.5cm]
+{\Large Tutora: Rosana Montes Soldado}\\[0.5cm]
+{\Large Departamento de Lenguajes y Sistemas Informáticos}\\[0.5cm]
+{\Large de noviembre, 2020}
+\end{center}
+
+\clearpage
+\pagenumbering{arabic}
+
+% -------------------------------------------------------------------
+% Contents, list of figures, list of tables
+% -------------------------------------------------------------------
+\newpage
+
+% -------------------------------------------------------------------
+% Main sections (as required)
+% -------------------------------------------------------------------
+
+% Primeras secciones
+
+\section*{Autorización}
+
+\section*{Agradecimientos}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\listoffigures
+\listoftables
+
+% Introducción
+
+\section{Introducción}
+\subsection{Motivación}
+
+La Facultad de Filosofía y Letras es, con 14 enseñanzas de grado y 2000 asignaturas, la más grande de la Universidad de Granada. Resulta obvio pensar en que la relación del tamaño de una entidad con la cantidad de datos que maneja es directamente proporcional. Centrándonos en los datos relacionados a todos los estudiantes que realizan algún programa de movilidad, sería impensable hoy en día manejar semejante cantidad de información sin la ayuda de una herramienta que nos permitiera conocer el estado de los estudiantes (tanto los que vienen del extranjero como los que van a otro país). No obstante, lo cierto es que hasta hace tan solo unos años, desde la Coordinación de Movilidad de la facultad comenzaron con el tratamiento de los datos mediante anotaciones de todo tipo y en cualquier lugar que pudiera parecer seguro y de la forma más organizada posible (si cabía): desde folios hasta libretas, haciendo casi imposible la realización de numerosas tareas como son la clasificación, búsqueda y selección de la información.
+
+Por ello, trataron de aproximarse a lo que comúnmente se utiliza en estos casos: un sistema de información. Hoy en día disponen de una herramienta que si bien les ha hecho reducir el tiempo de trabajo de semanas a unas pocas horas, sigue teniendo muchas limitaciones que no permiten adaptar la forma natural de interaccionar con la información y, por tanto, con el sistema que la alberga de manera total, poniendo en riesgo la consistencia de los datos, su seguridad y su accesibilidad, dificultando al mismo tiempo su integridad y su distribución.
+
+Por ello nace la idea de twinX, una propuesta cuyo objetivo es, en cierto modo, replicar la funcionalidad de la herramienta actual creada para la Oficina de Relaciones Internacionales de la Facultad de Filosofía y Letras, conocida como TWINS, estableciendo una serie de propuestas de rediseño (a nivel interno y al de la interfaz de usuario), cambio de plataforma a la web y la ampliación de su alcance a la totalidad (o la mayoría) de usuarios que interaccionan con el sistema (no solo con la actual herramienta) entre otras cosas.
+
+\subsection{Alcance}
+
+La necesidad de una herramienta como la que ya ha sido creada para albergar la información en la actualidad no es una novedad. Son numerosas las facultades que tienen el mismo problema (aunque quizás no al mismo nivel de dificultad, pues posiblemente manejen una menor cantidad de datos), pero es desde luego una labor que no puede llevarse a cabo con directorios, archivos y demás elementos que complican mucho esta serie de tareas para cualquier cantidad de datos, teniendo en cuenta que el tratamiento que se da a veces no es simple, ni mucho menos.
+
+Son varias las facultades que han mostrado interés por implementar TWINS. La Facultad de Ciencias Políticas trabaja en la actualidad con la herramienta y las facultades de Empresariales y de Bellas Artes están en ello también. En sus comienzos, la importación de datos era algo bastante tedioso y que llevó tiempo para su adaptación. Sin embargo, poco a poco, han notado una gran mejoría respecto a su anterior ritmo de trabajo.
+
+No obstante, twinX no tiene un objetivo tan cerrado a nivel institucional. Se pretende hacer llegar una solución para la gestión de la mayor parte de la información referente a los procesos de movilidad a toda la Universidad de Granada, estableciendo las menores limitaciones posibles, de modo que pueda incluso llegar a usarse en otras universidades que no dispongan de los medios suficientes para organizar y disponer la información tal y como se espera hacer con la herramienta que proponemos.
+
+Es más, algo que dota de atractivo a twinX es llevar la interacción con los datos a la mayor cantidad de usuarios posible que forman parte de procesos de movilidad estudiantil, lo que presenta probablemente una alternativa muy razonable a las posibles soluciones que las distintas facultades de otras universidades puedan poseer para llevar a cabo sus gestiones en el mismo ámbito.
+
+\subsection{Objetivos generales}
+
+Este proyecto no es otra cosa que un camino hacia la posibilidad de llevar a cabo las gestiones que actualmente se hacen en una plataforma web con una alta disponibilidad, un buen funcionamiento y mayor facilidad de acceso; es decir, se pretende llevar el actual TWINS al navegador, para que se pueda facilitar la posibilidad de acceso desde distintos sitios en lugar de tener los datos centralizados en un único archivo que tiene una infinidad de riesgos a ser borrado, modificado por error, corrompido, etc; todo ello, en aras de mejorar la labor de las distintas oficinas de relaciones internacionales de cualquier universidad.
+
+Se trata de mejorar y perfeccionar lo ya existente: poder consultar la información de una manera más rápida y efectiva, con una mayor comprensión de los menús por los que se pasa en el curso de la interacción con la aplicación, simplificar totalmente la vista, hacerla más atractiva y adaptarla a los sistemas web de hoy en día.
+
+Para poder partir de lo que ya se tiene, se habrá de implementar al menos la misma funcionalidad de TWINS casi al completo, exceptuando aquellos procesos que se consideren redundantes o de poca utilidad, priorizando siempre aquellos que sean de mayor importancia o representen un mayor manejo de los flujos de información con respecto a la totalidad de la aplicación, entre los que cabe mencionar la gestión de convenios entre universidades, acuerdos de estudios, expedientes de los estudiantes y sus datos personales, información sobre los tutores y su gestión con respecto a los acuerdos de estudios, la alteración de matrícula para estudiantes incoming y demás procesos derivados de estos seis módulos principales que se basan en la modificación, supresión y creación de la información que intercambiarán los distintos flujos entre los procesos de twinX.
+
+(Lo nuevo)
+
+% -------------------------------------------------------------------
+% Appendices
+% -------------------------------------------------------------------
+
+\newpage
+
+\begin{appendices}
+
+\end{appendices}
+
+\printglossaries
+
+\end{document}
