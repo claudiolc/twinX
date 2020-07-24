@@ -1,6 +1,6 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
-\usepackage{glossaries}
+\usepackage[xindy]{glossaries}
 
 \makeglossaries
 
@@ -16,3 +16,11 @@
     name=mathematics,
     description={Mathematics is what mathematicians do}
 }
+
+\glsaddall
+
+\begin{document}
+	Test.
+	
+	\printglossaries	
+\end{document}

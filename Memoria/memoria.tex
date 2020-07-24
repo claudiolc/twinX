@@ -20,6 +20,27 @@
 \usepackage{hyperref}
 \usepackage{glossaries}
 
+% -------------------------------------------------------------------
+% Glosario
+% -------------------------------------------------------------------
+
+\makeglossaries
+
+\newglossaryentry{latex}
+{
+	name=latex,
+	description={Is a mark up language specially suited 
+		for scientific documents}
+}
+
+\newglossaryentry{maths}
+{
+	name=mathematics,
+	description={Mathematics is what mathematicians do}
+}
+
+\glsaddall
+
 \begin{document}
 
 \captionsetup[figure]{margin=1.5cm,font=small,labelfont={bf},name={Figure},labelsep=colon,textfont={it}}
@@ -29,7 +50,7 @@
 \begin{center}
 \thispagestyle{empty}
 {\LARGE Universidad de Granada}\\[.5cm]
-{\Large Trabajo Fin de Grado}\\[1cm]
+{\Large \textbf{Trabajo Fin de Grado}}\\[1cm]
 \includegraphics[width=6.5cm]{img/UGR.png}\\[1cm]
 {\Large Plataforma piloto para la gestión institucionalizada de los servicios de
 	Relaciones Internacionales de la Universidad de Granada\\~\\}
@@ -108,10 +129,14 @@ Para poder partir de lo que ya se tiene, se habrá de implementar al menos la mi
 
 \newpage
 
+\printglossaries
+
+\newpage
+
 \begin{appendices}
 
 \end{appendices}
 
-\printglossaries
+
 
 \end{document}
