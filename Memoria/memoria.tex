@@ -26,17 +26,34 @@
 
 \makeglossaries
 
-\newglossaryentry{latex}
+\newglossaryentry{AE}
 {
-	name=latex,
-	description={Is a mark up language specially suited 
-		for scientific documents}
+	name=Acuerdo de estudios,
+	description={Documento de validez legal que recoge, previa movilidad, la relación de asignaturas que el estudiante va a realizar en su universidad de destino junto a la equivalencia con las asignaturas existentes en su facultad para su grado. Es el documento marco acordado entre el estudiante y su tutor académico para poder posteriormente realizar el reconocimiento de créditos del estudiante, junto con el \textit{Transcript Of Records}}
 }
 
-\newglossaryentry{maths}
+\newglossaryentry{ToR}
 {
-	name=mathematics,
-	description={Mathematics is what mathematicians do}
+	name=\textit{Transcript of Records},
+	description={Documento expedido por la universidad de destino tras la finalización de la movilidad de un estudiante en el que se establece la lista de asignaturas en el destino realizadas por el estudiante en cuestión y la calificación obtenida en las mismas}
+}
+
+\newglossaryentry{Reconocimiento}
+{
+	name=\textit{Reconocimiento de créditos},
+	description={Proceso administrativo realizado por el personal de secretaría en el cual se toma la relación establecida en el Acuerdo de Estudios y el \textit{Transcript of Records} para constar efectivamente las asignaturas que ha superado el estudiante y hacerlo así constar en su expediente académico. Dependiendo del destino, se puede precisar de una carta de equivalencias que permita identificar cuál es la calificación más exacta dada la obtenida en el destino, de modo que pueda ser adaptado al sistema de calificaciones de la universidad de origen}
+}
+
+\newglossaryentry{Convenio}
+{
+	name=\textit{Convenio},
+	description={Documento en el que se establece el acuerdo de dos universidades en países distintos de acoger a un número de estudiantes de una universidad a cambio de que la otra acepte al mismo número de estudiantes. Entre la información que figura en él se encuentra un identificacador que suele contener alguna(s) letras que permiten identificar al país, seguido de uno o varios números, las fechas de relevancia para nominar estudiantes en el destino, la persona encargada de garantizar la validez del convenio y sus datos de contacto, los requisitos lingüísticos que se han de reunir para ser aceptado en dicha universidad, el número de meses que durará la movilidad, etc.}
+}
+
+\newglossaryentry{Nominacion}
+{
+	name=\textit{Nominación},
+	description={Proceso por el cual se da a conocer a la universidad de destino el/la estudiante o los estudiantes que han sido elegidos por la universidad de origen para realizar su movilidad de acuerdo con el convenio que previamente se ha establecido entre las mismas. Puede requerirse por las universidades de destino a modo de formulario online en alguna plataforma de éstas, por lo que ha de estar explícito en el convenio, así como las credenciales que pueden ser necesarias para loguearse en el sitio como prueba de veracidad de los datos que se les hacen llegar}
 }
 
 \glsaddall
@@ -92,12 +109,14 @@
 \listoffigures
 \listoftables
 
+\newpage
+
 % Introducción
 
 \section{Introducción}
 \subsection{Motivación}
 
-La Facultad de Filosofía y Letras es, con 14 enseñanzas de grado y 2000 asignaturas, la más grande de la Universidad de Granada. Resulta obvio pensar en que la relación del tamaño de una entidad con la cantidad de datos que maneja es directamente proporcional. Centrándonos en los datos relacionados a todos los estudiantes que realizan algún programa de movilidad, sería impensable hoy en día manejar semejante cantidad de información sin la ayuda de una herramienta que nos permitiera conocer el estado de los estudiantes (tanto los que vienen del extranjero como los que van a otro país). No obstante, lo cierto es que hasta hace tan solo unos años, desde la Coordinación de Movilidad de la facultad comenzaron con el tratamiento de los datos mediante anotaciones de todo tipo y en cualquier lugar que pudiera parecer seguro y de la forma más organizada posible (si cabía): desde folios hasta libretas, haciendo casi imposible la realización de numerosas tareas como son la clasificación, búsqueda y selección de la información.
+La Facultad de Filosofía y Letras es, con 14 enseñanzas de grado y 2000 asignaturas, la más grande de la Universidad de Granada. Resulta obvio pensar en que la relación del tamaño de una entidad con la cantidad de datos que maneja es directamente proporcional. Centrándonos en los datos relacionados a todos los estudiantes que realizan algún programa de movilidad, sería impensable hoy en día manejar semejante cantidad de información sin la ayuda de alguna herramienta que nos permitiera conocer el estado de los mismos (tanto los que vienen del extranjero como los que van a otro país). No obstante, lo cierto es que hasta hace tan solo unos años, desde la Coordinación de Movilidad de la facultad comenzaron con el tratamiento de los datos mediante anotaciones de todo tipo y en cualquier lugar que pudiera parecer seguro y de la forma más organizada posible (si cabía): desde documentos físicos hasta digitales, haciendo casi imposible la realización de numerosas tareas como son la clasificación, búsqueda y selección de estos datos.
 
 Por ello, trataron de aproximarse a lo que comúnmente se utiliza en estos casos: un sistema de información. Hoy en día disponen de una herramienta que si bien les ha hecho reducir el tiempo de trabajo de semanas a unas pocas horas, sigue teniendo muchas limitaciones que no permiten adaptar la forma natural de interaccionar con la información y, por tanto, con el sistema que la alberga de manera total, poniendo en riesgo la consistencia de los datos, su seguridad y su accesibilidad, dificultando al mismo tiempo su integridad y su distribución.
 
@@ -107,15 +126,15 @@ Por ello nace la idea de twinX, una propuesta cuyo objetivo es, en cierto modo, 
 
 La necesidad de una herramienta como la que ya ha sido creada para albergar la información en la actualidad no es una novedad. Son numerosas las facultades que tienen el mismo problema (aunque quizás no al mismo nivel de dificultad, pues posiblemente manejen una menor cantidad de datos), pero es desde luego una labor que no puede llevarse a cabo con directorios, archivos y demás elementos que complican mucho esta serie de tareas para cualquier cantidad de datos, teniendo en cuenta que el tratamiento que se da a veces no es simple, ni mucho menos.
 
-Son varias las facultades que han mostrado interés por implementar TWINS. La Facultad de Ciencias Políticas trabaja en la actualidad con la herramienta y las facultades de Empresariales y de Bellas Artes están en ello también. En sus comienzos, la importación de datos era algo bastante tedioso y que llevó tiempo para su adaptación. Sin embargo, poco a poco, han notado una gran mejoría respecto a su anterior ritmo de trabajo.
+Son varias las facultades que han mostrado interés por implementar TWINS. La Facultad de Ciencias Políticas trabaja en la actualidad con la herramienta y las facultades de Ciencias Económicas y Empresariales y de Bellas Artes están en ello también. En sus comienzos, la importación de datos era algo bastante tedioso y que llevó tiempo para su adaptación. Sin embargo, poco a poco, han notado una gran mejoría respecto a su anterior ritmo de trabajo.
 
 No obstante, twinX no tiene un objetivo tan cerrado a nivel institucional. Se pretende hacer llegar una solución para la gestión de la mayor parte de la información referente a los procesos de movilidad a toda la Universidad de Granada, estableciendo las menores limitaciones posibles, de modo que pueda incluso llegar a usarse en otras universidades que no dispongan de los medios suficientes para organizar y disponer la información tal y como se espera hacer con la herramienta que proponemos.
 
-Es más, algo que dota de atractivo a twinX es llevar la interacción con los datos a la mayor cantidad de usuarios posible que forman parte de procesos de movilidad estudiantil, lo que presenta probablemente una alternativa muy razonable a las posibles soluciones que las distintas facultades de otras universidades puedan poseer para llevar a cabo sus gestiones en el mismo ámbito.
+Es más, algo que dota de atractivo a twinX es acercar la interacción con los datos a la mayor cantidad de usuarios posible que forman parte de procesos de movilidad estudiantil, lo que presenta probablemente una alternativa muy razonable a las posibles soluciones que las distintas facultades de otras universidades puedan poseer para llevar a cabo sus gestiones en el mismo ámbito.
 
 \subsection{Objetivos generales}
 
-Este proyecto no es otra cosa que un camino hacia la posibilidad de llevar a cabo las gestiones que actualmente se hacen en una plataforma web con una alta disponibilidad, un buen funcionamiento y mayor facilidad de acceso; es decir, se pretende llevar el actual TWINS al navegador, para que se pueda facilitar la posibilidad de acceso desde distintos sitios en lugar de tener los datos centralizados en un único archivo que tiene una infinidad de riesgos a ser borrado, modificado por error, corrompido, etc; todo ello, en aras de mejorar la labor de las distintas oficinas de relaciones internacionales de cualquier universidad.
+Este proyecto no es otra cosa que un camino hacia la posibilidad de transportar las gestiones que actualmente están teniendo lugar a una plataforma web con una alta disponibilidad, un buen funcionamiento y mayor facilidad de acceso; es decir, se pretende llevar el actual TWINS al navegador, para que se pueda facilitar la posibilidad de acceso desde distintos sitios en lugar de tener los datos centralizados en un único archivo que tiene una infinidad de riesgos a ser borrado, modificado por error, corrompido, etc; todo ello, en aras de mejorar la labor de las distintas oficinas de relaciones internacionales de cualquier universidad.
 
 Se trata de mejorar y perfeccionar lo ya existente: poder consultar la información de una manera más rápida y efectiva, con una mayor comprensión de los menús por los que se pasa en el curso de la interacción con la aplicación, simplificar totalmente la vista, hacerla más atractiva y adaptarla a los sistemas web de hoy en día.
 
@@ -133,9 +152,10 @@ y junto a ello, los demás procesos derivados de estos seis módulos principales
 
 Junto a ello y centrándonos en el día a día del trabajo de una secretaría de internacionalización, hay un gran trabajo que hacer en cuanto a los acuerdos de estudios. Durante la confección de los mismos se intercambian muchas versiones de estos documentos entre los tutores académicos y  los estudiantes que planean su movilidad, y es por ello que proponemos junto con twinX una nueva forma de hacer esto. La idea no es otra que permitir que mediante una identificación, tanto por parte del tutor como por la del interesado en hacer una movilidad se pueda confeccionar un acuerdo de estudios online, requiriendo los campos necesarios para dicho fin y pudiendo, de forma mucho más cómoda, intercambiar las versiones, teniendo ambas partes que acudir a la plataforma para poder acordar las bases del contrato.
 
-Con la idea anterior y en aras de reducir el papeleo al menor posible, una parte importante está en los estudiantes que vienen a estudiar a la UGR o estudiantes incoming, como también se les conoce. Tienen que hacer saber a la secretaría qué asignaturas desean cursar y, tras ello, esperar la retroalimentación por parte de la oficina, quien determina si existen plazas disponibles para las asignaturas seleccionadas. Todo ello se haría mucho más fácil si los datos que cada uno de los estudiantes no tuvieran que ser importados a la aplicación, sino que ya existieran en ella misma directamente, pudiendo incluso dar indicaciones a los estudiantes interesados sobre disponibilidad de plazas y derivados.
+Con la idea anterior y en aras de reducir el papeleo al menor posible, una parte importante está en los estudiantes que vienen a estudiar a la UGR o estudiantes incoming, como también se les conoce. Tienen que hacer saber a la secretaría qué asignaturas desean cursar y, tras ello, esperar la retroalimentación por parte de la oficina, quien determina si existen plazas disponibles para las asignaturas seleccionadas. Todo ello se haría mucho más fácil si los datos que cada uno de los estudiantes no tuvieran que ser importados a la aplicación, sino que ya existieran en ella misma directamente, pudiendo incluso dar indicaciones a los estudiantes interesados sobre disponibilidad de plazas y derivados. En el mismo ámbito cabe mencionar los demás documentos que han de entregarse para justificar el fin de estancia en un país de destino, la modificación de los acuerdos de estudios o el consentimiento de cesión de datos: todo ello se vería reducido a la interacción con la plataforma twinX, ofreciendo a los usuarios una visión general y compacta del curso de los eventos que marcan los procesos de movilidad.
 
-(peticiones de estudiantes -mensajería-, fin de estancia, modificación de acuerdo de estudios, consentimiento...)
+Es más, una de las tareas que más tiempo requiere es la localización de los distintos usuarios que registra TWINS y que se han puesto en contacto con la oficina, de modo que los moderadores que administran la información de los estudiantes tienen que buscar en distintos sitios según sea la petición que tengan que atender. Por ello, y dado que el correo electrónico -dando por hecho que éste es el medio de comunicación habitual- es un servicio aislado de la aplicación, proponemos una unificación para simplificar no sólo el curso de las operaciones que el usuario tenga que desempeñar, sino  también la consistencia de la información y poder visualizar todo en un mismo sitio, haciendo más efectivo el trabajo.
+
 
 Todo ello ha de estar respaldado por una capacidad de la plataforma de albergar una cierta cantidad de conexiones al mismo tiempo, pues aunque no se contemple soportar una elevada carga de peticiones tiempo debido a que los accesos se condensarán al comienzo y al final de un cuatrimestre académico, se ha de tener en cuenta que se ha de servir la plataforma a tantos estudiantes como deseen acceder a la misma.
 

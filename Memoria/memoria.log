@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.7.23)  23 JUL 2020 20:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.7.23)  28 JUL 2020 20:09
 entering extended mode
 **./memoria.tex
 (memoria.tex
@@ -758,7 +758,7 @@ LaTeX Info: Redefining \% on input line 1.
 \openout8 = `memoria.lot'.
 
  [3] [4]
-[5] (memoria.gls)
+[5] [6] (memoria.gls) [7]
 
 Package caption Warning: Unused \captionsetup[figure] on input line 46.
 See the caption package documentation for explanation.
@@ -767,33 +767,33 @@ See the caption package documentation for explanation.
 Package caption Warning: Unused \captionsetup[table] on input line 47.
 See the caption package documentation for explanation.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 138.
-[6]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 138.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 161.
+[8]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 161.
  (memoria.aux
 LaTeX Info: Redefining \. on input line 31.
 LaTeX Info: Redefining \% on input line 31.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 138.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 138.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 161.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 161.
 Package rerunfilecheck Info: File `memoria.out' has not changed.
-(rerunfilecheck)             Checksum: 9A6A8FEE755F225D6159284A89E39DAD;282.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 138.
+(rerunfilecheck)             Checksum: 08E009EC9C7936D2AD160148D5A2310C;282.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 161.
  ) 
 Here is how much of TeX's memory you used:
- 18222 strings out of 481225
- 303467 string characters out of 2915922
+ 18225 strings out of 481225
+ 303484 string characters out of 2915922
  741762 words of memory out of 3000000
- 33446 multiletter control sequences out of 15000+200000
+ 33447 multiletter control sequences out of 15000+200000
  540921 words of font info for 49 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,6n,64p,1077b,399s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 60i,6n,64p,1155b,399s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Progra
 m Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTe
 X/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on memoria.pdf (7 pages, 211819 bytes).
+Output written on memoria.pdf (9 pages, 216139 bytes).
 PDF statistics:
- 95 PDF objects out of 1000 (max. 8388607)
- 21 named destinations out of 1000 (max. 500000)
+ 103 PDF objects out of 1000 (max. 8388607)
+ 23 named destinations out of 1000 (max. 500000)
  56 words of extra memory for PDF output out of 10000 (max. 10000000)
 
