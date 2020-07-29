@@ -1,26 +1,66 @@
-\documentclass{article}
-\usepackage[utf8]{inputenc}
-\usepackage[xindy]{glossaries}
-
 \makeglossaries
 
-\newglossaryentry{latex}
+\newglossaryentry{AE}
 {
-    name=latex,
-    description={Is a mark up language specially suited 
-    for scientific documents}
+	name=Acuerdo de estudios,
+	plural=Acuerdos de estudios,
+	description={Documento de validez legal que recoge, previa movilidad, la relación de asignaturas que el estudiante va a realizar en su universidad de destino junto a la equivalencia con las asignaturas existentes en su facultad para su grado. Es el documento marco acordado entre el estudiante y su \gls{Tutor} académico para poder posteriormente realizar el reconocimiento de créditos del estudiante, junto con el \gls{ToR}}
 }
 
-\newglossaryentry{maths}
+\newglossaryentry{ToR}
 {
-    name=mathematics,
-    description={Mathematics is what mathematicians do}
+	name=\textit{Transcript of Records},
+	description={Documento expedido por la universidad de destino tras la finalización de la movilidad de un estudiante en el que se establece la lista de asignaturas en el destino realizadas por el estudiante en cuestión y la calificación obtenida en las mismas}
+}
+
+\newglossaryentry{Reconocimiento}
+{
+	name=Reconocimiento de créditos,
+	description={Proceso administrativo realizado por el personal de secretaría en el cual se toma la relación establecida en el Acuerdo de Estudios y el \gls{ToR} para constar efectivamente las asignaturas que ha superado el estudiante y hacerlo así constar en su expediente académico. Dependiendo del destino, se puede precisar de una carta de equivalencias que permita identificar cuál es la calificación más exacta dada la obtenida en el destino, de modo que pueda ser adaptado al sistema de calificaciones de la universidad de origen}
+}
+
+\newglossaryentry{Convenio}
+{
+	name=Convenio,
+	description={Documento en el que se establece el acuerdo de dos universidades en países distintos de acoger a un número de estudiantes de una universidad a cambio de que la otra acepte al mismo número de estudiantes. Entre la información que figura en él se encuentra un identificacador que suele contener alguna(s) letras que permiten identificar al país, seguido de uno o varios números, las fechas de relevancia para nominar estudiantes en el destino, la persona encargada de garantizar la validez del convenio y sus datos de contacto, los requisitos lingüísticos que se han de reunir para ser aceptado en dicha universidad, el número de meses que durará la movilidad, etc.}
+}
+
+\newglossaryentry{Nominacion}
+{
+	name=Nominación,
+	description={Proceso por el cual se da a conocer a la universidad de destino el/la estudiante o los estudiantes que han sido elegidos por la universidad de origen para realizar su movilidad de acuerdo con el convenio que previamente se ha establecido entre las mismas. Puede requerirse por las universidades de destino a modo de formulario online en alguna plataforma de éstas, por lo que ha de estar explícito en el convenio, así como las credenciales que pueden ser necesarias para loguearse en el sitio como prueba de veracidad de los datos que se les hacen llegar}
+}
+
+\newglossaryentry{Tutor}
+{
+	name=Tutor(a) académico/a,
+	plural=Tutores académicos,
+	description={Figura de responsabilidad para el estudiante de acuerdo con su destino que se encarga de verificar las distintas propuestas de \glspl{AE} que el estudiante realiza hasta que finalmente se confecciona la versión final y es aceptada por su tutor(a)}
+}
+
+\newglossaryentry{AM}
+{
+	name=Alteración de matrícula,
+	description={Proceso mediante el cual se conceden una serie de asignaturas -comúnmente a \glspl{Incoming}- mediante periodos de adjudicación donde se tienen en cuenta diferentes baremos en los que basar las distintas asignaciones}
+}
+
+\newglossaryentry{Incoming}
+{
+	name=Estudiante \textit{Incoming},
+	plural=Estudiantes \textit{Incoming},
+	description={Estudiante extranjero que viene de acogida a la universidad local o de origen, como también se la conoce}
+}
+
+\newglossaryentry{Socio}
+{
+	name=Socio,
+	description={Nombre genérico usado por el personal de secretaría para referirse a cualquier universidad extranjera con la que se tenga un \gls{Convenio}}
+}
+
+\newglossaryentry{Consentimiento}
+{
+	name=Consentimiento de cesión de datos,
+	description={Expresión por parte del estudiante de su voluntad en que sus datos, tales como nombre y correo electrónico, sean facilitados a otros futuros interesados en hacer un programa de movilidad en el mismo destino}
 }
 
 \glsaddall
-
-\begin{document}
-	Test.
-	
-	\printglossaries	
-\end{document}
