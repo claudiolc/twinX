@@ -1,9 +1,15 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{2}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[de~Filosofía~y Letras(2019)]{MemFYL}
+Decanato de~Filosofía~y Letras.
+\newblock Memoria de gestión 2019. {F}acultad de filosofía y letras, 2019.
+\newblock URL
+  \url{https://filosofiayletras.ugr.es/pages/facultad/normativa/memorias-de-gestion/memoriagestion2019/!}
 
 \bibitem[de~Gestión de la Comunicación. Unidad de Documentación Edición~e
   Información(2019)]{MemAcademica}
