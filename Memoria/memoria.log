@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.7.23)  18 AUG 2020 18:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.7.23)  24 AUG 2020 19:54
 entering extended mode
 **./memoria.tex
 (memoria.tex
@@ -708,17 +708,17 @@ LaTeX Info: Redefining \nameref on input line 29.
 \openout5 = `memoria.out'.
 
  (memoria.glsdefs)
-<img/UGR.png, id=23, 329.73187pt x 310.15875pt>
+<img/UGR.png, id=59, 329.73187pt x 310.15875pt>
 File: img/UGR.png Graphic file (type png)
 <use img/UGR.png>
 Package pdftex.def Info: img/UGR.png  used on input line 39.
 (pdftex.def)             Requested size: 184.9429pt x 173.96693pt.
-<img/LSI.png, id=25, 284.46703pt x 163.76074pt>
+<img/LSI.png, id=61, 284.46703pt x 163.76074pt>
 File: img/LSI.png Graphic file (type png)
 <use img/LSI.png>
 Package pdftex.def Info: img/LSI.png  used on input line 45.
 (pdftex.def)             Requested size: 56.9055pt x 32.75905pt.
-<img/ETSIIT.png, id=26, 219.7008pt x 88.6512pt>
+<img/ETSIIT.png, id=62, 219.7008pt x 88.6512pt>
 File: img/ETSIIT.png Graphic file (type png)
 <use img/ETSIIT.png>
 Package pdftex.def Info: img/ETSIIT.png  used on input line 46.
@@ -764,7 +764,21 @@ LaTeX Font Info:    Trying to load font information for U+lasy on input line 35
  ("C:\Program Files\MiKTeX\tex/latex/base\ulasy.fd"
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-[6]) [7] (memoria.bbl) [8] (memoria.gls [9]) [10]
+[6]) (section2.tex [7] [8]
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.42 E
+      l modelo de datos...
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+) [9] (memoria.bbl) [10] (memoria.gls [11]) [12]
 
 Package caption Warning: Unused \captionsetup[figure] on input line 31.
 See the caption package documentation for explanation.
@@ -773,24 +787,24 @@ See the caption package documentation for explanation.
 Package caption Warning: Unused \captionsetup[table] on input line 32.
 See the caption package documentation for explanation.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 115.
-[11]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 115.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 118.
+[13]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 118.
  (memoria.aux
 LaTeX Info: Redefining \. on input line 31.
 LaTeX Info: Redefining \% on input line 31.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 115.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 115.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 118.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 118.
 Package rerunfilecheck Info: File `memoria.out' has not changed.
-(rerunfilecheck)             Checksum: A7B8E4C81C49693B27458BC6956581DC;282.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 115.
+(rerunfilecheck)             Checksum: 0A1BBD3175E29E2589E9D43AF6C258B0;1155.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 118.
  ) 
 Here is how much of TeX's memory you used:
- 18583 strings out of 481225
- 309965 string characters out of 2915922
- 754189 words of memory out of 3000000
- 33774 multiletter control sequences out of 15000+200000
+ 18607 strings out of 481225
+ 310380 string characters out of 2915922
+ 754199 words of memory out of 3000000
+ 33784 multiletter control sequences out of 15000+200000
  542356 words of font info for 55 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,8n,64p,1176b,671s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -803,9 +817,9 @@ sfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr
 ram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/Mi
 KTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Program Files/MiKTeX/fonts/t
 ype1/public/amsfonts/latxfont/lasy10.pfb>
-Output written on memoria.pdf (12 pages, 299399 bytes).
+Output written on memoria.pdf (14 pages, 315807 bytes).
 PDF statistics:
- 180 PDF objects out of 1000 (max. 8388607)
- 38 named destinations out of 1000 (max. 500000)
- 56 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 239 PDF objects out of 1000 (max. 8388607)
+ 49 named destinations out of 1000 (max. 500000)
+ 128 words of extra memory for PDF output out of 10000 (max. 10000000)
 
