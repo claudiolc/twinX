@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.7.23)  24 AUG 2020 19:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.7.23)  2 SEP 2020 19:53
 entering extended mode
 **./memoria.tex
 (memoria.tex
@@ -582,34 +582,44 @@ Package: supertabular 2020/02/02 v4.1g the supertabular environment
 Package: glossary-tree 2020/03/19 v4.46 (NLCT)
 \glstreeindent=\skip70
 ))
-(glosario.tex
+("C:\Program Files\MiKTeX\tex/latex/tools\array.sty"
+Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
+\col@sep=\dimen185
+\ar@mcellbox=\box57
+\extrarowheight=\dimen186
+\NC@list=\toks37
+\extratabsurround=\skip71
+\backup@length=\skip72
+\ar@cellbox=\box58
+) (glosario.tex
 \glswrite=\write3
 \glo@main@file=\write4
 \openout4 = `memoria.glo'.
 
 Package glossaries Info: Writing glossary file memoria.glo on input line 1.
-) (memoria.aux
+)
+(memoria.aux
 LaTeX Info: Redefining \. on input line 31.
 LaTeX Info: Redefining \% on input line 31.
 )
 \openout1 = `memoria.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -648,16 +658,16 @@ LaTeX Font Info:    ... okay on input line 29.
 ("C:\Program Files\MiKTeX\tex/context/base/mkii\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count322
-\scratchdimen=\dimen185
-\scratchbox=\box57
+\scratchdimen=\dimen187
+\scratchbox=\box59
 \nofMPsegments=\count323
 \nofMParguments=\count324
-\everyMPshowfont=\toks37
+\everyMPshowfont=\toks38
 \MPscratchCnt=\count325
-\MPscratchDim=\dimen186
+\MPscratchDim=\dimen188
 \MPnumerator=\count326
 \makeMPintoPDFobject=\count327
-\everyMPtoPDFconversion=\toks38
+\everyMPtoPDFconversion=\toks39
 ) ("C:\Program Files\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty"
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -673,7 +683,7 @@ Package: ltcaption 2020/05/30 v1.4b longtable captions (AR)
 )
 Package caption Info: supertabular package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\AtBeginShipoutBox=\box58
+\AtBeginShipoutBox=\box60
 
 ("C:\Program Files\MiKTeX\tex/latex/pdflscape\pdflscape.sty"
 Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
@@ -683,10 +693,10 @@ Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
-LaTeX Info: Redefining \. on input line 29.
-LaTeX Info: Redefining \% on input line 29.
+LaTeX Info: Redefining \. on input line 30.
+LaTeX Info: Redefining \% on input line 30.
 \c@lstlisting=\count328
-Package hyperref Info: Link coloring OFF on input line 29.
+Package hyperref Info: Link coloring OFF on input line 30.
 
 ("C:\Program Files\MiKTeX\tex/latex/hyperref\nameref.sty"
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -699,29 +709,29 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count329
 )
-LaTeX Info: Redefining \ref on input line 29.
-LaTeX Info: Redefining \pageref on input line 29.
-LaTeX Info: Redefining \nameref on input line 29.
+LaTeX Info: Redefining \ref on input line 30.
+LaTeX Info: Redefining \pageref on input line 30.
+LaTeX Info: Redefining \nameref on input line 30.
 
 (memoria.out) (memoria.out)
 \@outlinefile=\write5
 \openout5 = `memoria.out'.
 
  (memoria.glsdefs)
-<img/UGR.png, id=59, 329.73187pt x 310.15875pt>
+<img/UGR.png, id=67, 329.73187pt x 310.15875pt>
 File: img/UGR.png Graphic file (type png)
 <use img/UGR.png>
-Package pdftex.def Info: img/UGR.png  used on input line 39.
+Package pdftex.def Info: img/UGR.png  used on input line 40.
 (pdftex.def)             Requested size: 184.9429pt x 173.96693pt.
-<img/LSI.png, id=61, 284.46703pt x 163.76074pt>
+<img/LSI.png, id=69, 284.46703pt x 163.76074pt>
 File: img/LSI.png Graphic file (type png)
 <use img/LSI.png>
-Package pdftex.def Info: img/LSI.png  used on input line 45.
+Package pdftex.def Info: img/LSI.png  used on input line 46.
 (pdftex.def)             Requested size: 56.9055pt x 32.75905pt.
-<img/ETSIIT.png, id=62, 219.7008pt x 88.6512pt>
+<img/ETSIIT.png, id=70, 219.7008pt x 88.6512pt>
 File: img/ETSIIT.png Graphic file (type png)
 <use img/ETSIIT.png>
-Package pdftex.def Info: img/ETSIIT.png  used on input line 46.
+Package pdftex.def Info: img/ETSIIT.png  used on input line 47.
 (pdftex.def)             Requested size: 99.58464pt x 40.18349pt.
  [1
 
@@ -733,7 +743,7 @@ ion with the same identifier (name{page.1}) has been already used, duplicate ig
 nored
 <to be read again> 
                    \relax 
-l.71 \newpage
+l.72 \newpage
               [1
 
 ] (memoria.toc
@@ -765,61 +775,53 @@ LaTeX Font Info:    Trying to load font information for U+lasy on input line 35
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
 [6]) (section2.tex [7] [8]
+Overfull \hbox (8.22075pt too wide) in paragraph at lines 46--46
+[]|\OT1/cmr/m/n/12 Administracion| 
+ []
 
-! LaTeX Error: There's no line here to end.
+[9]) (section3.tex) [10] (memoria.bbl) [11] (memoria.gls [12]) [13]
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.42 E
-      l modelo de datos...
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-) [9] (memoria.bbl) [10] (memoria.gls [11]) [12]
-
-Package caption Warning: Unused \captionsetup[figure] on input line 31.
+Package caption Warning: Unused \captionsetup[figure] on input line 32.
 See the caption package documentation for explanation.
 
 
-Package caption Warning: Unused \captionsetup[table] on input line 32.
+Package caption Warning: Unused \captionsetup[table] on input line 33.
 See the caption package documentation for explanation.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 118.
-[13]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 118.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 124.
+[14]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 124.
  (memoria.aux
 LaTeX Info: Redefining \. on input line 31.
 LaTeX Info: Redefining \% on input line 31.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 118.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 118.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 124.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 124.
 Package rerunfilecheck Info: File `memoria.out' has not changed.
-(rerunfilecheck)             Checksum: 0A1BBD3175E29E2589E9D43AF6C258B0;1155.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 118.
+(rerunfilecheck)             Checksum: 811948FF73FA0BC04950C983A8F0E703;1243.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 124.
  ) 
 Here is how much of TeX's memory you used:
- 18607 strings out of 481225
- 310380 string characters out of 2915922
- 754199 words of memory out of 3000000
- 33784 multiletter control sequences out of 15000+200000
- 542356 words of font info for 55 fonts, out of 3000000 for 9000
+ 18669 strings out of 481225
+ 311102 string characters out of 2915922
+ 755100 words of memory out of 3000000
+ 33836 multiletter control sequences out of 15000+200000
+ 542702 words of font info for 56 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,8n,64p,1176b,671s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 60i,13n,64p,1176b,671s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Progra
 m Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Program Files/Mi
 KTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/ty
 pe1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/am
 sfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr
 7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Prog
-ram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/Mi
-KTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Program Files/MiKTeX/fonts/t
-ype1/public/amsfonts/latxfont/lasy10.pfb>
-Output written on memoria.pdf (14 pages, 315807 bytes).
+ram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/Mi
+KTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX/fonts/t
+ype1/public/amsfonts/cm/cmtt12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/
+amsfonts/latxfont/lasy10.pfb>
+Output written on memoria.pdf (15 pages, 330076 bytes).
 PDF statistics:
- 239 PDF objects out of 1000 (max. 8388607)
- 49 named destinations out of 1000 (max. 500000)
- 128 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 259 PDF objects out of 1000 (max. 8388607)
+ 53 named destinations out of 1000 (max. 500000)
+ 144 words of extra memory for PDF output out of 10000 (max. 10000000)
 
