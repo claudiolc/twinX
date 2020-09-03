@@ -26,6 +26,8 @@ Como es lógico, tendrán que reportar estos cambios que hagan a sus universidad
 
 \subsection{Servicios al profesorado (PDI)}
 
+
+
 \subsection{Coordinación con la Oficina de Relaciones Internacionales (ORI) de la UGR}
 
 Todo comienza cuando la ORI envía los datos de las adjudicaciones de las plazas de movilidad a la secretaría de la facultad. Es entonces cuando comienzan los trámites administrativos: se registra a cada estudiante de acuerdo a su destino para comenzar a confeccionar su expediente en base a su acuerdo de estudios, documentos firmados y demás información necesaria. Todo ello tendrá que quedar en conocimiento de la ORI una vez acabe la movilidad.
@@ -38,38 +40,52 @@ Por tanto, es de gran importancia guardar toda la información referente al proc
 
 %TWINS alberga actualmente unos 2055 registros de estudiantes desde el curso 2018-2019, incluyendo a algunos de ellos que han manifestado su intención de realizar un programa de movilidad en la Facultad de Filosofía y Letras durante el curso 2020/2021. 
 
-TWINS alberga desde el curso 2018/2019 un volumen de datos que plasmamos en la siguiente tabla:
+TWINS alberga desde el curso 2018/2019 un volumen de datos que plasmamos en la tabla \ref{estadisticasTWINS}. Al tratarse de una base de datos en la herramienta ofimática Microsoft Access\textregistered, la aplicación consta más bien de una simple capa a modo de interfaz que permite al usuario interactuar con la base de datos. La presentación de los datos se posibilita gracias a la ejecución de consultas preestablecidas que se almacenan y se indica en qué campos ha de mostrarse la información. Cuando se realiza alguna acción que requiera el borrado, inserción o actualización de registros se hace uso de las macros, que son trozos de código que disponen distintos flujos de información entre las tablas implicadas en dicha operación.
 
-\begin{center}
-	\begin{tabular}{ | m{6em} | m{1cm}| m{1cm} | } 
-		\hline
-		Administración & \\
-		\hline
-		Estudiantes \footnotemark & 2055 \\ 
-		\hline
-		Tutores & 58 \\
-		\hline
-		Convenios  & 607 \\ 
-		\hline
-		Expedientes & 5049 \\ 
-		\hline
-		Base de datos & \\
-		\hline
-		Tablas & 108 \\
-		\hline
-		Relaciones & 60 \\
-		\hline
-		Macros & 55 \\
-		\hline
-		Formularios & nDef \\
-		\hline
-		
-	\end{tabular}
-	\footnotetext{Tanto \textit{incoming} como \textit{outcoming}}
-\end{center}~
+\begin{figure}
+	\includegraphics[width=\textwidth]{img/Capturas de TWINS/vistaConvenios.png}
+	\caption{Vista de Convenios}
+	\label{vistaConvenios}
+\end{figure}
+
+\begin{table}[h]
+	\begin{center}
+		\begin{tabular}{ | c | c | } 
+			\hline
+			\multicolumn{2}{|c|}{\textbf{Administración}} \\
+			\hline
+			Estudiantes \footnotemark & 2055 \\ 
+			\hline
+			Tutores & 58 \\
+			\hline
+			Convenios  & 607 \\ 
+			\hline
+			Expedientes & 5049 \\ 
+			\hline
+			\multicolumn{2}{|c|}{\textbf{Base de datos}} \\
+			\hline
+			Tablas & 108 \\
+			\hline
+			Relaciones & 60 \\
+			\hline
+			Macros & 55 \\
+			\hline
+			Formularios & 152 \\
+			\hline
+		\end{tabular}
+		\caption{Estadísticas de TWINS}
+		\label{estadisticasTWINS}
+	\end{center}
+\end{table}~
+\footnotetext{Tanto \textit{incoming} como \textit{outcoming}}
 
 
 
 \subsubsection{El modelo de datos}
 
-El modelo de datos...
+El modelo entidad-relación es el elegido para el diseño de esta base de datos. Las distintas tablas de la misma se conectan mediante relaciones que establecen restricciones para mantener la consistencia entre los datos.
+
+Las relaciones pueden ser:
+\begin{itemize}
+	\item \textbf{Uno-a-uno}
+\end{itemize}
