@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.7.23)  3 SEP 2020 19:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.7.23)  10 SEP 2020 19:41
 entering extended mode
 **./memoria.tex
 (memoria.tex
@@ -785,7 +785,7 @@ t line 46.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[9]) (section3.tex [10 <./img/Capturas de TWINS/vistaConvenios.png>]) [11]
+[9]) [10 <./img/Capturas de TWINS/vistaConvenios.png>] (section3.tex) [11]
 (memoria.bbl) [12] (memoria.gls [13]) [14]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 124.
  [15]
@@ -801,13 +801,13 @@ Package rerunfilecheck Info: File `memoria.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 124.
  ) 
 Here is how much of TeX's memory you used:
- 18692 strings out of 481225
- 311620 string characters out of 2915922
- 755203 words of memory out of 3000000
- 33852 multiletter control sequences out of 15000+200000
+ 18754 strings out of 481225
+ 313420 string characters out of 2915922
+ 757945 words of memory out of 3000000
+ 33912 multiletter control sequences out of 15000+200000
  543993 words of font info for 60 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,13n,79p,1176b,671s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 60i,13n,79p,1176b,675s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Claudio\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tc
 rm1200.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C
 :/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
@@ -820,9 +820,9 @@ Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX
 /fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX/fonts/type1
 /public/amsfonts/cm/cmtt12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsf
 onts/latxfont/lasy10.pfb>
-Output written on memoria.pdf (16 pages, 453494 bytes).
+Output written on memoria.pdf (16 pages, 456995 bytes).
 PDF statistics:
- 280 PDF objects out of 1000 (max. 8388607)
- 56 named destinations out of 1000 (max. 500000)
+ 290 PDF objects out of 1000 (max. 8388607)
+ 58 named destinations out of 1000 (max. 500000)
  149 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -12,6 +12,6 @@
 \contentsline {subsection}{\numberline {2.4}Coordinación con la Oficina de Relaciones Internacionales (ORI) de la UGR}{9}{subsection.2.4}%
 \contentsline {subsection}{\numberline {2.5}La base de datos TWINS}{9}{subsection.2.5}%
 \contentsline {subsubsection}{\numberline {2.5.1}El modelo de datos}{10}{subsubsection.2.5.1}%
-\contentsline {section}{\numberline {3}twinX}{10}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Descripción de la propuesta}{10}{subsection.3.1}%
+\contentsline {section}{\numberline {3}twinX}{11}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Descripción de la propuesta}{11}{subsection.3.1}%
 \contentsline {section}{Appendices}{15}{section*.11}%

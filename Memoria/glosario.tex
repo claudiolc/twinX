@@ -63,4 +63,18 @@
 	description={Expresión por parte del estudiante de su voluntad en que sus datos, tales como nombre y correo electrónico, sean facilitados a otros futuros interesados en hacer un programa de movilidad en el mismo destino}
 }
 
+\newglossaryentry{ExpedienteTWINS}
+{
+	name=Expediente de TWINS,
+	plural=expedientes de TWINS,
+	description={En la aplicación de TWINS, representa un acontecimiento que incumbe a un estudiante, como por ejemplo, la modificación de su acuerdo de estudios. Dado que es un registro de suma importancia, se divide en \glspl{EventoExpedienteTWINS}, los cuales van acumulándose y conformando el expediente durante el trascurso del mismo. Todo expediente está iniciado y finalizado por un \gls{EventoExpedienteTWINS}.\\La movilidad de un estudiante podría concebirse como una línea temporal, la cual está compuesta por unos puntos que la dividen; entonces, los expedientes serían estos puntos. Del mismo modo, la línea estaría comenzada y finalizada por dos expedientes también}
+}
+
+\newglossaryentry{EventoExpedienteTWINS}
+{
+	name=Evento de \glspl{ExpedienteTWINS},
+	plural=eventos de \glspl{ExpedienteTWINS},
+	description={Representa un estado concreto en que se encuentra el expediente de TWINS de un estudiante. Sobre éste último, se entiende que está realizando un programa de movilidad o tiene voluntad de hacerlo}
+}
+
 \glsaddall
