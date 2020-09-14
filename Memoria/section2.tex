@@ -17,7 +17,7 @@ Una vez el/la estudiante vuelve de su movilidad, se inicia el proceso de reconoc
 
 \subsubsection{Estudiantes entrantes o \textit{incoming}}
 
-En cuanto a los \textit{incoming}, el proceso es distinto. Si bien es verdad que se les atiende para problemas similares a los que los estudiantes salientes podrían tener, este grupo viene a la UGR con un acuerdo de estudios previo ya hecho, de modo que es entonces cuando tienen que tener el visto bueno extra de la Oficina, quien les confirma que las asignaturas a las que quieren acceder según lo que establezcan sus acuerdos de estudios tienen plazas disponibles. Es entonces cuando se podrían matricular de las mismas.
+En cuanto a los \textit{incoming}, el proceso es distinto. Si bien es verdad que se les atiende para problemas similares a los que los estudiantes salientes podrían tener, este grupo viene a la UGR con un acuerdo de estudios previo ya hecho, de modo que es entonces cuando precisan del visto bueno extra de la Oficina, quien les confirma que las asignaturas a las que quieren acceder según lo que establezcan sus acuerdos de estudios tienen plazas disponibles. Es entonces cuando se podrían matricular de las mismas.
 
 Este proceso es conocido como \textit{alteración de matrícula} en el ámbito de la movilidad y se hace de manera manual según las plazas que establece la facultad para cada asignatura. Es gracias a la ayuda de TWINS que puedan no sólo ver estas asignaciones de una mejor manera, sino que también tienen la posibilidad de generar los horarios para los estudiantes, algo fundamental y que les preocupa mucho cuando vienen a hacer su movilidad a la UGR. Pensemos que el simple hecho de que dos asignaturas tengan lugar en la misma hora supone un cambio inminente. Para ello, los interesados tienen que estudiar de qué alternativas disponen, atendiendo al número de plazas restantes en las demás asignaturas, no dejando de lado si la franja horaria en la que se imparte clase es compatible con su horario final.
 
@@ -25,6 +25,8 @@ Como es lógico, tendrán que reportar estos cambios que hagan a sus universidad
 
 
 \subsection{Servicios al profesorado (PDI)}
+
+
 
 
 
@@ -93,4 +95,22 @@ Es, sin duda, el modelo que más se utiliza aún hoy en día, el cual promete un
 
 Así pues, aparentemente, para las funcionalidades básicas y necesarias para trabajar en la oficina que twinX pretende implementar, el modelo relacional es suficiente.
 
-No obstante, no olvidemos la intención de extender la funcionalidad del actual TWINS para que los propios estudiantes puedan dejar atrás el constante envío de documentos entre sus tutores académicos por correo electrónico, de modo que puedan dar el salto a una plataforma que implemente una interfaz que les permita confeccionar documentos de vital importancia, como el acuerdo de estudios. En este contexto, se ha de evaluar la forma de tratar los datos que se quiere realizar. Si todas las asignaturas de la universidad de origen se tienen en memoria y tan sólo se tienen que registrar las de la universidad de destino, tan sólo tendríamos que guardar códigos, órdenes y los nuevos nombres para esas asignaturas. Sin embargo, si esto se complicara y tuviéramos que almacenar documentos, quizás, para esa parte de la aplicación, sería conveniente estudiar la posibilidad de implementar una base de datos cuyo modelo de datos esté enfocado a la búsqueda de documentos y, no menos importante, optimizado para dicho propósito, algo que sería impensable en una base de datos relacional.
+No obstante, no olvidemos la intención de extender la funcionalidad del actual TWINS para que los propios estudiantes puedan dejar atrás el constante envío de documentos entre sus tutores académicos por correo electrónico, de modo que puedan dar el salto a una plataforma que implemente una interfaz que les permita prescindir de estos documentos, como el acuerdo de estudios, y trabajar con la información directamente (aunque se posibiliten las conversiones a certificados que puedan ser impresos). En este contexto, se ha de tener en cuenta la forma de tratar los datos que se quiere realizar. Si todas las asignaturas de la universidad de origen se tienen en memoria y tan sólo se tienen que registrar las de la universidad de destino, tan sólo tendríamos que guardar códigos, órdenes y los nuevos nombres para esas asignaturas. Sin embargo, si esto se complicara y tuviéramos que almacenar documentos, quizás, para esa parte de la aplicación, sería conveniente estudiar la posibilidad de implementar una base de datos cuyo modelo de datos esté enfocado a la búsqueda de estos y, no menos importante, optimizado para dicho propósito, algo que sería impensable en una base de datos relacional. Un ejemplo de estas bases de datos es \textbf{Elasticsearch}, que permite hacer búsquedas complejas en texto, a través de datos estructurados y desestructurados. Esta podría ser una buena opción a utilizar una vez se alcance una determinada complejidad en el sistema de almacenamiento, pero en nuestro caso, solo lo comentamos como posibles trabajos futuros.
+
+\subsection{Funciones implementadas}
+
+\subsubsection{Funcionalidades básicas}
+Entre las funciones que hacen que TWINS cobre sentido, destacamos las siguientes:
+
+\begin{itemize}
+	\item \textbf{Almacenamiento de información administrativa}: estudiantes, tutores, convenios, expedientes, etc.
+	\item \textbf{Asociación de estudiantes con otras entidades}: estudiantes con su tutor, el convenio respecto del cual realiza su movilidad, sus expedientes, etc.
+	\item \textbf{\gls{AM}}: para poder organizar a los estudiantes \textit{incoming}
+	\item \textbf{Envío masivo de correos electrónicos}: posibilita funciones como las \glspl{Nominacion} automáticas
+	\item \textbf{Generación de documentos automática}: disposición de los distintos datos en documentos que son entregables a estudiantes para mostrarles un sumario de su situación académica
+	\item \textbf{Creación, edición y borrado de los datos dentro de la aplicación}
+\end{itemize}
+
+\subsection{La interfaz de usuario}
+
+\section{Estudio de necesidades}
