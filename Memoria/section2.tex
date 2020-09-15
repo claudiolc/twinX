@@ -110,8 +110,44 @@ Entre las funciones que hacen que TWINS cobre sentido, destacamos las siguientes
 	\item \textbf{Generación de documentos automática:} disposición de los distintos datos en documentos que son entregables a estudiantes para mostrarles un sumario de su situación académica
 	\item \textbf{Creación, edición y borrado de los datos dentro de la aplicación}
 	\item \textbf{Anotación de futuras modificaciones a documentos ajenos a la oficina:} como son, por ejemplo, los convenios, que quedan registrados en la sede de la UGR y no pueden ser modificados hasta una fecha concreta, fuera del control de la oficina.
+	\item \textbf{Recuperación de información de otros formularios externos a la aplicación:} para el registro de nuevos estudiantes (que es hasta ahora la mejor aproximación a la automatización de dicho proceso de la que se dispone) y, por ejemplo, para registrar datos de estudiantes afectados de alguna manera por la COVID-19.
 \end{itemize}
 
 \subsection{La interfaz de usuario}
+
+Como hemos señalado en anteriores secciones, toda la aplicación yace sobre la herramienta de Microsoft\textregistered. Por ello, tanto los datos, como la presentación o vista y el control ejercido sobre los mismos no tiene separación alguna.
+
+Al margen de esto y analizando las ventajas que el uso de Access\textregistered nos podría aportar, tenemos una manera de crear una interfaz de usuario de una manera más sencilla de lo normal. Tan sólo basta con arrastrar y redimensionar un botón con el ratón y una casilla para mostrar texto y con unas simples instrucciones tenemos una acción que, al pulsar el nuevo botón, en la casilla podría mostrarse, por ejemplo, cuántos registros almacena una determinada tabla (o varias de ellas) en la base de datos. Las consultas a la base de datos pueden almacenarse y reutilizarse según se quiera.
+
+También pueden programarse como si de una consulta se tratara, acciones que impliquen la modificación, borrado o creación de registros en la base de datos. A estas piezas de código funcionales se les da el nombre de \textit{macros}.
+
+Una vez mencionadas las posibilidades funcionales, abordemos el uso de las mismas que han hecho para construir TWINS.
+
+Lo primero que nos encontramos tras abrir la aplicación, es una pantalla de login con los distintos usuarios que pueden acceder al sistema:
+
+%imagen de login
+
+Tras identificarnos, nos topamos, antes de llegar a la pantalla principal, con tres pantallas más:
+
+\begin{itemize}
+	\item La pantalla de avisos nos alerta de las acciones que tenemos que realizar con mayor urgencia, dado que han sido programadas para tenerlas listas para una fecha cercana y necesitan de la atención del usuario al que se notifica
+	
+	 %Imagen de avisos
+	 
+	\item La pantalla de notas, con los mensajes que se envían los distintos componentes de la oficina entre ellos, funciona como un paso de notas adhesivas que se dejan en los distintos puestos de trabajo. Sólo el administrador puede ver todas las notas que todos los usuarios se envían, pero son privadas a emisor y receptor del mensaje. Eso sí, hablamos de la vista, porque ya que todo el mundo necesita el archivo de base de datos para interaccionar con ella, todo poseedor puede abrir la tabla de mensajes y ver todo su contenido.
+	
+	%Imagen de mensajes
+	
+	%Otra pantalla que falta
+	
+	%Su imagen
+	
+\end{itemize}
+
+Finalmente, llegamos a la pantalla principal, de donde parten todos los menús (incluso los que acabamos de ver, que disparan su vista al ser satisfactorio el proceso de identificación en el sistema).
+
+%Imagen de pantalla principal
+
+En ella, no vemos ninguna información como la que acabamos de ver ahora (ni indicador de notificaciones, mensajes, alertas; nada). Lo que sí podemos apreciar es una selección en la parte de arriba de la interfaz con la que se filtrará el contenido que aparezca tras acceder a cualquier elemento del menú. Esto es, se filtrarán las consultas que se hagan, pues al fin y al cabo es en lo que consiste la recuperación de parte de la información almacenada en la base de datos.
 
 \section{Estudio de necesidades}
