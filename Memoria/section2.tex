@@ -42,12 +42,12 @@ Por tanto, es de gran importancia guardar toda la información referente al proc
 
 %TWINS alberga actualmente unos 2055 registros de estudiantes desde el curso 2018-2019, incluyendo a algunos de ellos que han manifestado su intención de realizar un programa de movilidad en la Facultad de Filosofía y Letras durante el curso 2020/2021. 
 
-TWINS alberga desde el curso 2018/2019 un volumen de datos que plasmamos en la tabla \ref{estadisticasTWINS}. Al tratarse de una base de datos en la herramienta ofimática Microsoft Access\textregistered, la aplicación consta más bien de una simple capa a modo de interfaz que permite al usuario interactuar con la base de datos. La presentación de los datos se posibilita gracias a la ejecución de consultas preestablecidas que se almacenan y se indica en qué campos ha de mostrarse la información. Cuando se realiza alguna acción que requiera el borrado, inserción o actualización de registros se hace uso de las macros, que son trozos de código que disponen distintos flujos de información entre las tablas implicadas en dicha operación.
+TWINS alberga desde el curso 2018/2019 un volumen de datos que plasmamos en la tabla \ref{tab:estadisticasTWINS}. Al tratarse de una base de datos en la herramienta ofimática Microsoft Access\textregistered, la aplicación consta más bien de una simple capa a modo de interfaz que permite al usuario interactuar con la base de datos. La presentación de los datos se posibilita gracias a la ejecución de consultas preestablecidas que se almacenan y se indica en qué campos ha de mostrarse la información. Cuando se realiza alguna acción que requiera el borrado, inserción o actualización de registros se hace uso de las macros, que son trozos de código que disponen distintos flujos de información entre las tablas implicadas en dicha operación.
 
 \begin{figure}
 	\includegraphics[width=\textwidth]{img/Capturas de TWINS/vistaConvenios.png}
 	\caption{Vista de Convenios}
-	\label{vistaConvenios}
+	\label{fig:vistaConvenios}
 \end{figure}
 
 \begin{table}[h]
@@ -76,7 +76,7 @@ TWINS alberga desde el curso 2018/2019 un volumen de datos que plasmamos en la t
 			\hline
 		\end{tabular}
 		\caption{Estadísticas de TWINS}
-		\label{estadisticasTWINS}
+		\label{tab:estadisticasTWINS}
 	\end{center}
 \end{table}~
 \footnotetext{Tanto \textit{incoming} como \textit{outcoming}}
@@ -97,27 +97,34 @@ Así pues, aparentemente, para las funcionalidades básicas y necesarias para tr
 
 No obstante, no olvidemos la intención de extender la funcionalidad del actual TWINS para que los propios estudiantes puedan dejar atrás el constante envío de documentos entre sus tutores académicos por correo electrónico, de modo que puedan dar el salto a una plataforma que implemente una interfaz que les permita prescindir de estos documentos, como el acuerdo de estudios, y trabajar con la información directamente (aunque se posibiliten las conversiones a certificados que puedan ser impresos). En este contexto, se ha de tener en cuenta la forma de tratar los datos que se quiere realizar. Si todas las asignaturas de la universidad de origen se tienen en memoria y tan sólo se tienen que registrar las de la universidad de destino, tan sólo tendríamos que guardar códigos, órdenes y los nuevos nombres para esas asignaturas. Sin embargo, si esto se complicara y tuviéramos que almacenar documentos, quizás, para esa parte de la aplicación, sería conveniente estudiar la posibilidad de implementar una base de datos cuyo modelo de datos esté enfocado a la búsqueda de estos y, no menos importante, optimizado para dicho propósito, algo que sería impensable en una base de datos relacional. Un ejemplo de estas bases de datos es \textbf{Elasticsearch}, que permite hacer búsquedas complejas en texto, a través de datos estructurados y desestructurados. Esta podría ser una buena opción a utilizar una vez se alcance una determinada complejidad en el sistema de almacenamiento, pero en nuestro caso, solo lo comentamos como posibles trabajos futuros.
 
-\subsection{Funciones implementadas}
-
-\subsubsection{Funcionalidades básicas}
-Entre las funciones que hacen que TWINS cobre sentido, destacamos las siguientes:
+\subsubsection{Funciones implementadas}
 
 \begin{itemize}
-	\item \textbf{Almacenamiento de información administrativa:} estudiantes, tutores, convenios, expedientes, etc.
-	\item \textbf{Asociación de estudiantes con otras entidades:} estudiantes con su tutor, el convenio respecto del cual realizan su movilidad, sus expedientes, etc.
-	\item \textbf{\gls{AM}}: para poder organizar a los estudiantes \textit{incoming}
-	\item \textbf{Envío masivo de correos electrónicos:} posibilita funciones como las \glspl{Nominacion} automáticas.
-	\item \textbf{Generación de documentos automática:} disposición de los distintos datos en documentos que son entregables a estudiantes para mostrarles un sumario de su situación académica
-	\item \textbf{Creación, edición y borrado de los datos dentro de la aplicación}
-	\item \textbf{Anotación de futuras modificaciones a documentos ajenos a la oficina:} como son, por ejemplo, los convenios, que quedan registrados en la sede de la UGR y no pueden ser modificados hasta una fecha concreta, fuera del control de la oficina.
-	\item \textbf{Recuperación de información de otros formularios externos a la aplicación:} para el registro de nuevos estudiantes (que es hasta ahora la mejor aproximación a la automatización de dicho proceso de la que se dispone) y, por ejemplo, para registrar datos de estudiantes afectados de alguna manera por la COVID-19.
+	\item \textbf{Funcionalidades básicas}\\
+	Entre las funciones que hacen que TWINS cobre sentido, destacamos las siguientes:
+	
+	\begin{itemize}
+		\item \textbf{Almacenamiento de información administrativa:} estudiantes, tutores, convenios, expedientes, etc.
+		\item \textbf{Asociación de estudiantes con otras entidades:} estudiantes con su tutor, el convenio respecto del cual realizan su movilidad, sus expedientes, etc.
+		\item \textbf{\gls{AM}}: para poder organizar a los estudiantes \textit{incoming}
+		\item \textbf{Envío masivo de correos electrónicos:} posibilita funciones como las \glspl{Nominacion} automáticas o la comunicación a los participantes en los programas de movilidad de su tutor académico.
+		\item \textbf{Generación de documentos automática:} disposición de los distintos datos en documentos que son entregables a estudiantes para mostrarles un sumario de su situación académica
+		\item \textbf{Creación, edición y borrado de los datos dentro de la aplicación}
+		\item \textbf{Anotación de futuras modificaciones a documentos ajenos a la oficina:} como son, por ejemplo, los convenios, que quedan registrados en la sede de la UGR y no pueden ser modificados hasta una fecha concreta, fuera del control de la oficina.
+		\item \textbf{Recuperación de información de otros formularios externos a la aplicación:} para el registro de nuevos estudiantes (que es hasta ahora la mejor aproximación a la automatización de dicho proceso de la que se dispone) y, por ejemplo, para registrar datos de estudiantes afectados de alguna manera por la COVID-19.
+	\end{itemize}
+
+	\item \textbf{Funcionalidades específicas}\\
+	Entre las que destacan la generación de informes con fines estadísticos para la oficina, información de asignaturas o menús para gestionar formularios creados por el personal para poder posteriormente transferir la información a la herramienta TWINS.
+	
+	También disponen de un sistema de alertas en relación con las tareas a realizar por el personal y con una especie de calendario donde se notifican los eventos temporales más próximos a atender.
 \end{itemize}
 
-\subsection{La interfaz de usuario}
+\subsubsection{La interfaz de usuario}
 
 Como hemos señalado en anteriores secciones, toda la aplicación yace sobre la herramienta de Microsoft\textregistered. Por ello, tanto los datos, como la presentación o vista y el control ejercido sobre los mismos no tiene separación alguna.
 
-Al margen de esto y analizando las ventajas que el uso de Access\textregistered nos podría aportar, tenemos una manera de crear una interfaz de usuario de una manera más sencilla de lo normal. Tan sólo basta con arrastrar y redimensionar un botón con el ratón y una casilla para mostrar texto y con unas simples instrucciones tenemos una acción que, al pulsar el nuevo botón, en la casilla podría mostrarse, por ejemplo, cuántos registros almacena una determinada tabla (o varias de ellas) en la base de datos. Las consultas a la base de datos pueden almacenarse y reutilizarse según se quiera.
+Al margen de esto y analizando las ventajas que el uso de Access\textregistered \ nos podría aportar, tenemos una manera de crear una interfaz de usuario de una manera más sencilla de lo normal. Tan sólo basta con arrastrar y redimensionar un botón con el ratón y una casilla para mostrar texto y con unas simples instrucciones tenemos una acción que, al pulsar el nuevo botón, en la casilla podría mostrarse, por ejemplo, cuántos registros almacena una determinada tabla (o varias de ellas) en la base de datos. Las consultas a la base de datos pueden almacenarse y reutilizarse según se quiera. A las interfaces se las conoce como \textbf{formularios} en Access\textregistered
 
 También pueden programarse como si de una consulta se tratara, acciones que impliquen la modificación, borrado o creación de registros en la base de datos. A estas piezas de código funcionales se les da el nombre de \textit{macros}.
 
@@ -125,29 +132,69 @@ Una vez mencionadas las posibilidades funcionales, abordemos el uso de las misma
 
 Lo primero que nos encontramos tras abrir la aplicación, es una pantalla de login con los distintos usuarios que pueden acceder al sistema:
 
-%imagen de login
+\begin{figure}
+	\includegraphics[width=\textwidth]{img/Capturas de TWINS/login}
+	\caption{Vista del login inicial con todos los usuarios}
+	\label{fig:login}
+\end{figure}
+
 
 Tras identificarnos, nos topamos, antes de llegar a la pantalla principal, con tres pantallas más:
 
 \begin{itemize}
+	\item El calendario proporciona una vista genérica de todos los eventos que tienen lugar y que conciernen a la oficina o que tratan de asuntos relacionados con la misma. También se guardan plazos para realizar determinadas tareas. Los eventos del calendario\footnote{Nótese la especificación de « evento de calendario » o « \gls{EventoExpedienteTWINS} » en las definiciones correspondientes para establecer la diferenciación entre eventos que tienen que ver con la planificación en el calendario y los que componen los \glspl{ExpedienteTWINS}} son públicos a todos los usuarios de TWINS y en la creación de las entradas en él se permite establecer un(a) encargado/a de la tarea, de modo que de un vistazo puedan verse los avisos pendientes que se tienen para un determinado evento.
+	
+	\begin{figure}
+		\includegraphics[width=\textwidth]{"img/Capturas de TWINS/calendario"}
+		\caption{Vista del calendario con los eventos existentes y visibles por todos los usuarios}
+		\label{fig:calendario}
+	\end{figure}
+	
+	
 	\item La pantalla de avisos nos alerta de las acciones que tenemos que realizar con mayor urgencia, dado que han sido programadas para tenerlas listas para una fecha cercana y necesitan de la atención del usuario al que se notifica
 	
-	 %Imagen de avisos
+	 \begin{figure}
+	 	\includegraphics[width=\textwidth]{"img/Capturas de TWINS/avisos"}
+	 	\caption{Vista de los avisos desde el usuario administrador (puede ver todos los avisos de todos los usuarios aparte de los propios)}
+	 	\label{fig:avisos}
+	 \end{figure}
+	 
+	 %MISMA PANTALLA QUE LA ANTERIOR
 	 
 	\item La pantalla de notas, con los mensajes que se envían los distintos componentes de la oficina entre ellos, funciona como un paso de notas adhesivas que se dejan en los distintos puestos de trabajo. Sólo el administrador puede ver todas las notas que todos los usuarios se envían, pero son privadas a emisor y receptor del mensaje. Eso sí, hablamos de la vista, porque ya que todo el mundo necesita el archivo de base de datos para interaccionar con ella, todo poseedor puede abrir la tabla de mensajes y ver todo su contenido.
 	
-	%Imagen de mensajes
+		 %MISMA PANTALLA QUE LA ANTERIOR
 	
-	%Otra pantalla que falta
-	
-	%Su imagen
+	%AQUÍ VA LA PANTALLA DE EVENTOS SIN PROCESAR
 	
 \end{itemize}
 
-Finalmente, llegamos a la pantalla principal, de donde parten todos los menús (incluso los que acabamos de ver, que disparan su vista al ser satisfactorio el proceso de identificación en el sistema).
+Finalmente, llegamos a la pantalla principal, de donde parten todos los menús (incluso los que acabamos de ver, que se muestran automáticamente identificarse correctamente en el sistema).
 
 %Imagen de pantalla principal
 
-En ella, no vemos ninguna información como la que acabamos de ver ahora (ni indicador de notificaciones, mensajes, alertas; nada). Lo que sí podemos apreciar es una selección en la parte de arriba de la interfaz con la que se filtrará el contenido que aparezca tras acceder a cualquier elemento del menú. Esto es, se filtrarán las consultas que se hagan, pues al fin y al cabo es en lo que consiste la recuperación de parte de la información almacenada en la base de datos.
+En ella, no vemos ninguna información como la que acabamos de ver ahora (ni indicador de notificaciones, mensajes o alertas; nada). Lo que sí podemos apreciar es una selección en la parte de arriba del formulario con la que se filtrará el contenido que aparezca tras acceder a cualquier elemento del menú. Esto es, al solicitar determinada información cuando entremos a cierto menú, sólo se nos mostrarán aquellos datos que estén especificados en dicho cuadro de filtrado. Así, las consultas que se pueden hacer a la base de datos son mucho más cómodas y accesibles a todos los usuarios que no tienen por qué tener conocimiento de estos sistemas.
 
-\section{Estudio de necesidades}
+Si accedemos, por ejemplo, a la vista de convenios que ya hemos mostrado con anterioridad (figura \ref{fig:vistaConvenios}), el cuadro de filtrado se nos bloquea (ya hemos hecho una consulta y, para hacer otra, con otros parámetros, tendríamos que retroceder y volver a establecer nuestras preferencias de búsqueda). Se listan los convenios tal y como se han solicitado. El orden puede variarse a través de las flechas en las distintas columnas.
+
+Sin embargo y como es lógico, no se muestra toda la información de una tabla. Es más, realmente se están solicitando datos de distintas tablas (figura \ref{fig:tablasConsultaConvenios}). Esta es un ejemplo de cómo la herramienta de creación de formularios de Access nos permite disponer la información de una tabla de forma más concisa que mostrando la tabla en crudo.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{img/Capturas de TWINS/relaciónTablasConsultaConveniosLista.png}
+	\caption{Relación de tablas implicadas en la consulta realizada para listar los convenios}
+	\label{fig:tablasConsultaConvenios}
+\end{figure}
+
+Si nos fijamos en las distintas entradas de la lista, correspondiente cada una a un distinto convenio, vemos que se tienen elementos como un botón para acceder al formulario de la vista del mismo, los estudiantes \textit{outcoming} o \textit{incoming} que están de movilidad según ese convenio, y demás elementos que son de relevancia para la entrada en concreto.
+
+A efectos de diseño, es apreciable que ciertos campos de cada entrada se presentan con un elemento de lista, también conocido como \textit{dropdown}. No son editables hasta que no se accede a la vista del convenio, en contra de lo que puede dar a entender. Si generalizamos al resto de la aplicación, existen numerosos elementos con una disposición extraña como la que mencionamos, de modo que resultan atípicos para el usuario inexperto, lo que podría llevar a confusiones y una pérdida de confianza en el usuario que interactúe con el sistema, a pesar de que no habrá gran cantidad de gente que comience a utilizar el sistema por primera vez de forma avanzada como es la labor del personal de secretaría, quienes sí lo harán. De todos modos, no podemos dar nada por hecho y la labor de un experto en informática es, en esencia, facilitar y mejorar.
+
+Es por ello por lo que gran parte de este proyecto se enfocará al rediseño de la aplicación de TWINS basado en técnicas de usabilidad. Esto será posible gracias a la aplicación de metodologías actuales y la realización de pruebas reales con usuarios que interaccionarán con el sistema.
+
+Las siguientes vistas se proporcionan como ejemplo de lo mencionado, aunque no comentemos sus aspectos específicos, dado que la metodología empleada para su creación es la misma que ya hemos expuesto y la interacción por parte del usuario es similar:
+
+%imágenes. AÑADIR \REF PORQUE NO SE SABE DÓNDE SE VAN A MOSTRAR
+
+
+\subsection{Estudio de necesidades}
