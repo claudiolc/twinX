@@ -5,44 +5,46 @@ Reallocating 'name_of_file' (item size: 1) to 9 items.
 The style file: plainnat.bst
 Reallocating 'name_of_file' (item size: 1) to 13 items.
 Database file #1: bibliografia.bib
-You've used 2 entries,
+Warning--empty year in elastic
+You've used 3 entries,
             2773 wiz_defined-function locations,
-            603 strings with 5271 characters,
-and the built_in function-call counts, 627 in all, are:
-= -- 52
-> -- 20
-< -- 2
-+ -- 8
-- -- 6
-* -- 32
-:= -- 100
-add.period$ -- 6
-call.type$ -- 2
-change.case$ -- 8
-chr.to.int$ -- 2
-cite$ -- 4
-duplicate$ -- 30
-empty$ -- 65
-format.name$ -- 8
-if$ -- 129
+            607 strings with 5358 characters,
+and the built_in function-call counts, 923 in all, are:
+= -- 77
+> -- 30
+< -- 3
++ -- 12
+- -- 9
+* -- 47
+:= -- 144
+add.period$ -- 9
+call.type$ -- 3
+change.case$ -- 12
+chr.to.int$ -- 3
+cite$ -- 7
+duplicate$ -- 45
+empty$ -- 97
+format.name$ -- 12
+if$ -- 192
 int.to.chr$ -- 1
 int.to.str$ -- 1
 missing$ -- 0
-newline$ -- 18
-num.names$ -- 8
-pop$ -- 24
+newline$ -- 23
+num.names$ -- 12
+pop$ -- 37
 preamble$ -- 1
-purify$ -- 6
+purify$ -- 9
 quote$ -- 0
-skip$ -- 29
+skip$ -- 43
 stack$ -- 0
-substring$ -- 4
-swap$ -- 2
+substring$ -- 6
+swap$ -- 3
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 22
-warning$ -- 0
-while$ -- 6
+type$ -- 33
+warning$ -- 1
+while$ -- 9
 width$ -- 0
-write$ -- 31
+write$ -- 42
+(There was 1 warning)
