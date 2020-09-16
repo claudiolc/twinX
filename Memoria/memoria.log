@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.7.23)  15 SEP 2020 20:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.7.23)  16 SEP 2020 18:58
 entering extended mode
 **./memoria.tex
 (memoria.tex
@@ -591,35 +591,63 @@ Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
 \extratabsurround=\skip71
 \backup@length=\skip72
 \ar@cellbox=\box58
-) (glosario.tex
+)
+("C:\Program Files\MiKTeX\tex/latex/caption\subcaption.sty"
+Package: subcaption 2020/01/22 v1.3d Sub-captions (AR)
+\c@subfigure=\count322
+\c@subtable=\count323
+)
+("C:\Program Files\MiKTeX\tex/latex/stackengine\stackengine.sty"
+Package: stackengine 2017/02/13 v4.01\ Stacking text and objects in convenient 
+ways
+
+("C:\Program Files\MiKTeX\tex/latex/listofitems\listofitems.sty"
+("C:\Program Files\MiKTeX\tex/generic/listofitems\listofitems.tex"
+\loi_cnt_foreach_nest=\count324
+\loi_nestcnt=\count325
+)
+Package: listofitems 2019/08/21 v1.63 Grab items in lists using user-specified 
+sep char (CT)
+)
+\c@@stackindex=\count326
+\@boxshift=\skip73
+\stack@tmplength=\skip74
+\temp@stkl=\skip75
+\@stackedboxwidth=\skip76
+\@addedbox=\box59
+\@anchorbox=\box60
+\stackedbox=\box61
+\@centerbox=\box62
+\c@ROWcellindex@=\count327
+)
+(glosario.tex
 \glswrite=\write3
 \glo@main@file=\write4
 \openout4 = `memoria.glo'.
 
 Package glossaries Info: Writing glossary file memoria.glo on input line 1.
-)
-(memoria.aux
+) (memoria.aux
 LaTeX Info: Redefining \. on input line 31.
 LaTeX Info: Redefining \% on input line 31.
 )
 \openout1 = `memoria.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -657,21 +685,29 @@ LaTeX Font Info:    ... okay on input line 30.
 
 ("C:\Program Files\MiKTeX\tex/context/base/mkii\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count322
+\scratchcounter=\count328
 \scratchdimen=\dimen187
-\scratchbox=\box59
-\nofMPsegments=\count323
-\nofMParguments=\count324
+\scratchbox=\box63
+\nofMPsegments=\count329
+\nofMParguments=\count330
 \everyMPshowfont=\toks38
-\MPscratchCnt=\count325
+\MPscratchCnt=\count331
 \MPscratchDim=\dimen188
-\MPnumerator=\count326
-\makeMPintoPDFobject=\count327
+\MPnumerator=\count332
+\makeMPintoPDFobject=\count333
 \everyMPtoPDFconversion=\toks39
 ) ("C:\Program Files\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty"
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+
+("C:\Program Files\MiKTeX\tex/latex/grfext\grfext.sty"
+Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
+)
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 504.
 )
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
@@ -683,7 +719,7 @@ Package: ltcaption 2020/05/30 v1.4b longtable captions (AR)
 )
 Package caption Info: supertabular package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\AtBeginShipoutBox=\box60
+\AtBeginShipoutBox=\box64
 
 ("C:\Program Files\MiKTeX\tex/latex/pdflscape\pdflscape.sty"
 Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
@@ -693,10 +729,10 @@ Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
-LaTeX Info: Redefining \. on input line 30.
-LaTeX Info: Redefining \% on input line 30.
-\c@lstlisting=\count328
-Package hyperref Info: Link coloring OFF on input line 30.
+LaTeX Info: Redefining \. on input line 32.
+LaTeX Info: Redefining \% on input line 32.
+\c@lstlisting=\count334
+Package hyperref Info: Link coloring OFF on input line 32.
 
 ("C:\Program Files\MiKTeX\tex/latex/hyperref\nameref.sty"
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -707,11 +743,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ("C:\Program Files\MiKTeX\tex/generic/gettitlestring\gettitlestring.sty"
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count329
+\c@section@level=\count335
 )
-LaTeX Info: Redefining \ref on input line 30.
-LaTeX Info: Redefining \pageref on input line 30.
-LaTeX Info: Redefining \nameref on input line 30.
+LaTeX Info: Redefining \ref on input line 32.
+LaTeX Info: Redefining \pageref on input line 32.
+LaTeX Info: Redefining \nameref on input line 32.
 
 (memoria.out) (memoria.out)
 \@outlinefile=\write5
@@ -721,17 +757,17 @@ LaTeX Info: Redefining \nameref on input line 30.
 <img/UGR.png, id=79, 329.73187pt x 310.15875pt>
 File: img/UGR.png Graphic file (type png)
 <use img/UGR.png>
-Package pdftex.def Info: img/UGR.png  used on input line 40.
+Package pdftex.def Info: img/UGR.png  used on input line 42.
 (pdftex.def)             Requested size: 184.9429pt x 173.96693pt.
 <img/LSI.png, id=81, 284.46703pt x 163.76074pt>
 File: img/LSI.png Graphic file (type png)
 <use img/LSI.png>
-Package pdftex.def Info: img/LSI.png  used on input line 46.
+Package pdftex.def Info: img/LSI.png  used on input line 48.
 (pdftex.def)             Requested size: 56.9055pt x 32.75905pt.
 <img/ETSIIT.png, id=82, 219.7008pt x 88.6512pt>
 File: img/ETSIIT.png Graphic file (type png)
 <use img/ETSIIT.png>
-Package pdftex.def Info: img/ETSIIT.png  used on input line 47.
+Package pdftex.def Info: img/ETSIIT.png  used on input line 49.
 (pdftex.def)             Requested size: 99.58464pt x 40.18349pt.
  [1
 
@@ -743,7 +779,7 @@ ion with the same identifier (name{page.1}) has been already used, duplicate ig
 nored
 <to be read again> 
                    \relax 
-l.72 \newpage
+l.74 \newpage
               [1
 
 ] (memoria.toc
@@ -775,7 +811,7 @@ LaTeX Font Info:    Trying to load font information for U+lasy on input line 35
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
 [6]) (section2.tex [7] [8]
-<img/Capturas de TWINS/vistaConvenios.png, id=190, 992.20688pt x 569.12625pt>
+<img/Capturas de TWINS/vistaConvenios.png, id=206, 992.20688pt x 569.12625pt>
 File: img/Capturas de TWINS/vistaConvenios.png Graphic file (type png)
 <use img/Capturas de TWINS/vistaConvenios.png>
 Package pdftex.def Info: img/Capturas de TWINS/vistaConvenios.png  used on inpu
@@ -786,60 +822,1189 @@ t line 48.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [9] [10 <./img/Capturas de TWINS/vistaConvenios.png>] [11] [12]
-<img/Capturas de TWINS/login.png, id=218, 840.89156pt x 423.08063pt>
+<img/Capturas de TWINS/login.png, id=235, 840.89156pt x 423.08063pt>
 File: img/Capturas de TWINS/login.png Graphic file (type png)
 <use img/Capturas de TWINS/login.png>
 Package pdftex.def Info: img/Capturas de TWINS/login.png  used on input line 13
 6.
 (pdftex.def)             Requested size: 440.84746pt x 221.80432pt.
+<img/Capturas de TWINS/calendario.png, id=241, 983.92593pt x 408.02437pt>
+File: img/Capturas de TWINS/calendario.png Graphic file (type png)
+<use img/Capturas de TWINS/calendario.png>
+Package pdftex.def Info: img/Capturas de TWINS/calendario.png  used on input li
+ne 148.
+(pdftex.def)             Requested size: 440.84746pt x 182.81235pt.
  [13 <./img/Capturas de TWINS/login.png>]
-<img/Capturas de TWINS/relaciónTablasConsultaConveniosLista.png, id=232, 935.7
+<img/Capturas de TWINS/avisos.png, id=250, 1044.15094pt x 600.74437pt>
+File: img/Capturas de TWINS/avisos.png Graphic file (type png)
+<use img/Capturas de TWINS/avisos.png>
+Package pdftex.def Info: img/Capturas de TWINS/avisos.png  used on input line 1
+59.
+(pdftex.def)             Requested size: 440.84746pt x 253.64008pt.
+<img/Capturas de TWINS/eventosSinProcesar.png, id=254, 1005.00468pt x 558.58687
+pt>
+File: img/Capturas de TWINS/eventosSinProcesar.png Graphic file (type png)
+<use img/Capturas de TWINS/eventosSinProcesar.png>
+Package pdftex.def Info: img/Capturas de TWINS/eventosSinProcesar.png  used on 
+input line 170.
+(pdftex.def)             Requested size: 440.84746pt x 245.0204pt.
+ [14 <./img/Capturas de TWINS/calendario.png>]
+[15 <./img/Capturas de TWINS/avisos.png> <./img/Capturas de TWINS/eventosSinPro
+cesar.png>]
+<img/Capturas de TWINS/pantallaPrincipal.png, id=267, 988.44281pt x 474.27188pt
+>
+File: img/Capturas de TWINS/pantallaPrincipal.png Graphic file (type png)
+<use img/Capturas de TWINS/pantallaPrincipal.png>
+Package pdftex.def Info: img/Capturas de TWINS/pantallaPrincipal.png  used on i
+nput line 181.
+(pdftex.def)             Requested size: 440.84746pt x 211.52432pt.
+<img/Capturas de TWINS/relaciónTablasConsultaConveniosLista.png, id=270, 935.7
 4594pt x 163.3603pt>
 File: img/Capturas de TWINS/relaciónTablasConsultaConveniosLista.png Graphic f
 ile (type png)
 <use img/Capturas de TWINS/relaciónTablasConsultaConveniosLista.png>
 Package pdftex.def Info: img/Capturas de TWINS/relaciónTablasConsultaConvenios
-Lista.png  used on input line 171.
+Lista.png  used on input line 195.
 (pdftex.def)             Requested size: 440.84746pt x 76.9638pt.
- [14 <./img/Capturas de TWINS/relaciónTablasConsultaConveniosLista.png>]) (sec
-tion3.tex) [15] (memoria.bbl) [16] (memoria.gls
-[17]) [18]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 124.
- [19]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 124.
+ [16 <./img/Capturas de TWINS/pantallaPrincipal.png>]
+<img/Capturas de TWINS/cambioDNI.png, id=280, 990.70125pt x 615.0478pt>
+File: img/Capturas de TWINS/cambioDNI.png Graphic file (type png)
+<use img/Capturas de TWINS/cambioDNI.png>
+Package pdftex.def Info: img/Capturas de TWINS/cambioDNI.png  used on input lin
+e 217.
+(pdftex.def)             Requested size: 440.84746pt x 273.68134pt.
+\capfigacontent=\box65
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \unhbox 
+l.238 ...tionbox{\capa\label{fig:alumnos}}{\figa}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \unhbox 
+l.238 ...tionbox{\capa\label{fig:alumnos}}{\figa}}
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+! Package calc Error: `\unhbox ' invalid at this point.
+
+See the calc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.238 ...tionbox{\capa\label{fig:alumnos}}{\figa}}
+                                                  
+I expected to see one of: + - * / )
+
+
+! LaTeX Error: File `!' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.238 ...tionbox{\capa\label{fig:alumnos}}{\figa}}
+                                                  
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   ]
+l.238 ...tionbox{\capa\label{fig:alumnos}}{\figa}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   ]
+l.238 ...tionbox{\capa\label{fig:alumnos}}{\figa}}
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+Overfull \hbox (159.59041pt too wide) in paragraph at lines 238--238
+[]\OT1/cmr/m/n/12 [width=]img/Capturas
+ []
+
+
+Overfull \hbox (54.429pt too wide) in paragraph at lines 238--238
+\OT1/cmr/m/n/12 de
+ []
+
+
+Overfull \hbox (80.20096pt too wide) in paragraph at lines 238--238
+\OT1/cmr/m/n/12 TWIN-
+ []
+
+
+Overfull \hbox (64.87334pt too wide) in paragraph at lines 238--238
+\OT1/cmr/m/n/12 S/a-
+ []
+
+
+Overfull \hbox (66.17888pt too wide) in paragraph at lines 238--238
+\OT1/cmr/m/n/12 lum-
+ []
+
+
+Overfull \hbox (59.71645pt too wide) in paragraph at lines 238--238
+\OT1/cmr/m/n/12 nos 
+ []
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \unhbox 
+l.238 ...tionbox{\capa\label{fig:alumnos}}{\figa}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \unhbox 
+l.238 ...tionbox{\capa\label{fig:alumnos}}{\figa}}
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+! Package calc Error: `\unhbox ' invalid at this point.
+
+See the calc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.238 ...tionbox{\capa\label{fig:alumnos}}{\figa}}
+                                                  
+I expected to see one of: + - * / )
+
+
+! LaTeX Error: File `!' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.238 ...tionbox{\capa\label{fig:alumnos}}{\figa}}
+                                                  
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Extra }, or forgotten \endgroup.
+\caption@iibox@ ...->\setbox \@tempboxa \hbox {#4}
+                                                  \caption@iiibox {#1}{#2}{#...
+l.238 ...tionbox{\capa\label{fig:alumnos}}{\figa}}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+Overfull \hbox (14.53462pt too wide) in paragraph at lines 238--238
+[]\OT1/cmr/bx/n/10 (a)
+ []
+
+
+Overfull \hbox (18.16655pt too wide) in paragraph at lines 238--238
+|\OT1/cmr/m/it/10 Vis-
+ []
+
+
+Overfull \hbox (8.43327pt too wide) in paragraph at lines 238--238
+\OT1/cmr/m/it/10 ta
+ []
+
+
+Overfull \hbox (9.71104pt too wide) in paragraph at lines 238--238
+\OT1/cmr/m/it/10 de
+ []
+
+
+Overfull \hbox (24.78874pt too wide) in paragraph at lines 238--238
+\OT1/cmr/m/it/10 alum-
+ []
+
+
+Overfull \hbox (14.82214pt too wide) in paragraph at lines 238--238
+\OT1/cmr/m/it/10 nos[][]| 
+ []
+
+! Extra }, or forgotten \endgroup.
+\sbox  ...box {\color@setgroup #2\color@endgroup }
+                                                  
+l.238 ...tionbox{\capa\label{fig:alumnos}}{\figa}}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+\capfigbcontent=\box66
+! Missing number, treated as zero.
+<to be read again> 
+                   \unhbox 
+l.239 ...x{\capb\label{fig:cesionDeDatos}}{\figb}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \unhbox 
+l.239 ...x{\capb\label{fig:cesionDeDatos}}{\figb}}
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+! Package calc Error: `\unhbox ' invalid at this point.
+
+See the calc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.239 ...x{\capb\label{fig:cesionDeDatos}}{\figb}}
+                                                  
+I expected to see one of: + - * / )
+
+
+! LaTeX Error: File `!' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.239 ...x{\capb\label{fig:cesionDeDatos}}{\figb}}
+                                                  
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   ]
+l.239 ...x{\capb\label{fig:cesionDeDatos}}{\figb}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   ]
+l.239 ...x{\capb\label{fig:cesionDeDatos}}{\figb}}
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+Overfull \hbox (116.91129pt too wide) in paragraph at lines 239--239
+[]\OT1/cmr/m/n/12 [width=]img/Capturas
+ []
+
+
+Overfull \hbox (11.74988pt too wide) in paragraph at lines 239--239
+\OT1/cmr/m/n/12 de
+ []
+
+
+Overfull \hbox (37.52184pt too wide) in paragraph at lines 239--239
+\OT1/cmr/m/n/12 TWIN-
+ []
+
+
+Overfull \hbox (16.31927pt too wide) in paragraph at lines 239--239
+\OT1/cmr/m/n/12 S/-
+ []
+
+
+Overfull \hbox (14.36096pt too wide) in paragraph at lines 239--239
+\OT1/cmr/m/n/12 ce-
+ []
+
+
+Overfull \hbox (24.2178pt too wide) in paragraph at lines 239--239
+\OT1/cmr/m/n/12 sion-
+ []
+
+
+Overfull \hbox (18.11232pt too wide) in paragraph at lines 239--239
+\OT1/cmr/m/n/12 De-
+ []
+
+
+Overfull \hbox (18.76509pt too wide) in paragraph at lines 239--239
+\OT1/cmr/m/n/12 Da-
+ []
+
+
+Overfull \hbox (15.07901pt too wide) in paragraph at lines 239--239
+\OT1/cmr/m/n/12 tos 
+ []
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \unhbox 
+l.239 ...x{\capb\label{fig:cesionDeDatos}}{\figb}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \unhbox 
+l.239 ...x{\capb\label{fig:cesionDeDatos}}{\figb}}
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+! Package calc Error: `\unhbox ' invalid at this point.
+
+See the calc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.239 ...x{\capb\label{fig:cesionDeDatos}}{\figb}}
+                                                  
+I expected to see one of: + - * / )
+
+
+! LaTeX Error: File `!' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.239 ...x{\capb\label{fig:cesionDeDatos}}{\figb}}
+                                                  
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Extra }, or forgotten \endgroup.
+\caption@iibox@ ...->\setbox \@tempboxa \hbox {#4}
+                                                  \caption@iiibox {#1}{#2}{#...
+l.239 ...x{\capb\label{fig:cesionDeDatos}}{\figb}}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+Overfull \hbox (15.33325pt too wide) in paragraph at lines 239--239
+[]\OT1/cmr/bx/n/10 (b)
+ []
+
+
+Overfull \hbox (24.5554pt too wide) in paragraph at lines 239--239
+|\OT1/cmr/m/it/10 Menu
+ []
+
+
+Overfull \hbox (9.71104pt too wide) in paragraph at lines 239--239
+\OT1/cmr/m/it/10 de
+ []
+
+
+Overfull \hbox (16.86653pt too wide) in paragraph at lines 239--239
+\OT1/cmr/m/it/10 ges-
+ []
+
+
+Overfull \hbox (17.12212pt too wide) in paragraph at lines 239--239
+\OT1/cmr/m/it/10 tion
+ []
+
+
+Overfull \hbox (12.26659pt too wide) in paragraph at lines 239--239
+\OT1/cmr/m/it/10 del
+ []
+
+
+Overfull \hbox (18.39986pt too wide) in paragraph at lines 239--239
+\OT1/cmr/m/it/10 con-
+ []
+
+
+Overfull \hbox (17.88876pt too wide) in paragraph at lines 239--239
+\OT1/cmr/m/it/10 sen-
+ []
+
+
+Overfull \hbox (9.96658pt too wide) in paragraph at lines 239--239
+\OT1/cmr/m/it/10 ti-
+ []
+
+
+Overfull \hbox (25.04428pt too wide) in paragraph at lines 239--239
+\OT1/cmr/m/it/10 mien-
+ []
+
+
+Overfull \hbox (8.43327pt too wide) in paragraph at lines 239--239
+\OT1/cmr/m/it/10 to
+ []
+
+
+Overfull \hbox (9.71104pt too wide) in paragraph at lines 239--239
+\OT1/cmr/m/it/10 de
+ []
+
+
+Overfull \hbox (12.26654pt too wide) in paragraph at lines 239--239
+\OT1/cmr/m/it/10 ce-
+ []
+
+
+Overfull \hbox (17.8888pt too wide) in paragraph at lines 239--239
+\OT1/cmr/m/it/10 sion
+ []
+
+
+Overfull \hbox (9.71104pt too wide) in paragraph at lines 239--239
+\OT1/cmr/m/it/10 de
+ []
+
+
+Overfull \hbox (13.79991pt too wide) in paragraph at lines 239--239
+\OT1/cmr/m/it/10 da-
+ []
+
+
+Overfull \hbox (12.52214pt too wide) in paragraph at lines 239--239
+\OT1/cmr/m/it/10 tos
+ []
+
+
+Overfull \hbox (9.71104pt too wide) in paragraph at lines 239--239
+\OT1/cmr/m/it/10 de
+ []
+
+
+Overfull \hbox (11.7555pt too wide) in paragraph at lines 239--239
+\OT1/cmr/m/it/10 los
+ []
+
+
+Overfull \hbox (12.26657pt too wide) in paragraph at lines 239--239
+\OT1/cmr/m/it/10 es-
+ []
+
+
+Overfull \hbox (12.26657pt too wide) in paragraph at lines 239--239
+\OT1/cmr/m/it/10 tu-
+ []
+
+
+Overfull \hbox (22.48875pt too wide) in paragraph at lines 239--239
+\OT1/cmr/m/it/10 dian-
+ []
+
+
+Overfull \hbox (12.01102pt too wide) in paragraph at lines 239--239
+\OT1/cmr/m/it/10 tes
+ []
+
+
+Overfull \hbox (12.7777pt too wide) in paragraph at lines 239--239
+\OT1/cmr/m/it/10 sa-
+ []
+
+
+Overfull \hbox (19.42209pt too wide) in paragraph at lines 239--239
+\OT1/cmr/m/it/10 lien-
+ []
+
+
+Overfull \hbox (12.01102pt too wide) in paragraph at lines 239--239
+\OT1/cmr/m/it/10 tes[][]| 
+ []
+
+! Extra }, or forgotten \endgroup.
+\sbox  ...box {\color@setgroup #2\color@endgroup }
+                                                  
+l.239 ...x{\capb\label{fig:cesionDeDatos}}{\figb}}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+\capfigccontent=\box67
+! Missing number, treated as zero.
+<to be read again> 
+                   \unhbox 
+l.240 ...\capc\label{fig:infoAsignaturas}}{\figc}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \unhbox 
+l.240 ...\capc\label{fig:infoAsignaturas}}{\figc}}
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+! Package calc Error: `\unhbox ' invalid at this point.
+
+See the calc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.240 ...\capc\label{fig:infoAsignaturas}}{\figc}}
+                                                  
+I expected to see one of: + - * / )
+
+
+! LaTeX Error: File `!' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.240 ...\capc\label{fig:infoAsignaturas}}{\figc}}
+                                                  
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   ]
+l.240 ...\capc\label{fig:infoAsignaturas}}{\figc}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   ]
+l.240 ...\capc\label{fig:infoAsignaturas}}{\figc}}
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+Overfull \hbox (116.91129pt too wide) in paragraph at lines 240--240
+[]\OT1/cmr/m/n/12 [width=]img/Capturas
+ []
+
+
+Overfull \hbox (11.74988pt too wide) in paragraph at lines 240--240
+\OT1/cmr/m/n/12 de
+ []
+
+
+Overfull \hbox (37.52184pt too wide) in paragraph at lines 240--240
+\OT1/cmr/m/n/12 TWIN-
+ []
+
+
+Overfull \hbox (26.11084pt too wide) in paragraph at lines 240--240
+\OT1/cmr/m/n/12 S/in-
+ []
+
+
+Overfull \hbox (22.19005pt too wide) in paragraph at lines 240--240
+\OT1/cmr/m/n/12 foA-
+ []
+
+
+Overfull \hbox (17.6901pt too wide) in paragraph at lines 240--240
+\OT1/cmr/m/n/12 sig-
+ []
+
+
+Overfull \hbox (16.31927pt too wide) in paragraph at lines 240--240
+\OT1/cmr/m/n/12 na-
+ []
+
+
+Overfull \hbox (15.01373pt too wide) in paragraph at lines 240--240
+\OT1/cmr/m/n/12 tu-
+ []
+
+
+Overfull \hbox (15.07901pt too wide) in paragraph at lines 240--240
+\OT1/cmr/m/n/12 ras 
+ []
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \unhbox 
+l.240 ...\capc\label{fig:infoAsignaturas}}{\figc}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \unhbox 
+l.240 ...\capc\label{fig:infoAsignaturas}}{\figc}}
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+! Package calc Error: `\unhbox ' invalid at this point.
+
+See the calc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.240 ...\capc\label{fig:infoAsignaturas}}{\figc}}
+                                                  
+I expected to see one of: + - * / )
+
+
+! LaTeX Error: File `!' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.240 ...\capc\label{fig:infoAsignaturas}}{\figc}}
+                                                  
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Extra }, or forgotten \endgroup.
+\caption@iibox@ ...->\setbox \@tempboxa \hbox {#4}
+                                                  \caption@iiibox {#1}{#2}{#...
+l.240 ...\capc\label{fig:infoAsignaturas}}{\figc}}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+Overfull \hbox (14.05548pt too wide) in paragraph at lines 240--240
+[]\OT1/cmr/bx/n/10 (c)
+ []
+
+
+Overfull \hbox (24.5554pt too wide) in paragraph at lines 240--240
+|\OT1/cmr/m/it/10 Menu
+ []
+
+
+Overfull \hbox (9.71104pt too wide) in paragraph at lines 240--240
+\OT1/cmr/m/it/10 de
+ []
+
+
+Overfull \hbox (12.26659pt too wide) in paragraph at lines 240--240
+\OT1/cmr/m/it/10 in-
+ []
+
+
+Overfull \hbox (15.9721pt too wide) in paragraph at lines 240--240
+\OT1/cmr/m/it/10 for-
+ []
+
+
+Overfull \hbox (16.86656pt too wide) in paragraph at lines 240--240
+\OT1/cmr/m/it/10 ma-
+ []
+
+
+Overfull \hbox (18.39989pt too wide) in paragraph at lines 240--240
+\OT1/cmr/m/it/10 cion
+ []
+
+
+Overfull \hbox (9.71104pt too wide) in paragraph at lines 240--240
+\OT1/cmr/m/it/10 de
+ []
+
+
+Overfull \hbox (11.7555pt too wide) in paragraph at lines 240--240
+\OT1/cmr/m/it/10 las
+ []
+
+
+Overfull \hbox (20.4443pt too wide) in paragraph at lines 240--240
+\OT1/cmr/m/it/10 asig-
+ []
+
+
+Overfull \hbox (14.31102pt too wide) in paragraph at lines 240--240
+\OT1/cmr/m/it/10 na-
+ []
+
+
+Overfull \hbox (12.26657pt too wide) in paragraph at lines 240--240
+\OT1/cmr/m/it/10 tu-
+ []
+
+
+Overfull \hbox (12.90546pt too wide) in paragraph at lines 240--240
+\OT1/cmr/m/it/10 ras
+ []
+
+
+Overfull \hbox (14.31102pt too wide) in paragraph at lines 240--240
+\OT1/cmr/m/it/10 (en
+ []
+
+
+Overfull \hbox (7.66663pt too wide) in paragraph at lines 240--240
+\OT1/cmr/m/it/10 la
+ []
+
+
+Overfull \hbox (17.63322pt too wide) in paragraph at lines 240--240
+\OT1/cmr/m/it/10 uni-
+ []
+
+
+Overfull \hbox (16.9943pt too wide) in paragraph at lines 240--240
+\OT1/cmr/m/it/10 ver-
+ []
+
+
+Overfull \hbox (10.73326pt too wide) in paragraph at lines 240--240
+\OT1/cmr/m/it/10 si-
+ []
+
+
+Overfull \hbox (15.33325pt too wide) in paragraph at lines 240--240
+\OT1/cmr/m/it/10 dad
+ []
+
+
+Overfull \hbox (11.24437pt too wide) in paragraph at lines 240--240
+\OT1/cmr/m/it/10 lo-
+ []
+
+
+Overfull \hbox (14.82211pt too wide) in paragraph at lines 240--240
+\OT1/cmr/m/it/10 cal,
+ []
+
+
+Overfull \hbox (9.71104pt too wide) in paragraph at lines 240--240
+\OT1/cmr/m/it/10 de
+ []
+
+
+Overfull \hbox (17.37766pt too wide) in paragraph at lines 240--240
+\OT1/cmr/m/it/10 des-
+ []
+
+
+Overfull \hbox (20.18877pt too wide) in paragraph at lines 240--240
+\OT1/cmr/m/it/10 tino,
+ []
+
+
+Overfull \hbox (9.71104pt too wide) in paragraph at lines 240--240
+\OT1/cmr/m/it/10 de
+ []
+
+
+Overfull \hbox (12.77766pt too wide) in paragraph at lines 240--240
+\OT1/cmr/m/it/10 ca-
+ []
+
+
+Overfull \hbox (8.81659pt too wide) in paragraph at lines 240--240
+\OT1/cmr/m/it/10 ra
+ []
+
+
+Overfull \hbox (5.11108pt too wide) in paragraph at lines 240--240
+\OT1/cmr/m/it/10 a
+ []
+
+
+Overfull \hbox (11.7555pt too wide) in paragraph at lines 240--240
+\OT1/cmr/m/it/10 los
+ []
+
+
+Overfull \hbox (12.26657pt too wide) in paragraph at lines 240--240
+\OT1/cmr/m/it/10 es-
+ []
+
+
+Overfull \hbox (12.26657pt too wide) in paragraph at lines 240--240
+\OT1/cmr/m/it/10 tu-
+ []
+
+
+Overfull \hbox (22.48875pt too wide) in paragraph at lines 240--240
+\OT1/cmr/m/it/10 dian-
+ []
+
+
+Overfull \hbox (12.01102pt too wide) in paragraph at lines 240--240
+\OT1/cmr/m/it/10 tes
+ []
+
+
+Overfull \hbox (13.7999pt too wide) in paragraph at lines 240--240
+\OT1/cmr/m/it/10 en-
+ []
+
+
+Overfull \hbox (21.33871pt too wide) in paragraph at lines 240--240
+\OT1/cmr/m/it/10 tran-
+ []
+
+
+Overfull \hbox (16.09988pt too wide) in paragraph at lines 240--240
+\OT1/cmr/m/it/10 tes)[][]| 
+ []
+
+! Extra }, or forgotten \endgroup.
+\sbox  ...box {\color@setgroup #2\color@endgroup }
+                                                  
+l.240 ...\capc\label{fig:infoAsignaturas}}{\figc}}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! You can't use `\hrule' here except with leaders.
+\caption@hrule ->\hrule 
+                        \@height \z@ 
+l.243 	\caption{This is my figure\label{fg:}}
+                                             
+To put a horizontal rule in an hbox or an alignment,
+you should use \leaders or \hrulefill (see The TeXbook).
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \vskip 
+l.243 	\caption{This is my figure\label{fg:}}
+                                             
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \vskip 
+l.243 	\caption{This is my figure\label{fg:}}
+                                             
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.243 	\caption{This is my figure\label{fg:}}
+                                             
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.243 	\caption{This is my figure\label{fg:}}
+                                             
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.243 	\caption{This is my figure\label{fg:}}
+                                             
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.243 	\caption{This is my figure\label{fg:}}
+                                             
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.243 	\caption{This is my figure\label{fg:}}
+                                             
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.243 	\caption{This is my figure\label{fg:}}
+                                             
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.243 	\caption{This is my figure\label{fg:}}
+                                             
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.243 	\caption{This is my figure\label{fg:}}
+                                             
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.243 	\caption{This is my figure\label{fg:}}
+                                             
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.243 	\caption{This is my figure\label{fg:}}
+                                             
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.243 	\caption{This is my figure\label{fg:}}
+                                             
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.243 	\caption{This is my figure\label{fg:}}
+                                             
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.243 	\caption{This is my figure\label{fg:}}
+                                             
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.243 	\caption{This is my figure\label{fg:}}
+                                             
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Too many }'s.
+\color@endbox ->\color@endgroup \egroup 
+                                        
+l.244 \end{figure}
+                  
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+
+! LaTeX Error: \begin{document} ended by \end{figure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.244 \end{figure}
+                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.244 \end{figure}
+                  
+Things are pretty mixed up, but I think the worst is over.
+
+) (section3.tex [17 <./img/Capturas de TWINS/relaciónTablasConsultaConveniosLi
+sta.png>] [18 <./img/Capturas de TWINS/cambioDNI.png (PNG copy)>]) [19]
+(memoria.bbl) [20] (memoria.gls [21]) [22]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 126.
+ [23]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 126.
  (memoria.aux
 LaTeX Info: Redefining \. on input line 31.
 LaTeX Info: Redefining \% on input line 31.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 124.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 124.
-Package rerunfilecheck Info: File `memoria.out' has not changed.
-(rerunfilecheck)             Checksum: BD8AC115FE7054A2F3AFB581FBCE05FF;1481.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 124.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 126.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 126.
+
+
+Package rerunfilecheck Warning: File `memoria.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `memoria.out':
+(rerunfilecheck)             Before: D466C1F67DD8FE1314E4A9B5EEAE5B33;1481
+(rerunfilecheck)             After:  3E9A7F6FED446E3C2E1B6C6A91FF33A9;1481.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 126.
  ) 
 Here is how much of TeX's memory you used:
- 18788 strings out of 481225
- 314338 string characters out of 2915922
- 759158 words of memory out of 3000000
- 33933 multiletter control sequences out of 15000+200000
- 543993 words of font info for 60 fonts, out of 3000000 for 9000
+ 19276 strings out of 481225
+ 322269 string characters out of 2915922
+ 768083 words of memory out of 3000000
+ 34375 multiletter control sequences out of 15000+200000
+ 544301 words of font info for 61 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,13n,79p,1631b,675s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\Claudio\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tc
-rm1200.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C
-:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
-les/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Program Files/MiKTeX
-/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/
-public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfon
-ts/cm/cmr17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pf
-b><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program 
-Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX
-/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX/fonts/type1
-/public/amsfonts/cm/cmtt12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsf
-onts/latxfont/lasy10.pfb>
-Output written on memoria.pdf (20 pages, 546062 bytes).
+ 60i,13n,90p,1631b,797s stack positions out of 5000i,500n,10000p,200000b,50000s
+pdfTeX warning (dest): name{figure.caption.15} has been referenced but does n
+ot exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.22} has been referenced but does not exist
+, replaced by a fixed one
+
+ <C:\Users\Claudio\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
+1200.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/
+Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program File
+s/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Program Files/MiKTeX/f
+onts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/pu
+blic/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts
+/cm/cmr17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb>
+<C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Fi
+les/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX/f
+onts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmtt12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfon
+ts/latxfont/lasy10.pfb>
+Output written on memoria.pdf (24 pages, 850165 bytes).
 PDF statistics:
- 346 PDF objects out of 1000 (max. 8388607)
- 69 named destinations out of 1000 (max. 500000)
- 183 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 402 PDF objects out of 1000 (max. 8388607)
+ 80 named destinations out of 1000 (max. 500000)
+ 208 words of extra memory for PDF output out of 10000 (max. 10000000)
 

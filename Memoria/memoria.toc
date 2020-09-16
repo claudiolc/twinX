@@ -14,7 +14,7 @@
 \contentsline {subsubsection}{\numberline {2.5.1}El modelo de datos}{10}{subsubsection.2.5.1}%
 \contentsline {subsubsection}{\numberline {2.5.2}Funciones implementadas}{11}{subsubsection.2.5.2}%
 \contentsline {subsubsection}{\numberline {2.5.3}La interfaz de usuario}{12}{subsubsection.2.5.3}%
-\contentsline {subsection}{\numberline {2.6}Estudio de necesidades}{15}{subsection.2.6}%
-\contentsline {section}{\numberline {3}twinX}{15}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Descripción de la propuesta}{15}{subsection.3.1}%
-\contentsline {section}{Appendices}{19}{section*.13}%
+\contentsline {subsection}{\numberline {2.6}Estudio de necesidades}{17}{subsection.2.6}%
+\contentsline {section}{\numberline {3}twinX}{17}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Descripción de la propuesta}{17}{subsection.3.1}%
+\contentsline {section}{Appendices}{23}{section*.19}%
