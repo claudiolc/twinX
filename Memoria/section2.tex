@@ -26,8 +26,13 @@ Como es lógico, tendrán que reportar estos cambios que hagan a sus universidad
 
 \subsection{Servicios al profesorado (PDI)}
 
+Al igual que los estudiantes, el Personal Docente Investigador tiene posibilidad de participar en programas de movilidad; es decir, hay convenios que contemplan la acogida del profesorado.
 
+Es en la Oficina de Relaciones Internacionales de la facultad donde gestionan y registran estos convenios. Una vez hay constancia de ellos, el personal puede solicitar un programa al igual que los estudiantes; no obstante, es la ORI central quien se encarga de sus gestiones a lo largo de la movilidad. Esto es, no establecen una interacción directa con la oficina de la facultad.
 
+En su caso no tienen un acuerdo de estudios, sino que tienen un acuerdo de movilidad o \textit{mobility agreement}, donde se pone de manifiesto la intención y los objetivos del/de la interesado/a con el programa que desea hacer.
+
+%COMPROBAR SI HAY REGISTROS EN TWINS Y ACTUAR EN CONSECUENCIA 
 
 
 \subsection{Coordinación con la Oficina de Relaciones Internacionales (ORI) de la UGR}
@@ -84,6 +89,7 @@ TWINS alberga desde el curso 2018/2019 un volumen de datos que plasmamos en la t
 
 
 \subsubsection{El modelo de datos}
+\label{ModeloDatos}
 
 El modelo relacional propuesto por Codd es el elegido para el diseño de esta base de datos. Las distintas tablas de la misma se conectan mediante relaciones que establecen restricciones para mantener la consistencia entre los datos.
 
@@ -133,7 +139,7 @@ Una vez mencionadas las posibilidades funcionales, abordemos el uso de las misma
 Lo primero que nos encontramos tras abrir la aplicación, es una pantalla de login con los distintos usuarios que pueden acceder al sistema (figura \ref{fig:login})
 
 \begin{figure}
-	\includegraphics[width=\textwidth]{img/Capturas de TWINS/login}
+	\includegraphics[width=\textwidth]{img/Capturas de TWINS/login.png}
 	\caption{Vista del login inicial con todos los usuarios}
 	\label{fig:login}
 \end{figure}
@@ -145,7 +151,7 @@ Tras identificarnos, nos topamos, antes de llegar a la pantalla principal, con t
 	\item El calendario (figura \ref{fig:calendario}) proporciona una vista genérica de todos los eventos que tienen lugar y que conciernen a la oficina o que tratan de asuntos relacionados con la misma. También se guardan plazos para realizar determinadas tareas. Los eventos del calendario\footnote{Nótese la especificación de « evento de calendario » o « \gls{EventoExpedienteTWINS} » en las definiciones correspondientes para establecer la diferenciación entre eventos que tienen que ver con la planificación en el calendario y los que componen los \glspl{ExpedienteTWINS}} son públicos a todos los usuarios de TWINS y en la creación de las entradas en él se permite establecer un(a) encargado/a de la tarea, de modo que de un vistazo puedan verse los avisos pendientes que se tienen para un determinado evento.
 	
 	\begin{figure}
-		\includegraphics[width=\textwidth]{img/Capturas de TWINS/calendario}
+		\includegraphics[width=\textwidth]{img/Capturas de TWINS/calendario.png}
 		\caption{Vista del calendario con los eventos existentes y visibles por todos los usuarios}
 		\label{fig:calendario}
 	\end{figure}
@@ -156,7 +162,7 @@ Tras identificarnos, nos topamos, antes de llegar a la pantalla principal, con t
 	Por supuesto, también se pueden crear avisos fuera del contexto de los eventos de calendario, lo que también implica la existencia de emisor, receptor y fecha de caducidad. Al margen de la importancia que se le da a la notificación del número restante de días para que una tarea caduque, esta última forma de hacer uso de los avisos podría verse como imaginando al creador, en la oficina, dejando una nota adhesiva en la mesa de su compañero/a.
 	
 	 \begin{figure}
-	 	\includegraphics[width=\textwidth]{img/Capturas de TWINS/avisos}
+	 	\includegraphics[width=\textwidth]{img/Capturas de TWINS/avisos.png}
 	 	\caption{Vista de los avisos desde el usuario administrador (puede ver todos los avisos de todos los usuarios aparte de los propios)}
 	 	\label{fig:avisos}
 	 \end{figure}
@@ -167,7 +173,7 @@ Tras identificarnos, nos topamos, antes de llegar a la pantalla principal, con t
 	En ella, los usuarios de gestión pueden acceder a la información relacionada con el evento, como los demás eventos, los expedientes del alumno para el cual se está mostrando la información, o directamente las fichas del estudiante o el convenio en sí mismas.
 	
 	\begin{figure}
-		\includegraphics[width=\textwidth]{img/Capturas de TWINS/eventosSinProcesar}
+		\includegraphics[width=\textwidth]{img/Capturas de TWINS/eventosSinProcesar.png}
 		\caption{Menú de eventos sin procesar, una pantalla donde los usuarios ven fácilmente el trabajo acumulado}
 		\label{fig:eventosSinProcesar}
 	\end{figure}
@@ -178,7 +184,7 @@ Tras identificarnos, nos topamos, antes de llegar a la pantalla principal, con t
 Finalmente, llegamos a la pantalla principal (figura \ref{fig:pantallaPrincipal}), de donde parten todos los menús (incluso los que acabamos de ver, que se muestran automáticamente identificarse correctamente en el sistema).
 
 \begin{figure}
-	\includegraphics[width=\textwidth]{img/Capturas de TWINS/pantallaPrincipal}
+	\includegraphics[width=\textwidth]{img/Capturas de TWINS/pantallaPrincipal.png}
 	\caption{Pantalla principal de la aplicación. Desde aquí podemos acceder a todos los menús anteriormente mostrados.}
 	\label{fig:pantallaPrincipal}
 \end{figure}
@@ -214,43 +220,47 @@ En las figuras \ref{fig:alumnos}, \ref{fig:cesionDeDatos}, \ref{fig:infoAsignatu
 
 
 \begin{figure}
-	\includegraphics[width=\textwidth]{img/Capturas de TWINS/cambioDNI}
+	\includegraphics[width=\textwidth]{img/Capturas de TWINS/cambioDNI.png}
 	\caption{También existe en TWINS un menú específico para el cambio de DNI}
 	\label{fig:cambioDNI}
 \end{figure}
 
-\begin{figure}[ht]
-	\centering
-	\def\figa{\begin{minipage}
-			\includegraphics[width=\textwidth]{img/Capturas de TWINS/alumnos}
-	\end{minipage}}
-	\def\figb{\begin{minipage}
-			\includegraphics[width=\textwidth]{img/Capturas de TWINS/cesionDeDatos}
-	\end{minipage}}
-	\def\figc{\begin{minipage}
-			\includegraphics[width=\linewidth]{img/Capturas de TWINS/infoAsignaturas}
-	\end{minipage}}
-
-	\def\capa{Vista de alumnos}
-	\def\capb{Menú de gestión del consentimiento de cesión de datos de los estudiantes salientes}
-	\def\capc{Menú de información de las asignaturas (en la universidad local, de destino, de cara a los estudiantes entrantes)}
-	
-	\savestack{\capfiga}{\subcaptionbox{\capa\label{fig:alumnos}}{\figa}}
-	\savestack{\capfigb}{\subcaptionbox{\capb\label{fig:cesionDeDatos}}{\figb}}
-	\savestack{\capfigc}{\subcaptionbox{\capc\label{fig:infoAsignaturas}}{\figc}}
-	\setstackgap{S}{12pt}
-	\Shortstack{\capfiga\\ \capfigb\\ \capfigc}%
-	\caption{This is my figure\label{fg:}}
-\end{figure}
-
-
-
-
-
-
-
-
-
-
+%\begin{figure}[ht]
+%	\centering
+%	\def\figa{\begin{minipage}
+%			\includegraphics[width=\textwidth]{img/Capturas de TWINS/alumnos}
+%	\end{minipage}}
+%	\def\figb{\begin{minipage}
+%			\includegraphics[width=\textwidth]{img/Capturas de TWINS/cesionDeDatos}
+%	\end{minipage}}
+%	\def\figc{\begin{minipage}
+%			\includegraphics[width=\linewidth]{img/Capturas de TWINS/infoAsignaturas}
+%	\end{minipage}}
+%
+%	\def\capa{Vista de alumnos}
+%	\def\capb{Menú de gestión del consentimiento de cesión de datos de los estudiantes salientes}
+%	\def\capc{Menú de información de las asignaturas (en la universidad local, de destino, de cara a los estudiantes entrantes)}
+%	
+%	\savestack{\capfiga}{\subcaptionbox{\capa\label{fig:alumnos}}{\figa}}
+%	\savestack{\capfigb}{\subcaptionbox{\capb\label{fig:cesionDeDatos}}{\figb}}
+%	\savestack{\capfigc}{\subcaptionbox{\capc\label{fig:infoAsignaturas}}{\figc}}
+%	\setstackgap{S}{12pt}
+%	\Shortstack{\capfiga\\ \capfigb\\ \capfigc}%
+%	\caption{This is my figure\label{fg:}}
+%\end{figure}
 
 \subsection{Estudio de necesidades}
+
+En general, la Oficina de Relaciones Internacionales de la facultad dispone de una herramienta que, dado que ha sido creada por un integrante de la secretaría de la facultad con una estrecha relación laboral con los miembros de la oficina, ha sabido cumplir los requisitos a grandes rasgos. Muchas funcionalidades de la misma son muy concretas a las necesidades de la oficina (informes imprimibles con documentación específica, estadísticas, pegatinas para fundas de plástico, etc.)
+
+No obstante, debido a las limitaciones de la metodología escogida para posibilitar estas gestiones, se ha llegado a un punto en que es muy complicado realizar modificaciones y extensiones a la misma, entre las que podemos destacar la existencia de un portal directamente conectado a la aplicación principal que posibilite la realización de gestiones por parte de los estudiantes. De este modo, tanto el estudiante como el personal de secretaría ahorrarían tiempo y su interacción no sería íntegramente en el correo electrónico. Esto es también extensible al papel de los tutores académicos.
+
+Actualmente se ha hecho uso de herramientas auxiliares como los Formularios de Google\textregistered que permiten volcar datos al formato de hoja de cálculo, con lo que permite a TWINS reconocer la información y que pueda, a través de macros, crear nuevos registros en la base de datos para almacenarlos. Sin embargo, se precisa de la interacción humana para dicha tarea, al igual para muchas otras que se puedan querer automatizar o adaptar, como por ejemplo:
+
+\begin{itemize}
+	\item \textbf{Adaptar la mensajería} e implementarla dentro de la aplicación para llevar un mejor control de los casos de los estudiantes.
+	\item \textbf{Automatización del seguimiento de las nominaciones} teniendo un portal externo donde otras universidades puedan nominar a sus estudiantes en la UGR.
+	\item \textbf{Portal con vista para el estudiante entrante}, posibilitando que haga su propio registro en la plataforma y pueda ver su información en ella.
+\end{itemize}
+
+Al margen de las nuevas características a incluir, no podemos dejar de lado la necesidad de reconstruir un sistema desde cero que sea consistente, estable, con alta disponibilidad y fiabilidad, que pueda adaptarse a las necesidades tanto del personal de la oficina como a las del estudiantado. Es por tanto por lo que debemos descartar seguir utilizando la herramienta de Access\textregistered por sus limitaciones, expuestas en \nameref{ModeloDatos}.
