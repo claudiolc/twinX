@@ -51,7 +51,7 @@ TWINS alberga desde el curso 2018/2019 un volumen de datos que plasmamos en la t
 
 \begin{figure}
 	\includegraphics[width=\textwidth]{img/Capturas de TWINS/vistaConvenios.png}
-	\caption{Vista de Convenios}
+	\caption[Convenios]{Vista de Convenios}
 	\label{fig:vistaConvenios}
 \end{figure}
 
@@ -140,7 +140,7 @@ Lo primero que nos encontramos tras abrir la aplicación, es una pantalla de log
 
 \begin{figure}
 	\includegraphics[width=\textwidth]{img/Capturas de TWINS/login.png}
-	\caption{Vista del login inicial con todos los usuarios}
+	\caption[Login de TWINS]{Vista del login inicial con todos los usuarios}
 	\label{fig:login}
 \end{figure}
 
@@ -152,7 +152,7 @@ Tras identificarnos, nos topamos, antes de llegar a la pantalla principal, con t
 	
 	\begin{figure}
 		\includegraphics[width=\textwidth]{img/Capturas de TWINS/calendario.png}
-		\caption{Vista del calendario con los eventos existentes y visibles por todos los usuarios}
+		\caption[Calendario de TWINS]{Vista del calendario con los eventos existentes y visibles por todos los usuarios}
 		\label{fig:calendario}
 	\end{figure}
 	
@@ -163,7 +163,7 @@ Tras identificarnos, nos topamos, antes de llegar a la pantalla principal, con t
 	
 	 \begin{figure}
 	 	\includegraphics[width=\textwidth]{img/Capturas de TWINS/avisos.png}
-	 	\caption{Vista de los avisos desde el usuario administrador (puede ver todos los avisos de todos los usuarios aparte de los propios)}
+	 	\caption[Avisos de TWINS]{Vista de los avisos desde el usuario administrador (puede ver todos los avisos de todos los usuarios aparte de los propios)}
 	 	\label{fig:avisos}
 	 \end{figure}
 	 
@@ -174,7 +174,7 @@ Tras identificarnos, nos topamos, antes de llegar a la pantalla principal, con t
 	
 	\begin{figure}
 		\includegraphics[width=\textwidth]{img/Capturas de TWINS/eventosSinProcesar.png}
-		\caption{Menú de eventos sin procesar, una pantalla donde los usuarios ven fácilmente el trabajo acumulado}
+		\caption[Eventos sin procesar de TWINS]{Menú de eventos sin procesar, una pantalla donde los usuarios ven fácilmente el trabajo acumulado}
 		\label{fig:eventosSinProcesar}
 	\end{figure}
 	
@@ -185,7 +185,7 @@ Finalmente, llegamos a la pantalla principal (figura \ref{fig:pantallaPrincipal}
 
 \begin{figure}
 	\includegraphics[width=\textwidth]{img/Capturas de TWINS/pantallaPrincipal.png}
-	\caption{Pantalla principal de la aplicación. Desde aquí podemos acceder a todos los menús anteriormente mostrados.}
+	\caption[Menú principal de TWINS]{Pantalla principal de la aplicación. Desde aquí podemos acceder a todos los menús anteriormente mostrados.}
 	\label{fig:pantallaPrincipal}
 \end{figure}
 
@@ -199,7 +199,7 @@ Sin embargo y como es lógico, no se muestra toda la información de una tabla. 
 \begin{figure}
 	\centering
 	\includegraphics[width=\textwidth]{img/Capturas de TWINS/relaciónTablasConsultaConveniosLista.png}
-	\caption{Relación de tablas implicadas en la consulta realizada para listar los convenios}
+	\caption[Tablas implicadas en consultar convenios]{Relación de tablas implicadas en la consulta realizada para listar los convenios}
 	\label{fig:tablasConsultaConvenios}
 \end{figure}
 
@@ -209,45 +209,39 @@ A efectos de diseño, es apreciable que ciertos campos de cada entrada se presen
 
 Es por ello por lo que gran parte de este proyecto se enfocará al rediseño de la aplicación de TWINS basado en técnicas de usabilidad. Esto será posible gracias a la aplicación de metodologías actuales y la realización de pruebas reales con usuarios que interaccionarán con el sistema.
 
-En las figuras \ref{fig:alumnos}, \ref{fig:cesionDeDatos}, \ref{fig:infoAsignaturas} y \ref{fig:cambioDNI} se proporcionan otras vistas como ejemplo de lo mencionado. No comentaremos sus aspectos específicos, dado que la metodología empleada para su creación es la misma que ya hemos expuesto y la interacción por parte del usuario es similar. Nótese que no se muestran datos con carácter sensible debido a cuestiones de protección de datos.
-
-%imágenes. AÑADIR \REF PORQUE NO SE SABE DÓNDE SE VAN A MOSTRAR
-
-
-
-
-
+En las figuras \ref{fig:cambioDNI}, \ref{fig:alumnos}, \ref{fig:cesionDeDatos} y \ref{fig:infoAsignaturas} se proporcionan otras vistas como ejemplo de lo mencionado. No comentaremos sus aspectos específicos, dado que la metodología empleada para su creación es la misma que ya hemos expuesto y la interacción por parte del usuario es similar. Nótese que no se muestran datos con carácter sensible debido a cuestiones de protección de datos.
 
 
 \begin{figure}
 	\includegraphics[width=\textwidth]{img/Capturas de TWINS/cambioDNI.png}
-	\caption{También existe en TWINS un menú específico para el cambio de DNI}
+	\caption[Menú de cambio de DNI]{También existe en TWINS un menú específico para el cambio de DNI}
 	\label{fig:cambioDNI}
 \end{figure}
 
-%\begin{figure}[ht]
-%	\centering
-%	\def\figa{\begin{minipage}
-%			\includegraphics[width=\textwidth]{img/Capturas de TWINS/alumnos}
-%	\end{minipage}}
-%	\def\figb{\begin{minipage}
-%			\includegraphics[width=\textwidth]{img/Capturas de TWINS/cesionDeDatos}
-%	\end{minipage}}
-%	\def\figc{\begin{minipage}
-%			\includegraphics[width=\linewidth]{img/Capturas de TWINS/infoAsignaturas}
-%	\end{minipage}}
-%
-%	\def\capa{Vista de alumnos}
-%	\def\capb{Menú de gestión del consentimiento de cesión de datos de los estudiantes salientes}
-%	\def\capc{Menú de información de las asignaturas (en la universidad local, de destino, de cara a los estudiantes entrantes)}
-%	
-%	\savestack{\capfiga}{\subcaptionbox{\capa\label{fig:alumnos}}{\figa}}
-%	\savestack{\capfigb}{\subcaptionbox{\capb\label{fig:cesionDeDatos}}{\figb}}
-%	\savestack{\capfigc}{\subcaptionbox{\capc\label{fig:infoAsignaturas}}{\figc}}
-%	\setstackgap{S}{12pt}
-%	\Shortstack{\capfiga\\ \capfigb\\ \capfigc}%
-%	\caption{This is my figure\label{fg:}}
-%\end{figure}
+\begin{figure}
+	\subcaptionbox{Vista de alumnos \label{fig:alumnos}}{
+		\centering
+		\includegraphics[width=\textwidth]{img/Capturas de TWINS/alumnos}
+		
+	}\par\medskip
+
+	\subcaptionbox{Menú de gestión del consentimiento de cesión de datos de los estudiantes salientes \label{fig:cesionDeDatos}}{
+		\centering
+		\includegraphics[width=\textwidth]{img/Capturas de TWINS/cesionDeDatos}
+	} \par\medskip
+\end{figure}
+
+\begin{figure}
+	\ContinuedFloat
+	\subcaptionbox[Vista de información de asignaturas]{Menú de información de las asignaturas (en la universidad local, de destino, de cara a los estudiantes entrantes) \label{fig:infoAsignaturas}}{
+		\centering
+		\includegraphics[width=\linewidth]{img/Capturas de TWINS/infoAsignaturas}
+	}
+
+\label{fig:adicionales}
+\caption{Capturas adicionales de TWINS}
+
+\end{figure}
 
 \subsection{Estudio de necesidades}
 
@@ -255,7 +249,7 @@ En general, la Oficina de Relaciones Internacionales de la facultad dispone de u
 
 No obstante, debido a las limitaciones de la metodología escogida para posibilitar estas gestiones, se ha llegado a un punto en que es muy complicado realizar modificaciones y extensiones a la misma, entre las que podemos destacar la existencia de un portal directamente conectado a la aplicación principal que posibilite la realización de gestiones por parte de los estudiantes. De este modo, tanto el estudiante como el personal de secretaría ahorrarían tiempo y su interacción no sería íntegramente en el correo electrónico. Esto es también extensible al papel de los tutores académicos.
 
-Actualmente se ha hecho uso de herramientas auxiliares como los Formularios de Google\textregistered que permiten volcar datos al formato de hoja de cálculo, con lo que permite a TWINS reconocer la información y que pueda, a través de macros, crear nuevos registros en la base de datos para almacenarlos. Sin embargo, se precisa de la interacción humana para dicha tarea, al igual para muchas otras que se puedan querer automatizar o adaptar, como por ejemplo:
+Actualmente se ha hecho uso de herramientas auxiliares como los Formularios de Google\textregistered \ que permiten volcar datos al formato de hoja de cálculo, con lo que permite a TWINS reconocer la información y que pueda, a través de macros, crear nuevos registros en la base de datos para almacenarlos. Sin embargo, se precisa de la interacción humana para dicha tarea, al igual para muchas otras que se puedan querer automatizar o adaptar, como por ejemplo:
 
 \begin{itemize}
 	\item \textbf{Adaptar la mensajería} e implementarla dentro de la aplicación para llevar un mejor control de los casos de los estudiantes.
@@ -263,4 +257,4 @@ Actualmente se ha hecho uso de herramientas auxiliares como los Formularios de G
 	\item \textbf{Portal con vista para el estudiante entrante}, posibilitando que haga su propio registro en la plataforma y pueda ver su información en ella.
 \end{itemize}
 
-Al margen de las nuevas características a incluir, no podemos dejar de lado la necesidad de reconstruir un sistema desde cero que sea consistente, estable, con alta disponibilidad y fiabilidad, que pueda adaptarse a las necesidades tanto del personal de la oficina como a las del estudiantado. Es por tanto por lo que debemos descartar seguir utilizando la herramienta de Access\textregistered por sus limitaciones, expuestas en \nameref{ModeloDatos}.
+Al margen de las nuevas características a incluir, no podemos dejar de lado la necesidad de reconstruir un sistema desde cero que sea consistente, estable, con alta disponibilidad y fiabilidad, que pueda adaptarse a las necesidades tanto del personal de la oficina como a las del estudiantado. Es por tanto por lo que debemos descartar seguir utilizando la herramienta de Access\textregistered \ por sus limitaciones, expuestas en \nameref{ModeloDatos}.
