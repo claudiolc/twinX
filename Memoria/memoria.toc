@@ -15,3 +15,7 @@
 \contentsline {subsubsection}{\numberline {2.5.2}Funciones implementadas}{12}{subsubsection.2.5.2}%
 \contentsline {subsubsection}{\numberline {2.5.3}La interfaz de usuario}{13}{subsubsection.2.5.3}%
 \contentsline {subsection}{\numberline {2.6}Estudio de necesidades de la Oficina de Relaciones Internacionales}{18}{subsection.2.6}%
+\contentsline {section}{\numberline {3}twinX}{22}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Desarrollo de twinX}{22}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Diseño centrado en el usuario}{22}{subsubsection.3.1.1}%
+\contentsline {paragraph}{\numberline {3.1.1.1}Pautas de Accesibilidad}{23}{paragraph.3.1.1.1}%
