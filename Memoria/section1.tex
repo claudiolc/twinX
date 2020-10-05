@@ -1,4 +1,9 @@
 \section{Introducción}
+
+Desde hace muchos años, las herramientas que hay para gestionar la información en oficinas y secretarías no son -por suerte- las mismas que antes. Y es que, por pequeña que sea la cantidad de información a manejar, hay cada día más y más formas de hacer las cosas mejor y teniendo en cuenta detalles y elementos que intervienen en la actualización haciendo, por lo general, el proceso más efectivo, eficiente y seguro.
+
+Con este trabajo pretendemos dar un empujón a una solución que fue creada para hacer gestiones, pues estas han ido poco a poco tomando forma de problema. Cada vez hay más información que almacenar, se tiene que disponer de la misma de manera más efectiva y, en general, las exigencias van elevándose conforme pasa el tiempo. Por ello, con este trabajo, vamos a proponer una alternativa a modo de punto de partida, no solo para un ámbito en concreto, sino para muchas otras situaciones en que se tengan preámbulos parecidos al que describiremos. 
+
 \subsection{Motivación}
 
 La Facultad de Filosofía y Letras es, con 14 enseñanzas de grado y 2000 asignaturas, una de las facultades con mayor volumen de información de la Universidad de Granada. En el curso 2018/2019 se encuentra en cuarto lugar en cantidad de estudiantes con un total de 4733 \cite{MemAcademica}. Es más, se tiene un registro de unos 517 estudiantes entrantes y otros 236 salientes hacia y desde España, haciendo algún programa de movilidad durante el curso 2019/2020 en dicha facultad \cite{MemFYL}.
@@ -7,7 +12,7 @@ Resulta obvio pensar en que la relación del tamaño de una entidad con la canti
 
 Por ello, trataron de aproximarse a lo que comúnmente se utiliza en estos casos: un sistema de información. Hoy en día disponen de una herramienta que si bien les ha hecho reducir el tiempo de trabajo de semanas a unas pocas horas, sigue teniendo muchas limitaciones que no permiten adaptar la forma natural de interaccionar con la información y, por tanto, con el sistema que la alberga de manera total, poniendo en riesgo la consistencia de los datos, su seguridad y su accesibilidad, dificultando al mismo tiempo su integridad y su distribución.
 
-Por ello nace la idea de twinX, una propuesta cuyo objetivo es, en cierto modo, replicar la funcionalidad de la herramienta actual creada para la Oficina de Relaciones Internacionales de la Facultad de Filosofía y Letras, conocida como TWINS, estableciendo una serie de propuestas de rediseño (a nivel interno y al de la interfaz de usuario), cambio de plataforma a la web y la ampliación de su alcance a la totalidad (o la mayoría) de usuarios que interaccionan con el sistema (no solo con la actual herramienta) entre otras cosas.
+Así, nace la idea de \textbf{twinX}. Se trata de una propuesta cuyo objetivo es, en cierto modo, replicar la funcionalidad de la herramienta actual creada para la Oficina de Relaciones Internacionales de la Facultad de Filosofía y Letras, conocida como \textbf{TWINS}. Será necesario establecer una serie de propuestas de rediseño (a nivel interno y al de la interfaz de usuario), un cambio de plataforma a la web y la ampliación de su alcance a la totalidad (o la mayoría) de usuarios que interaccionan con el sistema, entre otras cosas.
 
 \subsection{Alcance}
 
@@ -23,19 +28,19 @@ Es más, algo que dota de atractivo a twinX es acercar la interacción con los d
 
 Este proyecto no es otra cosa que un camino hacia la posibilidad de transportar las gestiones que actualmente están teniendo lugar a una plataforma web.
 
-Se trata dar el dejar atrás una aplicación enlazada a una base de datos local, todo ello realizado con Microsoft Access y obtener a cambio una alta disponibilidad, un buen funcionamiento y una mejoría en la forma de gestionar el trabajo; es decir, se pretende llevar el actual TWINS al navegador, para que se pueda facilitar la posibilidad de acceso desde distintos sitios en lugar de tener los datos centralizados en un único archivo que tiene una infinidad de riesgos a ser borrado, modificado por error, corrompido, etc; todo ello, en aras de mejorar la labor de las distintas oficinas de relaciones internacionales de cualquier universidad.
+Se trata de dejar atrás una aplicación enlazada a una base de datos local, todo ello realizado con Microsoft Access\textregistered y obtener a cambio una alta disponibilidad, un buen funcionamiento y una mejoría en la forma de gestionar el trabajo; es decir, se pretende llevar el actual TWINS al navegador, para que se pueda facilitar la posibilidad de acceso desde distintos sitios en lugar de tener los datos centralizados en un único archivo que tiene una infinidad de riesgos de ser borrado, modificado por error, corrompido, etc; todo ello, en aras de mejorar la labor de las distintas oficinas de relaciones internacionales de cualquier universidad.
 
-Se trata de mejorar y perfeccionar lo ya existente: poder consultar la información de una manera más rápida y efectiva, con una mayor comprensión de los menús por los que se pasa en el curso de la interacción con la aplicación, simplificar totalmente la vista, hacerla más atractiva y adaptarla a los sistemas web de hoy en día.
+No es más que la intención de mejorar y perfeccionar lo ya existente: poder consultar la información de una manera más rápida y efectiva, con una mayor comprensión de los menús por los que se pasa en el curso de la interacción con la aplicación, simplificar totalmente la vista, hacerla más atractiva y adaptarla a los sistemas web de hoy en día.
 
 Para poder partir de lo que ya se tiene, se habrá de implementar al menos la misma funcionalidad de TWINS casi al completo. Dejando a un lado los procesos que se consideren redundantes o de poca utilidad, se habrá de incluir aquellos que sean de mayor importancia o representen un mayor manejo de los flujos de información con respecto a la totalidad de la aplicación y se incluirán otros o se modificarán los ya existentes para automatizar el intercambio de datos entre los mismos. Entre todos ellos, cabe mencionar:
 
 \begin{itemize}
-	\item Gestión de \glspl{Convenio} entre universidades
-	\item \glspl{AE}
-	\item Expedientes\footnote{Con «expedientes» aquí nos referimos más bien a las etapas del estudiante en su proceso de movilidad y no al expediente académico universitario que alberga sus calificaciones.} de los estudiantes y sus datos personales
-	\item Información sobre los \glspl{Tutor} y su gestión con respecto a los acuerdos de estudios
-	\item \gls{AM} para \glspl{Incoming}
-	\item Comunicaciones masivas, tanto al estudiantado como a los \glspl{Socio} (ver: \gls{Nominacion})
+	\item Gestión de \glspl{Convenio} entre universidades.
+	\item \glspl{AE}.
+	\item Expedientes\footnote{Con « expedientes » aquí nos referimos más bien a las etapas del estudiante en su proceso de movilidad y no al expediente académico universitario que alberga sus calificaciones.} de los estudiantes y sus datos personales.
+	\item Información sobre los \glspl{Tutor} y su gestión con respecto a los acuerdos de estudios.
+	\item \gls{AM} para \glspl{Incoming}.
+	\item Comunicaciones masivas, tanto al estudiantado como a los \glspl{Socio} (ver: \gls{Nominacion}).
 \end{itemize}
 
 Y con ello, los demás procesos derivados de estos siete módulos principales que se basan en la modificación, supresión y creación de la información que intercambiarán los distintos procesos de twinX.

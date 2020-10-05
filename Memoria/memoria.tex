@@ -9,7 +9,7 @@
 
 \documentclass[12pt]{article}
 \usepackage[margin=1.2in]{geometry}
-\usepackage[toc,page]{appendix}
+\usepackage[titletoc]{appendix}
 \usepackage{graphicx}
 \usepackage[square,numbers]{natbib}
 \usepackage{lipsum}
@@ -23,6 +23,14 @@
 \usepackage{subcaption}
 
 % -------------------------------------------------------------------
+% Ajustes de idioma
+% -------------------------------------------------------------------
+\addto\captionsspanish{%
+	\renewcommand\appendixname{Anexo}
+	\renewcommand\appendixpagename{Anexos}
+}
+
+% -------------------------------------------------------------------
 % Glosario
 % -------------------------------------------------------------------
 
@@ -30,8 +38,8 @@
 
 \begin{document}
 
-\captionsetup[figure]{margin=1.5cm,font=small,labelfont={bf},name={Figure},labelsep=colon,textfont={it}}
-\captionsetup[table]{margin=1.5cm,font=small,labelfont={bf},name={Table},labelsep=colon,textfont={it}}
+\captionsetup[figure]{margin=1.5cm,font=small,labelfont={bf},name={Figura},labelsep=colon,textfont={it}}
+\captionsetup[table]{margin=1.5cm,font=small,labelfont={bf},name={Tabla},labelsep=colon,textfont={it}}
 
 
 \begin{center}
@@ -117,7 +125,6 @@
 \newpage
 
 \begin{appendices}
-
 \end{appendices}
 
 

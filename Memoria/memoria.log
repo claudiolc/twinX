@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.7.23)  22 SEP 2020 17:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.7.23)  5 OCT 2020 00:23
 entering extended mode
 **./memoria.tex
 (memoria.tex
@@ -609,22 +609,22 @@ LaTeX Info: Redefining \% on input line 31.
 )
 \openout1 = `memoria.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -698,10 +698,10 @@ Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
-LaTeX Info: Redefining \. on input line 31.
-LaTeX Info: Redefining \% on input line 31.
+LaTeX Info: Redefining \. on input line 39.
+LaTeX Info: Redefining \% on input line 39.
 \c@lstlisting=\count330
-Package hyperref Info: Link coloring OFF on input line 31.
+Package hyperref Info: Link coloring OFF on input line 39.
 
 ("C:\Program Files\MiKTeX\tex/latex/hyperref\nameref.sty"
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -714,29 +714,29 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count331
 )
-LaTeX Info: Redefining \ref on input line 31.
-LaTeX Info: Redefining \pageref on input line 31.
-LaTeX Info: Redefining \nameref on input line 31.
+LaTeX Info: Redefining \ref on input line 39.
+LaTeX Info: Redefining \pageref on input line 39.
+LaTeX Info: Redefining \nameref on input line 39.
 
 (memoria.out) (memoria.out)
 \@outlinefile=\write5
 \openout5 = `memoria.out'.
 
  (memoria.glsdefs)
-<img/UGR.png, id=71, 329.73187pt x 310.15875pt>
+<img/UGR.png, id=67, 329.73187pt x 310.15875pt>
 File: img/UGR.png Graphic file (type png)
 <use img/UGR.png>
-Package pdftex.def Info: img/UGR.png  used on input line 41.
+Package pdftex.def Info: img/UGR.png  used on input line 49.
 (pdftex.def)             Requested size: 184.9429pt x 173.96693pt.
-<img/LSI.png, id=73, 284.46703pt x 163.76074pt>
+<img/LSI.png, id=69, 284.46703pt x 163.76074pt>
 File: img/LSI.png Graphic file (type png)
 <use img/LSI.png>
-Package pdftex.def Info: img/LSI.png  used on input line 47.
+Package pdftex.def Info: img/LSI.png  used on input line 55.
 (pdftex.def)             Requested size: 56.9055pt x 32.75905pt.
-<img/ETSIIT.png, id=74, 219.7008pt x 88.6512pt>
+<img/ETSIIT.png, id=70, 219.7008pt x 88.6512pt>
 File: img/ETSIIT.png Graphic file (type png)
 <use img/ETSIIT.png>
-Package pdftex.def Info: img/ETSIIT.png  used on input line 48.
+Package pdftex.def Info: img/ETSIIT.png  used on input line 56.
 (pdftex.def)             Requested size: 99.58464pt x 40.18349pt.
  [1
 
@@ -748,7 +748,7 @@ ion with the same identifier (name{page.1}) has been already used, duplicate ig
 nored
 <to be read again> 
                    \relax 
-l.73 \newpage
+l.81 \newpage
               [1
 
 ] (memoria.toc
@@ -774,132 +774,133 @@ LaTeX Info: Redefining \% on input line 1.
 
  [3]
 (section1.tex [4] [5]
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 35
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 40
 .
  ("C:\Program Files\MiKTeX\tex/latex/base\ulasy.fd"
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
 [6]) (section2.tex [7] [8] [9]
-<img/Capturas de TWINS/vistaConvenios.png, id=195, 992.20688pt x 569.12625pt>
+<img/Capturas de TWINS/vistaConvenios.png, id=192, 992.20688pt x 569.12625pt>
 File: img/Capturas de TWINS/vistaConvenios.png Graphic file (type png)
 <use img/Capturas de TWINS/vistaConvenios.png>
 Package pdftex.def Info: img/Capturas de TWINS/vistaConvenios.png  used on inpu
-t line 53.
+t line 56.
 (pdftex.def)             Requested size: 440.84746pt x 252.86525pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[10 <./img/Capturas de TWINS/vistaConvenios.png>] [11] [12]
-<img/Capturas de TWINS/login.png, id=220, 840.89156pt x 423.08063pt>
+[10] [11 <./img/Capturas de TWINS/vistaConvenios.png>] [12]
+<img/Capturas de TWINS/login.png, id=216, 840.89156pt x 423.08063pt>
 File: img/Capturas de TWINS/login.png Graphic file (type png)
 <use img/Capturas de TWINS/login.png>
 Package pdftex.def Info: img/Capturas de TWINS/login.png  used on input line 14
-2.
+9.
 (pdftex.def)             Requested size: 440.84746pt x 221.80432pt.
- [13 <./img/Capturas de TWINS/login.png>]
-<img/Capturas de TWINS/calendario.png, id=231, 983.92593pt x 408.02437pt>
+ [13]
+<img/Capturas de TWINS/calendario.png, id=226, 983.92593pt x 408.02437pt>
 File: img/Capturas de TWINS/calendario.png Graphic file (type png)
 <use img/Capturas de TWINS/calendario.png>
 Package pdftex.def Info: img/Capturas de TWINS/calendario.png  used on input li
-ne 154.
+ne 161.
 (pdftex.def)             Requested size: 440.84746pt x 182.81235pt.
-<img/Capturas de TWINS/avisos.png, id=233, 1044.15094pt x 600.74437pt>
+ [14 <./img/Capturas de TWINS/login.png>]
+<img/Capturas de TWINS/avisos.png, id=235, 1044.15094pt x 600.74437pt>
 File: img/Capturas de TWINS/avisos.png Graphic file (type png)
 <use img/Capturas de TWINS/avisos.png>
 Package pdftex.def Info: img/Capturas de TWINS/avisos.png  used on input line 1
-65.
+72.
 (pdftex.def)             Requested size: 440.84746pt x 253.64008pt.
- [14 <./img/Capturas de TWINS/calendario.png>]
-<img/Capturas de TWINS/eventosSinProcesar.png, id=244, 1005.00468pt x 558.58687
+<img/Capturas de TWINS/eventosSinProcesar.png, id=239, 1005.00468pt x 558.58687
 pt>
 File: img/Capturas de TWINS/eventosSinProcesar.png Graphic file (type png)
 <use img/Capturas de TWINS/eventosSinProcesar.png>
 Package pdftex.def Info: img/Capturas de TWINS/eventosSinProcesar.png  used on 
-input line 176.
+input line 183.
 (pdftex.def)             Requested size: 440.84746pt x 245.0204pt.
-<img/Capturas de TWINS/pantallaPrincipal.png, id=246, 988.44281pt x 474.27188pt
+ [15 <./img/Capturas de TWINS/calendario.png>]
+[16 <./img/Capturas de TWINS/avisos.png> <./img/Capturas de TWINS/eventosSinPro
+cesar.png>]
+<img/Capturas de TWINS/pantallaPrincipal.png, id=252, 988.44281pt x 474.27188pt
 >
 File: img/Capturas de TWINS/pantallaPrincipal.png Graphic file (type png)
 <use img/Capturas de TWINS/pantallaPrincipal.png>
 Package pdftex.def Info: img/Capturas de TWINS/pantallaPrincipal.png  used on i
-nput line 187.
+nput line 194.
 (pdftex.def)             Requested size: 440.84746pt x 211.52432pt.
- [15 <./img/Capturas de TWINS/avisos.png>] [16 <./img/Capturas de TWINS/eventos
-SinProcesar.png> <./img/Capturas de TWINS/pantallaPrincipal.png>]
-<img/Capturas de TWINS/relaciónTablasConsultaConveniosLista.png, id=260, 935.7
+<img/Capturas de TWINS/relaciónTablasConsultaConveniosLista.png, id=255, 935.7
 4594pt x 163.3603pt>
 File: img/Capturas de TWINS/relaciónTablasConsultaConveniosLista.png Graphic f
 ile (type png)
 <use img/Capturas de TWINS/relaciónTablasConsultaConveniosLista.png>
 Package pdftex.def Info: img/Capturas de TWINS/relaciónTablasConsultaConvenios
-Lista.png  used on input line 201.
+Lista.png  used on input line 203.
 (pdftex.def)             Requested size: 440.84746pt x 76.9638pt.
- [17 <./img/Capturas de TWINS/relaciónTablasConsultaConveniosLista.png>]
-<img/Capturas de TWINS/cambioDNI.png, id=271, 990.70125pt x 615.0478pt>
+ [17 <./img/Capturas de TWINS/pantallaPrincipal.png> <./img/Capturas de TWINS/r
+elaciónTablasConsultaConveniosLista.png>]
+<img/Capturas de TWINS/cambioDNI.png, id=267, 990.70125pt x 615.0478pt>
 File: img/Capturas de TWINS/cambioDNI.png Graphic file (type png)
 <use img/Capturas de TWINS/cambioDNI.png>
 Package pdftex.def Info: img/Capturas de TWINS/cambioDNI.png  used on input lin
-e 216.
+e 218.
 (pdftex.def)             Requested size: 440.84746pt x 273.68134pt.
-<img/Capturas de TWINS/alumnos.png, id=272, 983.17313pt x 538.26094pt>
+<img/Capturas de TWINS/alumnos.png, id=268, 983.17313pt x 538.26094pt>
 File: img/Capturas de TWINS/alumnos.png Graphic file (type png)
 <use img/Capturas de TWINS/alumnos.png>
 Package pdftex.def Info: img/Capturas de TWINS/alumnos.png  used on input line 
-226.
+228.
 (pdftex.def)             Requested size: 440.84746pt x 241.3528pt.
 
-Overfull \hbox (7.83325pt too wide) in paragraph at lines 226--226
+Overfull \hbox (7.83325pt too wide) in paragraph at lines 228--228
 [][] 
  []
 
-<img/Capturas de TWINS/cesionDeDatos.png, id=273, 920.68968pt x 599.99156pt>
+<img/Capturas de TWINS/cesionDeDatos.png, id=269, 920.68968pt x 599.99156pt>
 File: img/Capturas de TWINS/cesionDeDatos.png Graphic file (type png)
 <use img/Capturas de TWINS/cesionDeDatos.png>
 Package pdftex.def Info: img/Capturas de TWINS/cesionDeDatos.png  used on input
- line 231.
+ line 233.
 (pdftex.def)             Requested size: 440.84746pt x 287.29689pt.
 
-Overfull \hbox (7.83325pt too wide) in paragraph at lines 231--231
+Overfull \hbox (7.83325pt too wide) in paragraph at lines 233--233
 [][] 
  []
 
-<img/Capturas de TWINS/infoAsignaturas.png, id=274, 852.18375pt x 632.3625pt>
+<img/Capturas de TWINS/infoAsignaturas.png, id=270, 852.18375pt x 632.3625pt>
 File: img/Capturas de TWINS/infoAsignaturas.png Graphic file (type png)
 <use img/Capturas de TWINS/infoAsignaturas.png>
 Package pdftex.def Info: img/Capturas de TWINS/infoAsignaturas.png  used on inp
-ut line 239.
+ut line 241.
 (pdftex.def)             Requested size: 440.84746pt x 327.13216pt.
 
-Overfull \hbox (7.83325pt too wide) in paragraph at lines 239--240
+Overfull \hbox (7.83325pt too wide) in paragraph at lines 241--242
 [][] 
  []
 
-[18 <./img/Capturas de TWINS/cambioDNI.png (PNG copy)>] [19 <./img/Capturas de 
-TWINS/alumnos.png (PNG copy)> <./img/Capturas de TWINS/cesionDeDatos.png>]
-[20 <./img/Capturas de TWINS/infoAsignaturas.png>]) [21] (memoria.bbl) [22]
-(memoria.gls [23]) [24]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 125.
- [25]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 125.
+[18] [19 <./img/Capturas de TWINS/cambioDNI.png (PNG copy)>] [20 <./img/Captura
+s de TWINS/alumnos.png (PNG copy)> <./img/Capturas de TWINS/cesionDeDatos.png>]
+[21 <./img/Capturas de TWINS/infoAsignaturas.png>]) [22] (memoria.bbl) [23]
+(memoria.gls [24]) [25]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 132.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 132.
  (memoria.aux
 LaTeX Info: Redefining \. on input line 31.
 LaTeX Info: Redefining \% on input line 31.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 125.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 125.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 132.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 132.
 Package rerunfilecheck Info: File `memoria.out' has not changed.
-(rerunfilecheck)             Checksum: 339AFCA30A49FAAE52DDD760478D24E4;1360.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 125.
+(rerunfilecheck)             Checksum: 2E7FE94794D07C9F519CC77D924F013E;1356.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 132.
  ) 
 Here is how much of TeX's memory you used:
- 18925 strings out of 481225
- 317666 string characters out of 2915922
- 760080 words of memory out of 3000000
+ 18924 strings out of 481225
+ 317660 string characters out of 2915922
+ 761146 words of memory out of 3000000
  34052 multiletter control sequences out of 15000+200000
  544301 words of font info for 61 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,13n,86p,1631b,675s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 60i,13n,86p,1176b,675s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Claudio\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tc
 rm1200.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C
 :/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
@@ -912,9 +913,9 @@ Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX
 /fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX/fonts/type1
 /public/amsfonts/cm/cmtt12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsf
 onts/latxfont/lasy10.pfb>
-Output written on memoria.pdf (26 pages, 1110347 bytes).
+Output written on memoria.pdf (26 pages, 1111460 bytes).
 PDF statistics:
- 403 PDF objects out of 1000 (max. 8388607)
- 80 named destinations out of 1000 (max. 500000)
- 207 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 399 PDF objects out of 1000 (max. 8388607)
+ 79 named destinations out of 1000 (max. 500000)
+ 199 words of extra memory for PDF output out of 10000 (max. 10000000)
 

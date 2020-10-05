@@ -1,7 +1,7 @@
 This is makeindex, version 2.15 [MiKTeX 20.6.29].
 Scanning style file ./memoria.ist.............................done (29 attributes redefined, 0 ignored).
-Scanning input file memoria.glo....done (39 entries accepted, 0 rejected).
-Sorting entries....done (226 comparisons).
-Generating output file memoria.gls....done (55 lines written, 0 warnings).
+Scanning input file memoria.glo....done (40 entries accepted, 0 rejected).
+Sorting entries....done (248 comparisons).
+Generating output file memoria.gls....done (56 lines written, 0 warnings).
 Output written in memoria.gls.
 Transcript written in memoria.glg.
