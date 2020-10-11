@@ -1,21 +1,21 @@
 \babel@toc {spanish}{}
-\contentsline {section}{\numberline {1}Introducción}{4}{section.1}%
-\contentsline {subsection}{\numberline {1.1}Motivación}{4}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}Alcance}{5}{subsection.1.2}%
-\contentsline {subsection}{\numberline {1.3}Objetivos generales}{5}{subsection.1.3}%
-\contentsline {section}{\numberline {2}Caso de estudio: Oficina de Relaciones Internacionales de la Facultad de Filosofía y Letras de la Universidad de Granada}{7}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Sobre la oficina}{8}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Servicio al estudiantado}{8}{subsection.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.1}Estudiantes salientes o \textit {outcoming}}{8}{subsubsection.2.2.1}%
-\contentsline {subsubsection}{\numberline {2.2.2}Estudiantes entrantes o \textit {incoming}}{9}{subsubsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.3}Servicios al profesorado (PDI)}{9}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Coordinación con la Oficina de Relaciones Internacionales (ORI) de la UGR}{10}{subsection.2.4}%
-\contentsline {subsection}{\numberline {2.5}La base de datos TWINS}{10}{subsection.2.5}%
-\contentsline {subsubsection}{\numberline {2.5.1}El modelo de datos}{11}{subsubsection.2.5.1}%
-\contentsline {subsubsection}{\numberline {2.5.2}Funciones implementadas}{12}{subsubsection.2.5.2}%
-\contentsline {subsubsection}{\numberline {2.5.3}La interfaz de usuario}{13}{subsubsection.2.5.3}%
-\contentsline {subsection}{\numberline {2.6}Estudio de necesidades de la Oficina de Relaciones Internacionales}{18}{subsection.2.6}%
-\contentsline {section}{\numberline {3}twinX}{22}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Desarrollo de twinX}{22}{subsection.3.1}%
-\contentsline {subsubsection}{\numberline {3.1.1}Diseño centrado en el usuario}{22}{subsubsection.3.1.1}%
-\contentsline {paragraph}{\numberline {3.1.1.1}Pautas de Accesibilidad}{23}{paragraph.3.1.1.1}%
+\contentsline {section}{\numberline {1}Introducci\IeC {\'o}n}{4}{section.1}
+\contentsline {subsection}{\numberline {1.1}Motivaci\IeC {\'o}n}{4}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Alcance}{5}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}Objetivos generales}{5}{subsection.1.3}
+\contentsline {section}{\numberline {2}Caso de estudio: Oficina de Relaciones Internacionales de la Facultad de Filosof\IeC {\'\i }a y Letras de la Universidad de Granada}{7}{section.2}
+\contentsline {subsection}{\numberline {2.1}Sobre la oficina}{8}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Servicio al estudiantado}{8}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}Estudiantes salientes o \textit {outcoming}}{8}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2}Estudiantes entrantes o \textit {incoming}}{9}{subsubsection.2.2.2}
+\contentsline {subsection}{\numberline {2.3}Servicios al profesorado (PDI)}{9}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Coordinaci\IeC {\'o}n con la Oficina de Relaciones Internacionales de la UGR}{10}{subsection.2.4}
+\contentsline {subsection}{\numberline {2.5}La base de datos TWINS}{10}{subsection.2.5}
+\contentsline {subsubsection}{\numberline {2.5.1}El modelo de datos}{11}{subsubsection.2.5.1}
+\contentsline {subsubsection}{\numberline {2.5.2}Funciones implementadas}{12}{subsubsection.2.5.2}
+\contentsline {subsubsection}{\numberline {2.5.3}La interfaz de usuario}{13}{subsubsection.2.5.3}
+\contentsline {subsection}{\numberline {2.6}Estudio de necesidades de la Oficina de Relaciones Internacionales}{18}{subsection.2.6}
+\contentsline {section}{\numberline {3}twinX}{22}{section.3}
+\contentsline {subsection}{\numberline {3.1}Desarrollo de twinX}{22}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}Dise\IeC {\~n}o centrado en el usuario}{23}{subsubsection.3.1.1}
+\contentsline {paragraph}{\numberline {3.1.1.1}Pautas de Accesibilidad}{23}{paragraph.3.1.1.1}

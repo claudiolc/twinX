@@ -1,5 +1,9 @@
 % makeindex style file created by the glossaries package
+<<<<<<< HEAD
 % for document 'memoria' on 2020-10-5
+=======
+% for document 'memoria' on 2020-10-11
+>>>>>>> doc1
 actual '?'
 encap '|'
 level '!'

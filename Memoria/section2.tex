@@ -31,14 +31,14 @@ Como es lógico, tendrán que reportar estos cambios que hagan a sus universidad
 
 Al igual que los estudiantes, el Personal Docente Investigador tiene posibilidad de participar en programas de movilidad; es decir, hay convenios que contemplan la acogida del profesorado.
 
-Es en la Oficina de Relaciones Internacionales de la facultad donde gestionan y registran estos convenios. Una vez hay constancia de ellos, el personal puede solicitar un programa al igual que los estudiantes; no obstante, es la ORI central quien se encarga de sus gestiones a lo largo de la movilidad. Esto es, no establecen una interacción directa con la oficina de la facultad.
+Es en la Oficina de Relaciones Internacionales de la facultad donde gestionan y registran estos convenios. Una vez hay constancia de ellos, el personal puede solicitar un programa al igual que los estudiantes; no obstante, es la Oficina de Relaciones Internacionales central quien se encarga de sus gestiones a lo largo de la movilidad. Esto es, no establecen una interacción directa con la oficina de la facultad.
 
 En su caso no tienen un acuerdo de estudios, sino que tienen un acuerdo de movilidad o \textit{mobility agreement}, donde se pone de manifiesto la intención y los objetivos del/de la interesado/a con el programa que desea hacer.
 
 %COMPROBAR SI HAY REGISTROS EN TWINS Y ACTUAR EN CONSECUENCIA 
 
 
-\subsection{Coordinación con la Oficina de Relaciones Internacionales (ORI) de la UGR}
+\subsection{Coordinación con la Oficina de Relaciones Internacionales de la UGR (ORI)}
 
 Todo comienza cuando la ORI envía los datos de las adjudicaciones de las plazas de movilidad a la secretaría de la facultad. Es entonces cuando comienzan los trámites administrativos: se registra a cada estudiante de acuerdo a su destino para comenzar a confeccionar su expediente en base a su acuerdo de estudios, documentos firmados y demás información necesaria. Todo ello tendrá que quedar en conocimiento de la ORI una vez acabe la movilidad.
 
@@ -104,7 +104,7 @@ En este caso, podemos entender que la herramienta TWINS fue creada en Access y, 
 
 Es, sin duda, el modelo que más se utiliza aún hoy en día, el cual promete una determinada efectividad siempre y cuando el volumen de información a manejar no sea excesivamente elevado. En este caso, aunque la información que se requiere manipular en la oficina no es fácilmente manejable por personas, sí que aún podemos continuar utilizando este modelo para el desarrollo de la nueva herramienta twinX. Se entiende que no se tendrán más de unos 1000 estudiantes por curso académico (en una sola facultad) y que el número de convenios y tutores no será ni mucho menos parecido, considerando, eso sí, que la cantidad de \glspl{ExpedienteTWINS} será aproximadamente el doble que la de los estudiantes para los que se creen dichos registros.
 
-Así pues, el modelo relacional parecer ser suficiente para las funcionalidades básicas y necesarias para trabajar en la oficina que twinX pretende implementar.
+Así pues, el modelo relacional parecer ser suficiente para las funcionalidades básicas y necesarias para trabajar en la ORI-FyL que twinX pretende implementar.
 
 No obstante, no olvidemos la intención de extender la funcionalidad del actual TWINS para que los propios estudiantes puedan dejar atrás el constante envío de documentos entre sus tutores académicos por correo electrónico, de modo que puedan dar el salto a una plataforma que implemente una interfaz que les permita prescindir de estos documentos, como el acuerdo de estudios, y trabajar con la información directamente (aunque se posibiliten las conversiones a certificados que puedan ser impresos). En este contexto, se ha de tener en cuenta la forma de tratar los datos que se quiere realizar, que tendrá que adaptarse a este modelo de datos que va a ser usado también en twinX.
 
@@ -123,7 +123,7 @@ No obstante, no olvidemos la intención de extender la funcionalidad del actual 
 		\item \textbf{Envío masivo de correos electrónicos:} posibilita funciones como las \glspl{Nominacion} automáticas o la comunicación a los participantes en los programas de movilidad de su tutor académico.
 		\item \textbf{Generación de documentos automática:} disposición de los distintos datos en documentos que son entregables a estudiantes para mostrarles un sumario de su situación académica
 		\item \textbf{Creación, edición y borrado de los datos dentro de la aplicación}
-		\item \textbf{Anotación de futuras modificaciones a documentos ajenos a la oficina:} como son, por ejemplo, los convenios, que quedan registrados en la sede de la UGR y no pueden ser modificados hasta una fecha concreta, fuera del control de la oficina.
+		\item \textbf{Anotación de futuras modificaciones a documentos ajenos a la oficina:} como son, por ejemplo, los convenios, que quedan registrados en la sede de la UGR y no pueden ser modificados hasta una fecha concreta, fuera del control de la ORI-FyL.
 		\item \textbf{Recuperación de información de otros formularios externos a la aplicación:} para el registro de nuevos estudiantes (que es hasta ahora la mejor aproximación a la automatización de dicho proceso de la que se dispone) y, por ejemplo, para registrar datos de estudiantes afectados de alguna manera por la COVID-19.
 	\end{itemize}
 
@@ -155,7 +155,7 @@ Lo primero que nos encontramos tras abrir la aplicación, es una pantalla de log
 Tras identificarnos, nos topamos, antes de llegar a la pantalla principal, con tres pantallas más:
 
 \begin{itemize}
-	\item El calendario (figura \ref{fig:calendario}) proporciona una vista genérica de todos los eventos que tienen lugar y que conciernen a la oficina o que tratan de asuntos relacionados con la misma. También se guardan plazos para realizar determinadas tareas. Los eventos del calendario\footnote{Nótese la especificación de « evento de calendario » o « \gls{EventoExpedienteTWINS} » en las definiciones correspondientes para establecer la diferenciación entre eventos que tienen que ver con la planificación en el calendario y los que componen los \glspl{ExpedienteTWINS}} son públicos a todos los usuarios de TWINS y en la creación de las entradas en él se permite establecer un(a) encargado/a de la tarea, de modo que de un vistazo puedan verse los avisos pendientes que se tienen para un determinado evento.
+	\item El calendario (figura \ref{fig:calendario}) proporciona una vista genérica de todos los eventos que tienen lugar y que conciernen a la ORI-FyL o que tratan de asuntos relacionados con la misma. También se guardan plazos para realizar determinadas tareas. Los eventos del calendario\footnote{Nótese la especificación de « evento de calendario » o « \gls{EventoExpedienteTWINS} » en las definiciones correspondientes para establecer la diferenciación entre eventos que tienen que ver con la planificación en el calendario y los que componen los \glspl{ExpedienteTWINS}} son públicos a todos los usuarios de TWINS y en la creación de las entradas en él se permite establecer un(a) encargado/a de la tarea, de modo que de un vistazo puedan verse los avisos pendientes que se tienen para un determinado evento.
 	
 	\begin{figure}
 		\includegraphics[width=\textwidth]{img/Capturas de TWINS/calendario.png}
@@ -175,7 +175,7 @@ Tras identificarnos, nos topamos, antes de llegar a la pantalla principal, con t
 	 \end{figure}
 	 
 	
-	\item Dejando atrás los plazos y los eventos del calendario, otro elemento de gran importancia y con lo que trabajan día a día en la oficina (y no sólo en un cierto momento del cuatrimestre académico) son los \glspl{EventoExpedienteTWINS}. Pensemos que a diario surgen problemas, inconvenientes o simplemente hay que actualizar la situación de un estudiante. Por ello, la siguiente pantalla tras descartar las dos anteriores es la de eventos (de expediente) sin procesar (figura \ref{fig:eventosSinProcesar}).
+	\item Dejando atrás los plazos y los eventos del calendario, otro elemento de gran importancia y con lo que trabajan día a día en la ORI-FyL (y no sólo en un cierto momento del cuatrimestre académico) son los \glspl{EventoExpedienteTWINS}. Pensemos que a diario surgen problemas, inconvenientes o simplemente hay que actualizar la situación de un estudiante. Por ello, la siguiente pantalla tras descartar las dos anteriores es la de eventos (de expediente) sin procesar (figura \ref{fig:eventosSinProcesar}).
 	
 	En ella, los usuarios de gestión pueden acceder a la información relacionada con el evento, como los demás eventos, los expedientes del alumno para el cual se está mostrando la información, o directamente las fichas del estudiante o el convenio en sí mismas.
 	
@@ -200,7 +200,7 @@ Si accedemos, por ejemplo, a la vista de convenios que ya hemos mostrado con ant
 
 \begin{figure}
 	\centering
-	\includegraphics[width=\textwidth]{img/Capturas de TWINS/relaciónTablasConsultaConveniosLista.png}
+	\includegraphics[width=\textwidth]{img/Capturas de TWINS/relacionTablasConsultaConveniosLista.png}
 	\caption[Tablas implicadas en consultar convenios en TWINS]{Relación de tablas implicadas en la consulta realizada para listar los convenios en TWINS}
 	\label{fig:tablasConsultaConvenios}
 \end{figure}
@@ -211,7 +211,11 @@ A efectos de diseño de la interfaz, es apreciable que ciertos campos de cada en
 
 Es por ello por lo que gran parte de este proyecto se enfocará al rediseño de la aplicación de TWINS basado en técnicas de usabilidad. Esto será posible gracias a la aplicación de metodologías actuales y la realización de pruebas reales con usuarios que interaccionarán con el sistema.
 
-En las figuras \ref{fig:cambioDNI}, \ref{fig:alumnos}, \ref{fig:cesionDeDatos} y \ref{fig:infoAsignaturas} se proporcionan otras vistas relativas a la interfaz de usuario. Podemos apreciar cómo se destacan con colores más llamativos los menús donde una acción indebida podría desenvolver acciones indeseadas. También, como elemento en común cada vez que aparece el nombre de los estudiantes, se marca en rojo si es \textit{outcoming} o en azul si, por el contrario, es \textit{incoming}. Aparte de esto, no comentaremos sus aspectos específicos, dado que la metodología empleada para su creación es la misma que ya hemos expuesto y la interacción por parte del usuario es similar. Nótese que no se muestran datos con carácter sensible debido a cuestiones de protección de datos.
+Para finalizar, vamos a comentar aspectos genéricos sobre las distintas vistas de la interfaz de TWINS. Es un elemento apreciable el uso de colores vivos y que reclaman la atención del usuario. Éstos suelen ser utilizados mayormente en áreas donde se debe prestar mucha atención y se debe proceder con cuidado a la hora de hacer cambios, pues podría desencadenar a un estado de inconsistencia en el sistema difícil de revertir. Ejemplo de esto es el menú de cambio de DNI (figura \ref{fig:cambioDNI}), donde la cabecera es amarilla. La propia aplicación te impide editar el DNI si para el estudiante seleccionado se tienen registros de información. No obstante, no cabe duda de que se trata de un cambio importante, y por eso también, para acceder a dicho menú, hay que hacer doble click en el botón del menú principal (figura \ref{fig:pantallaPrincipal}), ya que sus letras tienen un color rojo, como pasa con cualquier botón que contiene la aplicación y se resalta de esta manera.
+
+También, como elemento en común cada vez que aparece el nombre de los estudiantes, se marca en rojo si es \textit{outgoing} o en azul si, por el contrario, es \textit{incoming}. Ejemplos de esto podemos encontrarlos en las figuras \ref{fig:alumnos} y \ref{fig:cesionDeDatos}. En la primera, podemos también apreciar cómo se presenta un color verde en la columna de casillas más a la izquierda cuando el número de acuerdos de estudios activo para los estudiantes es de 0, lo que significa que « no hay peligro » al editar su información. Si por el contrario tuvieran más de uno, la aplicación mostraría la cifra en amarillo, indicando el alto riesgo de modificar sus datos en caso de hacerlo de forma descuidada. Nótese que no se muestran datos con carácter sensible debido a cuestiones de protección de datos.
+
+Comentemos, en último lugar, que la disposición de estos colores e indicadores no es en vano, no ya a partir de las aclaraciones anteriores, sino también haciendo alusión a la figura \ref{fig:infoAsignaturas}, donde no se tienen datos importantes que modificar, tan solo se trata de una mera consulta --sin derecho a modificación-- a las asignaturas registradas para los estudiantes en la base de datos, no habiendo riesgo de comprometer la consistencia de la información. Es por ello por lo que la paleta de colores, aunque de discutible empleo en toda la aplicación, es muy reducida en esta vista concretamente, pues tan solo se resalta en azul la cabecera, y el resto queda en blanco y negro.
 
 
 \begin{figure}
@@ -230,7 +234,7 @@ En las figuras \ref{fig:cambioDNI}, \ref{fig:alumnos}, \ref{fig:cesionDeDatos} y
 	\subcaptionbox{Menú de gestión del consentimiento de cesión de datos de los estudiantes salientes en TWINS \label{fig:cesionDeDatos}}{
 		\centering
 		\includegraphics[width=\textwidth]{img/Capturas de TWINS/cesionDeDatos}
-	} \par\medskip
+		} \par\medskip
 \end{figure}
 
 \begin{figure}
@@ -245,9 +249,9 @@ En las figuras \ref{fig:cambioDNI}, \ref{fig:alumnos}, \ref{fig:cesionDeDatos} y
 
 \end{figure}
 
-\subsection{Estudio de necesidades de la Oficina de Relaciones Internacionales}
+\subsection{Estudio de necesidades de la ORI-FyL}
 
-En general, la Oficina de Relaciones Internacionales de la facultad dispone de una herramienta que, dado que ha sido creada por un integrante de la secretaría de la facultad con una estrecha relación laboral con los miembros de la oficina, ha sabido cumplir los requisitos  operacionales del servicio. Muchas funcionalidades de la misma son muy concretas a las necesidades de la oficina (informes imprimibles con documentación específica, estadísticas, pegatinas para fundas de plástico, etc.)
+En general, la Oficina de Relaciones Internacionales de la facultad dispone de una herramienta que, dado que ha sido creada por un integrante de la secretaría de la facultad con una estrecha relación laboral con los miembros de la oficina, ha sabido cumplir los requisitos  operacionales del servicio. Muchas funcionalidades de la misma son muy concretas a las necesidades de la ORI-FyL (informes imprimibles con documentación específica, estadísticas, pegatinas para fundas de plástico, etc.)
 
 No obstante, debido a las limitaciones de la metodología escogida para posibilitar estas gestiones, se ha llegado a un punto en que es muy complicado realizar modificaciones y extensiones a la misma, entre las que podemos destacar la existencia de un portal directamente conectado a la aplicación principal que posibilite la realización de gestiones por parte de los estudiantes. De este modo, tanto el estudiante como el personal de secretaría ahorrarían tiempo y su interacción no sería íntegramente en el correo electrónico. Esto es también extensible al papel de los tutores académicos.
 
