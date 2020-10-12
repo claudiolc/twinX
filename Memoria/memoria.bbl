@@ -1,9 +1,14 @@
-\begin{thebibliography}{5}
+\begin{thebibliography}{6}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[int()]{intDesign}
+What is {D}esign {T}hinking? | {I}nteraction {D}esign {F}oundation.
+\newblock URL
+  \url{https://www.interaction-design.org/literature/topics/design-thinking}.
 
 \bibitem[usa()]{usability}
 Usability.gov | {I}mproving the user experience.
@@ -29,7 +34,7 @@ Oficina de~Gestión de la Comunicación. Unidad de Documentación Edición~e
 
 \bibitem[Elastic()]{elastic}
 Elastic.
-\newblock ¿{Q}ué es elasticsearch?
+\newblock ¿{Q}ué es {E}lasticsearch?
 \newblock URL \url{https://www.elastic.co/es/what-is/elasticsearch}.
 
 \end{thebibliography}
