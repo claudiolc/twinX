@@ -5,7 +5,7 @@ Table centro as CEN {
   nombre varchar
 }
 
-Table mail as MAIL {
+Table mail_predef as MAIL {
   id int [pk, increment]
   asunto varchar
   cuerpo text
@@ -24,6 +24,8 @@ Table asignatura as ASIG {
   id_tit int
   nombre varchar
   ects int
+  cuatrimestre cuatrimestre
+  tipo tipo_asignatura
 }
 
 Ref: ASIG.id_tit > TIT.id
@@ -35,6 +37,7 @@ Table asignatura_ext as EXT_ASIG {
   nombre varchar
   ects int
   curso curso
+  cuatrimestre cuatrimestre
 }
 
 Ref: EXT_ASIG.id_conv > CON.id
@@ -81,7 +84,7 @@ Table usuarios as U {
  
 Table estudiante as EST{
   id_usuario int
-  dni varchar [unique]
+  dni varchar [unique] // PUEDE SER NIE, CUIDADO CON EL FORMATO
   id_convenio int
   id_titulacion int
   telefono2 int
@@ -97,11 +100,12 @@ Ref: EST.id_titulacion > TIT.id
 Ref: EST.id_usuario - U.id
 Ref: EST.id_convenio > CON.id
 
-Table partner as PART {
-  id int [pk, increment]
-  titulo varchar
-  email varchar
-}
+//No tiene ahora mismo mucho sentido
+//Table partner as PART {
+//  id int [pk, increment]
+//  titulo varchar
+//  email varchar
+//}
 
 // CONVENIOS Y ACUERDOS
 
@@ -233,8 +237,8 @@ Table acuerdo_estudios as AE {
   id_tutor int [note: 'ref a usuario pero tiene que ser un tutor, futura restricción']
   necesidades text
   renuncia int
-  begin_movilidad datetime
-  end_movilidad datetime
+  begin_movilidad datetime // comienzo individual del estudiante
+  end_movilidad datetime // fin individual del estudiante
   timestamp_nominacion datetime
   timestamp_tutor datetime
   timestamp_registro datetime
@@ -395,11 +399,20 @@ Table mensaje as MSG{
   id_receptor int
   leido boolean
   etiqueta etiqueta_msg
-  deadline datetime
+  //deadline datetime //depr???
+  asunto varchar
+  cuerpo text
+  eliminado boolean
 }
 
 Ref: MSG.id_emisor > U.id
 Ref: MSG.id_receptor > U.id
+
+Enum tipo_asignatura {
+  TRONCAL
+  OBLIGATORIA
+  OPTATIVA
+}
 
 Enum cargo {
   COORDINADOR
@@ -417,7 +430,6 @@ Enum nivel_idioma {
 
 
 Enum etiqueta_msg {
-  ELIMINADO
   AVISO
   MENSAJE
   RECORDATORIO
@@ -485,4 +497,3 @@ Enum cuatrimestre {
   SEGUNDO
   C_COMPLETO
 }
-

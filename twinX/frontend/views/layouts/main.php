@@ -38,20 +38,28 @@ AppAsset::register($this);
         ['label' => 'Contact', 'url' => ['/site/contact']],
     ];
     if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-        $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
+        $menuItems[] = [
+                'label' => 'Registro',
+                'url' => ['/site/signup'],
+                'options' => ['class' => 'ml-auto']
+        ];
+
+        $menuItems[] = [
+            'label' => 'Iniciar sesión',
+            'url' => ['/site/login'],
+            'options' => ['class' => '']
+        ];
     } else {
-        $menuItems[] = '<li>'
-            . Html::beginForm(['/site/logout'], 'post')
-            . Html::submitButton(
-                'Logout (' . Yii::$app->user->identity->username . ')',
-                ['class' => 'btn btn-link logout']
-            )
-            . Html::endForm()
-            . '</li>';
+        $menuItems[] = ['label' => 'Salir ('.Yii::$app->user->identity->username.')',
+            'url' => ['/site/logout'],
+            'linkOptions' => [
+                'data-method' => 'post',
+            ],
+            'options' => ['class' => 'ml-auto']
+        ];
     }
     echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right'],
+        'options' => ['class' => 'navbar-nav w-100'],
         'items' => $menuItems,
     ]);
     NavBar::end();
