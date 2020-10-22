@@ -21,6 +21,21 @@ use yii\web\IdentityInterface;
  * @property integer $created_at
  * @property integer $updated_at
  * @property string $password write-only password
+ *
+ * @property string $nombre
+ * @property string $tipo_usuario
+ * @property string $telefono
+ * @property string $sexo
+ *
+ * @property Convenio[] $convenios
+ * @property Convenio[] $convenios0
+ * @property DeadlineAviso[] $deadlineAvisos
+ * @property Estudiante $estudiante
+ * @property Evento[] $eventos
+ * @property Mensaje[] $mensajes
+ * @property Mensaje[] $mensajes0
+ * @property RelExpFase[] $relExpFases
+ * @property RelExpFavGestor[] $relExpFavGestors
  */
 class User extends ActiveRecord implements IdentityInterface
 {
@@ -55,8 +70,125 @@ class User extends ActiveRecord implements IdentityInterface
         return [
             ['status', 'default', 'value' => self::STATUS_INACTIVE],
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_INACTIVE, self::STATUS_DELETED]],
+            [['email', 'nombre', 'tipo_usuario', 'telefono', 'sexo'], 'required'],
+            [['tipo_usuario', 'sexo'], 'string'],
+            [['email'], 'string', 'max' => 255],
+            [['nombre'], 'string', 'max' => 50],
+            [['telefono'], 'string', 'max' => 20],
+            [['username'], 'unique'],
+            [['email'], 'unique'],
+            [['password_reset_token'], 'unique'],
         ];
     }
+
+    public function attributeLabels()
+    {
+        return [
+            'id' => 'ID',
+            'username' => 'Nombre de usuario',
+            'email' => 'Correo electrónico',
+            'status' => 'Estado',
+            'created_at' => 'F. registro',
+            'nombre' => 'Nombre',
+            'tipo_usuario' => 'Tipo de usuario',
+            'telefono' => 'Teléfono',
+            'sexo' => 'Sexo',
+        ];
+    }
+
+    /**
+     * Gets query for [[Convenios]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getConveniosAsCreador()
+    {
+        return $this->hasMany(Convenio::className(), ['creado_por' => 'id']);
+    }
+
+    /**
+     * Gets query for [[Convenios0]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getConveniosAsTutor()
+    {
+        return $this->hasMany(Convenio::className(), ['id_tutor' => 'id']);
+    }
+
+    /**
+     * Gets query for [[DeadlineAvisos]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+
+    public function getDeadlineAvisos()
+    {
+        return $this->hasMany(DeadlineAviso::className(), ['id_responsable' => 'id']);
+    }
+
+    /**
+     * Gets query for [[Estudiante]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+
+    public function getEstudiante()
+    {
+        return $this->hasOne(Estudiante::className(), ['id_usuario' => 'id']);
+    }
+
+    /**
+     * Gets query for [[Eventos]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+
+    public function getEventos()
+    {
+        return $this->hasMany(Evento::className(), ['id_creador' => 'id']);
+    }
+
+    /**
+     * Gets query for [[Mensajes]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+
+    public function getMensajesAsEmisor()
+    {
+        return $this->hasMany(Mensaje::className(), ['id_emisor' => 'id']);
+    }
+
+    /**
+     * Gets query for [[Mensajes0]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getMensajesAsReceptor()
+    {
+        return $this->hasMany(Mensaje::className(), ['id_receptor' => 'id']);
+    }
+
+    /**
+     * Gets query for [[RelExpFases]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getRelExpFases()
+    {
+        return $this->hasMany(RelExpFase::className(), ['id_gestor' => 'id']);
+    }
+
+    /**
+     * Gets query for [[RelExpFavGestors]].
+     * @return \yii\db\ActiveQuery
+     */
+    public function getRelExpFavGestors()
+    {
+        return $this->hasMany(RelExpFavGestor::className(), ['id_gestor' => 'id']);
+    }
+
 
     /**
      * {@inheritdoc}

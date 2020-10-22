@@ -20,7 +20,7 @@ if (Yii::$app->user->isGuest) {
 } else {
     $menuItems[] = ['label' => 'Gestión', 'url' => ['/gestion']];
     $menuItems[] = ['label' => 'Calendario', 'url' => ['/calendario']];
-    $menuItems[] = ['label' => 'Panel de control', 'url' => ['/controlPanel']];
+    $menuItems[] = ['label' => 'Panel de control', 'url' => ['/panel']];
     $menuItems[] = ['label' => 'Salir ('.Yii::$app->user->identity->username.')',
         'url' => ['/site/logout'],
         'linkOptions' => [

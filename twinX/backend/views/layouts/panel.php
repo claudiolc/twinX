@@ -15,12 +15,13 @@ $this->beginContent('@backend/views/layouts/base.php')
 ?>
 
 <main class="d-flex">
-    <?php echo $this->render('_sidebar_gestion.php') ?>
+    <?php echo $this->render('_sidebar_panel.php') ?>
 
-    <div class="container p-3">
+    <div class="container w-25 p-3">
         <?= Alert::widget() ?>
         <?= $content ?>
     </div>
+
 </main>
 
 <?php $this->endContent() ?>

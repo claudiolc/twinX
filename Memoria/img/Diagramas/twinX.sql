@@ -100,7 +100,6 @@ CREATE TABLE `convenio` (
   `cod_area` varchar(255) NOT NULL,
   `cod_uni` varchar(255) NOT NULL,
   `cod_pais` varchar(255) NOT NULL,
-  `id_admon_out` int,
   `id_tutor` int NOT NULL COMMENT 'ref a usuario pero tiene que ser un tutor, futura restricción',
   `id_curso_creacion` int NOT NULL,
   `creado_por` int NOT NULL,
@@ -147,8 +146,6 @@ CREATE TABLE `convenio` (
 
 CREATE TABLE `admon_out` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
-  `cod_pais` varchar(255) NOT NULL,
-  `cod_uni` varchar(255) NOT NULL,
   `nombre_coord` varchar(255),
   `cargo_coord` varchar(255),
   `email_coord` varchar(255),
@@ -306,7 +303,7 @@ ALTER TABLE `universidad` ADD FOREIGN KEY (`cod_pais`) REFERENCES `pais` (`iso`)
 
 ALTER TABLE `estudiante` ADD FOREIGN KEY (`id_titulacion`) REFERENCES `titulacion` (`id`);
 
-ALTER TABLE `user` ADD FOREIGN KEY (`id`) REFERENCES `estudiante` (`id_usuario`);
+ALTER TABLE `estudiante` ADD FOREIGN KEY (`id_usuario`) REFERENCES `user` (`id`);
 
 ALTER TABLE `estudiante` ADD FOREIGN KEY (`id_convenio`) REFERENCES `convenio` (`id`);
 
@@ -330,9 +327,7 @@ ALTER TABLE `convenio` ADD FOREIGN KEY (`cod_pais`, `cod_uni`) REFERENCES `unive
 
 ALTER TABLE `convenio` ADD FOREIGN KEY (`id_admon_out`) REFERENCES `admon_out` (`id`);
 
-ALTER TABLE `convenio` ADD FOREIGN KEY (`cod_pais`, `cod_uni`) REFERENCES `admon_out` (`cod_pais`, `cod_uni`);
-
-ALTER TABLE `user` ADD FOREIGN KEY (`id`) REFERENCES `convenio` (`id_tutor`);
+ALTER TABLE `convenio`  ADD FOREIGN KEY (`id_tutor`) REFERENCES `user` (`id`);
 
 ALTER TABLE `acuerdo_estudios` ADD FOREIGN KEY (`id_curso`) REFERENCES `curso` (`id`);
 
@@ -348,7 +343,7 @@ ALTER TABLE `expediente` ADD FOREIGN KEY (`id_ae`) REFERENCES `acuerdo_estudios`
 
 ALTER TABLE `expediente` ADD FOREIGN KEY (`id_tipo_exp`) REFERENCES `tipo_expediente` (`id`);
 
-ALTER TABLE `tipo_expediente` ADD FOREIGN KEY (`id`) REFERENCES `fase_expediente` (`id_tipo_exp`);
+ALTER TABLE `fase_expediente` ADD FOREIGN KEY (`id_tipo_exp`) REFERENCES `tipo_expediente` (`id`);
 
 ALTER TABLE `envio_mail_fase` ADD FOREIGN KEY (`id_mail`) REFERENCES `mail_predef` (`id`);
 
@@ -364,17 +359,17 @@ ALTER TABLE `hist_envio_mail_fase_mod` ADD FOREIGN KEY (`id_fase`) REFERENCES `f
 
 ALTER TABLE `hist_envio_mail_fase_mod` ADD FOREIGN KEY (`id_exp`) REFERENCES `expediente` (`id`);
 
-ALTER TABLE `expediente` ADD FOREIGN KEY (`id`) REFERENCES `rel_exp_fase` (`id_exp`);
+ALTER TABLE `rel_exp_fase` ADD FOREIGN KEY (`id_exp`) REFERENCES `expediente` (`id`);
 
-ALTER TABLE `fase_expediente` ADD FOREIGN KEY (`id`) REFERENCES `rel_exp_fase` (`id_fase`);
+ALTER TABLE `rel_exp_fase` ADD FOREIGN KEY (`id_fase`) REFERENCES `fase_expediente` (`id`);
 
-ALTER TABLE `user` ADD FOREIGN KEY (`id`) REFERENCES `rel_exp_fase` (`id_gestor`);
+ALTER TABLE `rel_exp_fase` ADD FOREIGN KEY (`id_gestor`) REFERENCES `user` (`id`);
 
 ALTER TABLE `rel_exp_fav_gestor` ADD FOREIGN KEY (`id_exp`) REFERENCES `expediente` (`id`);
 
 ALTER TABLE `rel_exp_fav_gestor` ADD FOREIGN KEY (`id_gestor`) REFERENCES `user` (`id`);
 
-ALTER TABLE `user` ADD FOREIGN KEY (`id`) REFERENCES `evento` (`id_creador`);
+ALTER TABLE `evento` ADD FOREIGN KEY (`id_creador`) REFERENCES `user` (`id`);
 
 ALTER TABLE `deadline_aviso` ADD FOREIGN KEY (`id_responsable`) REFERENCES `user` (`id`);
 
