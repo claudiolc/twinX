@@ -22,7 +22,7 @@ El proceso dispone de unas fases a seguir, como son:
 
 El no atender a causas de accesibilidad sería no aplicar correctamente, de alguna forma, el tipo de diseño escogido para el desarrollo del producto. Cuando se hacen pruebas, el objetivo no es otro que adaptar el producto para que pueda ser bien utilizado por el mayor número de usuarios posible y de la forma satisfactoria para ellos. Es por ello por lo que tenemos que abrir el abanico y contemplar que pueden ser numerosos los usuarios que necesiten adaptaciones para interaccionar correctamente con el contenido web.
 
-Para ello, se propone la utilización de los recursos especificados en \textit{Web Content Accessibility Guidelines} (WCAG) \citep{wcag}. Con ello, podemos hacer que la experiencia en el sitio web pueda ser mínimamente satisfactoria para todo usuario que necesite hacer uso de la misma. Para ello, se deberán emplear una serie de técnicas, especificadas en su web, para que twinX sea adaptable. Entre ellas, destacamos la posibilidad de interacción con el teclado, un texto descriptivo para las posibles imágenes que se puedan incluir, regular el contraste, etc. Con este proyecto, la intención es alcanzar el nivel AA (segundo más exigente), para que la gran mayoría de personas con necesidades especiales puedan usar la plataforma sin problema alguno.
+Para ello, se propone la utilización de los recursos especificados en \textit{Web Content Accessibility Guidelines} (WCAG) \citep{wcag}. Con ello, podemos hacer que la experiencia en el sitio web pueda ser mínimamente satisfactoria para todo usuario que necesite hacer uso de la misma. En efecto, se deberán emplear una serie de técnicas, especificadas en su web, para que twinX sea adaptable. Entre ellas, destacamos la viabilidad de la interacción con el teclado, un texto descriptivo para las posibles imágenes que se puedan incluir, regular el contraste, etc. Con este proyecto, la intención es alcanzar el nivel AA (segundo más exigente), para que la gran mayoría de personas con necesidades especiales puedan usar la plataforma sin problema alguno.
 
 \subsubsection{Encuesta SUS}
 
@@ -38,7 +38,7 @@ Por todo ello, esta será una de las herramientas que utilizaremos en las prueba
 
 \subsection{\textit{Design Thinking}, DT}
 
-El « Pensamiento de Diseño » o \textit{Design thinking} es una técnica de desarrollo que se centra en el usuario, pudiendo detectar y reaccionar ante cambios repentinos en el entorno de los usuarios y sus comportamientos. El objetivo está, mayormente, en abordar problemas con una pobre definición o que no se conocen a fondo para situar al usuario en el centro de todo y poder así enfocar el problema desde otras perspectivas, de manera que se pueda poner la atención en aquello que resulte de mayor importancia para los usuarios.
+El «Pensamiento de Diseño» o \textit{Design thinking} es una técnica de desarrollo que se centra en el usuario, pudiendo detectar y reaccionar ante cambios repentinos en el entorno de los usuarios y sus comportamientos. El objetivo está, mayormente, en abordar problemas con una pobre definición o que no se conocen a fondo para situar al usuario en el centro de todo y poder así enfocar el problema desde otras perspectivas, de manera que se pueda poner la atención en aquello que resulte de mayor importancia para los usuarios.
 
 \subsubsection{Las fases del DT}
 
@@ -88,26 +88,30 @@ Tal y como hemos comentado en la sección \ref{herramientasDT}, una de las herra
 
 Vamos a tratar de crear tres personalidades lo más variopintas posibles en aras de enfocarnos más aún en el usuario y dotar de mayor calidad el resultado final, de modo que podamos abarcar por completo el entorno de influencia del problema. (Herramienta: \citep{uxpressia})
 
-\begin{figure}[htb]
+\begin{figure}
 	\centering
 	\includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{img/Personas/Eladio}
 	\caption[Persona \#1]{Persona \#1: Eladio}
 	\label{fig:persona1}
 \end{figure}
-\begin{figure}[htb]
+\begin{figure}
 	\centering
 	\includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{img/Personas/MGracia}
 	\caption[Persona \#2]{Persona \#2: María Gracia}
 	\label{fig:persona2}
 \end{figure}
-\begin{figure}[htb]
+\begin{figure}
 	\centering
 	\includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{img/Personas/Marketa}
 	\caption[Persona \#3]{Persona \#3: Marketa}
 	\label{fig:persona3}
 \end{figure}
 
-En definitiva, podemos apreciar que estas tres personas, con sus perfiles, podrían estar usar cualquier aplicación para el desarrollo de cualquiera de sus actividades. Es por ello por lo que podemos tomar estos perfiles ficticios como válidos, pues no están «hechos a medida» para nosotros, de modo que podamos describir el prototipo de persona «perfecta» a usar nuestro producto. Gracias a ello, podemos adaptar el desarrollo a una serie de necesidades y/o conflictos que pueden generar en otras personas al mismo tiempo, obligándonos a buscar una solución homogénea para todos, funcional y, no menos importante, que resuelva el problema como es debido y dadas las necesidades.
+En vista de la persona en la figura \ref{fig:persona1}, Eladio, podríamos pensar que para él, lo óptimo sería desarrollar una app móvil para poder gestionar su movilidad, en caso de que quisiera hacerla. Pertenece a las nuevas generaciones donde apenas se usa el ordenador, hasta llegar a la universidad, mayormente, por lo que está acostumbrado a una tablet. Al mismo tiempo, María Gracia (figura \ref{fig:persona2}) trabaja gestionando información como la de estudiantes como Eladio o Marketa (figura \ref{fig:persona3}) y no puede permitirse interaccionar con un dispositivo móvil, pues tardaría mucho en realizar su trabajo, y no lo haría de forma efectiva. Por tanto, una solución web parece una resolución del problema apta para la mayoría del mercado del producto.
+
+Como decíamos, nos sirven elementos que no tengan que ver directamente con las habilidades tecnológicas de los candidatos; y es que, por ejemplo, María Gracia en este caso no podría tampoco ver una web que no tuviera la tipografía lo suficientemente grande como para leer, porque podría tener la vista cansada. O quizás Marketa, si no tiene una buena situación económica, tendría quizás que conectarse desde un dispositivo algo obsoleto, por lo que probablemente le sea muy costoso en cuanto a tiempo cargar una página web con numerosas imágenes.
+
+En definitiva, podría pensarse que los perfiles de estas tres personas están hechos para hacer el análisis de cualquier aplicación o producto software, ya que no hemos ideado estas personalidades específicamente para el problema que nos compete. Es por ello por lo que podemos tomar estos perfiles ficticios como válidos, pues no están «hechos a medida» para nosotros. Gracias a ello, podemos adaptar el desarrollo a una serie de necesidades y/o conflictos que pueden generar en otras personas al mismo tiempo, obligándonos a buscar una solución homogénea para todos, funcional y, no menos importante, que resuelva el problema como es debido y dadas las necesidades.
 
 \section{Entrevistas}
 
@@ -133,14 +137,37 @@ En nuestro caso, hemos efectuado la malla (figura \ref{fig:malla}) para definir,
 	\label{fig:malla}
 \end{figure}
 
-%%%%%% SECCIÓN 3.5
-%\section{Descripción de la propuesta}
-%
-%Para desarrollar twinX primero se ha de elegir una metodología. En este caso, dado que este proyecto es tan sólo un comienzo para lo que sería el producto final y que tiene unos requisitos poco cerrados, escogeremos una metodología de desarrollo ágil.
-%
-%Este tipo de metodologías se basan en la adaptación a medios con necesidades cambiantes, con un desarrollo muy de cerca con el cliente, quien está presente junto con el equipo de desarrollo en las numerosas reuniones que se hacen a lo largo de la vida del proyecto. En este caso, el equipo de desarrollo es ajustado, pero no por ello dejaremos de lado la necesaria intervención de dos personas que hacen el papel de clientes y que son:
-%
-%\begin{itemize}
-%	\item María Consuelo Pérez Ocaña (Coordinadora de Internacionalización en la la Facultad de Filosofía y Letras)
-%	\item Miguel Ángel Sanz Sáez (personal de secretaría y creador de TWINS)
-%\end{itemize}
+
+\section{Descripción de la propuesta}
+Una vez hemos dado pinceladas de todo lo que tenemos, de qué podemos hacer, qué no y cómo llevarlo a cabo, vamos a establecer los claros objetivos de este proyecto y definir exactamente cuál será el producto tras su finalización, una vez conocemos todo el entorno que lo rodea. 
+
+\subsection{Elección de la metodología de desarrollo}
+Para desarrollar twinX primero se ha de elegir una metodología. Tradicionalmente, los proyectos de software se construían siguiendo lo que se conocen como «metodologías pesadas» o tradicionales \citep{waterfall1}, largos procesos de desarrollo en los que se definen unas fases secuenciales por donde el producto iba pasando hasta tener una versión final. La metodología más sonada es la de «cascada» o \textit{waterfall} en inglés \citep{waterfall2}. En ella, tenían lugar unas estrictas etapas enfocadas a un grupo de tareas en concreto, como son la etapa de definición, la de diseño, la de codificación, la de pruebas y la de mejora. Todo ello daba lugar a documentaciones muy completas aunque innecesariamente extensas en muchos casos, a través de la implicación de mucha gente experta en la materia, capacitada para hacer las tareas definidas muy concretamente. La flexibilidad apenas estaba contemplada, puesto que la planificación era muy estricta y hacía peligrar la buena continuidad del proyecto.
+
+Hoy en día, apenas se utiliza este tipo de metodologías. En nuestro caso, queremos construir lo que sería tan sólo el comienzo del producto final. En otras palabras, nuestras condiciones no encajarían en una metodología en cascada, pues no tenemos unos requisitos estrictamente fijados, ya que vamos a crear una versión de TWINS no definitiva y la cual no se verá con todas las características implementadas. Además, es un cambio tan drástico el que se va a dar al transportar la aplicación a la web, que se precisa de la continua atención de una especie de «equipo supervisor», conformado por uno o varios usuarios finales del producto, que nos pueda proporcionar un \textit{feedback} sobre si nos estamos acercando o alejando de sus expectativas. Sobre esto último, diremos que no es que no se tuviera en cuenta en las metodologías tradicionales, pero no se primaba tanto como se debería, lo que hacía que el software perdiera calidad.
+
+Por todo ello, podemos aventurarnos a decir que nuestro proyecto encaja más en una \textbf{metodología ágil}. Este tipo de metodologías se basan en la adaptación a medios con necesidades cambiantes, con un desarrollo muy de cerca con el cliente, quien está presente junto con el equipo de desarrollo en las numerosas reuniones que se hacen a lo largo de la vida del proyecto. Es más, en el \textit{14th Annual State of Agile Report} \citep{stateofagile} podemos encontrar unas estadísticas sobre los beneficios que ha traído el uso de metodologías ágiles en el último año, entre las que podemos destacar la capacidad de manejar los cambios de prioridades, la reducción de riesgos en el proyecto o el mantenimiento del software. En este caso, el equipo de desarrollo es ajustado, pero no por ello dejaremos de lado la necesaria intervención de dos personas fundamentales que hacen el papel de clientes y que son:
+
+\begin{itemize}
+	\item María Consuelo Pérez Ocaña (Coordinadora de Internacionalización en la la Facultad de Filosofía y Letras)
+	\item Miguel Ángel Sanz Sáez (personal de secretaría y creador de TWINS)
+\end{itemize}
+
+\subsection{Propuesta de producto}
+En su primera versión, twinX incluirá la funcionalidad mínima de TWINS, de modo que de cara a las pruebas, la interacción con la nueva plataforma sea más bien realista, y aporte verosimilitud a la mejora, pudiendo así ser tomada como tal.
+
+Más concretamente, contemplamos la implementación de:
+
+\begin{itemize}
+	\item El añadido, modificación y eliminación de información esencial (como son asignaturas, tipo de expediente --similar a \gls{ExpedienteTWINS}--, mensajes predefinidos, etc.)
+	\item La visualización de la información relevante a estudiantes (sus datos personales, expedientes abiertos, fases de los mismos, etc.)
+	\item La visualización de los \glspl{Convenio}, modificación de la información y el añadido de nuevos. Posibilidad de dos vistas: una de resumen y otra completa, tal y como se tiene en TWINS.
+	\item Calendario con eventos, tareas, tal y como se disponía en TWINS
+	\item El envío de mensajes, a modo de sustituir los avisos en TWINS, pero abriendo el abanico a tres tipos de mensaje: mensaje normal, recordatorio (mensaje de un usuario para sí mismo) y avisos (por proximidad a la fecha de un evento o al límite para realizar una determinada tarea).
+	\item Una pantalla inicial de visualización de la información de mayor relevancia a modo de resumen. 
+	\item Organización de todo el contenido en tres grandes secciones: «gestión», «calendario» y «panel de control», para simplificar y mejorar la interfaz de usuario, facilitando la interacción con la misma.
+\end{itemize}
+
+\section{Presupuesto}
+
+\section{Planificación}
