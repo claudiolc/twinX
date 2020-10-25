@@ -1,0 +1,186 @@
+% Opciones del tipo de documento
+\documentclass[oneside,openright,titlepage,numbers=noenddot,openany,headinclude,footinclude=true,
+cleardoublepage=empty,abstractoff,BCOR=5mm,paper=a4,fontsize=12pt,main=spanish]{scrreprt}
+
+% Paquetes de latex que se cargan al inicio. Cubren la entrada de
+% texto, gráficos, código fuente y símbolos.
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fixltx2e}
+\usepackage{graphicx} % Inclusión de imágenes.
+%\usepackage{grffile}  % Distintos formatos para imágenes.
+%\usepackage{longtable} % Tablas multipágina.
+%\usepackage{wrapfig} % Coloca texto alrededor de una figura.
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage[colorlinks=true]{hyperref}
+%\usepackage{tikz} % Diagramas conmutativos.
+\usepackage{minted} % Código fuente.
+\usepackage{natbib}
+
+% Plantilla classicthesis
+\usepackage[beramono,eulerchapternumbers,linedheaders,parts,a5paper,dottedtoc,
+manychapters,pdfspacing]{classicthesis}
+
+% Geometría y espaciado de párrafos.
+\setcounter{secnumdepth}{0}
+\usepackage{enumitem}
+\setitemize{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt}
+\setlist[enumerate]{topsep=0pt,itemsep=-1ex,partopsep=1ex,parsep=1ex}
+\usepackage[top=1in, bottom=1.5in, left=1in, right=1in]{geometry}
+\setlength\itemsep{0em}
+\setlength{\parindent}{0pt}
+\usepackage{parskip}
+
+% Profundidad de la tabla de contenidos.
+\setcounter{secnumdepth}{3}
+
+% Usa el paquete minted para mostrar trozos de código.
+% Pueden seleccionarse el lenguaje apropiado y el estilo del código.
+\usepackage{minted}
+\usemintedstyle{colorful}
+\setminted{fontsize=\small}
+\setminted[php]{linenos=false,fontsize=\small}
+\renewcommand{\theFancyVerbLine}{\sffamily\textcolor[rgb]{0.5,0.5,1.0}{\oldstylenums{\arabic{FancyVerbLine}}}}
+
+% Archivos de configuración.
+%\input{macros}  % En macros.tex se almacenan las opciones y comandos para escribir matemáticas.
+\input{classicthesis-config} % En classicthesis-config.tex se almacenan las opciones propias de la plantilla.
+
+% -------------------------------------------------------------------
+% Ajustes de idioma
+% -------------------------------------------------------------------
+\addto\captionsspanish{%
+	\renewcommand\appendixname{Anexo}
+	\renewcommand\appendixpagename{Anexos}
+}
+
+% Color institucional UGR
+% \definecolor{ugrColor}{HTML}{ed1c3e} % Versión clara.
+\definecolor{ugrColor}{HTML}{c6474b}  % Usado en el título.
+\definecolor{ugrColor2}{HTML}{c6474b} % Usado en las secciones.
+
+% Datos de portada
+\usepackage{titling} % Facilita los datos de la portada
+\author{Nicolas Bourbaki} 
+\date{\today}
+\title{Elementos de matemática}
+
+% Portada
+\include{titlepage}
+\usepackage{wallpaper}
+\usepackage[main=spanish]{babel}
+
+
+
+% -------------------------------------------------------------------
+% Glosario
+% -------------------------------------------------------------------
+
+\input{glosario.tex}
+
+
+\begin{document}
+
+\ThisULCornerWallPaper{1}{ugrA4.pdf}
+\maketitle
+\tableofcontents
+
+
+\captionsetup[figure]{margin=1.5cm,font=small,labelfont={bf},name={Figura},labelsep=colon,textfont={it}}
+\captionsetup[table]{margin=1.5cm,font=small,labelfont={bf},name={Tabla},labelsep=colon,textfont={it}}
+
+
+%\begin{center}
+%	\thispagestyle{empty}
+%	{\LARGE Universidad de Granada}\\[.5cm]
+%	{\Large \textbf{Trabajo Fin de Grado}}\\[1cm]
+%	\includegraphics[width=6.5cm]{img/UGR.png}\\[1cm]
+%	{\Large Plataforma piloto para la gestión institucionalizada de los servicios de
+%		Relaciones Internacionales de la Universidad de Granada\\~\\}
+%	{\huge \bfseries twinX}\\[1.5cm]
+%	\linespread{1}
+%	\vspace{\fill}
+%	\includegraphics[width=2cm]{img/LSI.png}\hspace{1cm}
+%	\includegraphics[width=3.5cm]{img/ETSIIT.png}\\[1cm]
+%	{\Large Claudio López Carrascosa}\\[0.5cm]
+%	{\Large Tutora: Rosana Montes Soldado}\\[0.5cm]
+%	{\Large Departamento de Lenguajes y Sistemas Informáticos}\\[0.5cm]
+%	{\Large de noviembre, 2020}
+%\end{center}
+
+\clearpage
+\pagenumbering{arabic}
+
+% -------------------------------------------------------------------
+% Contents, list of figures, list of tables
+% -------------------------------------------------------------------
+\newpage
+
+% -------------------------------------------------------------------
+% Main sections (as required)
+% -------------------------------------------------------------------
+
+% Primeras secciones
+
+\section*{Autorización}
+
+\section*{Agradecimientos}
+
+\newpage
+
+\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{4}
+\tableofcontents
+
+
+\newpage
+
+\listoffigures
+\listoftables
+
+\newpage
+
+% 1. Introducción
+
+\input{section1.tex}
+
+% 2. Caso de estudio
+
+\input{section2.tex}
+
+% 3. twinX
+
+\input{section3.tex}
+
+
+% -------------------------------------------------------------------
+% Bibliography
+% -------------------------------------------------------------------
+
+\newpage
+
+%\bibliographystyle{plainnat}
+%\bibliography{bibliografia} 
+
+\bibliographystyle{alpha}
+\bibliography{research}   
+\nocite{*}
+% -------------------------------------------------------------------
+% Appendices
+% -------------------------------------------------------------------
+
+\newpage
+
+\printglossaries
+
+\newpage
+
+\input{anexos.tex}
+
+
+\end{document}
