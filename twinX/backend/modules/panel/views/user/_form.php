@@ -14,11 +14,10 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'username')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'password_reset_token')->textInput(['maxlength' => true]) ?>
+<!--    //= $form->field($model, 'password_reset_token')->textInput(['maxlength' => true])-->
+    <?php $model->status = 10 ?>
 
     <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'status')->textInput() ?>
 
     <?= $form->field($model, 'nombre')->textInput(['maxlength' => true]) ?>
 
@@ -26,10 +25,10 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'telefono')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'sexo')->dropDownList([ 'F' => 'F', 'M' => 'M', 'O' => 'O', ], ['prompt' => '']) ?>
+    <?= $form->field($model, 'sexo')->dropDownList([ 'F' => 'Femenino', 'M' => 'Masculino', 'O' => 'Otro', ], ['prompt' => '']) ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Guardar', ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

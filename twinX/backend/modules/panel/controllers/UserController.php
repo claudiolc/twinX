@@ -1,6 +1,6 @@
 <?php
 
-namespace backend\controllers;
+namespace backend\modules\panel\controllers;
 
 use Yii;
 use common\models\User;
@@ -35,7 +35,6 @@ class UserController extends Controller
      */
     public function actionIndex()
     {
-        $this->layout = 'panel';
         $dataProvider = new ActiveDataProvider([
             'query' => User::find(),
         ]);

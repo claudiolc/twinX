@@ -1,1 +1,3 @@
-<p>hi</p>
+<?php
+    Yii::$app->response->redirect(['panel/user']);
+?>
