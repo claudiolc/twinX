@@ -18,9 +18,9 @@ if (Yii::$app->user->isGuest) {
     ];
 
 } else {
-    $menuItems[] = ['label' => 'Gestión', 'url' => ['/gestion']];
-    $menuItems[] = ['label' => 'Calendario', 'url' => ['/calendario']];
-    $menuItems[] = ['label' => 'Panel de control', 'url' => ['/panel']];
+    $menuItems[] = ['label' => 'Gestión', 'url' => ['/gestion'], 'active' => $this->context->route == 'gestion/index'];
+    $menuItems[] = ['label' => 'Calendario', 'url' => ['/calendario'], 'active' => $this->context->route == 'calendario/index'];
+    $menuItems[] = ['label' => 'Panel de control', 'url' => ['/panel'], 'active' => in_array(\Yii::$app->controller->module->id, ['panel'])];
     $menuItems[] = ['label' => 'Salir ('.Yii::$app->user->identity->username.')',
         'url' => ['/site/logout'],
         'linkOptions' => [

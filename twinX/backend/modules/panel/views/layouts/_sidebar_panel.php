@@ -1,6 +1,6 @@
 <?php $this->beginContent('@backend/views/layouts/_sidebar_base.php') ?>
-    <a href="#" class="list-group-item list-group-item-action active">
-        Cras justo odio
+    <a href="/user" class="list-group-item list-group-item-action active">
+        Usuarios
     </a>
     <a href="#" class="list-group-item list-group-item-action">Dapibus ac fasdfacilisis in</a>
     <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>

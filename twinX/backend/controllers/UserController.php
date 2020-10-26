@@ -35,6 +35,7 @@ class UserController extends Controller
      */
     public function actionIndex()
     {
+        $this->layout = 'panel';
         $dataProvider = new ActiveDataProvider([
             'query' => User::find(),
         ]);
