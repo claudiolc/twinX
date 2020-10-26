@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -13,8 +14,10 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>
-        <?= Html::a('Crear usuario', ['create'], ['class' => 'btn btn-success align-items-right']) ?>
+    <p class="d-flex justify-content-end">
+
+        <?= Html::a('Crear usuario', ['create'], ['class' => 'btn btn-success']) ?>
+
     </p>
 
 
@@ -35,10 +38,19 @@ $this->params['breadcrumbs'][] = $this->title;
             'tipo_usuario',
             'telefono',
             'sexo',
+
             [
-                    'class' => \yii\grid\ActionColumn::className(),
-                    'urlCreator' => ['/panel/user' ]
+                    'class' => 'yii\grid\ActionColumn',
+                    'template' => '{view} {update} {delete}',
+                    'header' => 'Acciones'
             ]
+//            [
+//                    'class' => \yii\grid\ActionColumn::className(),
+////                    'urlCreator' => [Url::to(['panel/user/view', 'id' => 2])]
+//                    'buttons' => [
+//                        'Editar' => function(){return true;}
+//                    ]
+//            ]
 
 
         ],

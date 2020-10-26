@@ -15,7 +15,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'username')->textInput(['maxlength' => true]) ?>
 
 <!--    //= $form->field($model, 'password_reset_token')->textInput(['maxlength' => true])-->
-    <?php $model->status = 10 ?>
+    <?php $model->status = 10 ?><!-- Hacer que funcione -->
 
     <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
 
