@@ -12,8 +12,8 @@
             <aside class="shadow">
                 <?php echo \yii\bootstrap4\Nav::widget([
                     'options' => [
-                        'class' => 'list-group-item list-group-item-actions',
-                        'id' => 'panel-sidebar'
+                        'class' => 'list-group-item list-group-item-actions d-flex flex-column',
+                        'id' => 'sidebar'
                     ],
                     'items' => $items
                 ]) ?>

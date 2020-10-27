@@ -15,7 +15,6 @@ class DefaultController extends Controller
      */
     public function actionIndex()
     {
-        $this->layout = 'panel';
         return $this->render('index');
     }
 }

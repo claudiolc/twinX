@@ -13,7 +13,8 @@ return [
     'bootstrap' => ['log'],
     'modules' => [
         'panel' =>[
-            'class' => '\backend\modules\panel\Panel'
+            'class' => '\backend\modules\panel\Panel',
+            'layout' => 'panel'
         ]
     ],
 //    'homeUrl' => '',
@@ -50,6 +51,9 @@ return [
             ],
         ],
         */
+        'assetManager' => [
+            'appendTimestamp' => 'true'
+        ],
     ],
     'params' => $params,
 ];

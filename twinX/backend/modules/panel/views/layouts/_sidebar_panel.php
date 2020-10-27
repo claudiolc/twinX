@@ -4,6 +4,11 @@
         'url' => ['/panel/user'],
         'active' => in_array(\Yii::$app->controller->id, ['user'])
         ],
+        [
+            'label' => 'Tipos de expediente',
+            'url' => ['/panel/tipo_expediente'],
+            'active' => in_array(\Yii::$app->controller->id, ['tipo_expediente'])
+        ],
 
     ];
 

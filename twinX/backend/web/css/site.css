@@ -138,6 +138,36 @@ a.desc:after {
     outline: none;
 }
 
+/* SITE STYLE */
+a {
+    color: #ba68c8
+}
 
+a:hover {
+    color: #883997
+}
 
+/* SIDEBAR */
+
+#sidebar {
+    padding-left: 0;
+    padding-right: 0;
+    min-width: 200px;
+}
+
+#sidebar, .shadow {
+    border-radius: 7px;
+}
+
+#sidebar .nav-link {
+    padding-left: 40px;
+    padding-right: 40px;
+    width: 100%;
+}
+
+#sidebar .active {
+    color: black;
+    background: #ba68c8;
+
+}
 
