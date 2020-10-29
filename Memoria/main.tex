@@ -20,7 +20,9 @@ cleardoublepage=empty,abstractoff,BCOR=5mm,paper=a4,fontsize=12pt,main=spanish]{
 \usepackage[colorlinks=true]{hyperref}
 %\usepackage{tikz} % Diagramas conmutativos.
 \usepackage{minted} % Código fuente.
-\usepackage{natbib}
+%\usepackage{natbib}
+\usepackage[backend=bibtex8]{biblatex}
+\addbibresource{bibliografia.bib}
 
 %\usepackage[nonumberlist]{glossaries}
 
@@ -165,6 +167,9 @@ manychapters,pdfspacing]{classicthesis}
 
 \input{chapter3.tex}
 
+% 4. Diseño de la interfaz de usuario
+
+\input{chapter4.tex}
 
 % -------------------------------------------------------------------
 % Bibliography
@@ -172,9 +177,10 @@ manychapters,pdfspacing]{classicthesis}
 
 \newpage
 
-\bibliographystyle{alpha}
-\bibliography{bibliografia}   
+%\bibliographystyle{alpha}
+%\bibliography{bibliografia}   
 \nocite{*}
+\printbibliography
 
 % -------------------------------------------------------------------
 % Appendices
