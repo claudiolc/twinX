@@ -5,10 +5,10 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model common\models\TipoExpediente */
 
-$this->title = 'Update Tipo Expediente: ' . $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Tipo Expedientes', 'url' => ['index']];
+$this->title = 'Modificación del tipo de expediente ' . strtoupper($model->descripcion);
+$this->params['breadcrumbs'][] = ['label' => 'Tipos de expediente', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Guardar';
 ?>
 <div class="tipo-expediente-update">
 

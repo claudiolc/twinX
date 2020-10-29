@@ -155,7 +155,7 @@ a:hover {
     min-width: 200px;
 }
 
-#sidebar, .shadow {
+#sidebar, .shadow, .nav-link {
     border-radius: 7px;
 }
 
@@ -168,6 +168,14 @@ a:hover {
 #sidebar .active {
     color: black;
     background: #ba68c8;
-
 }
 
+#sidebar .dropdown-item:focus {
+    background-color: #883997;
+}
+
+/* TABLAS */
+
+th, tr {
+    text-align: center;
+}

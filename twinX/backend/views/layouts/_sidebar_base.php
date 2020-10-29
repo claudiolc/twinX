@@ -15,7 +15,12 @@
                         'class' => 'list-group-item list-group-item-actions d-flex flex-column',
                         'id' => 'sidebar'
                     ],
-                    'items' => $items
+                    'items' => $items,
+//                    'submenuTemplate' => "\n<ul class='treeview-menu'>\n{items}\n</ul>\n",
+//                    'encodeLabels' => false, //allows you to use html in labels
+//                    'activateParents' => false,
+                //list-group-item list-group-item-actions d-flex flex-column
+
                 ]) ?>
             </aside>
         </div>

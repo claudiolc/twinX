@@ -44,14 +44,6 @@ $this->params['breadcrumbs'][] = $this->title;
                     'template' => '{view} {update} {delete}',
                     'header' => 'Acciones'
             ]
-//            [
-//                    'class' => \yii\grid\ActionColumn::className(),
-////                    'urlCreator' => [Url::to(['panel/user/view', 'id' => 2])]
-//                    'buttons' => [
-//                        'Editar' => function(){return true;}
-//                    ]
-//            ]
-
 
         ],
     ]); ?>

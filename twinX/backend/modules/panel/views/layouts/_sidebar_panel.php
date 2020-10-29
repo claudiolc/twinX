@@ -5,9 +5,25 @@
         'active' => in_array(\Yii::$app->controller->id, ['user'])
         ],
         [
-            'label' => 'Tipos de expediente',
-            'url' => ['/panel/tipo_expediente'],
-            'active' => in_array(\Yii::$app->controller->id, ['tipo_expediente'])
+            'label' => 'Expedientes',
+            'items' => [
+                [
+                    'label' => 'Tipos de expediente',
+                    'url' => ['/panel/tipo-expediente'],
+                    'active' => in_array(\Yii::$app->controller->id, ['tipo-expediente'])
+                ],
+                [
+                    'label' => 'Fases de expedientes',
+                    'url' => ['/panel/fase-expediente'],
+                    'active' => in_array(\Yii::$app->controller->id, ['fase-expediente'])
+                ],
+            ],
+        ],
+
+        [
+            'label' => 'Mails predefinidos',
+            'url' => ['/panel/mail-predef'],
+            'active' => in_array(\Yii::$app->controller->id, ['mail-predef'])
         ],
 
     ];
