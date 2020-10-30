@@ -3,6 +3,9 @@
  * @var $content string
  * @var $items []
  */
+
+use kartik\nav\NavX;
+\backend\assets\PanelAsset::register($this);
 ?>
 <div class="align-items-center ml-5">
     <div class="flex-column">
@@ -10,16 +13,15 @@
 
         <div class="list-group">
             <aside class="shadow">
-                <?php echo \yii\bootstrap4\Nav::widget([
+                <?php echo NavX::widget([
                     'options' => [
                         'class' => 'list-group-item list-group-item-actions d-flex flex-column',
                         'id' => 'sidebar'
                     ],
                     'items' => $items,
-//                    'submenuTemplate' => "\n<ul class='treeview-menu'>\n{items}\n</ul>\n",
-//                    'encodeLabels' => false, //allows you to use html in labels
-//                    'activateParents' => false,
-                //list-group-item list-group-item-actions d-flex flex-column
+
+                    'encodeLabels' => false,
+
 
                 ]) ?>
             </aside>

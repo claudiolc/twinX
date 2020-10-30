@@ -6,7 +6,7 @@ use yii\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Fase Expedientes';
+$this->title = 'Fases de expedientes';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="fase-expediente-index">
@@ -14,7 +14,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p class="d-flex justify-content-end">
-        <?= Html::a('Create Fase Expediente', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Nueva fase de expediente', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
 

@@ -2,6 +2,7 @@
 
 namespace backend\modules\panel\controllers;
 
+use common\models\TipoExpediente;
 use Yii;
 use common\models\FaseExpediente;
 use yii\data\ActiveDataProvider;
@@ -65,6 +66,10 @@ class FaseExpedienteController extends Controller
     public function actionCreate()
     {
         $model = new FaseExpediente();
+        $tiposExp = new TipoExpediente();
+//        $tiposExp = new ActiveDataProvider([
+//            'query' => TipoExpediente::find()->select('descripcion')->all()
+//        ]);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -72,6 +77,7 @@ class FaseExpedienteController extends Controller
 
         return $this->render('create', [
             'model' => $model,
+            'tiposExp' => $tiposExp,
         ]);
     }
 
@@ -85,6 +91,7 @@ class FaseExpedienteController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        $tiposExp = new TipoExpediente();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -92,6 +99,7 @@ class FaseExpedienteController extends Controller
 
         return $this->render('update', [
             'model' => $model,
+            'tiposExp' => $tiposExp,
         ]);
     }
 

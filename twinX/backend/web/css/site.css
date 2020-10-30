@@ -152,10 +152,10 @@ a:hover {
 #sidebar {
     padding-left: 0;
     padding-right: 0;
-    min-width: 200px;
+    max-width: 250px;
 }
 
-#sidebar, .shadow, .nav-link {
+#sidebar, .shadow {
     border-radius: 7px;
 }
 
@@ -170,12 +170,19 @@ a:hover {
     background: #ba68c8;
 }
 
-#sidebar .dropdown-item:focus {
+#sidebar .dropdown-parent .active {
+    color: white;
     background-color: #883997;
+
 }
+
 
 /* TABLAS */
 
 th, tr {
     text-align: center;
+}
+
+table {
+    max-width: inherit;
 }

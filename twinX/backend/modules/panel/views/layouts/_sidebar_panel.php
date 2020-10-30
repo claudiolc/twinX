@@ -1,23 +1,38 @@
 <?php
-    $items = [[
-        'label' => 'Usuarios',
-        'url' => ['/panel/user'],
-        'active' => in_array(\Yii::$app->controller->id, ['user'])
+    $items = [
+        [
+            'label' => 'Usuarios',
+            'url' => ['/panel/user'],
+            'active' => in_array(\Yii::$app->controller->id, ['user']),
+            'options' => [
+                'data-pjax' => 1,
+            ]
         ],
         [
-            'label' => 'Expedientes',
-            'items' => [
-                [
-                    'label' => 'Tipos de expediente',
-                    'url' => ['/panel/tipo-expediente'],
-                    'active' => in_array(\Yii::$app->controller->id, ['tipo-expediente'])
-                ],
-                [
-                    'label' => 'Fases de expedientes',
-                    'url' => ['/panel/fase-expediente'],
-                    'active' => in_array(\Yii::$app->controller->id, ['fase-expediente'])
-                ],
+            'label' => 'Expedientes <i class="fas fa-caret-down"></i>',
+            'options' => [
+                'onClick' => 'toggleCollapse();',
+                'class' => 'dropdown-parent'
             ],
+            'active' => in_array(\Yii::$app->controller->id, ['tipo-expediente', 'fase-expediente']),
+
+        ],
+        [
+            'label' => '<p class="pl-4 m-0">Tipos de expediente</p>',
+            'url' => ['/panel/tipo-expediente'],
+            'active' => in_array(\Yii::$app->controller->id, ['tipo-expediente']),
+            'options' => [
+                'class' => 'dropdown-node collapse',
+                'data-pjax' => 0,
+            ]
+        ],
+        [
+            'label' => '<p class="pl-4 m-0">Fases de expedientes</p>',
+            'url' => ['/panel/fase-expediente'],
+            'active' => in_array(\Yii::$app->controller->id, ['fase-expediente']),
+            'options' => [
+                'class' => 'dropdown-node collapse'
+            ]
         ],
 
         [

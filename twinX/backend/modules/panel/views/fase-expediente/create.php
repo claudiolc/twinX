@@ -4,9 +4,10 @@ use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\FaseExpediente */
+/* @var $tiposExp \common\models\TipoExpediente */
 
-$this->title = 'Create Fase Expediente';
-$this->params['breadcrumbs'][] = ['label' => 'Fase Expedientes', 'url' => ['index']];
+$this->title = 'Nueva fase de expediente';
+$this->params['breadcrumbs'][] = ['label' => 'Fases de expedientes', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="fase-expediente-create">
@@ -15,6 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= $this->render('_form', [
         'model' => $model,
+        'tiposExp' => $tiposExp,
     ]) ?>
 
 </div>
