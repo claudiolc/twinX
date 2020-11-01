@@ -15,17 +15,10 @@ use yii\widgets\ActiveForm;
     <?php $form = ActiveForm::begin(); ?>
 
     <?php
-        $result = $tiposExp::find()->select(['id', 'descripcion'])->all();
-        $arr = [];
-        foreach ($result as $res) {
-            $arr[$res->id] = $res->descripcion;
-        }
-//        var_dump($arr);
-    ?>
-    <?//= $form->field($model, 'id_tipo_exp')->dropDownList([], $arr) ?>
-    <?= $form->field($model, 'id_tipo_exp')->dropDownList($arr); ?>
-    <?php //echo Html::activeDropDownList($model, 'id_tipo_exp', array_column($arr, 0), array_keys($arr) ) ?>
 
+    ?>
+
+    <?= $form->field($model, 'id_tipo_exp')->dropDownList($tiposExp); ?>
 
     <?= $form->field($model, 'descripcion')->textInput(['maxlength' => true]) ?>
 
