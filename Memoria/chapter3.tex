@@ -47,7 +47,7 @@ El proceso tiene unas fases no necesariamente secuenciales, de modo que puedan a
 \begin{itemize}
 	\item \textbf{Empatizar}, tratar de adoptar un conocimiento lo más empático posible del problema que se pretende resolver. Este es un elemento esencial, pues posibilita a los desarrolladores a descartar sus propias primeras conclusiones --erróneas a menudo-- y a entrar en materia con la realidad del cliente y sus necesidades.
 	
-	\item \textbf{Definir} las necesidades de los usuarios y sus problemas. Es la fase donde se reúnen y ordenan los elementos obtenidos como resultado de la fase anterior. A partir de entonces, se sintetizan para definir los problemas esenciales que se identifican, los cuales dan pie a la creación de \textit{personas}; esto es, la construcción de perfiles humanos en los cuales centrar el desarrollo.
+	\item \textbf{Definir} las necesidades de los usuarios y sus problemas. Es la fase donde se reúnen y ordenan los elementos obtenidos como resultado de la fase anterior. A partir de entonces, se sintetizan para definir los problemas base que se identifican, los cuales dan pie a la creación de \textit{personas}; esto es, la construcción de perfiles humanos en los cuales centrar el desarrollo.
 	
 	\item \textbf{Idear} y hacer frente a lo que se da por hecho, creando formas alternativas de ver y tratar el problema con soluciones innovadoras, a partir de lo estudiado en las dos fases anteriores.
 	
@@ -171,7 +171,7 @@ Más concretamente, contemplamos la implementación de:
 	\item Búsqueda en los distintos listados (convenios, estudiantes, expedientes...) con filtros para facilitar la recuperación de la información.
 \end{itemize}
 
-\section{Presupuesto}
+
 
 \section{Planificación}
 \subsection{La metodología Scrum}
@@ -209,7 +209,7 @@ A continuación, vamos a exponer la planificación que se ha pensado para llevar
 \subsubsection*{\textbf{Sprint 1: comienzo del desarrollo}}
 
 \begin{itemize}
-	\item \textbf{Integrar el \gls{paneltwinX}:} desde donde se añadirán nuevos registros a la plataforma, del lado del \gls{superusuario}. Es la parte más importante si tenemos en cuenta que es la que nos posibilita hacer pruebas de la manera más sencilla, ya que no se espera que twinX tenga en su primera versión ninguna herramienta de migración masiva de datos. 
+	\item \textbf{Integrar el \gls{paneltwinX}:} desde donde se añadirán nuevos registros a la plataforma, del lado del \gls{administradortwinX}. Es la parte más importante si tenemos en cuenta que es la que nos posibilita hacer pruebas de la manera más sencilla, ya que no se espera que twinX tenga en su primera versión ninguna herramienta de migración masiva de datos. 
 	%PARA LA SECCIÓN 4
 %	\begin{itemize}
 %		\item \textbf{Integrar la vista de usuarios}	
@@ -266,3 +266,103 @@ En adición a la planificación aquí expuesta, cabe señalar la utilización de
 	\label{fig:kanban}
 \end{figure}
 
+\subsection{Planificación temporal}
+
+Desde febrero de 2020 que dio comienzo la primera reunión para comenzar a planificar el proyecto hasta noviembre del mismo año, la planificación del trabajo se ha dispuesto como se muestra en el diagrama de Gantt de la figura \ref{fig:gantt}.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{img/gantt.png}
+	\caption[Diagrama de Gantt]{Diagrama de Gantt con la planificación del proyecto real}
+	\label{fig:gantt}
+\end{figure}
+
+Más en detalle, el tiempo dedicado a cada tarea en horas, de forma aproximada, lo podemos exponer en la tabla \ref{tab:horas}
+
+\begin{table}[h]
+	\begin{center}
+		\begin{tabular}{ | c | c | } 
+			\hline
+			\textbf{Análisis} & $\approx$ 13 h 30 min \\
+			\hline
+			Reuniones & 3 h 33 min \\ 
+			\hline
+			Estudio de TWINS & 10 h \\
+			\hline
+			\textbf{Aprendizaje}  & 60 h \\ 
+			\hline
+			PHP & 40 h \\ 
+			\hline
+			Tutorial de Yii2 Framework & 20 h \\
+			\hline
+			\textbf{Implementación} & 100 h \\
+			\hline
+			Sprint 0 \footnotemark & 10 h \\
+			\hline
+			Sprint 1 & 60 h \\
+			\hline
+			Sprint 2 & 30 h \\
+			\hline
+			\textbf{Pruebas} & 5 h\\
+			\hline
+			\textbf{Memoria} & 120 h \\
+			\hline
+			\textbf{Total del proyecto} & 298 h \\
+			\hline
+		\end{tabular}
+		\caption{Estadísticas de TWINS}
+		\label{tab:horas}
+	\end{center}
+\end{table}~
+\footnotetext{Hemos excluído la completitud del tutorial del Sprint 0 porque lo hemos englobado dentro de la sección de aprendizaje.}
+
+\section{Presupuesto}
+
+A partir de la información anterior en cuanto al tiempo invertido en el proyecto y en vista de los elementos necesarios para llevarlo a cabo, proponemos el presupuesto de la tabla \ref{tab:presupuesto} para hacer frente a sus costes.
+
+\begin{table}[h]
+	\begin{center}
+		\begin{tabular}{ | c | c | } 
+			\hline
+			\rowcolor{gray!30}
+			\textbf{Recursos hardware} & 121.4 € \\
+			\hline
+			\rowcolor{gray!15}
+			\textbf{Concepto} & \textbf{Coste} \\ 
+			\hline
+			Xiaomi Mi Air Notebook 13" & 611 € \\
+			\hline
+			[Amortización a 5 años]  & 121.4 € \\ 
+			\hline
+			\rowcolor{gray!30}
+			\textbf{Recursos software} & 214 € \\
+			\hline
+			\rowcolor{gray!15}
+			\textbf{Concepto} & \textbf{Coste} \\ 
+			\hline
+			Windows\textregistered 10 Home & 145 €\\
+			\hline
+			Suscripción a Microsoft Office\textregistered 365 (1 año) & 69 €\\
+			\hline
+			Servidor AWS (tarifa estándar gratuita)& 0 €\\
+			\hline
+			\rowcolor{gray!30}
+			\textbf{Recursos humanos} & 2 384 € \\
+			\hline
+			\rowcolor{gray!15}
+			\textbf{Concepto} & \textbf{Coste} \\ 
+			\hline
+			298 horas de trabajo (8€ / hora) & 2 384 €\\
+			\hline
+			\rowcolor{gray!15}
+			\textbf{Coste total del proyecto} & 2 719.4 €\\
+			\hline
+		\end{tabular}
+		\caption{Presupuesto estimado}
+		\label{tab:presupuesto}
+	\end{center}
+\end{table}
+
+El precio por hora obtenido por el desarrollador se ajusta al estándar cobrado por un ingeniero junior que acaba de incorporarse al mundo laboral.
+
+Sobre los demás elementos, diremos que la amortización solo ha sido necesaria aplicarla en caso del computador, que tras la finalización del proyecto seguirá siendo útil. Para la licencia de la suite de Office\textregistered \ hemos podido especificar la compra de un año completo como periodo mínimo de uso, siendo imposible el uso de la versión de estudiante, que excluye la herramienta de Access\textregistered, imprescindible para poder llevar a cabo todo nuestro estudio. Respecto del resto de software utilizado, no se incluye por ser de licencia libre, como Yii2 Framework.

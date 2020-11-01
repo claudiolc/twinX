@@ -1,0 +1,488 @@
+// ENTIDADES BÁSICAS
+
+Table centro as CEN {
+  id int [pk, increment]
+  nombre varchar
+}
+
+Table mail as MAIL {
+  id int [pk, increment]
+  asunto varchar
+  cuerpo text
+}
+ 
+Table titulacion as TIT {
+  id int [pk]
+  nombre varchar
+  id_centro int
+}
+
+Ref: TIT.id_centro > CEN.id
+
+Table asignatura as ASIG {
+  id int [pk]
+  id_tit int
+  nombre varchar
+  ects int
+}
+
+Ref: ASIG.id_tit > TIT.id
+
+Table asignatura_ext as EXT_ASIG {
+  id int [pk]
+  id_conv int // Creo que es recomendable para que no se mezclen luego asignaturas con nombre parecido entre distintos convenios
+  id_asig varchar // Identificador en destino que facilite la identificación de la asignatura
+  nombre varchar
+  ects int
+  curso curso
+}
+
+Ref: EXT_ASIG.id_conv > CON.id
+
+Table pais as P {
+  iso varchar [pk]
+  nombre varchar
+}
+
+Table universidad as UNI {
+  cod_uni varchar
+  cod_pais varchar
+  nombre varchar
+  direccion varchar
+  web varchar
+  email varchar
+  
+  Indexes {
+    (cod_pais, cod_uni) [pk]
+  }
+}
+
+Ref: UNI.cod_pais > P.iso
+
+Table area as AR {
+  cod_isced int [pk] // Al cambiar el nombre, cambiar también la relación de FK en convenios 
+  nombre_isced varchar
+  nombre_area varchar
+  
+}
+
+// USUARIOS Y TIPOS
+
+Table usuarios as U {
+  id int [pk, increment] // auto-increment
+  username varchar
+  nombre varchar
+  tipo tipo_usuario
+  password varchar
+  email varchar
+  telefono int
+  sexo sexo
+}
+ 
+Table estudiante as EST{
+  id_usuario int
+  dni varchar [unique]
+  id_convenio int
+  id_titulacion int
+  telefono2 int
+  email_go_ugr varchar
+  f_nacimiento datetime
+  tipo_estudiante tipo_estudiante
+  cesion_datos boolean
+  nota_expediente double
+  beca tipo_beca // Posiblemente sea un booleano BECA MEC sí/no
+}
+
+Ref: EST.id_titulacion > TIT.id
+Ref: EST.id_usuario - U.id
+Ref: EST.id_convenio > CON.id
+
+Table partner as PART {
+  id int [pk, increment]
+  titulo varchar
+  email varchar
+}
+
+// CONVENIOS Y ACUERDOS
+
+Table competencia_ling as CL {
+  id int [pk, increment]
+  lengua varchar
+  nivel nivel_idioma
+}
+
+Table rel_cl_est {
+  id int [pk, increment]
+  id_cl int [ref: > CL.id]
+  id_est int [ref: > EST.id_usuario]
+}
+
+Table req_ling_conv {
+  id int [pk, increment] // Teóricamente necesario
+  id_comp int [ref: > CL.id]
+  id_conv int [ref: > CON.id]
+}
+
+Table convenio as CON {
+  id int [pk, increment]
+  cod_area varchar
+  cod_uni varchar
+  cod_pais varchar
+  id_admon_out int
+  
+  curso_creacion curso
+  creado_por int
+  
+  num_becas_in int
+  num_becas_out int
+  
+  meses_in int
+  meses_out int
+  
+  anotaciones text
+  
+  anno_inicio int
+  anno_fin int
+  
+  req_titulacion varchar
+  req_curso varchar
+  
+  nominacion_online boolean
+  link_nom_online varchar
+  info_nom_online text
+  
+  link_documentacion varchar
+  
+  movilidad_pdi boolean
+  movilidad_pas boolean
+  
+  tipo_movilidad tipo_movilidad
+  
+  user_online varchar
+  password_online varchar
+  notas_online varchar
+  fecha_online datetime
+  
+  info_tor text
+  
+  observ_discapacidad text
+  observ_req_ling text // Sustitucin del campo en requisito_ling para reutilizar entradas de la tabla y hacer una n:n
+  
+  begin_nom_1s datetime
+  end_nom_1s datetime
+  begin_nom_2s datetime
+  end_nom_2s datetime
+  begin_app_1s datetime
+  end_app_1s datetime
+  begin_app_2s datetime
+  end_app_2s datetime
+  begin_mov_1s datetime
+  end_mov_1s datetime
+  begin_mov_2s datetime
+  end_mov_2s datetime
+  
+  memo_grading text
+  memo_visado text
+  memo_seguro text
+  memo_alojamiento text
+
+}
+
+Ref: P.iso < CON.cod_pais
+Ref: CON.creado_por > U.id
+Ref: CON.cod_area > AR.cod_isced
+Ref: CON.(cod_pais, cod_uni) > UNI.(cod_pais, cod_uni)
+Ref: CON.id_admon_out > AD_OUT.id
+Ref: CON.(cod_pais, cod_uni) > AD_OUT.(cod_pais, cod_uni)
+
+// Encontrar la forma de crear un usuario por admon, de modo que se tenga a la mano en el convenio para proporcionarlo a los contactos correspondientes y así podrían nominar
+
+Table admon_out as AD_OUT {
+  id int [pk, increment]
+  cod_pais varchar
+  cod_uni varchar
+  
+  nombre_coord varchar
+  cargo_coord varchar
+  email_coord varchar
+  tlf_coord varchar
+  address_coord varchar //Por defecto igual que la de la universidad
+  web_inf_acad varchar
+  
+  nombre_admon_in varchar
+  cargo_admon_in varchar
+  mail_admon_in varchar
+  nombre_resp_acad_in varchar
+  cargo_resp_acad_in varchar
+  
+  nombre_admon_out varchar
+  cargo_admon_out varchar
+  mail_admon_out varchar
+  nombre_resp_acad_out varchar
+  cargo_resp_acad_out varchar
+  mail_resp_acad_out varchar
+}
+
+Table acuerdo_estudios as AE {
+  id int [pk, increment]
+  id_estudiante int
+  timestamp_creacion datetime
+  periodo cuatrimestre
+  fase int
+  curso curso
+  id_tutor int [note: 'ref a usuario pero tiene que ser un tutor, futura restricción']
+  necesidades text
+  renuncia int
+  begin_movilidad datetime
+  end_movilidad datetime
+  timestamp_nominacion datetime
+  timestamp_tutor datetime
+  timestamp_registro datetime
+  link_documentacion varchar [note: 'otra alternativa: tabla contenedora de link_documentacion para AE (necesaria otra para convenios también, apliando el mismo método)']
+  n_solicitud_RRII int
+  convocatoria convocatoria
+  
+  // Campos para validar el acuerdo (deliberacion con tutores hasta su final acuerdo)
+  // ¿Podría la validación hacerse con el historial?
+  // O más facil: hacer el historial guardando asignaturasen la tabla asignatura-ae sin necesidad de tener otra tabla para historial del acuerdo
+  // Tiene más sentido almacenar solo los cambios inmediatamente anteriores
+  
+  // El estado "VIGENTE" podría venir cuando existiera un expediente para el usuario y el acuerdo que sea NOMINADO, etc.
+  estado_validacion estado_ae [note: 'idea: podría tener una serie de códigos que pudieran definir el estado o, de ser otro número de los predefinidos, sería el id de renuncia, dándose el acuerdo como inválido (por renuncia)']
+}
+
+Ref: AE.id_tutor < U.id
+Ref: AE.renuncia - REN.id
+Ref: AE.id_estudiante > EST.id_usuario
+
+Table ae_asigloc_asigext {
+  id_ae int
+  asig_loc int [ref: > ASIG.id]
+  asig_ext int [ref: > EXT_ASIG.id]
+  
+  Indexes {
+    (id_ae, asig_loc, asig_ext) [pk] //No se pueden repetir
+  }
+}
+
+Table renuncia as REN{
+  id int [pk, increment]
+  id_ae int [ref: - AE.id, note: 'construir un disparador para invalidar el acuerdo en su tabla']
+  descripcion text
+  timestamp datetime
+}
+
+// EXPEDIENTES, TIPOS DE EXPDIENTE Y FASES
+
+Table expediente as EXP{
+  id int [pk, increment]
+  id_ae int
+  id_tipo_exp int
+}
+
+Ref: EXP.id_ae > AE.id
+Ref: EXP.id_tipo_exp > TIPO_EXP.id
+
+// Podría estudiarse la creación de otra tabla para poner descripciones cortas a los expedientes si no se tiene suficiente con construirla a partir de las primeras letras de la descripción de los mismos
+
+Table tipo_expediente as TIPO_EXP {
+  id int [pk, increment]
+  descripcion varchar
+  tipo_estudiante tipo_estudiante
+}
+
+Table fase_expediente as FAS_EXP {
+  id int [pk, increment]
+  id_tipo_exp int
+  descripcion varchar
+}
+
+Ref: FAS_EXP.id_tipo_exp < TIPO_EXP.id
+
+Table envio_mail_fase { //En qué fase hay que enviar mail y a quién
+  id int [pk, increment]
+  id_mail int [ref: > MAIL.id]
+  id_fase int [ref: > FAS_EXP.id]
+  cargo cargo
+}
+
+Table hist_envio_mail_fase {
+  id int [pk, increment]
+  id_mail int [ref: > MAIL.id]
+  id_fase int [ref: > FAS_EXP.id]
+  id_exp int [ref: > EXP.id]
+  email varchar
+}
+
+Table hist_envio_mail_fase_mod { // Mail modificado
+  id int [pk, increment]
+  asunto varchar
+  cuerpo text
+  id_fase int [ref: > FAS_EXP.id]
+  id_exp int [ref: > EXP.id]
+  email varchar
+}
+
+Table rel_exp_fase as REL_EF {
+  id int [pk]
+  id_exp int
+  id_fase int
+  id_gestor int
+  procesado boolean
+  timestamp datetime
+  // Es esto el memo? En ese caso podría ser un 'text'
+  info varchar [note: 'podría estar en otra tabla']
+}
+
+Ref: REL_EF.id_exp - EXP.id
+Ref: REL_EF.id_fase - FAS_EXP.id
+Ref: REL_EF.id_gestor - U.id
+// Restricción avanzada: coinciden los tipos, usuario.tipo == GESTOR
+
+//Evita tener que tener un atributo extra. Muy costoso en cuanto a JOINs aunque creemos una vista?
+Table fase_exp_final {
+  id int [pk, increment]
+  id_fase int [ref: < FAS_EXP.id]
+}
+
+Table rel_exp_fav_gestor { 
+  id int [pk, increment]
+  id_exp int [ref: > EXP.id]
+  id_gestor int [ref: > U.id]
+  //Restricción avanzada: tipo_usuario == GESTOR
+}
+
+// CALENDARIO
+
+Table evento as EV {
+  id int [pk, increment]
+  id_creador int
+  titulo varchar
+  descripcion text
+  estado estado_evento_tarea
+  prioridad prioridad
+}
+
+Ref: EV.id_creador - U.id //tipo == GESTOR
+
+Table tarea as TASK {
+  id int [pk, increment]
+  descripcion text
+  estado estado_evento_tarea
+}
+
+Table deadline_aviso as DLA { 
+  id int [pk, increment]
+  fecha datetime
+  id_responsable int
+  id_evento int 
+  id_tarea int
+}
+
+Ref: DLA.id_responsable > U.id // tipo == GESTOR
+Ref: DLA.id_evento > EV.id
+Ref: DLA.id_tarea > TASK.id
+
+
+// MENSAJES
+
+// Podrían ponerse algunas restricciones como quién puede mandar mensajes a quién
+
+Table mensaje as MSG{
+  id int [pk, increment]
+  timestamp datetime
+  id_emisor int
+  id_receptor int
+  leido boolean
+  etiqueta etiqueta_msg
+  deadline datetime
+}
+
+Ref: MSG.id_emisor > U.id
+Ref: MSG.id_receptor > U.id
+
+Enum cargo {
+  COORDINADOR
+  ADMON_IN
+  ADMON_OUT
+  RESP_ADMON_OUT
+}
+
+Enum nivel_idioma {
+  B1
+  B2
+  C1
+  C2
+}
+
+
+Enum etiqueta_msg {
+  ELIMINADO
+  AVISO
+  MENSAJE
+  RECORDATORIO
+}
+
+Enum estado_evento_tarea {
+  PENDIENTE
+  EN_PROCESO
+  TERMINADO
+}
+
+Enum prioridad {
+  ALTA
+  MEDIA
+  BAJA
+}
+
+Enum estado_ae {
+  REVISION
+  DENEGADO
+  ACEPTADO
+  VIGENTE // Idea: cuando se haya hecho la nominación
+}
+
+Enum convocatoria {
+  PRIMERA
+  SEGUNDA
+  EXTRAORDINARIA
+}
+
+Enum tipo_movilidad {
+  ERASMUS
+  ARQUS
+  ERASMUS_DI
+  ERASMUS_PARTNER
+  INTERCAMBIO
+  LIBRE_MOVILIDAD
+}
+
+Enum tipo_usuario {
+  SUPERUSUARIO
+  GESTOR
+  ESTUDIANTE
+  TUTOR
+}
+
+Enum curso {
+  1920
+  2021
+}
+
+Enum sexo {
+  F
+  M
+  O
+}
+
+Enum tipo_estudiante {
+  INCOMING
+  OUTCOMING
+}
+
+Enum cuatrimestre {
+  PRIMERO
+  SEGUNDO
+  C_COMPLETO
+}
+

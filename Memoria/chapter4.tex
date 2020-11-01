@@ -4,9 +4,57 @@ Una vez hemos definido cuáles son nuestros objetivos, analizado el estado del a
 
 \section{Matriz de tareas de usuario}
 
-Un buen comienzo sería el de definir los roles de usuario en nuestra nueva aplicación. Hemos hablado ya en el capítulo anterior sobre la figura del \gls{gestortwinX} y la del \gls{superusuario}. Incluyamos entonces también las de \gls{Tutor}, estudiante y, de forma excepcional, la de coordinador(a) externo/a. Sobre esta última, recordemos que no tenía ningún tipo de interacción en TWINS y que hasta entonces, los usuarios de la plataforma habían establecido intercambios de información por correo electrónico con los coordinadores de otras facultades, que es el método estándar de realizar las \glspl{Nominacion}. Sin embargo, aunque no para sus primeras versiones, se espera que twinX brinde la capacidad de hacer estas nominaciones a través de una interfaz gráfica, de una forma mucho más sencilla y segura que con el envío de un texto libre, donde puede haber errores y/o malas prácticas, dado el amplio uso que se puede hacer de la herramienta.
+Un buen comienzo sería el de definir los roles de usuario en nuestra nueva aplicación. Hemos hablado ya en el capítulo anterior sobre la figura del \gls{gestortwinX} y la del \gls{administradortwinX}. Incluyamos entonces también las de \gls{Tutor}, estudiante y, de forma excepcional, la de coordinador(a) externo/a. Sobre esta última, recordemos que no tenía ningún tipo de interacción en TWINS y que hasta entonces, los usuarios de la plataforma habían establecido intercambios de información por correo electrónico con los coordinadores de otras facultades, que es el método estándar de realizar las \glspl{Nominacion}. Sin embargo, aunque no para sus primeras versiones, se espera que twinX brinde la capacidad de hacer estas nominaciones a través de una interfaz gráfica, de una forma mucho más sencilla y segura que con el envío de un texto libre, donde puede haber errores y/o malas prácticas, dado el amplio uso que se puede hacer de la herramienta.
 
-Es precisamente por la necesidad de dejar claras las acciones a llevar a cabo por cada usuario del sistema por la que elaborar una \textbf{matriz de tareas de usuario}. Esta herramienta nos permite establecer cuál es la frecuencia de uso de una característica de nuestra aplicación por un grupo de usuarios en concreto y cuál es la prioridad que debemos darle a la implementación de la misma. De esta forma, nos será más fácil diferenciar aquellas acciones que tan solo se lleven a cabo unas pocas veces al mes (o cada varios meses) y cuales, por el contrario, son ejecutadas casi a diario, de modo que se priorice su integración y su optimización. Sobre estas últimas, cabe decir que el potenciarlas no solo se procurará hacer en términos de procesamiento interno del código, sino también en cuanto a su facilidad de utilización por parte del usuario. Es decir, tendremos que crear más accesos directos o simplificar lo máximo posible el curso de tareas a llevar a cabo para realizar estas acciones y obtener los resultados deseados. En adición a todo esto, podremos observar cuáles son los usuarios que menos usarán la plataforma, de modo que se reste prioridad a la implementación de sus interacciones, en beneficio de las que llevan a cabo los usuarios que, por el contrario, monopolizan el uso de la aplicación.
+Es precisamente por la necesidad de dejar claras las acciones a llevar a cabo por cada usuario del sistema por la que elaborar una \textbf{matriz de tareas de usuario}. Esta herramienta nos permite establecer cuál es la frecuencia de uso de una característica de nuestra aplicación por un grupo de usuarios en concreto y cuál es la prioridad que debemos darle a la implementación de la misma. De esta forma, nos será más fácil diferenciar aquellas acciones que tan solo se lleven a cabo unas pocas veces al mes (o cada varios meses) y cuales, por el contrario, son ejecutadas casi a diario, de modo que se priorice su integración y su optimización. Sobre estas últimas, cabe decir que el potenciarlas no solo se procurará hacer en términos de procesamiento interno del código, sino también en cuanto a su facilidad de utilización por parte del usuario. Es decir, tendremos que crear más accesos directos o simplificar lo máximo posible el curso de tareas a llevar a cabo para realizar estas acciones y obtener los resultados deseados. En adición a todo esto, podremos observar cuáles son los usuarios que menos usarán la plataforma, de modo que se reste prioridad a la implementación de sus interacciones, en beneficio de las que llevan a cabo los usuarios que, por el contrario, monopolizan el uso de la aplicación. \cite{matrizTareas}
+
+Para simplificar la matriz (tabla \ref{tab:matrizTareas}) y hacerla visualmente más sencilla de entender, vamos a asignar una serie de letras que correspondan a un nivel de utilización en concreto. Elegiremos la «A» para una frecuencia de uso alta, «M» para un uso medio y «B» para una baja frecuencia. A estas indicaciones añadiremos unas puntuaciones que nos permitirán determinar con mayor facilidad cuáles son las tareas de mayor importancia y cuáles son menos urgentes de implementar, al igual que los usuarios que desempeñarán un papel más o menos crítico en la aplicación. Respectivamente serán 3, 2 y 1 punto, de modo que las prioridades más altas recibirán una mayor puntuación y viceversa.
+
+\begin{table}[h]
+	\begin{center}
+		\begin{adjustbox}{width=1\textwidth}
+		\begin{tabular}{ | >{\centering\arraybackslash}p{0.375\linewidth} | c | c | c | c | c | c | } 
+			\hline
+			\textbf{Usuarios / Tareas} & \textbf{Administrador} & \textbf{Gestor} & \textbf{Tutor} & \textbf{Estudiante} & \textbf{Coordinador externo} & \textbf{Puntuación} \\
+			\hline
+			Acceder a twinX & M & A & B & B & B & \cellcolor{red!25}8 \\
+			\hline
+			Ver expedientes de un usuario & A & A & & & & \cellcolor{red!25}6 \\
+			\hline
+			Cambiar de fase un expediente & A & A & & & & \cellcolor{red!25}6 \\ 
+			\hline
+			Consultar la información de un convenio & A & A & & & & \cellcolor{red!25}6 \\ 
+			\hline
+			Modificar los datos de un estudiante & M & M & & B & & \cellcolor{red!25}5 \\
+			\hline
+			Introducir un nuevo convenio & B & M & & & & 3 \\
+			\hline
+			Realizar el acuerdo de estudios & & & & B & & 1 \\
+			\hline
+			Revisar propuesta de acuerdo de estudios & & B & M & & & 3 \\
+			\hline
+			Consultar los expediente pendientes de procesamiento & M & A & & & & 5 \\
+			
+			\hline
+			Expresar consentimiento de cesión de datos & & & & B & & 1 \\
+			\hline
+			Añadir un nuevo tipo de expediente y/o fase de expediente & B & & &  & & 1 \\
+			\hline
+			Marcar un expediente como favorito & B & M & & & & 3 \\
+			\hline	
+			\textbf{Puntuación del grupo de usuarios} & \cellcolor{red!25}18 & \cellcolor{red!25}22 & 3 & 4 & 1 &  \\
+			\hline
+	\end{tabular}
+
+	\end{adjustbox}
+		\caption{Matriz de tareas de usuario}
+		\label{tab:matrizTareas}
+	\end{center}
+\end{table}
+
+Tras la atenta observación de la matriz, podemos afirmar que las acciones que mayor uso van a tener por los usuarios de twinX serían las ya existentes en TWINS, como es lógico, y que por supuesto, los grupos de usuarios con mayor necesidad de uso de la aplicación son los gestores y administradores. Sobre éstos últimos, cabe señalar que son una especie de gestores con más permisos de lo normal, de modo que pueden modificar la información que clasifica la situación de los estudiantes como son, por ejemplo, las fases de los expedientes. Solo los administradores podrían hacerlo, ya que los gestores no tienen por qué tener acceso a dichas modificaciones; simplemente necesitan trabajar con las ya registradas y, en caso de necesitar más entradas o la modificación de otras existentes, tendrían que solicitarlo a los administradores.
+
+Con esta matriz, además, justificamos que el contenido de la primera versión de twinX (descrito en la sección ~\ref{propuesta}), es suficiente para cubrir la mayoría de las necesidades esenciales del trabajo de un secretario de la ORI-FyL, lo que es uno de los objetivos principales de este proyecto, aunque sea tan solo un comienzo a lo que finalmente llegaría a ser twinX.
 
 \section{Sitemap}
 \section{Labelling (iconografía)}
