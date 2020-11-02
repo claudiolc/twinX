@@ -8,7 +8,7 @@ use yii\helpers\Html;
 $this->title = 'Modificación del email predefinido #' . $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Mails predefinidos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Guardar';
 ?>
 <div class="mail-predef-update">
 

@@ -10,7 +10,7 @@ use yii\helpers\Html;
 $this->title = 'Editar fase #'. $model->id . 'del tipo de expediente #' . $model->id_tipo_exp;
 $this->params['breadcrumbs'][] = ['label' => 'Fases de expedientes', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Guardar';
 ?>
 <div class="fase-expediente-update">
 

@@ -22,7 +22,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
-    <?php Pjax::begin(); ?>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
@@ -46,12 +45,17 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             [
                 'class' => 'yii\grid\ActionColumn',
-                'template' => '{view} {update} {delete}',
+                'template' => '{detalleMails} {view} {update} {delete}',
+                'buttons' => [
+                        'detalleMails' => function($url, $model, $key){
+                            return "<a href='/panel/envio-mail-fase/filtered-extended-index?id=". $key . "' class='btn btn-outline-warning'><i class='fas fa-envelope'></i></a>";
+
+                        }
+                ],
                 'header' => 'Acciones'
             ],
         ],
     ]); ?>
-    <?php Pjax::end(); ?>
 
 
 

@@ -2,6 +2,8 @@
 
 namespace backend\modules\panel\controllers;
 
+use common\models\FaseExpediente;
+use common\models\MailPredef;
 use Yii;
 use common\models\EnvioMailFase;
 use yii\data\ActiveDataProvider;
@@ -44,6 +46,28 @@ class EnvioMailFaseController extends Controller
         ]);
     }
 
+    public function actionFilteredIndex($id)
+    {
+        $dataProvider = new ActiveDataProvider([
+            'query' => EnvioMailFase::find()->andWhere('id_fase = ' . $id),
+        ]);
+
+        return $this->render('@backend/modules/panel/views/envio-mail-fase/_index', [
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+
+    public function actionFilteredExtendedIndex($id)
+    {
+        $dataProvider = new ActiveDataProvider([
+            'query' => EnvioMailFase::find()->andWhere('id_fase = ' . $id),
+        ]);
+
+        return $this->render('@backend/modules/panel/views/envio-mail-fase/index', [
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+
     /**
      * Displays a single EnvioMailFase model.
      * @param integer $id
@@ -75,6 +99,22 @@ class EnvioMailFaseController extends Controller
         ]);
     }
 
+    public function actionCreateByFaseId($id)
+    {
+        $model = new EnvioMailFase();
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->actionFilteredIndex($id);
+        }
+
+        $model->id_fase = $id;
+        return $this->render('@backend/modules/panel/views/envio-mail-fase/create', [
+            'model' => $model,
+            'mails' => $this->getAllMails(),
+            'fases' => $this->getAllFases(),
+        ]);
+    }
+
     /**
      * Updates an existing EnvioMailFase model.
      * If update is successful, the browser will be redirected to the 'view' page.
@@ -92,6 +132,8 @@ class EnvioMailFaseController extends Controller
 
         return $this->render('update', [
             'model' => $model,
+            'fases' =>$this->getAllFases(),
+            'mails' => $this->getAllMails(),
         ]);
     }
 
@@ -109,6 +151,13 @@ class EnvioMailFaseController extends Controller
         return $this->redirect(['index']);
     }
 
+    public function actionDeleteByFaseId($id, $idFase)
+    {
+        $this->findModel($id)->delete();
+
+        return $this->actionFilteredIndex($idFase);
+    }
+
     /**
      * Finds the EnvioMailFase model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
@@ -124,4 +173,33 @@ class EnvioMailFaseController extends Controller
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
+
+    protected function getAllMails()
+    {
+        $model = new MailPredef();
+        $mails = [];
+
+        $result = $model->find()->select(['id', 'titulo'])->all();
+
+        foreach ($result as $res) {
+            $mails[$res->id] = $res->titulo;
+        }
+
+        return $mails;
+    }
+
+    protected function getAllFases()
+    {
+        $model = new FaseExpediente();
+        $fases = [];
+
+        $result = $model->find()->select(['id', 'descripcion'])->all();
+
+        foreach ($result as $res) {
+            $fases[$res->id] = $res->descripcion;
+        }
+
+        return $fases;
+    }
+
 }

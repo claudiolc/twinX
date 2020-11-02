@@ -41,6 +41,18 @@
             'active' => in_array(\Yii::$app->controller->id, ['mail-predef'])
         ],
 
+        [
+            'label' => 'Universidades',
+            'url' => ['/panel/universidad'],
+            'active' => in_array(\Yii::$app->controller->id, ['universidad'])
+        ],
+
+        [
+            'label' => 'Países',
+            'url' => ['/panel/pais'],
+            'active' => in_array(\Yii::$app->controller->id, ['pais'])
+        ],
+
     ];
 
     echo $this->render('@backend/views/layouts/_sidebar_base.php', ['items' => $items]);

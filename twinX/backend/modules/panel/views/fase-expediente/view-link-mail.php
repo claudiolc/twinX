@@ -20,4 +20,4 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <?php include('_view.php') ?>
 
-<?php echo $envioMailFase->actionFilteredIndex($model->id) ?>
+<?php echo $envioMailFase->actionCreateByFaseId($model->id) ?>

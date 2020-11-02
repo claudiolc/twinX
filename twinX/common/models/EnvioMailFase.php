@@ -46,9 +46,9 @@ class EnvioMailFase extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'id_mail' => 'Id Mail',
-            'id_fase' => 'Id Fase',
-            'cargo' => 'Cargo',
+            'id_mail' => 'Mail predefinido',
+            'id_fase' => 'Fase de expediente',
+            'cargo' => 'Receptor(a)',
         ];
     }
 

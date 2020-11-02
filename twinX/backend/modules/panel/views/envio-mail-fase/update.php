@@ -4,11 +4,14 @@ use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\EnvioMailFase */
+/* @var $mails \common\models\MailPredef
+ * @var $fases \common\models\FaseExpediente
+ */
 
-$this->title = 'Update Envio Mail Fase: ' . $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Envio Mail Fases', 'url' => ['index']];
+$this->title = 'Editar envío de mail automático #' . $model->id;
+$this->params['breadcrumbs'][] = ['label' => 'Envío de mails automatizado', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Guardar';
 ?>
 <div class="envio-mail-fase-update">
 
@@ -16,6 +19,8 @@ $this->params['breadcrumbs'][] = 'Update';
 
     <?= $this->render('_form', [
         'model' => $model,
+        'mails' => $mails,
+        'fases' => $fases
     ]) ?>
 
 </div>

@@ -47,7 +47,7 @@ class FaseExpedienteSearch extends FaseExpediente
         $query = FaseExpediente::find();
 
         ///
-        $query->joinWith(TipoExpediente::className());
+        $query->joinWith('tipoExp');
 
         // add conditions that should always apply here
 
@@ -75,13 +75,13 @@ class FaseExpedienteSearch extends FaseExpediente
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'id' => $this->id,
+            'fase_expediente.id' => $this->id,
             'id_tipo_exp' => $this->id_tipo_exp,
         ]);
 
-        $query->andFilterWhere(['like', 'descripcion', $this->descripcion]);
+        $query->andFilterWhere(['like', 'fase_expediente.descripcion', $this->descripcion]);
         ///
-        $query->andFilterWhere(['like', 'tipoExp.descripcion', $this->tipoExp]);
+        $query->andFilterWhere(['like', 'tipo_expediente.descripcion', $this->tipoExp]);
 
         return $dataProvider;
     }

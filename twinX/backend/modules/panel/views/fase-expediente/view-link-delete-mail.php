@@ -8,6 +8,7 @@ use yii\widgets\Pjax;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\FaseExpediente */
+/* @var $id int */
 
 $envioMailFase = new \backend\modules\panel\controllers\EnvioMailFaseController('envio-mail-fase', Yii::$app->getModule('envio-mail-fase'));
 //$dataProvider =
@@ -20,4 +21,4 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <?php include('_view.php') ?>
 
-<?php echo $envioMailFase->actionFilteredIndex($model->id) ?>
+<?php echo $envioMailFase->actionDeleteByFaseId($id ,$model->id) ?>

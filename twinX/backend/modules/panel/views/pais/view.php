@@ -4,20 +4,20 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model common\models\EnvioMailFase */
+/* @var $model common\models\Pais */
 
-$this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Envio Mail Fases', 'url' => ['index']];
+$this->title = $model->iso;
+$this->params['breadcrumbs'][] = ['label' => 'Pais', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
-<div class="envio-mail-fase-view">
+<div class="pais-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->id], [
+        <?= Html::a('Update', ['update', 'id' => $model->iso], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Delete', ['delete', 'id' => $model->iso], [
             'class' => 'btn btn-danger',
             'data' => [
                 'confirm' => 'Are you sure you want to delete this item?',
@@ -29,10 +29,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
-            'id_mail',
-            'id_fase',
-            'cargo',
+            'iso',
+            'nombre',
         ],
     ]) ?>
 

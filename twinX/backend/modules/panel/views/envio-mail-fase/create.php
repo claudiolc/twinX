@@ -4,9 +4,13 @@ use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\EnvioMailFase */
+/* @var $mails \common\models\MailPredef
+ * @var $fases \common\models\FaseExpediente
+ */
 
-$this->title = 'Create Envio Mail Fase';
-$this->params['breadcrumbs'][] = ['label' => 'Envio Mail Fases', 'url' => ['index']];
+
+$this->title = 'Nuevo envío de mail automatizado';
+$this->params['breadcrumbs'][] = ['label' => 'Envío de mails automatizado', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="envio-mail-fase-create">
@@ -15,6 +19,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= $this->render('_form', [
         'model' => $model,
+        'mails' => $mails,
+        'fases' => $fases
     ]) ?>
 
 </div>
