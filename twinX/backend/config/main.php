@@ -12,9 +12,14 @@ return [
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
     'modules' => [
-        'panel' =>[
+        'panel' => [
             'class' => '\backend\modules\panel\Panel',
             'layout' => 'panel'
+        ],
+
+        'gestion' => [
+            'class' => '\backend\modules\gestion\Gestion',
+            'layout' => 'gestion'
         ]
     ],
 //    'homeUrl' => '',

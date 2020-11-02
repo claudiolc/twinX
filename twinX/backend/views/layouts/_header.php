@@ -7,9 +7,7 @@ NavBar::begin([
     'brandLabel' => Yii::$app->name,
     'brandUrl' => Yii::$app->homeUrl,
 ]);
-$menuItems = [
-    ['label' => 'Home', 'url' => ['/site/index']],
-];
+
 if (Yii::$app->user->isGuest) {
     $menuItems[] = [
         'label' => 'Login',
@@ -18,8 +16,8 @@ if (Yii::$app->user->isGuest) {
     ];
 
 } else {
-    $menuItems[] = ['label' => 'Gestión', 'url' => ['/gestion'], 'active' => $this->context->route == 'gestion/index'];
-    $menuItems[] = ['label' => 'Calendario', 'url' => ['/calendario'], 'active' => $this->context->route == 'calendario/index'];
+    $menuItems[] = ['label' => 'Gestión', 'url' => ['/gestion'], 'active' => in_array(\Yii::$app->controller->module->id, ['gestion'])];
+    $menuItems[] = ['label' => 'Calendario', 'url' => ['/calendario'], 'active' => in_array(\Yii::$app->controller->module->id, ['calendario'])];
     $menuItems[] = ['label' => 'Panel de control', 'url' => ['/panel'], 'active' => in_array(\Yii::$app->controller->module->id, ['panel'])];
     $menuItems[] = ['label' => 'Salir ('.Yii::$app->user->identity->username.')',
         'url' => ['/site/logout'],
