@@ -148,7 +148,8 @@ a:hover {
 }
 
 .header-logo {
-    max-width: 50px;
+    max-width: 125px;
+    margin-right: 1.5em;
 }
 
 .navbar-nav a {
