@@ -2,9 +2,11 @@
 
 Una vez hemos analizado el material ya existente y desde el que partiremos para la construcción de twinX, vamos a ponernos manos a la obra con su desarrollo. Si bien es cierto que no se parte desde cero en cuanto a requisitos, sí que se va a reconstruir la herramienta desde cero, para poder aportar un gran significado a todos los módulos que vayan a formar parte de twinX y así podamos cohesionarlos de una mejor manera.
 
-\section{Desarrollo de twinX}
+Para conseguir nuestro propósito, en este capítulo hablaremos, en primer lugar, sobre cómo vamos a usar el \textbf{diseño centrado en el usuario} y a aplicar sus metodologías para desarrollar twinX (sección ~\ref{sec:desarrollo}). A continuación, hablaremos de las \hyperref[sec:personas]{personas ficticias} que podrían usar la aplicación, de las \hyperref[sec:entrevistas]{entrevistas} que se han tenido para posibilitar este proyecto, y describiremos de forma más precisa \hyperref[sec:propuesta]{nuestra propuesta}, donde elegiremos un tipo de metodología de desarrollo y definiremos las capacidades de la primera versión de twinX. Por último, expondremos la planificación diseñada para realizar los trabajos necesarios (sección ~\ref{sec:planificacion}), donde hablaremos del uso que haremos de \textit{Scrum}, el desdoble en \textit{sprints} del desarrollo, el tiempo empleado en el proyecto en su totalidad y el presupuesto del mismo.
 
-Vamos a comenzar estableciendo las ideas principales del proyecto, reafirmando el propósito y viéndolo desde otras perspectivas que, aunque parecen obvias, no siempre se tienen en cuenta. Ello nos permitirá asentar las bases del producto software final y dotarlo de calidad.
+\section{Desarrollo de twinX}
+\label{sec:desarrollo}
+Vamos a comenzar estableciendo las ideas principales del proyecto, reafirmando el propósito y viéndolo desde otras perspectivas que, aunque parecen obvias, no siempre se tienen en cuenta. Ello nos permitirá asentar las bases del producto software final y dotarlo de calidad. 
 
 \subsection{Diseño centrado en el usuario}
 
@@ -26,7 +28,7 @@ Para ello, se propone la utilización de los recursos especificados en \textit{W
 
 \subsubsection{Encuesta SUS}
 
-La encuesta SUS o \textit{System Usability Scale} es una de las encuestas que se pueden utilizar para evaluar la usabilidad de una cantidad de productos o servicios.
+La encuesta SUS o \textit{System Usability Scale} (\cite{sus}) es una de las encuestas que se pueden utilizar para evaluar la usabilidad de una cantidad de productos o servicios.
 
 Sus únicos 10 enunciados es una de las cosas que más atractiva la hacen, puesto que hace que los usuarios la rellenen de manera rápida y fácil. También destaca por ser de denominación común y tener un bajo coste, además de poder corregirse inmediatamente después de terminar la encuesta. Es más, es una encuesta que puede aplicarse a casi cualquier tipo de interfaz de usuario, por lo que es muy versátil. Finalmente, cabe destacar la facilidad de entender los resultados, puesto que vienen dados en forma de una puntuación en el rango de 0 a 100.
 
@@ -38,7 +40,7 @@ Por todo ello, esta será una de las herramientas que utilizaremos en las prueba
 
 \subsection{\textit{Design Thinking}, DT}
 
-El «Pensamiento de Diseño» o \textit{Design thinking} es una técnica de desarrollo que se centra en el usuario, pudiendo detectar y reaccionar ante cambios repentinos en el entorno de los usuarios y sus comportamientos. El objetivo está, mayormente, en abordar problemas con una pobre definición o que no se conocen a fondo para situar al usuario en el centro de todo y poder así enfocar el problema desde otras perspectivas, de manera que se pueda poner la atención en aquello que resulte de mayor importancia para los usuarios.
+El «Pensamiento de Diseño» o \textit{Design thinking} es una técnica de desarrollo que se centra en el usuario, pudiendo detectar y reaccionar ante cambios repentinos en el entorno de los usuarios y sus comportamientos. El objetivo está, mayormente, en abordar problemas con una pobre definición o que no se conocen a fondo para situar al usuario en el centro de todo y poder así enfocar el problema desde otras perspectivas, de manera que se pueda poner la atención en aquello que resulte de mayor importancia para los usuarios (\cite{dt}).
 
 \subsubsection{Las fases del DT}
 
@@ -78,15 +80,16 @@ Hay una serie de actividades o técnicas que nos pueden resultar útiles para ll
 
 \subsection{Aplicación de las metodologías}
 
-En relación con las fases del DT, podemos diferenciar a través de las cuales ya hemos ido pasando. El comienzo del proyecto vino acompañado de una serie de reuniones que se incluyen en los anexos. En este contexto, la fase de \textbf{empatización} se correspondería con las dos primeras reuniones, donde se establecieron un primer contacto y las bases del proyecto, atendiendo al testimonio de los usuarios reales de TWINS, lo que actualmente se está usando para resolver los problemas a los que se tienen que enfrentar en la ORI-FyL. Es más, en la segunda reunión (~\ref{reunion2}) se habló de algunas características ideales y que está costando implementar en el actual escenario, lo que podríamos englobar dentro de la \textbf{ideación}. Por último, ya en la tercera reunión, se tiene la \textbf{definición} de todos los conceptos necesarios para comprender el funcionamiento de TWINS y de la oficina en general. No obstante, a lo largo de esta sección, vamos a continuar esta fase con la definición de más elementos necesarios para llevar a cabo el desarrollo de twinX.
+En relación con las fases del DT, podemos diferenciar a través de las cuales ya hemos ido pasando. El comienzo del proyecto vino acompañado de una serie de reuniones que se incluyen en los anexos. En este contexto, la fase de \textbf{empatización} se correspondería con las dos primeras reuniones, donde se establecieron un primer contacto y las bases del proyecto, atendiendo al testimonio de los usuarios reales de TWINS, lo que actualmente se está usando para resolver los problemas a los que se tienen que enfrentar en la ORI-FyL. Es más, en la \hyperref[reunion2]{segunda reunión} se habló de algunas características ideales y que está costando implementar en el actual escenario, lo que podríamos englobar dentro de la \textbf{ideación}. Por último, ya en la tercera reunión, se tiene la \textbf{definición} de todos los conceptos necesarios para comprender el funcionamiento de TWINS y de la oficina en general. No obstante, a lo largo de esta sección, vamos a continuar esta fase con la definición de más elementos necesarios para llevar a cabo el desarrollo de twinX.
 
 Con esas tres fases cubiertas, se puede dar comienzo a las otras dos: la de \textbf{prototipado} y \textbf{pruebas}, que serán desarrolladas de forma más extensa en las secciones ~\ref{bocetos} y ~\ref{pruebas}. %PENDIENTE: comprobar referencias, ya que han sido puestas antes de tiempo y añadir posibles futuras reuniones y sesiones de pruebas.
 
 \section{Personas ficticias}
+\label{sec:personas}
 
 Tal y como hemos comentado en la sección \ref{herramientasDT}, una de las herramientas que nos permiten definir el alcance y las necesidades de la aplicación es la creación de perfiles de personas ficticias, candidatos a utilizar twinX en un futuro. De esta forma, tanto por la parte del desarrollo como por la del interesado en el producto final, pueden no solo hacerse una mejor idea de los objetivos del mismo, sino también justificar su creación.
 
-Vamos a tratar de crear tres personalidades lo más variopintas posibles en aras de enfocarnos más aún en el usuario y dotar de mayor calidad el resultado final, de modo que podamos abarcar por completo el entorno de influencia del problema. (Herramienta: \cite{uxpressia})
+Vamos a tratar de crear tres personalidades lo más variopintas posibles en aras de enfocarnos más aún en el usuario y dotar de mayor calidad el resultado final, de modo que podamos abarcar por completo el entorno de influencia del problema.
 
 \begin{figure}
 	\centering
@@ -114,6 +117,7 @@ Como decíamos, nos sirven elementos que no tengan que ver directamente con las 
 En definitiva, podría pensarse que los perfiles de estas tres personas están hechos para hacer el análisis de cualquier aplicación o producto software, ya que no hemos ideado estas personalidades específicamente para el problema que nos compete. Es por ello por lo que podemos tomar estos perfiles ficticios como válidos, pues no están «hechos a medida» para nosotros. Gracias a ello, podemos adaptar el desarrollo a una serie de necesidades y/o conflictos que pueden generar en otras personas al mismo tiempo, obligándonos a buscar una solución homogénea para todos, funcional y, no menos importante, que resuelva el problema como es debido y dadas las necesidades.
 
 \section{Entrevistas}
+\label{sec:entrevistas}
 
 Las reuniones con las personas que pueden entenderse como «el cliente» del producto software, han sido esenciales para el desarrollo del mismo. En primer lugar, se establecieron las bases y se definieron los problemas. Una vez lograda la comprensión, nos pusimos manos a la obra a definir cómo podríamos abordar el problema de forma que se pudiera aportar una solución de valor; si bien no definitiva y que resolviera el problema por completo, pero sí un buen comienzo como pretendemos alcanzar con este proyecto.
 
@@ -121,9 +125,9 @@ Como decimos, el valor de las reuniones es muy alto. Sin ir más lejos, dependí
 
 Sin estas entrevistas, hubiera sido muy complicado llegar a hacer un producto que pueda servir a la ORI-FyL, el que era un objetivo implícito, pero el cual tiene prioridad como el que más, pues de nada serviría realizar un proyecto para crear un producto que nadie pudiera llegar a utilizar. Por tanto, las aportaciones de los participantes en las entrevistas han sido los que han capacitado al desarrollo el dar como resultado una pieza de valor.
 
-\section{Malla receptora de la información}
+\section{Malla receptora de información}
 
-A las técnicas expuestas en \nameref{herramientasDT}, podemos sumar la creación de una malla que nos permita definir las partes claves de nuestro proyecto. Si bien es cierto que la \textit{Feedback Capture Grid} es mayormente utilizada para potenciar el aprendizaje tras las sesiones de pruebas, podríamos plasmar en ella los elementos que cualquier persona podría hacerse, sean o no actores que interactuarían o no con el producto final. \cite{feedbackCaptureGrid}
+A las técnicas expuestas en \nameref{herramientasDT}, podemos sumar la creación de una malla que nos permita definir las partes claves de nuestro proyecto. Si bien es cierto que la \textit{Feedback Capture Grid} es mayormente utilizada para potenciar el aprendizaje tras las sesiones de pruebas, podríamos plasmar en ella los elementos que cualquier persona podría hacerse, sean o no actores que interactuarían o no con el producto final \cite{feedbackCaptureGrid}.
 
 Su creación consiste en la división en cuatro cuadrantes de una hoja de papel, por ejemplo. En los diferentes espacios, empezando en orden de izquierda a derecha y por la parte superior, se toma nota de las buenas ideas que se han percibido tras conocer el producto, los problemas o las críticas que se le pueden encontrar, las preguntas que pueda haber y, por último, las ideas para la mejora del software que se pudieran tener, a modo de trabajos futuros.
 
@@ -133,12 +137,14 @@ En nuestro caso, hemos efectuado la malla (figura \ref{fig:malla}) para definir,
 \begin{figure}
 	\centering
 	\includegraphics[width=\textwidth]{img/malla.png}
-	\caption{Malla receptora de la información}
+	\caption{Malla receptora de información}
 	\label{fig:malla}
 \end{figure}
 
 
 \section{Descripción de la propuesta}
+\label{sec:propuesta}
+
 Una vez hemos dado pinceladas de todo lo que tenemos, de qué podemos hacer, qué no y cómo llevarlo a cabo, vamos a establecer los claros objetivos de este proyecto y definir exactamente cuál será el producto tras su finalización, una vez conocemos todo el entorno que lo rodea. 
 
 \subsection{Elección del tipo de metodología de desarrollo}
@@ -155,7 +161,7 @@ Por todo ello, podemos aventurarnos a decir que nuestro proyecto encaja más en 
 \end{itemize}
 
 \subsection{Propuesta de producto}
-\label{propuesta}
+\label{subsec:propuesta}
 En su primera versión, twinX incluirá la funcionalidad mínima de TWINS, de modo que de cara a las pruebas, la interacción con la nueva plataforma sea más bien realista, y aporte verosimilitud a la mejora, pudiendo así ser tomada como tal.
 
 Más concretamente, contemplamos la implementación de:
@@ -174,12 +180,16 @@ Más concretamente, contemplamos la implementación de:
 
 
 \section{Planificación}
+\label{sec:planificacion}
+
+Una vez sabemos qué son las metodologías ágiles, vamos a centrarnos en una en concreto con la que poder expandir nuestro proyecto de forma organizada y guiada. También necesitaremos organizar la acción en varias fases; esto es, dividir en distintas partes el contenido a desarrollar, de modo que lo más importante venga al principio, para poder obtener resultados de calidad. No menos importante, también tendremos que estimar un coste aproximado del proyecto para poder llevarlo a cabo, atendiendo a los distintos factores que intervienen.
+
 \subsection{La metodología Scrum}
 En relación con la sección ~\ref{elecciónMetodología}, la metodología concreta a usar para el desarrollo de twinX será \textbf{Scrum}. Es ideal para incrementar la flexibilidad y producir un sistema que pueda responder ante tanto requisitos iniciales como los que se van añadiendo a lo largo del proceso de desarrollo que se puedan ir descubriendo.
 
 En Scrum, se asume que el análisis, el diseño y los procesos de desarrollo son impredecibles, y por ello, tienen que ser iterativos; esto es, hay que estar constantemente comprobando el trabajo realizado, evaluando qué se ha hecho, para adaptarlo de la mejor manera posible a la situación del proyecto. Esta repetición recibe el nombre de \textbf{sprint}, y es una medida de esta metodología.
 
-Los sprints son flexibles y no lineales. Se podrían tomar como una caja negra que precisa de controles externos. De este modo, en cada iteración se pueden tener en cuenta todos los factores que se crean necesarios, de forma que se evite convertir el proceso en algo caótico y que se aleje de los objetivos del proyecto y, al mismo tiempo, se pueda maximizar la flexibilidad. \cite{scrum}
+Los sprints son flexibles y no lineales. Se podrían tomar como una caja negra que precisa de controles externos. De este modo, en cada iteración se pueden tener en cuenta todos los factores que se crean necesarios, de forma que se evite convertir el proceso en algo caótico y que se aleje de los objetivos del proyecto y, al mismo tiempo, se pueda maximizar la flexibilidad \cite{scrum}.
 
 Vamos a agrupar en tres bloques las fases de la metodología Scrum:
 \begin{itemize}
@@ -194,7 +204,7 @@ Vamos a agrupar en tres bloques las fases de la metodología Scrum:
 
 \subsection{Planificación en sprints}
 
-A continuación, vamos a exponer la planificación que se ha pensado para llevar a cabo el desarrollo de este producto piloto para la plataforma twinX, de acuerdo con lo expuesto en la sección ~\ref{propuesta}:
+A continuación, vamos a exponer la planificación que se ha pensado para llevar a cabo el desarrollo de este producto piloto para la plataforma twinX, de acuerdo con lo expuesto en la sección ~\ref{subsec:propuesta}:
 
 \subsubsection*{\textbf{Sprint 0: puesta a punto}}
 
@@ -277,7 +287,7 @@ Desde febrero de 2020 que dio comienzo la primera reunión para comenzar a plani
 	\label{fig:gantt}
 \end{figure}
 
-Más en detalle, el tiempo dedicado a cada tarea en horas, de forma aproximada, lo podemos exponer en la tabla \ref{tab:horas}
+Más en detalle, el tiempo dedicado a cada tarea en horas, de forma aproximada, lo podemos exponer en la tabla \ref{tab:horas}.
 
 \begin{table}[h]
 	\begin{center}

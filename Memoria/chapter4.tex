@@ -6,7 +6,7 @@ Una vez hemos definido cuáles son nuestros objetivos, analizado el estado del a
 
 Un buen comienzo sería el de definir los roles de usuario en nuestra nueva aplicación. Hemos hablado ya en el capítulo anterior sobre la figura del \gls{gestortwinX} y la del \gls{administradortwinX}. Incluyamos entonces también las de \gls{Tutor}, estudiante y, de forma excepcional, la de coordinador(a) externo/a. Sobre esta última, recordemos que no tenía ningún tipo de interacción en TWINS y que hasta entonces, los usuarios de la plataforma habían establecido intercambios de información por correo electrónico con los coordinadores de otras facultades, que es el método estándar de realizar las \glspl{Nominacion}. Sin embargo, aunque no para sus primeras versiones, se espera que twinX brinde la capacidad de hacer estas nominaciones a través de una interfaz gráfica, de una forma mucho más sencilla y segura que con el envío de un texto libre, donde puede haber errores y/o malas prácticas, dado el amplio uso que se puede hacer de la herramienta.
 
-Es precisamente por la necesidad de dejar claras las acciones a llevar a cabo por cada usuario del sistema por la que elaborar una \textbf{matriz de tareas de usuario}. Esta herramienta nos permite establecer cuál es la frecuencia de uso de una característica de nuestra aplicación por un grupo de usuarios en concreto y cuál es la prioridad que debemos darle a la implementación de la misma. De esta forma, nos será más fácil diferenciar aquellas acciones que tan solo se lleven a cabo unas pocas veces al mes (o cada varios meses) y cuales, por el contrario, son ejecutadas casi a diario, de modo que se priorice su integración y su optimización. Sobre estas últimas, cabe decir que el potenciarlas no solo se procurará hacer en términos de procesamiento interno del código, sino también en cuanto a su facilidad de utilización por parte del usuario. Es decir, tendremos que crear más accesos directos o simplificar lo máximo posible el curso de tareas a llevar a cabo para realizar estas acciones y obtener los resultados deseados. En adición a todo esto, podremos observar cuáles son los usuarios que menos usarán la plataforma, de modo que se reste prioridad a la implementación de sus interacciones, en beneficio de las que llevan a cabo los usuarios que, por el contrario, monopolizan el uso de la aplicación. \cite{matrizTareas}
+Es precisamente por la necesidad de dejar claras las acciones a llevar a cabo por cada usuario del sistema por la que elaborar una \textbf{matriz de tareas de usuario}. Esta herramienta nos permite establecer cuál es la frecuencia de uso de una característica de nuestra aplicación por un grupo de usuarios en concreto y cuál es la prioridad que debemos darle a la implementación de la misma. De esta forma, nos será más fácil diferenciar aquellas acciones que tan solo se lleven a cabo unas pocas veces al mes (o cada varios meses) y cuales, por el contrario, son ejecutadas casi a diario, de modo que se priorice su integración y su optimización. Sobre estas últimas, cabe decir que el potenciarlas no solo se procurará hacer en términos de procesamiento interno del código, sino también en cuanto a su facilidad de utilización por parte del usuario. Es decir, tendremos que crear más accesos directos o simplificar lo máximo posible el curso de tareas a llevar a cabo para realizar estas acciones y obtener los resultados deseados. En adición a todo esto, podremos observar cuáles son los usuarios que menos usarán la plataforma, de modo que se reste prioridad a la implementación de sus interacciones, en beneficio de las que llevan a cabo los usuarios que, por el contrario, monopolizan el uso de la aplicación \cite{matrizTareas}.
 
 Para simplificar la matriz (tabla \ref{tab:matrizTareas}) y hacerla visualmente más sencilla de entender, vamos a asignar una serie de letras que correspondan a un nivel de utilización en concreto. Elegiremos la «A» para una frecuencia de uso alta, «M» para un uso medio y «B» para una baja frecuencia. A estas indicaciones añadiremos unas puntuaciones que nos permitirán determinar con mayor facilidad cuáles son las tareas de mayor importancia y cuáles son menos urgentes de implementar, al igual que los usuarios que desempeñarán un papel más o menos crítico en la aplicación. Respectivamente serán 3, 2 y 1 punto, de modo que las prioridades más altas recibirán una mayor puntuación y viceversa.
 
@@ -56,7 +56,7 @@ Tras la atenta observación de la matriz, podemos afirmar que las acciones que m
 
 Con esta matriz, además, justificamos que el contenido de la primera versión de twinX (descrito en la sección ~\ref{propuesta}), es suficiente para cubrir la mayoría de las necesidades esenciales del trabajo de un secretario de la ORI-FyL, lo que es uno de los objetivos principales de este proyecto, aunque sea tan solo un comienzo a lo que finalmente llegaría a ser twinX.
 
-\section{Sitemap}
+\section{Mapa web (sitemap)}
 
 Cuando un usuario llega a un sitio web por primera vez, incluso si es experimentado, no sabe qué hacer o dónde hacer clic. Lo normal es que esta duda no perdure por más de 15 segundos en la cabeza, aunque podría ser así si el sitio web en cuestión no tiene una estructura bien definida.
 
@@ -64,7 +64,7 @@ Para aclarar la estructura de un portal web, se puede hacer uso de los \textit{s
 
 Aparte de definir, este tipo de diagramas nos permite comprender mejor nuestros objetivos, si vamos bien encaminados y tenemos una idea que es válida también para los usuarios finales del producto y si por algún motivo hemos de eliminar páginas innecesarias o que puedan ser redundantes.
 
-Para su confección, es necesario disponer la página de inicio y las secciones que parten de ahí y que llevan a otros sitios, a modo de árbol. Una buena estrategia es la de tratar de minimizar el número de pasos que hay que dar para llegar a encontrar la información deseada desde el comienzo del diagrama. Esto es lo que conocemos como \textbf{la regla de los 3 clics}; aunque no oficial, es sin duda una apuesta segura para la simplicidad, facilitando que los usuarios menos experimentados puedan usar el sitio sin tener que dedicar mucho tiempo a ello, en cuyo caso podrían abandonar y buscar otra alternativa. \cite{sitemap}
+Para su confección, es necesario disponer la página de inicio y las secciones que parten de ahí y que llevan a otros sitios, a modo de árbol. Una buena estrategia es la de tratar de minimizar el número de pasos que hay que dar para llegar a encontrar la información deseada desde el comienzo del diagrama. Esto es lo que conocemos como \textbf{la regla de los 3 clics}; aunque no oficial, es sin duda una apuesta segura para la simplicidad, facilitando que los usuarios menos experimentados puedan usar el sitio sin tener que dedicar mucho tiempo a ello, en cuyo caso podrían abandonar y buscar otra alternativa \cite{sitemap}.
 
 \begin{figure}
 	\centering
@@ -76,10 +76,15 @@ Para su confección, es necesario disponer la página de inicio y las secciones 
 En la figura \ref{fig:sitemap} exponemos el \textit{sitemap} de twinX, diferenciando claramente sus tres secciones principales: gestión, calendario y panel de control. En la parte de gestión, destaca la cantidad de posibilidades de navegabilidad existentes, dado que por ejemplo, al buscar un expediente en su menú, podríamos acceder al perfil de un estudiante o viceversa. Lo mismo pasa con los convenios y los acuerdos de estudios: todos estos accesos directos se ponen para facilitar el trabajo del usuario y mejorar su experiencia, usando los menús ya creados y evitando la redundancia de los mismos.
 
 
-\section{Labelling (iconografía)}
+\section{Iconografía (labelling)}
+
 \section{Bocetos wireframe}
 
+[PÁRRAFO]
+
 \subsection{Wireframes del módulo de gestión}
+
+[PÁRRAFO]
 
 \begin{figure}
 	\centering
