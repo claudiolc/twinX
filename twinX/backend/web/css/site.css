@@ -147,6 +147,14 @@ a:hover {
     color: #883997
 }
 
+.header-logo {
+    max-width: 50px;
+}
+
+.navbar-nav a {
+    color: white;
+}
+
 /* SIDEBAR */
 
 #sidebar {
@@ -175,7 +183,6 @@ a:hover {
     background-color: #883997;
 
 }
-
 
 /* TABLAS */
 

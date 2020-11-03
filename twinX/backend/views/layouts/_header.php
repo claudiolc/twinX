@@ -2,10 +2,14 @@
 
 use yii\bootstrap4\Nav;
 use yii\bootstrap4\NavBar;
+use yii\helpers\Html;
 
 NavBar::begin([
-    'brandLabel' => Yii::$app->name,
+    'brandLabel' => Html::img('@web/images/logo.png', ['alt'=>Yii::$app->name, 'class' => 'header-logo']),
     'brandUrl' => Yii::$app->homeUrl,
+    'options' => [
+//      'class' => 'bg-dark'
+    ],
 ]);
 
 if (Yii::$app->user->isGuest) {
