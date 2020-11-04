@@ -1,0 +1,84 @@
+\chapter{Diseño técnico}
+
+Hemos definido hasta ahora gran parte de los ingredientes que llevará twinX: quiénes lo van a usar, qué es capaz de hacer, cuánto vamos a tardar en hacerlo y por qué hace falta algo como twinX.
+
+Es hora de ponernos manos a la obra. Pero antes de ello, es necesario aún definir muchas más cosas, todo ello en relación con lo anterior pero a más bajo nivel: cuáles van a ser exactamente nuestras tareas, qué subtareas asociadas tendremos que desarrollar y cómo va a ser la base de datos. Será vez puestos todos los ingredientes a nuestra disposición para cocinarlos cuando podamos comenzar a utilizar nuestras herramientas para conseguir nuestro objetivo.
+
+\section{Listado inicial del producto (product backlog)}
+
+Es cierto que ya sabemos lo que va a ser capaz de hacer twinX en su primera versión, pero no tenemos claros los pequeños pasos a dar para poder completar las grandes tareas que ya conocemos. Por ello, vamos a elaborar un listado de todo lo que tenemos que hacer en orden de preferencia, paso a paso, para poder conseguir nuestros objetivos de manera organizada.
+
+La priorización de la lista de tareas suele estar hecha por el llamado \textit{product owner}; esto es, el propietario del producto final (en este caso, las dos personas mencionadas en la sección ~\ref{eleccionMetodologia}). Sin embargo, en este caso, vamos a obviar la labor de los propietarios, dado que no se está construyendo un producto desde cero, sino que se parte de lo que ya se construyó en TWINS y porque además, la intención de este proyecto no es obtener un producto inmediatamente utilizable, sino como propuesta de donde partir.
+
+Más técnicamente, cada uno de los componentes de esta lista son acciones que el usuario podrá desarrollar. Esto es algo característico de Scrum y su constante enfoque en el usuario, todo ello en relación con su activa participación con el equipo de desarrollo durante todo el proceso. Pues bien, estas capacitaciones que el usuario final tendrá reciben el nombre de \textbf{historias de usuario}, y es la forma que se tiene en esta metodología ágil de nombrar a los clásicos requisitos. Suponen una reducción en la documentación, ya que no se necesitan especificar demasiados elementos a priori. No obstante y como ya comentamos en secciones pasadas, el número de tareas y, por tanto, de historias de usuario, puede variar, pues al comienzo de cada sprint se realiza una reunión para evaluar los trabajos del equipo de desarrollo y se vuelve a revisar la priorización que se ha hecho de las tareas en el \textit{product backlog}.
+
+En referencia a esas «grandes tareas» que hemos mencionado anteriormente y que ya tenemos definidas, podríamos decir que dentro de ellas se esconden otras pequeñas tareas que nos son más sencillas de seguir a la hora del desarrollo. Es decir, son historias de usuario encerradas en otra más grande que alberga a todas ellas. Esto se conoce en el argot de Scrum como \textbf{épicas}. Así, «hacer uso del panel de control» sería una épica, pues dentro de ella irían historias de usuario como «ver un listado con todos los tipos de expedientes».
+
+En la tabla \ref{tab:listadoHU} encontramos el backlog genérico del desarrollo, como producto de la síntesis que se puede hacer de las secciones~\ref{subsec:propuesta} y~\ref{subsec:sprints}, donde hemos incluido las historias de usuario a desarrollar para la primera versión de twinX, en sus épicas correspondientes. Entendemos que todas las historias numeradas como «x.1», «x.2», ..., «x.n» pertenecen todas a la épica (historia de usuario) «x». Recordemos también que el significado de «historia de usuario» no es otro que una acción a desarrollar por el usuario final del sistema, por lo que siempre tienen que estar descritas desde su punto de vista. Es asunto del desarrollador el cuestionarse las tareas (de código en su mayoría) que implica realizar cada una de ellas, por lo que para la elaboración del backlog no nos centraremos en esas tareas a llevar a cabo en cuanto a implementación, sino a satisfacción de las necesidades del usuario.
+
+\begin{table}[h]
+	\begin{center}
+		\begin{adjustbox}{width=1\textwidth}
+			\begin{tabular}{ | c | >{\centering\arraybackslash}p{0.75\linewidth} | c | } 
+				\hline
+				\textbf{Identificador} & \textbf{Descripción} & \textbf{Sprint} \\
+				\hline
+				HU.1 \label{HU1} &  Acceso al panel de control & 1 \\
+				\hline
+				HU.1.1 \label{HU1.1} & Listado de usuarios en todo el sistema: consulta, búsqueda, edición y eliminación de registros. & 1 \\
+				\hline
+				HU.1.2 \label{HU1.2} & Listado de tipos de expedientes almacenados: consulta, búsqueda, edición y eliminación de registros. & 1 \\
+				\hline
+				HU.1.3 \label{HU1.3} & Listado de fases de expedientes almacenadas: consulta, búsqueda, edición y eliminación de registros. & 1 \\
+				\hline
+				HU.1.4 \label{HU1.4} & Listado de mails predefinidos almacenados: consulta, búsqueda, edición y eliminación de registros. & 1 \\
+				\hline
+				HU.1.5 \label{HU1.5} & Listado de universidades almacenadas: consulta, búsqueda, edición y eliminación de registros. & 1 \\
+				\hline
+				HU.1.6 \label{HU1.6} & Listado de países almacenados: consulta, búsqueda, edición y eliminación de registros. & 1 \\
+				\hline
+				HU.2.1 \label{HU2.1} & Ver la información más importante y de atención prioritaria de un vistazo & 1 \\
+				\hline
+				HU.2.2 \label{HU2.2} & Gestionar los estudiantes: listado y vistas independientes con posibilidad de edición de sus datos & 1 \\
+				\hline
+				HU.2.3 \label{HU2.3} & Gestionar los convenios: listado y vistas independientes con posibilidad de edición de los distintos campos & 1 \\
+				\hline
+				HU.2.4 \label{HU2.4} & Gestionar los expedientes de los estudiantes: listado y vistas independientes con posibilidad de modificar sus fases & 1 \\
+				\hline
+				HU.2.5 \label{HU2.5} & Gestionar los acuerdos de estudios: listado y vistas independientes con posibilidad de consultar los estudiantes relacionados y sus datos & 1 \\
+				\hline
+				HU.2.6 \label{HU2.6} & Ver todos los tutores del sistema y consultar los acuerdos de estudios asociados a los mismos & 1 \\
+				\hline
+				HU.3 \label{HU.3} & Planificación de eventos y tareas & 2 \\
+				\hline
+				HU.3.1 \label{HU.3.1} & Crear nuevos eventos con tareas asociadas a los mismos & 2 \\
+				\hline
+				HU.3.2 \label{HU.3.2} & Configurar avisos de los eventos y tareas que se creen & 2 \\
+				\hline
+				HU.3.3. \label{HU.3.3} & Configurar recordatorios personales & 2 \\
+				\hline
+				HU.4 \label{HU.4} & Hacer uso de una mensajería entre los usuarios & 2 \\
+				\hline
+				HU.4.1 \label{HU.4.1} & Consultar y borrar los mensajes recibidos y poder escribir nuevos & 2 \\
+				\hline			
+			\end{tabular}	
+		\end{adjustbox}
+		\caption{Listado de historias de usuario}
+		\label{tab:listadoHU}
+	\end{center}
+\end{table}
+
+\begin{table}[h]
+	\begin{center}
+		\begin{tabular}{ | c | c | c | } 
+			\hline
+			
+			\hline			
+		\end{tabular}	
+		\caption{HU1}
+		\label{tab:HU1}
+	\end{center}
+\end{table}
+
+
+
