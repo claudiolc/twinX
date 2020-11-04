@@ -83,16 +83,24 @@ Como no podía ser de otra forma, nuestro portal no es una excepción y también
 
 \begin{table}[h]
 	\begin{center}
-%		\begin{adjustbox}{width=1\textwidth}
-			\begin{tabular}{ | c | >{\centering\arraybackslash}p{0.375\linewidth} | c | c | } 
+		\begin{adjustbox}{width=1\textwidth}
+			\begin{tabular}{ | >{\centering\arraybackslash}p{0.375\linewidth} | >{\centering\arraybackslash}p{0.375\linewidth} | c | c | } 
 				\hline
-				Etiqueta & Descripción & Icono & Etiqueta (inglés) \\
+				\textbf{Etiqueta} & \textbf{Descripción} & \textbf{Icono} & \textbf{Etiqueta (inglés)} \\
 				\hline
 				Sobre & Consultar el menú de envío de emails de un expediente concreto en el panel de control & \pbox{4cm}{\bigskip \huge\faEnvelope}  & \textit{Envelope} \\ 
 				\hline
+				Ojo & Ver el detalle de los datos almacenados para una determinada entrada en una lista & \pbox{4cm}{\bigskip \huge\faEye}  & \textit{Eye} \\ 
+				\hline
+				Lápiz & Editar la información de una entrada concreta en una lista & \pbox{4cm}{\bigskip \huge\faPencil}  & \textit{Pencil} \\ 
+				\hline
+				Papelera & Eliminar una entrada de una lista & \pbox{4cm}{\bigskip \huge\faTrash}  & \textit{Trash} \\ 
+				\hline
+				Flecha de desplegable (\textit{dropdown}) hacia abajo & Indicador de la dirección del despliegue del menú \textit{dropdown} & \pbox{4cm}{\bigskip \huge\faCaretDown}  & \textit{Caret down} \\ 
+				\hline
 			
 			\end{tabular}
-%		\end{adjustbox}
+		\end{adjustbox}
 	\caption{Iconos de twinX}
 	\label{tab:iconografia}
 	\end{center}
@@ -100,11 +108,25 @@ Como no podía ser de otra forma, nuestro portal no es una excepción y también
 
 \section{Bocetos wireframe}
 
-[PÁRRAFO]
+Con gran parte de los elementos necesarios definidos para poder crear twinX, necesitamos tener una idea clara de interfaz de usuario en mente antes de poder comenzar a integrarla. Pensemos lo fácil que es corregir errores de diseño tan solo arrastrando elementos y disponiéndolos en el boceto. Gracias a eso, podemos ahorrar mucho tiempo a la hora de programar según la guía que suponen los \textit{wireframes}.
 
 \subsection{Wireframes del módulo de gestión}
 
-[PÁRRAFO]
+Para el módulo de gestión, tenemos los siguientes bocetos:
+
+\begin{itemize}
+	\item \textbf{\hyperref[fig:dashboardWF]{Dashboard}:} una sección nueva que proponemos para twinX, donde se puede ver de un vistazo la información más importante para el usuario. Recordemos que en TWINS, al principio se disparaban una serie de vistas de calendario, avisos y tareas, etc. Todo ello obligaba al usuario a cerrar ventanas posiblemente indeseadas. Con esta nueva aproximación, el objetivo es aumentar la efectividad en el trabajo, pudiendo redirigirse a múltiples instancias del portal web desde un único lugar.
+	\item \textbf{\hyperref[fig:convenios_listaWF]{Lista de convenios}:} manteniendo la información de mayor utilidad para el usuario, como el número de estudiantes salientes y/o entrantes que hay en destino del total de estudiantes que han sido nominados para ese convenio.
+	\item \textbf{\hyperref[fig:vista_conv_basica_contWF]{Vista de convenios básica contraída}:} en TWINS había dos posibilidades para visualizar un convenio: estaba la vista básica, con la información de mayor relevancia para las consultas diarias; y la avanzada, que mostraba todos los detalles que se tenían sobre un convenio en concreto. Sin embargo, estaban en vistas distintas. En twinX, proponemos un único menú de convenio con un botón para cambiar entre la vista básica y la vista avanzada.
+	\item \textbf{\hyperref[fig:vista_conv_avanzada_contWF]{Vista de convenios avanzada contraída}:} con todas las secciones contenedoras de los datos que alberga un convenio en su totalidad.
+	\item \textbf{\hyperref[fig:vista_conv_extendidaWF]{Vista de convenios extendida}:} para ver los detalles de una o varias secciones del convenio en concreto.
+	\item \textbf{\hyperref[fig:expedientes_listaWF]{Lista de expedientes}:} se incluyen accesos directos a acciones rápidas que facilitan el trabajo de los gestores, como se venía haciendo en TWINS.
+	\item \textbf{\hyperref[fig:estudiantes_listaWF]{Lista de estudiantes}:} de nuevo, con accesos directos para agilizar las operaciones.
+	\item \textbf{\hyperref[fig:busquedaWF]{Búsqueda con desplegable}:} con la posibilidad de aplicación de distintos filtros para obtener unos mejores resultados. Éstos también tienen accesos directos que agilizan el trabajo. Por ejemplo, si se quisieran consultar los expedientes de un usuario, se podría ir directamente a ellos, sin tener que recuperar previamente la información del usuario en cuestión por completo.
+	\item \textbf{\hyperref[fig:expediente_detalleWF]{Vista de expediente}:} con información de relevancia para el gestor sobre el estudiante y una lista de las fases por las que el expediente ha pasado hasta la más actual. Se permite adjuntar documentación a cada fase y procesar un cambio de fase desde esa misma vista, para simplificar el desdoble en menús. También se incluye la posibilidad de crear una nueva fase.
+	\item \textbf{\hyperref[fig:cambio_faseWF]{Diálogo modal de cambio de fase}:} avisa al usuario de las acciones que se van a desarrollar tras la confirmación del procesamiento de la fase, que será principalmente el envío automatizado de mails predefinidos.
+	\item \textbf{\hyperref[fig:estudiante_detalleWF]{Vista de estudiante}:} donde se dispone toda la información acerca de un estudiante.
+\end{itemize}
 
 \begin{figure}
 	\centering
@@ -124,7 +146,7 @@ Como no podía ser de otra forma, nuestro portal no es una excepción y también
 \centering
 \includegraphics[width=\textwidth]{img/Wireframes/Gestión/vista_convenio_básica_contraída.png}
 \caption[Wireframe de vista de convenio básica]{Wireframe de vista de convenio básica. Secciones contraídas.}
-\label{fig:vista_conv_básica_contWF}
+\label{fig:vista_conv_basica_contWF}
 \end{figure}
 
 \begin{figure}
@@ -132,6 +154,13 @@ Como no podía ser de otra forma, nuestro portal no es una excepción y también
 	\includegraphics[width=\textwidth]{img/Wireframes/Gestión/vista_convenio_avanzada_contraída.png}
 	\caption[Wireframe de vista de convenio avanzada]{Wireframe de vista de convenio avanzada. Secciones contraídas. Acceso desde el botón «+» de la botonera en la esquina superior derecha del contenido principal.}
 	\label{fig:vista_conv_avanzada_contWF}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{img/Wireframes/Gestión/vista_convenio_extendida.png}
+	\caption[Wireframe de vista de convenio extendida]{Wireframe de vista de convenio extendida, donde se pueden ver los detalles de una o varias secciones en concreto bajo demanda.}
+	\label{fig:vista_conv_extendidaWF}
 \end{figure}
 
 \begin{figure}
@@ -152,7 +181,7 @@ Como no podía ser de otra forma, nuestro portal no es una excepción y también
 	\centering
 	\includegraphics[width=\textwidth]{img/Wireframes/Gestión/búsqueda.png}
 	\caption[Wireframe de búsqueda]{Wireframe de búsqueda. Diálogo modal, desplegable desde la barra. Capacidad de filtrado}
-	\label{fig:búsquedaWF}
+	\label{fig:busquedaWF}
 \end{figure}
 
 \begin{figure}
@@ -180,6 +209,14 @@ Como no podía ser de otra forma, nuestro portal no es una excepción y también
 \newpage
 
 \subsection{Wireframes del módulo de calendario}
+
+Por su parte, los bocetos diseñados para el módulo del calendario son los siguientes:
+
+\begin{itemize}
+	\item \textbf{\hyperref[fig:eventos_listaWF]{Lista de eventos}:} alberga todos los eventos que se han creado en el sistema, con la información más relevante sobre los mismos y acceso a acciones como editar y eliminar.
+	\item \textbf{\hyperref[fig:notificaciones_listaWF]{Lista de notificaciones}:} como los mensajes, recordatorios y/o avisos de tareas pendientes, que aparecerán en este menú, accesible también desde la barra persistente situada en la cabecera de la aplicación.
+	\item \textbf{\hyperref[fig:nuevo_eventoWF]{Vista de creación de un evento}:} respeta en la medida de lo posible la vista de creación de un nuevo evento en TWINS, con los elementos esenciales. Si bien es cierto que podría no ser la más inmediata a la hora de pensar en una interfaz similar, se ha tratado de ajustar a las necesidades reales de los usuarios finales. En este caso, se pretende permitir la inclusión de un número indefinido de avisos para con el evento, lo cual es extensible al ámbito de las tareas asociadas al mismo evento (en TWINS se tenían siempre dos, lo que obligaba a ocupar más espacio en las tablas de la base de datos, sobre todo para aquellos eventos donde ni siquiera había un solo aviso definido).	
+\end{itemize}
 
 \begin{figure}
 	\centering
