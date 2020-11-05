@@ -4,18 +4,18 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
 /* @var $this yii\web\View */
-/* @var $searchModel common\models\search\PaisSearch */
+/* @var $searchModel common\models\search\EstudianteSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Países';
+$this->title = 'Estudiantes';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="pais-index">
+<div class="estudiante-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p class="d-flex justify-content-end">
-        <?= Html::a('Nuevo país', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Estudiante', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php Pjax::begin(); ?>
@@ -27,8 +27,17 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'iso',
-            'nombre:getNombre()',
+            'id_usuario',
+            'dni',
+            'id_convenio',
+            'id_titulacion',
+            'telefono2',
+            //'email_go_ugr:email',
+            //'f_nacimiento',
+            //'tipo_estudiante',
+            //'cesion_datos',
+            //'nota_expediente',
+            //'beca_mec',
 
             [
                 'class' => 'yii\grid\ActionColumn',

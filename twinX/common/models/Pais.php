@@ -61,7 +61,7 @@ class Pais extends \yii\db\ActiveRecord
      *
      * @return \yii\db\ActiveQuery|\common\models\query\UniversidadQuery
      */
-    public function getUniversidads()
+    public function getUniversidades()
     {
         return $this->hasMany(Universidad::className(), ['cod_pais' => 'iso']);
     }

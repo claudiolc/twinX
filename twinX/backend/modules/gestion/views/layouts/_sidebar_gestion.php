@@ -6,6 +6,11 @@ $items = [
         'active' => in_array(\Yii::$app->controller->id, ['dashboard'])
     ],
     [
+        'label' => 'Convenios',
+        'url' => ['/gestion/convenio'],
+        'active' => in_array(\Yii::$app->controller->id, ['convenio'])
+    ],
+    [
         'label' => 'Estudiantes',
         'url' => ['/gestion/estudiante'],
         'active' => in_array(\Yii::$app->controller->id, ['estudiante'])
