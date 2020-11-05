@@ -60,8 +60,6 @@ En la tabla \ref{tab:listadoHU} encontramos el backlog genérico del desarrollo,
 					\hyperref[tab:HU3.3]{HU.3.3} & Configurar recordatorios personales. & 2 \\
 				\hline
 					\hyperref[tab:HU4]{HU.4} & Hacer uso de una mensajería entre los usuarios. & 2 \\
-				\hline
-					\hyperref[tab:HU4.1]{HU.4.1} & Consultar y borrar los mensajes recibidos y poder escribir nuevos. & 2 \\
 				\hline			
 			\end{tabular}	
 		\end{adjustbox}
@@ -484,31 +482,28 @@ A continuación, vamos a ofrecer una serie de tarjetas de todas y cada una de es
 	\begin{center}
 		\begin{tabular}{ | c | c | c | } 
 			\hline
-			\textbf{Identificación} & \parbox[t]{7cm}{HU1.1 - Listado de usuarios en todo el sistema: consulta, búsqueda, edición y eliminación de registros.}  & \textbf{Sprint:} 1 \\
+			\textbf{Identificación} & \parbox[t]{7cm}{HU3 - Planificación de eventos y tareas.}  & \textbf{Sprint:} 2 \\
 			\hline
-			\textbf{Descripción} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{El panel de control posibilita al administrador crear, modificar y eliminar la información con la que trabajan los gestores en twinX} \\
+			\textbf{Descripción} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{Los gestores tendrán la posibilidad de crear eventos y tareas para organizar mejor su trabajo} \\
 			\hline
 			\textbf{Pruebas de aceptación} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{
 				\begin{itemize}
-					\item PA1
-					\item PA2
-					\item PA3
-					\item PA4
+					\item Se intenta visualizar el calendario sin permisos mínimos de gestor. La plataforma deniega el acceso.
 				\end{itemize}
 			} \\
 			\hline
 			\textbf{Tareas} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{
 				\begin{itemize}
-					\item T1
-					\item T2
-					\item T3
-					\item T4
+					\item Crear el módulo de calendario.
+					\item Configurar el \textit{layout}.
+					\item Agregar el módulo a \texttt{config/main.php}.
+					\item Agregar el nuevo módulo a la cabecera del sitio en el \textit{frontend}.
 				\end{itemize}
 			} \\		
 			\hline			
 		\end{tabular}	
-		\caption{Tabla de la HU1.1}
-		\label{tab:HU1.1}
+		\caption{Tabla de la HU3}
+		\label{tab:HU3}
 	\end{center}
 \end{table}
 
@@ -516,31 +511,28 @@ A continuación, vamos a ofrecer una serie de tarjetas de todas y cada una de es
 	\begin{center}
 		\begin{tabular}{ | c | c | c | } 
 			\hline
-			\textbf{Identificación} & \parbox[t]{7cm}{HU1.1 - Listado de usuarios en todo el sistema: consulta, búsqueda, edición y eliminación de registros.}  & \textbf{Sprint:} 1 \\
+			\textbf{Identificación} & \parbox[t]{7cm}{HU3.1 - Crear nuevos eventos con tareas asociadas a los mismos.}  & \textbf{Sprint:} 2 \\
 			\hline
-			\textbf{Descripción} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{El panel de control posibilita al administrador crear, modificar y eliminar la información con la que trabajan los gestores en twinX} \\
+			\textbf{Descripción} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{Los gestores podrán crear eventos comunes a todo el personal de gestión de la plataforma y complementarlos usando tareas.} \\
 			\hline
 			\textbf{Pruebas de aceptación} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{
 				\begin{itemize}
-					\item PA1
-					\item PA2
-					\item PA3
-					\item PA4
+					\item Se intenta crear un evento con una fecha anterior a la actual y el sistema alerta del error e impide la operación.
+					\item Se intenta eliminar un evento que no ha finalizado y que tiene tareas pendientes. El sistema avisa y efectúa la acción tras una confirmación.
 				\end{itemize}
 			} \\
 			\hline
 			\textbf{Tareas} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{
 				\begin{itemize}
-					\item T1
-					\item T2
-					\item T3
-					\item T4
+					\item Crear los modelos de evento y tarea con Gii.
+					\item Crear la tabla CRUD con Gii y modificarla de acuerdo con los bocetos.
+					\item Diseñar la interfaz de usuario para la creación de eventos y tareas.
 				\end{itemize}
 			} \\		
 			\hline			
 		\end{tabular}	
-		\caption{Tabla de la HU1.1}
-		\label{tab:HU1.1}
+		\caption{Tabla de la HU3.1}
+		\label{tab:HU3.1}
 	\end{center}
 \end{table}
 
@@ -548,31 +540,27 @@ A continuación, vamos a ofrecer una serie de tarjetas de todas y cada una de es
 	\begin{center}
 		\begin{tabular}{ | c | c | c | } 
 			\hline
-			\textbf{Identificación} & \parbox[t]{7cm}{HU1.1 - Listado de usuarios en todo el sistema: consulta, búsqueda, edición y eliminación de registros.}  & \textbf{Sprint:} 1 \\
+			\textbf{Identificación} & \parbox[t]{7cm}{HU3.2 - Configurar avisos de los eventos y tareas que se creen}  & \textbf{Sprint:} 2 \\
 			\hline
-			\textbf{Descripción} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{El panel de control posibilita al administrador crear, modificar y eliminar la información con la que trabajan los gestores en twinX} \\
+			\textbf{Descripción} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{Los gestores podrán asignar avisos a los eventos y tareas creados para ser notificados cuando elijan y a la persona a la que se los asignen.} \\
 			\hline
 			\textbf{Pruebas de aceptación} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{
 				\begin{itemize}
-					\item PA1
-					\item PA2
-					\item PA3
-					\item PA4
+					\item Se intenta poner un recordatorio en una fecha anterior a la actual. El sistema lo notifica e impide la acción.
 				\end{itemize}
 			} \\
 			\hline
 			\textbf{Tareas} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{
 				\begin{itemize}
-					\item T1
-					\item T2
-					\item T3
-					\item T4
+					\item Construir el modelo de la tabla \texttt{deadline\_aviso} con Gii.
+					\item Modificar las vistas de calendario y tarea para agregar los recordatorios.
+					\item Añadir al menú de notificaciones la aparición de avisos por evento o tarea pendiente.
 				\end{itemize}
 			} \\		
 			\hline			
 		\end{tabular}	
-		\caption{Tabla de la HU1.1}
-		\label{tab:HU1.1}
+		\caption{Tabla de la HU3.2}
+		\label{tab:HU3.2}
 	\end{center}
 \end{table}
 
@@ -580,31 +568,27 @@ A continuación, vamos a ofrecer una serie de tarjetas de todas y cada una de es
 	\begin{center}
 		\begin{tabular}{ | c | c | c | } 
 			\hline
-			\textbf{Identificación} & \parbox[t]{7cm}{HU1.1 - Listado de usuarios en todo el sistema: consulta, búsqueda, edición y eliminación de registros.}  & \textbf{Sprint:} 1 \\
+			\textbf{Identificación} & \parbox[t]{7cm}{HU3.3 - Configurar los recordatorios personales}  & \textbf{Sprint:} 2 \\
 			\hline
-			\textbf{Descripción} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{El panel de control posibilita al administrador crear, modificar y eliminar la información con la que trabajan los gestores en twinX} \\
+			\textbf{Descripción} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{Los gestores tendrán la posibilidad de programar recordatorios para recibir un aviso en el futuro.} \\
 			\hline
 			\textbf{Pruebas de aceptación} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{
 				\begin{itemize}
-					\item PA1
-					\item PA2
-					\item PA3
-					\item PA4
+					\item Se intenta programar un recordatorio para una fecha anterior a la actual. El sistema lanza una aviso e impide la acción.
 				\end{itemize}
 			} \\
 			\hline
 			\textbf{Tareas} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{
 				\begin{itemize}
-					\item T1
-					\item T2
-					\item T3
-					\item T4
+					\item Construir el modelo de recordatorio con Gii.
+					\item Construir la tabla CRUD con Gii.
+					\item Configurar el panel de notificaciones para que muestre también los recordatorios programados.
 				\end{itemize}
 			} \\		
 			\hline			
 		\end{tabular}	
-		\caption{Tabla de la HU1.1}
-		\label{tab:HU1.1}
+		\caption{Tabla de la HU3.3}
+		\label{tab:HU3.3}
 	\end{center}
 \end{table}
 
@@ -612,94 +596,27 @@ A continuación, vamos a ofrecer una serie de tarjetas de todas y cada una de es
 	\begin{center}
 		\begin{tabular}{ | c | c | c | } 
 			\hline
-			\textbf{Identificación} & \parbox[t]{7cm}{HU1.1 - Listado de usuarios en todo el sistema: consulta, búsqueda, edición y eliminación de registros.}  & \textbf{Sprint:} 1 \\
+			\textbf{Identificación} & \parbox[t]{7cm}{HU4 - Hacer uso de la mensajería entre los usuarios}  & \textbf{Sprint:} 2 \\
 			\hline
-			\textbf{Descripción} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{El panel de control posibilita al administrador crear, modificar y eliminar la información con la que trabajan los gestores en twinX} \\
+			\textbf{Descripción} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{Los usuarios pueden enviarse mensajes entre ellos mismos: consultar los mensajes recibidos, escribir nuevos y cambiar la etiqueta de los ya existentes (importante, eliminado, etc.)} \\
 			\hline
 			\textbf{Pruebas de aceptación} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{
 				\begin{itemize}
-					\item PA1
-					\item PA2
-					\item PA3
-					\item PA4
+					\item Se intenta enviar un mensaje a un usuario no existente. El sistema alerta del error y el mensaje no es enviado.
 				\end{itemize}
 			} \\
 			\hline
 			\textbf{Tareas} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{
 				\begin{itemize}
-					\item T1
-					\item T2
-					\item T3
-					\item T4
+					\item Construir el modelo de mensaje con Gii.
+					\item Construir la tabla CRUD con Yii.
+					\item Modificar la interfaz para asemejarla a una bandeja de entrada de mensajes.
+					\item Configurar las notificaciones de recepción de mensajes.
 				\end{itemize}
 			} \\		
 			\hline			
 		\end{tabular}	
-		\caption{Tabla de la HU1.1}
-		\label{tab:HU1.1}
-	\end{center}
-\end{table}
-
-\begin{table}[h]
-	\begin{center}
-		\begin{tabular}{ | c | c | c | } 
-			\hline
-			\textbf{Identificación} & \parbox[t]{7cm}{HU1.1 - Listado de usuarios en todo el sistema: consulta, búsqueda, edición y eliminación de registros.}  & \textbf{Sprint:} 1 \\
-			\hline
-			\textbf{Descripción} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{El panel de control posibilita al administrador crear, modificar y eliminar la información con la que trabajan los gestores en twinX} \\
-			\hline
-			\textbf{Pruebas de aceptación} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{
-				\begin{itemize}
-					\item PA1
-					\item PA2
-					\item PA3
-					\item PA4
-				\end{itemize}
-			} \\
-			\hline
-			\textbf{Tareas} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{
-				\begin{itemize}
-					\item T1
-					\item T2
-					\item T3
-					\item T4
-				\end{itemize}
-			} \\		
-			\hline			
-		\end{tabular}	
-		\caption{Tabla de la HU1.1}
-		\label{tab:HU1.1}
-	\end{center}
-\end{table}
-
-\begin{table}[h]
-	\begin{center}
-		\begin{tabular}{ | c | c | c | } 
-			\hline
-			\textbf{Identificación} & \parbox[t]{7cm}{HU1.1 - Listado de usuarios en todo el sistema: consulta, búsqueda, edición y eliminación de registros.}  & \textbf{Sprint:} 1 \\
-			\hline
-			\textbf{Descripción} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{El panel de control posibilita al administrador crear, modificar y eliminar la información con la que trabajan los gestores en twinX} \\
-			\hline
-			\textbf{Pruebas de aceptación} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{
-				\begin{itemize}
-					\item PA1
-					\item PA2
-					\item PA3
-					\item PA4
-				\end{itemize}
-			} \\
-			\hline
-			\textbf{Tareas} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{
-				\begin{itemize}
-					\item T1
-					\item T2
-					\item T3
-					\item T4
-				\end{itemize}
-			} \\		
-			\hline			
-		\end{tabular}	
-		\caption{Tabla de la HU1.1}
-		\label{tab:HU1.1}
+		\caption{Tabla de la HU4}
+		\label{tab:HU4}
 	\end{center}
 \end{table}
