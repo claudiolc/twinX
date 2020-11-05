@@ -93,6 +93,8 @@ class User extends ActiveRecord implements IdentityInterface
             'tipo_usuario' => 'Tipo de usuario',
             'telefono' => 'Teléfono',
             'sexo' => 'Sexo',
+            'created_at' => 'Fecha de registro',
+            'updated_at' => 'Última actualización'
         ];
     }
 

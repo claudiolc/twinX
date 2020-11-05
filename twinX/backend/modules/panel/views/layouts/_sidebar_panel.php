@@ -65,6 +65,19 @@
             'active' => in_array(\Yii::$app->controller->id, ['centro'])
         ],
 
+        [
+            'label' => 'Áreas',
+            'url' => ['/panel/area'],
+            'active' => in_array(\Yii::$app->controller->id, ['area'])
+        ],
+
+        [
+            'label' => 'Cursos',
+            'url' => ['/panel/curso'],
+            'active' => in_array(\Yii::$app->controller->id, ['curso'])
+        ],
+
+
     ];
 
     echo $this->render('@backend/views/layouts/_sidebar_base.php', ['items' => $items]);
