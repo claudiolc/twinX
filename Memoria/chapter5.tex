@@ -14,52 +14,54 @@ Más técnicamente, cada uno de los componentes de esta lista son acciones que e
 
 En referencia a esas «grandes tareas» que hemos mencionado anteriormente y que ya tenemos definidas, podríamos decir que dentro de ellas se esconden otras pequeñas tareas que nos son más sencillas de seguir a la hora del desarrollo. Es decir, son historias de usuario encerradas en otra más grande que alberga a todas ellas. Esto se conoce en el argot de Scrum como \textbf{épicas}. Así, «hacer uso del panel de control» sería una épica, pues dentro de ella irían historias de usuario como «ver un listado con todos los tipos de expedientes».
 
-En la tabla \ref{tab:listadoHU} encontramos el backlog genérico del desarrollo, como producto de la síntesis que se puede hacer de las secciones~\ref{subsec:propuesta} y~\ref{subsec:sprints}, donde hemos incluido las historias de usuario a desarrollar para la primera versión de twinX, en sus épicas correspondientes. Entendemos que todas las historias numeradas como «x.1», «x.2», ..., «x.n» pertenecen todas a la épica (historia de usuario) «x». Recordemos también que el significado de «historia de usuario» no es otro que una acción a desarrollar por el usuario final del sistema, por lo que siempre tienen que estar descritas desde su punto de vista. Es asunto del desarrollador el cuestionarse las tareas (de código en su mayoría) que implica realizar cada una de ellas, por lo que para la elaboración del backlog no nos centraremos en esas tareas a llevar a cabo en cuanto a implementación, sino a satisfacción de las necesidades del usuario.
+En la tabla \ref{tab:listadoHU} encontramos el backlog genérico del desarrollo, como producto de la síntesis que se puede hacer de las secciones \ref{subsec:propuesta} y~\ref{subsec:sprints}, donde hemos incluido las historias de usuario a desarrollar para la primera versión de twinX, en sus épicas correspondientes. Entendemos que todas las historias numeradas como «x.1», «x.2», ..., «x.n» pertenecen todas a la épica (historia de usuario) «x». Recordemos también que el significado de «historia de usuario» no es otro que una acción a desarrollar por el usuario final del sistema, por lo que siempre tienen que estar descritas desde su punto de vista. Es asunto del desarrollador el cuestionarse las tareas (de código en su mayoría) que implica realizar cada una de ellas, por lo que para la elaboración del backlog no nos centraremos en esas tareas a llevar a cabo en cuanto a implementación, sino a satisfacción de las necesidades del usuario.
 
 \begin{table}[h]
 	\begin{center}
 		\begin{adjustbox}{width=1\textwidth}
 			\begin{tabular}{ | c | >{\centering\arraybackslash}p{0.75\linewidth} | c | } 
 				\hline
-				\textbf{Identificador} & \textbf{Descripción} & \textbf{Sprint} \\
+					\textbf{Identificador} & \textbf{Descripción} & \textbf{Sprint} \\
 				\hline
-				HU.1 \label{HU1} &  Acceso al panel de control & 1 \\
+					\hyperref[tab:HU1]{HU.1} &  Acceso al panel de control. & 1 \\
 				\hline
-				HU.1.1 \label{HU1.1} & Listado de usuarios en todo el sistema: consulta, búsqueda, edición y eliminación de registros. & 1 \\
+					\hyperref[tab:HU1.1]{HU.1.1} & Listado de usuarios en todo el sistema: consulta, búsqueda, edición y eliminación de registros. & 1 \\
 				\hline
-				HU.1.2 \label{HU1.2} & Listado de tipos de expedientes almacenados: consulta, búsqueda, edición y eliminación de registros. & 1 \\
+					\hyperref[tab:HU1.2]{HU.1.2} & Listado de tipos de expedientes almacenados: consulta, búsqueda, edición y eliminación de registros. & 1 \\
 				\hline
-				HU.1.3 \label{HU1.3} & Listado de fases de expedientes almacenadas: consulta, búsqueda, edición y eliminación de registros. & 1 \\
+					\hyperref[tab:HU1.3]{HU.1.3} & Listado de fases de expedientes almacenadas: consulta, búsqueda, edición y eliminación de registros. & 1 \\
 				\hline
-				HU.1.4 \label{HU1.4} & Listado de mails predefinidos almacenados: consulta, búsqueda, edición y eliminación de registros. & 1 \\
+					\hyperref[tab:HU1.4]{HU.1.4} & Listado de mails predefinidos almacenados: consulta, búsqueda, edición y eliminación de registros. & 1 \\
 				\hline
-				HU.1.5 \label{HU1.5} & Listado de universidades almacenadas: consulta, búsqueda, edición y eliminación de registros. & 1 \\
+					\hyperref[tab:HU1.5]{HU.1.5} & Listado de universidades almacenadas: consulta, búsqueda, edición y eliminación de registros. & 1 \\
 				\hline
-				HU.1.6 \label{HU1.6} & Listado de países almacenados: consulta, búsqueda, edición y eliminación de registros. & 1 \\
+					\hyperref[tab:HU1.6]{HU.1.6} & Listado de países almacenados: consulta, búsqueda, edición y eliminación de registros. & 1 \\
 				\hline
-				HU.2.1 \label{HU2.1} & Ver la información más importante y de atención prioritaria de un vistazo & 1 \\
+					\hyperref[tab:HU2]{HU.2} & Gestionar el trabajo diario de la oficina: estudiantes, expedientes, acuerdos de estudios, convenios y tutores. & 1 \\
 				\hline
-				HU.2.2 \label{HU2.2} & Gestionar los estudiantes: listado y vistas independientes con posibilidad de edición de sus datos & 1 \\
+					\hyperref[tab:HU2.1]{HU.2.1} & Ver la información más importante y de atención prioritaria de un vistazo. & 1 \\
 				\hline
-				HU.2.3 \label{HU2.3} & Gestionar los convenios: listado y vistas independientes con posibilidad de edición de los distintos campos & 1 \\
+					\hyperref[tab:HU2.2]{HU.2.2} & Gestionar los estudiantes: listado y vistas independientes con posibilidad de edición de sus datos. & 1 \\
 				\hline
-				HU.2.4 \label{HU2.4} & Gestionar los expedientes de los estudiantes: listado y vistas independientes con posibilidad de modificar sus fases & 1 \\
+					\hyperref[tab:HU2.3]{HU.2.3} & Gestionar los convenios: listado y vistas independientes con posibilidad de edición de los distintos campos. & 1 \\
 				\hline
-				HU.2.5 \label{HU2.5} & Gestionar los acuerdos de estudios: listado y vistas independientes con posibilidad de consultar los estudiantes relacionados y sus datos & 1 \\
+					\hyperref[tab:HU2.4]{HU.2.4} & Gestionar los expedientes de los estudiantes: listado y vistas independientes con posibilidad de modificar sus fases. & 1 \\
 				\hline
-				HU.2.6 \label{HU2.6} & Ver todos los tutores del sistema y consultar los acuerdos de estudios asociados a los mismos & 1 \\
+					\hyperref[tab:HU2.5]{HU.2.5} & Gestionar los acuerdos de estudios: listado y vistas independientes con posibilidad de consultar los estudiantes relacionados y sus datos. & 1 \\
 				\hline
-				HU.3 \label{HU.3} & Planificación de eventos y tareas & 2 \\
+					\hyperref[tab:HU2.6]{HU.2.6} & Ver todos los tutores del sistema y consultar los acuerdos de estudios asociados a los mismos. & 1 \\
 				\hline
-				HU.3.1 \label{HU.3.1} & Crear nuevos eventos con tareas asociadas a los mismos & 2 \\
+					\hyperref[tab:HU3]{HU.3} & Planificación de eventos y tareas. & 2 \\
 				\hline
-				HU.3.2 \label{HU.3.2} & Configurar avisos de los eventos y tareas que se creen & 2 \\
+					\hyperref[tab:HU3.1]{HU.3.1} & Crear nuevos eventos con tareas asociadas a los mismos. & 2 \\
 				\hline
-				HU.3.3. \label{HU.3.3} & Configurar recordatorios personales & 2 \\
+					\hyperref[tab:HU3.2]{HU.3.2} & Configurar avisos de los eventos y tareas que se creen. & 2 \\
 				\hline
-				HU.4 \label{HU.4} & Hacer uso de una mensajería entre los usuarios & 2 \\
+					\hyperref[tab:HU3.3]{HU.3.3} & Configurar recordatorios personales. & 2 \\
 				\hline
-				HU.4.1 \label{HU.4.1} & Consultar y borrar los mensajes recibidos y poder escribir nuevos & 2 \\
+					\hyperref[tab:HU4]{HU.4} & Hacer uso de una mensajería entre los usuarios. & 2 \\
+				\hline
+					\hyperref[tab:HU4.1]{HU.4.1} & Consultar y borrar los mensajes recibidos y poder escribir nuevos. & 2 \\
 				\hline			
 			\end{tabular}	
 		\end{adjustbox}
@@ -68,17 +70,636 @@ En la tabla \ref{tab:listadoHU} encontramos el backlog genérico del desarrollo,
 	\end{center}
 \end{table}
 
+\section{Historias de usuario}
+
+A continuación, vamos a ofrecer una serie de tarjetas de todas y cada una de estas historias de usuario, planificadas para los dos primeros sprints y priorizadas como se ha especificado en la tabla \ref{tab:listadoHU}.
+
 \begin{table}[h]
 	\begin{center}
 		\begin{tabular}{ | c | c | c | } 
 			\hline
-			
+				\textbf{Identificación} & HU1 - Acceso al panel de control & \textbf{Sprint:} 1 \\
+			\hline
+				\textbf{Descripción} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{El panel de control posibilita al administrador crear, modificar y eliminar la información con la que trabajan los gestores en twinX} \\
+			\hline
+				\textbf{Pruebas de aceptación} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{
+					\begin{itemize}
+						\item Se intenta acceder al panel de control desde la sesión de un usuario sin permisos de administrador y el sistema no permite el acceso.
+					\end{itemize}
+				} \\
+			\hline
+			\textbf{Tareas} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{
+				\begin{itemize}
+					\item Crear el módulo de panel de control
+					\item Configurar el \textit{layout}
+					\item Agregar el módulo a \texttt{config/main.php}
+					\item Agregar el nuevo módulo a la cabecera del sitio en el \textit{frontend}
+				\end{itemize}
+			} \\		
 			\hline			
 		\end{tabular}	
-		\caption{HU1}
+		\caption{Tabla de la HU1}
 		\label{tab:HU1}
 	\end{center}
 \end{table}
 
 
 
+\begin{table}[h]
+	\begin{center}
+		\begin{tabular}{ | c | c | c | } 
+			\hline
+			\textbf{Identificación} & \parbox[t]{7cm}{HU1.1 - Listado de usuarios en todo el sistema: consulta, búsqueda, edición y eliminación de registros.}  & \textbf{Sprint:} 1 \\
+			\hline
+			\textbf{Descripción} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{Un listado para que el administrador pueda ver todos los usuarios del sistema: tutores, estudiantes, gestores y otros posibles administradores. Se podrán editar los permisos y/o datos del usuario en concreto.} \\
+			\hline
+			\textbf{Pruebas de aceptación} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{
+				\begin{itemize}
+					\item El usuario a borrar es de tipo  «estudiante» y tiene al menos un acuerdo de estudios registrado en el sistema, por lo que se impide la acción.
+					\item Se intenta cambiar el rango de un estudiante a «gestor», pero hay datos relacionados con el estudiante ya guardados (acuerdo de estudios, expedientes...), por lo que se impide la acción.
+					\item Se crea un usuario nuevo, pero se avisa al administrador que dicho usuario aún tiene que activar su cuenta.
+				\end{itemize}
+			} \\
+			\hline
+			\textbf{Tareas} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{
+				\begin{itemize}
+					\item Construir el modelo de Usuario con Gii.
+					\item Construir la tabla CRUD con Gii.
+				\end{itemize}
+			} \\		
+			\hline			
+		\end{tabular}	
+		\caption{Tabla de la HU1.1}
+		\label{tab:HU1.1}
+	\end{center}
+\end{table}
+
+
+\begin{table}[h]
+	\begin{center}
+		\begin{tabular}{ | c | c | c | } 
+			\hline
+			\textbf{Identificación} & \parbox[t]{7cm}{HU1.2 - Listado de tipos de expedientes almacenados: consulta, búsqueda, edición y eliminación de registros.}  & \textbf{Sprint:} 1 \\
+			\hline
+			\textbf{Descripción} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{El administrador podrá crear, modificar, buscar y eliminar tipos de expedientes para que los gestores puedan especificar nuevos estados en la movilidad de un estudiante concreto.} \\
+			\hline
+			\textbf{Pruebas de aceptación} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{
+				\begin{itemize}
+					\item Se intenta borrar un tipo de expediente que está en uso y se deniega la acción.
+					\item Se modifica el nombre de un expediente en uso y se alerta al administrador de ello. La acción se realiza después de una confirmación.
+				\end{itemize}
+			} \\
+			\hline
+			\textbf{Tareas} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{
+				\begin{itemize}
+					\item Construir el modelo de tipo de expediente con Gii.
+					\item Construir la tabla CRUD con Gii.
+				\end{itemize}
+			} \\		
+			\hline			
+		\end{tabular}	
+		\caption{Tabla de la HU1.2}
+		\label{tab:HU1.2}
+	\end{center}
+\end{table}
+
+\begin{table}[h]
+	\begin{center}
+		\begin{tabular}{ | c | c | c | } 
+			\hline
+			\textbf{Identificación} & \parbox[t]{7cm}{HU1.3 - Listado de fases de expedientes almacenadas: consulta, búsqueda, edición y eliminación de registros.}  & \textbf{Sprint:} 1 \\
+			\hline
+			\textbf{Descripción} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{El administrador podrá crear, modificar, buscar y eliminar fases de expedientes para poder especificar los eventos que suceden durante la tramitación de un expediente para un estudiante en concreto.} \\
+			\hline
+			\textbf{Pruebas de aceptación} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{
+				\begin{itemize}
+					\item Se intenta borrar una fase de expediente que está en uso y se deniega la acción.
+					\item Se modifica el nombre de una fase de expediente en uso y se alerta al administrador de ello. La acción se realiza después de una confirmación.
+				\end{itemize}
+			} \\
+			\hline
+			\textbf{Tareas} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{
+				\begin{itemize}
+					\item Construir el modelo de fase de expediente con Gii.
+					\item Construir la tabla CRUD con Gii.
+					\item Enlazar los nombres de los tipos de expedientes haciendo una consulta a la tabla correspondiente.
+					\item Adjuntar una vista para enlazar envíos de mails por defecto al procesar la fase.
+				\end{itemize}
+			} \\		
+			\hline			
+		\end{tabular}	
+		\caption{Tabla de la HU1.3}
+		\label{tab:HU1.3}
+	\end{center}
+\end{table}
+
+\begin{table}[h]
+	\begin{center}
+		\begin{tabular}{ | c | c | c | } 
+			\hline
+			\textbf{Identificación} & \parbox[t]{7cm}{HU1.4 - Listado de mails predefinidos almacenados: consulta, búsqueda, edición y eliminación de registros.}  & \textbf{Sprint:} 1 \\
+			\hline
+			\textbf{Descripción} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{El administrador podrá crear, modificar, buscar y eliminar mails predefinidos que poder adjuntar a una o varias fases en concreto para que sean enviados de forma automatizada al procesar la fase en cuestión.} \\
+			\hline
+			\textbf{Pruebas de aceptación} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{
+				\begin{itemize}
+					\item Se intenta eliminar un mail predefinido que está en uso en alguna fase y se deniega la acción
+				\end{itemize}
+			} \\
+			\hline
+			\textbf{Tareas} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{
+				\begin{itemize}
+					\item Construir el modelo con Gii.
+					\item Contruir la tabla CRUD con Gii.
+					\item Modificar los atributos a mostrar para que se muestren los nombres y no las claves primarias en base de datos.
+				\end{itemize}
+			} \\		
+			\hline			
+		\end{tabular}	
+		\caption{Tabla de la HU1.4}
+		\label{tab:HU1.4}
+	\end{center}
+\end{table}
+
+\begin{table}[h]
+	\begin{center}
+		\begin{tabular}{ | c | c | c | } 
+			\hline
+			\textbf{Identificación} & \parbox[t]{7cm}{HU1.5 - Listado de universidades almacenadas: consulta, búsqueda, edición y eliminación de registros.}  & \textbf{Sprint:} 1 \\
+			\hline
+			\textbf{Descripción} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{El administrador podrá crear, modificar, buscar y eliminar universidades para que puedan ser elegidas a la hora de especificar los datos de un convenio dado.} \\
+			\hline
+			\textbf{Pruebas de aceptación} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{
+				\begin{itemize}
+					\item Se intenta eliminar una universidad en uso y se impide la acción.
+					\item Se intenta modificar una universidad en uso y se alerta al usuario de los riesgos. La acción se realiza tras una confirmación.
+				\end{itemize}
+			} \\
+			\hline
+			\textbf{Tareas} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{
+				\begin{itemize}
+					\item Construir el modelo de universidad con Gii.
+					\item Construir la tabla CRUD con Gii.
+				\end{itemize}
+			} \\		
+			\hline			
+		\end{tabular}	
+		\caption{Tabla de la HU1.5}
+		\label{tab:HU1.5}
+	\end{center}
+\end{table}
+
+\begin{table}[h]
+	\begin{center}
+		\begin{tabular}{ | c | c | c | } 
+			\hline
+			\textbf{Identificación} & \parbox[t]{7cm}{HU1.6 - Listado de países almacenados: consulta, búsqueda, edición y eliminación de registros.}  & \textbf{Sprint:} 1 \\
+			\hline
+			\textbf{Descripción} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{El administrador podrá crear, modificar, buscar y eliminar países para su asociación con universidades, todo ello en relación con la creación de convenios.} \\
+			\hline
+			\textbf{Pruebas de aceptación} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{
+				\begin{itemize}
+					\item Se intenta eliminar un país en uso y se impide la acción.
+					\item Se intenta modificar un país en uso y se alerta al usuario de los riesgos. La acción se realiza tras una confirmación.
+				\end{itemize}
+			} \\
+			\hline
+			\textbf{Tareas} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{
+				\begin{itemize}
+					\item Construir el modelo de país con Gii.
+					\item Construir la tabla CRUD con Gii.
+				\end{itemize}
+			} \\		
+			\hline			
+		\end{tabular}	
+		\caption{Tabla de la HU1.6}
+		\label{tab:HU1.6}
+	\end{center}
+\end{table}
+
+\begin{table}[h]
+	\begin{center}
+		\begin{tabular}{ | c | c | c | } 
+			\hline
+			\textbf{Identificación} & \parbox[t]{7cm}{HU2 - Gestionar el trabajo diario de la oficina: estudianets, expedientes, acuerdos de estudios, convenios y tutores.}  & \textbf{Sprint:} 1 \\
+			\hline
+			\textbf{Descripción} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{El menú de gestión es el que frecuentarán los trabajadores de la oficina, donde gestionarán todo lo que rodea a la movilidad internacional en la facultad.} \\
+			\hline
+			\textbf{Pruebas de aceptación} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{
+				\begin{itemize}
+					\item Se intenta acceder a gestión desde la sesión de un usuario sin permisos de gestor y el sistema no permite el acceso.
+				\end{itemize}
+			} \\
+			\hline
+			\textbf{Tareas} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{
+				\begin{itemize}
+					\item Crear el módulo de gestión
+					\item Configurar el \textit{layout}
+					\item Agregar el módulo a \texttt{config/main.php}
+					\item Agregar el nuevo módulo a la cabecera del sitio en el \textit{frontend}
+				\end{itemize}
+			} \\		
+			\hline				
+		\end{tabular}	
+		\caption{Tabla de la HU2}
+		\label{tab:HU2}
+	\end{center}
+\end{table}
+
+\begin{table}[h]
+	\begin{center}
+		\begin{tabular}{ | c | c | c | } 
+			\hline
+			\textbf{Identificación} & \parbox[t]{7cm}{HU2.1 - Ver la información más importante y de atención prioritaria de un vistazo.}  & \textbf{Sprint:} 1 \\
+			\hline
+			\textbf{Descripción} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{Disposición de un panel que resuma todo lo más importante que un gestor deba atender en un día concreto; esto es, que resuma los asuntos a atender en una sola visa. Esta utilidad recibe el nombre de \textit{dashboard}} \\
+			\hline
+			\textbf{Pruebas de aceptación} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{
+				\begin{itemize}
+					\item Si una tarjeta tiene mucho contenido, solo se mostrará una parte del mismo, para no entorpecer la visibilidad de las demás tarjetas.
+					\item Si una tarjeta no tiene contenido, se tendrá que avisar de ello en lugar de dejarla en blanco.
+				\end{itemize}
+			} \\
+			\hline
+			\textbf{Tareas} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{
+				\begin{itemize}
+					\item Crear la interfaz gráfica siguiendo los bocetos.
+					\item Asociar cada tarjeta de información con los registros necesarios en la base de datos.
+				\end{itemize}
+			} \\		
+			\hline			
+		\end{tabular}	
+		\caption{Tabla de la HU2.1}
+		\label{tab:HU2.1}
+	\end{center}
+\end{table}
+
+\begin{table}[h]
+	\begin{center}
+		\begin{tabular}{ | c | c | c | } 
+			\hline
+			\textbf{Identificación} & \parbox[t]{7cm}{HU2.2 - Gestionar los estudiantes: listado y vistas independientes con posibilidad de edición de los distintos campos.}  & \textbf{Sprint:} 1 \\
+			\hline
+			\textbf{Descripción} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{Los gestores dispondrán de una lista con todos los estudiantes con algún proceso de movilidad registrado. Desde ahí, podrán acceder a otros menús en relación con un estudiante en concreto.} \\
+			\hline
+			\textbf{Pruebas de aceptación} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{
+				\begin{itemize}
+					\item Se intenta acceder al acuerdo de estudios de un estudiante que no tiene. Se muestra un mensaje de error.
+				\end{itemize}
+			} \\
+			\hline
+			\textbf{Tareas} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{
+				\begin{itemize}
+					\item Construir el modelo de estudiante con Gii.
+					\item Costruir la tabla CRUD con Gii.
+					\item Desarrollar la vista de un estudiante.
+					\item Programar acciones especiales para cada entrada en la lista (acceso a acuerdo de estudios, convenio, expedientes...)
+				\end{itemize}
+			} \\		
+			\hline			
+		\end{tabular}	
+		\caption{Tabla de la HU2.2}
+		\label{tab:HU2.2}
+	\end{center}
+\end{table}
+
+\begin{table}[h]
+	\begin{center}
+		\begin{tabular}{ | c | c | c | } 
+			\hline
+			\textbf{Identificación} & \parbox[t]{7cm}{HU2.3 - Gestionar los convenios: listado y vistas independientes con posibilidad de edición de los distintos campos.}  & \textbf{Sprint:} 1 \\
+			\hline
+			\textbf{Descripción} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{Los gestores dispondrán de una lista con todos los convenios registrados en el sistema. Podrán consultarlos, buscarlos, añadir nuevos, editarlos y borrarlos. También podrán ver los estudiantes asociados a un convenio concreto para los que se tiene un acuerdo de estudios vigente.
+			} \\
+			\hline
+			\textbf{Pruebas de aceptación} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{
+				\begin{itemize}
+					\item Se intenta eliminar un convenio que tiene algún acuerdo de estudios vigente. No se lleva a cabo la acción y se alerta al usuario.
+				\end{itemize}
+			} \\
+			\hline
+			\textbf{Tareas} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{
+				\begin{itemize}
+					\item Crear el modelo de convenio con Gii.
+					\item Crear la tabla CRUD con Gii.
+					\item Crear la interfaz para la vista de convenios acorde con los bocetos y las necesidades.
+				\end{itemize}
+			} \\		
+			\hline			
+		\end{tabular}	
+		\caption{Tabla de la HU2.3}
+		\label{tab:HU2.3}
+	\end{center}
+\end{table}
+
+\begin{table}[h]
+	\begin{center}
+		\begin{tabular}{ | c | c | c | } 
+			\hline
+			\textbf{Identificación} & \parbox[t]{7cm}{HU2.4 - Gestionar los expedientes: listado y vistas independientes con posibilidad de edición de los distintos campos.}  & \textbf{Sprint:} 1 \\
+			\hline
+			\textbf{Descripción} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{Los gestores dispondrán de una lista con todos los expedientes registrados en el sistema. Podrán consultarlos, buscarlos, añadir nuevos, editarlos y borrarlos. Dispondrán de un menú interno al que acceder para ver los historiales de los expedientes: las fases por las que han pasado, ejecutar algún cambio de fase o consultar datos relacionados con los estudiantes, sus acuerdos y los convenios asociados.
+			} \\
+			\hline
+			\textbf{Pruebas de aceptación} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{
+				\begin{itemize}
+					\item Se intenta procesar más de una fase al mismo tiempo. No se lleva a cabo la acción y se alerta al usuario.
+				\end{itemize}
+			} \\
+			\hline
+			\textbf{Tareas} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{
+				\begin{itemize}
+					\item Crear el modelo de expediente con Gii.
+					\item Crear la tabla CRUD con Gii.
+					\item Diseñar la interfaz gráfica de acuerdo con los bocetos y las necesidades.
+					\item Crear los accesos directos a la vista de estudiante y a la de convenio.
+				\end{itemize}
+			} \\		
+			\hline			
+		\end{tabular}	
+		\caption{Tabla de la HU2.4}
+		\label{tab:HU2.4}
+	\end{center}
+\end{table}
+
+\begin{table}[h]
+	\begin{center}
+		\begin{tabular}{ | c | c | c | } 
+			\hline
+			\textbf{Identificación} & \parbox[t]{7cm}{HU2.5 - Gestionar los acuerdos de estudios: listado y vistas independientes con posibilidad de edición de los distintos campos.}  & \textbf{Sprint:} 1 \\
+			\hline
+			\textbf{Descripción} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{Los gestores dispondrán de una lista con todos los acuerdos de estudios registrados en el sistema. Podrán consultarlos, buscarlos, añadir nuevos, editarlos y borrarlos. También podrán ver el convenio al que se asocia un acuerdo de estudios dado y los expedientes de ese acuerdo para con el estudiante que lo tiene registrado.
+			} \\
+			\hline
+			\textbf{Pruebas de aceptación} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{
+				\begin{itemize}
+					\item Se intenta eliminar un acuerdo vigente. No se lleva a cabo la acción y se alerta al usuario.
+				\end{itemize}
+			} \\
+			\hline
+			\textbf{Tareas} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{
+				\begin{itemize}
+					\item Crear el modelo de convenio con Gii.
+					\item Crear la tabla CRUD con Gii.
+					\item Crear los accesos directos a la vista de estudiante y a la de convenio.
+				\end{itemize}
+			} \\		
+			\hline			
+		\end{tabular}	
+		\caption{Tabla de la HU2.5}
+		\label{tab:HU2.5}
+	\end{center}
+\end{table}
+
+\begin{table}[h]
+	\begin{center}
+		\begin{tabular}{ | c | c | c | } 
+			\hline
+			\textbf{Identificación} & \parbox[t]{7cm}{HU2.6 - Ver todos los tutores del sistema y consultar los acuerdos de estudios asociados a los mismos.}  & \textbf{Sprint:} 1 \\
+			\hline
+			\textbf{Descripción} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{Los gestores dispondrán de una lista con todos los tutores activos en el sistema (esto es, tutorizando algún acuerdo de estudios). Podrán consultarlos, buscarlos y ver información relacionada, como los acuerdos de estudios que tutoriza. También se podrá asignar un tutor a un acuerdo de estudios existente y que no tenga tutor previamente.
+			} \\
+			\hline
+			\textbf{Pruebas de aceptación} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{
+				\begin{itemize}
+					\item Se intenta asignar un tutor a un acuerdo de estudios que ya tiene tutor o el cual no se encuentra vigente. No se lleva a cabo la acción y se alerta al usuario.
+				\end{itemize}
+			} \\
+			\hline
+			\textbf{Tareas} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{
+				\begin{itemize}
+					\item Crear el modelo de tutor con Gii.
+					\item Crear la tabla CRUD con Gii.
+					\item Crear los accesos directos a la vista de acuerdo de estudios.
+				\end{itemize}
+			} \\		
+			\hline			
+		\end{tabular}	
+		\caption{Tabla de la HU2.6}
+		\label{tab:HU2.6}
+	\end{center}
+\end{table}
+
+\begin{table}[h]
+	\begin{center}
+		\begin{tabular}{ | c | c | c | } 
+			\hline
+			\textbf{Identificación} & \parbox[t]{7cm}{HU1.1 - Listado de usuarios en todo el sistema: consulta, búsqueda, edición y eliminación de registros.}  & \textbf{Sprint:} 1 \\
+			\hline
+			\textbf{Descripción} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{El panel de control posibilita al administrador crear, modificar y eliminar la información con la que trabajan los gestores en twinX} \\
+			\hline
+			\textbf{Pruebas de aceptación} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{
+				\begin{itemize}
+					\item PA1
+					\item PA2
+					\item PA3
+					\item PA4
+				\end{itemize}
+			} \\
+			\hline
+			\textbf{Tareas} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{
+				\begin{itemize}
+					\item T1
+					\item T2
+					\item T3
+					\item T4
+				\end{itemize}
+			} \\		
+			\hline			
+		\end{tabular}	
+		\caption{Tabla de la HU1.1}
+		\label{tab:HU1.1}
+	\end{center}
+\end{table}
+
+\begin{table}[h]
+	\begin{center}
+		\begin{tabular}{ | c | c | c | } 
+			\hline
+			\textbf{Identificación} & \parbox[t]{7cm}{HU1.1 - Listado de usuarios en todo el sistema: consulta, búsqueda, edición y eliminación de registros.}  & \textbf{Sprint:} 1 \\
+			\hline
+			\textbf{Descripción} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{El panel de control posibilita al administrador crear, modificar y eliminar la información con la que trabajan los gestores en twinX} \\
+			\hline
+			\textbf{Pruebas de aceptación} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{
+				\begin{itemize}
+					\item PA1
+					\item PA2
+					\item PA3
+					\item PA4
+				\end{itemize}
+			} \\
+			\hline
+			\textbf{Tareas} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{
+				\begin{itemize}
+					\item T1
+					\item T2
+					\item T3
+					\item T4
+				\end{itemize}
+			} \\		
+			\hline			
+		\end{tabular}	
+		\caption{Tabla de la HU1.1}
+		\label{tab:HU1.1}
+	\end{center}
+\end{table}
+
+\begin{table}[h]
+	\begin{center}
+		\begin{tabular}{ | c | c | c | } 
+			\hline
+			\textbf{Identificación} & \parbox[t]{7cm}{HU1.1 - Listado de usuarios en todo el sistema: consulta, búsqueda, edición y eliminación de registros.}  & \textbf{Sprint:} 1 \\
+			\hline
+			\textbf{Descripción} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{El panel de control posibilita al administrador crear, modificar y eliminar la información con la que trabajan los gestores en twinX} \\
+			\hline
+			\textbf{Pruebas de aceptación} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{
+				\begin{itemize}
+					\item PA1
+					\item PA2
+					\item PA3
+					\item PA4
+				\end{itemize}
+			} \\
+			\hline
+			\textbf{Tareas} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{
+				\begin{itemize}
+					\item T1
+					\item T2
+					\item T3
+					\item T4
+				\end{itemize}
+			} \\		
+			\hline			
+		\end{tabular}	
+		\caption{Tabla de la HU1.1}
+		\label{tab:HU1.1}
+	\end{center}
+\end{table}
+
+\begin{table}[h]
+	\begin{center}
+		\begin{tabular}{ | c | c | c | } 
+			\hline
+			\textbf{Identificación} & \parbox[t]{7cm}{HU1.1 - Listado de usuarios en todo el sistema: consulta, búsqueda, edición y eliminación de registros.}  & \textbf{Sprint:} 1 \\
+			\hline
+			\textbf{Descripción} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{El panel de control posibilita al administrador crear, modificar y eliminar la información con la que trabajan los gestores en twinX} \\
+			\hline
+			\textbf{Pruebas de aceptación} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{
+				\begin{itemize}
+					\item PA1
+					\item PA2
+					\item PA3
+					\item PA4
+				\end{itemize}
+			} \\
+			\hline
+			\textbf{Tareas} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{
+				\begin{itemize}
+					\item T1
+					\item T2
+					\item T3
+					\item T4
+				\end{itemize}
+			} \\		
+			\hline			
+		\end{tabular}	
+		\caption{Tabla de la HU1.1}
+		\label{tab:HU1.1}
+	\end{center}
+\end{table}
+
+\begin{table}[h]
+	\begin{center}
+		\begin{tabular}{ | c | c | c | } 
+			\hline
+			\textbf{Identificación} & \parbox[t]{7cm}{HU1.1 - Listado de usuarios en todo el sistema: consulta, búsqueda, edición y eliminación de registros.}  & \textbf{Sprint:} 1 \\
+			\hline
+			\textbf{Descripción} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{El panel de control posibilita al administrador crear, modificar y eliminar la información con la que trabajan los gestores en twinX} \\
+			\hline
+			\textbf{Pruebas de aceptación} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{
+				\begin{itemize}
+					\item PA1
+					\item PA2
+					\item PA3
+					\item PA4
+				\end{itemize}
+			} \\
+			\hline
+			\textbf{Tareas} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{
+				\begin{itemize}
+					\item T1
+					\item T2
+					\item T3
+					\item T4
+				\end{itemize}
+			} \\		
+			\hline			
+		\end{tabular}	
+		\caption{Tabla de la HU1.1}
+		\label{tab:HU1.1}
+	\end{center}
+\end{table}
+
+\begin{table}[h]
+	\begin{center}
+		\begin{tabular}{ | c | c | c | } 
+			\hline
+			\textbf{Identificación} & \parbox[t]{7cm}{HU1.1 - Listado de usuarios en todo el sistema: consulta, búsqueda, edición y eliminación de registros.}  & \textbf{Sprint:} 1 \\
+			\hline
+			\textbf{Descripción} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{El panel de control posibilita al administrador crear, modificar y eliminar la información con la que trabajan los gestores en twinX} \\
+			\hline
+			\textbf{Pruebas de aceptación} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{
+				\begin{itemize}
+					\item PA1
+					\item PA2
+					\item PA3
+					\item PA4
+				\end{itemize}
+			} \\
+			\hline
+			\textbf{Tareas} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{
+				\begin{itemize}
+					\item T1
+					\item T2
+					\item T3
+					\item T4
+				\end{itemize}
+			} \\		
+			\hline			
+		\end{tabular}	
+		\caption{Tabla de la HU1.1}
+		\label{tab:HU1.1}
+	\end{center}
+\end{table}
+
+\begin{table}[h]
+	\begin{center}
+		\begin{tabular}{ | c | c | c | } 
+			\hline
+			\textbf{Identificación} & \parbox[t]{7cm}{HU1.1 - Listado de usuarios en todo el sistema: consulta, búsqueda, edición y eliminación de registros.}  & \textbf{Sprint:} 1 \\
+			\hline
+			\textbf{Descripción} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{El panel de control posibilita al administrador crear, modificar y eliminar la información con la que trabajan los gestores en twinX} \\
+			\hline
+			\textbf{Pruebas de aceptación} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{
+				\begin{itemize}
+					\item PA1
+					\item PA2
+					\item PA3
+					\item PA4
+				\end{itemize}
+			} \\
+			\hline
+			\textbf{Tareas} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{
+				\begin{itemize}
+					\item T1
+					\item T2
+					\item T3
+					\item T4
+				\end{itemize}
+			} \\		
+			\hline			
+		\end{tabular}	
+		\caption{Tabla de la HU1.1}
+		\label{tab:HU1.1}
+	\end{center}
+\end{table}
