@@ -2,32 +2,19 @@
 
 namespace backend\modules\panel\controllers;
 
-use common\models\TipoExpediente;
+use common\models\Centro;
 use Yii;
-use common\models\FaseExpediente;
-use yii\data\ActiveDataProvider;
+use common\models\Titulacion;
+use common\models\search\TitulacionSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use common\models\search\FaseExpedienteSearch;
 
 /**
- * FaseExpedienteController implements the CRUD actions for FaseExpediente model.
+ * TitulacionController implements the CRUD actions for Titulacion model.
  */
-class FaseExpedienteController extends Controller
+class TitulacionController extends Controller
 {
-
-
-//    public function getNombreTipoExpediente()
-//    {
-//        $tipoExp = new TipoExpediente();
-//        return $tipoExp->find()
-//            ->alias('te')
-//            ->select('descripcion')
-//            ->where('te.id = ' . $this->id_tipo_exp)
-//            ->one();
-//    }
-
     /**
      * {@inheritdoc}
      */
@@ -44,25 +31,22 @@ class FaseExpedienteController extends Controller
     }
 
     /**
-     * Lists all FaseExpediente models.
+     * Lists all Titulacion models.
      * @return mixed
      */
     public function actionIndex()
     {
-
-        $searchModel = new FaseExpedienteSearch();
-
+        $searchModel = new TitulacionSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
-
         return $this->render('index', [
-            'dataProvider' => $dataProvider,
             'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
         ]);
     }
 
     /**
-     * Displays a single FaseExpediente model.
+     * Displays a single Titulacion model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -75,13 +59,13 @@ class FaseExpedienteController extends Controller
     }
 
     /**
-     * Creates a new FaseExpediente model.
+     * Creates a new Titulacion model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new FaseExpediente();
+        $model = new Titulacion();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -89,12 +73,12 @@ class FaseExpedienteController extends Controller
 
         return $this->render('create', [
             'model' => $model,
-            'tiposExp' => $this->getAllTiposExpedientes(),
+            'centros' => $this->getAllCentros()
         ]);
     }
 
     /**
-     * Updates an existing FaseExpediente model.
+     * Updates an existing Titulacion model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -110,12 +94,12 @@ class FaseExpedienteController extends Controller
 
         return $this->render('update', [
             'model' => $model,
-            'tiposExp' => $this->getAllTiposExpedientes(),
+            'centros' => $this->getAllCentros()
         ]);
     }
 
     /**
-     * Deletes an existing FaseExpediente model.
+     * Deletes an existing Titulacion model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -129,39 +113,32 @@ class FaseExpedienteController extends Controller
     }
 
     /**
-     * Finds the FaseExpediente model based on its primary key value.
+     * Finds the Titulacion model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return FaseExpediente the loaded model
+     * @return Titulacion the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = FaseExpediente::findOne($id)) !== null) {
+        if (($model = Titulacion::findOne($id)) !== null) {
             return $model;
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
 
-    protected function getAllTiposExpedientes()
+    protected function getAllCentros()
     {
-        $tipoExpModel = new TipoExpediente();
-        $tiposExp = [];
+        $tipoExpModel = new Centro();
+        $centros = [];
 
-        $result = $tipoExpModel::find()->select(['id', 'descripcion'])->all();
+        $result = $tipoExpModel::find()->select(['id', 'nombre'])->all();
 
         foreach ($result as $res) {
-            $tiposExp[$res->id] = $res->descripcion;
+            $centros[$res->id] = $res->nombre;
         }
 
-        return $tiposExp;
-    }
-
-    public function actionViewLinkMail($id)
-    {
-        return $this->render('view-link-mail', [
-            'model' => $this->findModel($id),
-        ]);
+        return $centros;
     }
 }

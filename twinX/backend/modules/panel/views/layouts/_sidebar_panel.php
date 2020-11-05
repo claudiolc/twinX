@@ -53,6 +53,18 @@
             'active' => in_array(\Yii::$app->controller->id, ['pais'])
         ],
 
+        [
+            'label' => 'Titulaciones',
+            'url' => ['/panel/titulacion'],
+            'active' => in_array(\Yii::$app->controller->id, ['titulacion'])
+        ],
+
+        [
+            'label' => 'Centros',
+            'url' => ['/panel/centro'],
+            'active' => in_array(\Yii::$app->controller->id, ['centro'])
+        ],
+
     ];
 
     echo $this->render('@backend/views/layouts/_sidebar_base.php', ['items' => $items]);
