@@ -4,9 +4,6 @@ use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\EnvioMailFase */
-/* @var $mails \common\models\MailPredef
- * @var $fases \common\models\FaseExpediente
- */
 
 
 $this->title = 'Nuevo envío de mail automatizado';
@@ -19,8 +16,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= $this->render('_form', [
         'model' => $model,
-        'mails' => $mails,
-        'fases' => $fases
     ]) ?>
 
 </div>

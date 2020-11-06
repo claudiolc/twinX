@@ -6,7 +6,6 @@ use yii\widgets\ActiveForm;
 /* @var $this yii\web\View */
 /* @var $model common\models\Titulacion */
 /* @var $form yii\widgets\ActiveForm */
-/* @var $centros \common\models\Centro */
 ?>
 
 <div class="titulacion-form">
@@ -17,7 +16,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'nombre')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'id_centro')->dropDownList($centros) ?>
+    <?= $form->field($model, 'id_centro')->dropDownList(\yii\helpers\ArrayHelper::map(\common\models\Centro::find()->all(), 'id', 'nombre')) ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

@@ -89,7 +89,6 @@ class FaseExpedienteController extends Controller
 
         return $this->render('create', [
             'model' => $model,
-            'tiposExp' => $this->getAllTiposExpedientes(),
         ]);
     }
 
@@ -110,7 +109,6 @@ class FaseExpedienteController extends Controller
 
         return $this->render('update', [
             'model' => $model,
-            'tiposExp' => $this->getAllTiposExpedientes(),
         ]);
     }
 
@@ -142,20 +140,6 @@ class FaseExpedienteController extends Controller
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
-    }
-
-    protected function getAllTiposExpedientes()
-    {
-        $tipoExpModel = new TipoExpediente();
-        $tiposExp = [];
-
-        $result = $tipoExpModel::find()->select(['id', 'descripcion'])->all();
-
-        foreach ($result as $res) {
-            $tiposExp[$res->id] = $res->descripcion;
-        }
-
-        return $tiposExp;
     }
 
     public function actionViewLinkMail($id)

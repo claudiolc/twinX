@@ -48,7 +48,7 @@ class Titulacion extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'nombre' => 'Nombre',
-            'id_centro' => 'Id Centro',
+            'id_centro' => 'Centro',
         ];
     }
 

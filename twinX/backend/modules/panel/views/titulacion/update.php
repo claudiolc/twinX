@@ -4,7 +4,7 @@ use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Titulacion */
-/* @var $centros \common\models\Centro */
+
 
 $this->title = 'Modificar titulación #' . $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Titulaciones', 'url' => ['index']];
@@ -17,7 +17,7 @@ $this->params['breadcrumbs'][] = 'Guardar';
 
     <?= $this->render('_form', [
         'model' => $model,
-        'centros' => $centros,
+
     ]) ?>
 
 </div>

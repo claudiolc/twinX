@@ -73,7 +73,6 @@ class TitulacionController extends Controller
 
         return $this->render('create', [
             'model' => $model,
-            'centros' => $this->getAllCentros()
         ]);
     }
 
@@ -94,7 +93,6 @@ class TitulacionController extends Controller
 
         return $this->render('update', [
             'model' => $model,
-            'centros' => $this->getAllCentros()
         ]);
     }
 
@@ -128,17 +126,4 @@ class TitulacionController extends Controller
         throw new NotFoundHttpException('The requested page does not exist.');
     }
 
-    protected function getAllCentros()
-    {
-        $tipoExpModel = new Centro();
-        $centros = [];
-
-        $result = $tipoExpModel::find()->select(['id', 'nombre'])->all();
-
-        foreach ($result as $res) {
-            $centros[$res->id] = $res->nombre;
-        }
-
-        return $centros;
-    }
 }
