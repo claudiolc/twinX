@@ -79,6 +79,11 @@ class Pais extends \yii\db\ActiveRecord
 
     public function getNombreLogo()
     {
-        return 'asdf'.$this->nombre;
+        return ''.$this->nombre;
+    }
+
+    public function getNombreISO()
+    {
+        return $this->nombre . ' (' . $this->iso . ')';
     }
 }

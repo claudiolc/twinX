@@ -28,10 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            [
-                    'label' => 'Convenio',
-                    'value' => 'cod_pais ' . 'cod_uni' . '/cod_area'
-            ],
+            'codConvenio',
 //            'cod_area',
 //            'cod_uni',
 //            'cod_pais',

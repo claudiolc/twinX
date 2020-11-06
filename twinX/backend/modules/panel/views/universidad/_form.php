@@ -1,6 +1,7 @@
 <?php
 
 use common\models\Pais;
+use kartik\select2\Select2;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
@@ -14,7 +15,10 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'cod_pais')->dropDownList(ArrayHelper::map(Pais::find()->all(), 'iso', 'nombre')) ?>
+    <?= $form->field($model, 'cod_pais')->widget(Select2::className(), [
+        'data' => ArrayHelper::map(Pais::find()->all(), 'iso', 'nombre'),
+        'theme' => Select2::THEME_KRAJEE_BS4,
+    ]) ?>
 
     <?= $form->field($model, 'cod_uni')->textInput(['maxlength' => true]) ?>
 
