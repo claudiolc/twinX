@@ -17,8 +17,8 @@ class ConvenioSearch extends Convenio
     public function rules()
     {
         return [
-            [['id', 'id_admon_out', 'id_tutor', 'id_curso_creacion', 'creado_por', 'num_becas_in', 'num_becas_out', 'meses_in', 'meses_out', 'anno_inicio', 'anno_fin', 'nominacion_online', 'movilidad_pdi', 'movilidad_pas'], 'integer'],
-            [['cod_area', 'cod_uni', 'cod_pais', 'anotaciones', 'req_titulacion', 'req_curso', 'link_nom_online', 'info_nom_online', 'link_documentacion', 'tipo_movilidad', 'user_online', 'password_online', 'notas_online', 'fecha_online', 'info_tor', 'observ_discapacidad', 'observ_req_ling', 'begin_nom_1s', 'end_nom_1s', 'begin_nom_2s', 'end_nom_2s', 'begin_app_1s', 'end_app_1s', 'begin_app_2s', 'end_app_2s', 'begin_mov_1s', 'end_mov_1s', 'begin_mov_2s', 'end_mov_2s', 'memo_grading', 'memo_visado', 'memo_seguro', 'memo_alojamiento'], 'safe'],
+            [['id', 'id_tutor', 'id_curso_creacion', 'creado_por', 'num_becas_in', 'num_becas_out', 'meses_in', 'meses_out', 'anno_inicio', 'anno_fin', 'nominacion_online', 'movilidad_pdi', 'movilidad_pas'], 'integer'],
+            [['cod_area', 'cod_uni', 'cod_pais', 'anotaciones', 'req_titulacion', 'req_curso', 'link_nom_online', 'info_nom_online', 'link_documentacion', 'tipo_movilidad', 'user_online', 'password_online', 'fecha_online', 'info_tor', 'observ_discapacidad', 'observ_req_ling', 'begin_nom_1s', 'end_nom_1s', 'begin_nom_2s', 'end_nom_2s', 'begin_app_1s', 'end_app_1s', 'begin_app_2s', 'end_app_2s', 'begin_mov_1s', 'end_mov_1s', 'begin_mov_2s', 'end_mov_2s', 'memo_grading', 'memo_visado', 'memo_seguro', 'memo_alojamiento', 'nombre_coord', 'cargo_coord', 'email_coord', 'tlf_coord', 'address_coord', 'web_inf_acad', 'nombre_admon_in', 'cargo_admon_in', 'mail_admon_in', 'nombre_resp_acad_in', 'cargo_resp_acad_in', 'nombre_admon_out', 'cargo_admon_out', 'mail_admon_out', 'nombre_resp_acad_out', 'cargo_resp_acad_out', 'mail_resp_acad_out'], 'safe'],
         ];
     }
 
@@ -59,7 +59,6 @@ class ConvenioSearch extends Convenio
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'id_admon_out' => $this->id_admon_out,
             'id_tutor' => $this->id_tutor,
             'id_curso_creacion' => $this->id_curso_creacion,
             'creado_por' => $this->creado_por,
@@ -99,14 +98,30 @@ class ConvenioSearch extends Convenio
             ->andFilterWhere(['like', 'tipo_movilidad', $this->tipo_movilidad])
             ->andFilterWhere(['like', 'user_online', $this->user_online])
             ->andFilterWhere(['like', 'password_online', $this->password_online])
-            ->andFilterWhere(['like', 'notas_online', $this->notas_online])
             ->andFilterWhere(['like', 'info_tor', $this->info_tor])
             ->andFilterWhere(['like', 'observ_discapacidad', $this->observ_discapacidad])
             ->andFilterWhere(['like', 'observ_req_ling', $this->observ_req_ling])
             ->andFilterWhere(['like', 'memo_grading', $this->memo_grading])
             ->andFilterWhere(['like', 'memo_visado', $this->memo_visado])
             ->andFilterWhere(['like', 'memo_seguro', $this->memo_seguro])
-            ->andFilterWhere(['like', 'memo_alojamiento', $this->memo_alojamiento]);
+            ->andFilterWhere(['like', 'memo_alojamiento', $this->memo_alojamiento])
+            ->andFilterWhere(['like', 'nombre_coord', $this->nombre_coord])
+            ->andFilterWhere(['like', 'cargo_coord', $this->cargo_coord])
+            ->andFilterWhere(['like', 'email_coord', $this->email_coord])
+            ->andFilterWhere(['like', 'tlf_coord', $this->tlf_coord])
+            ->andFilterWhere(['like', 'address_coord', $this->address_coord])
+            ->andFilterWhere(['like', 'web_inf_acad', $this->web_inf_acad])
+            ->andFilterWhere(['like', 'nombre_admon_in', $this->nombre_admon_in])
+            ->andFilterWhere(['like', 'cargo_admon_in', $this->cargo_admon_in])
+            ->andFilterWhere(['like', 'mail_admon_in', $this->mail_admon_in])
+            ->andFilterWhere(['like', 'nombre_resp_acad_in', $this->nombre_resp_acad_in])
+            ->andFilterWhere(['like', 'cargo_resp_acad_in', $this->cargo_resp_acad_in])
+            ->andFilterWhere(['like', 'nombre_admon_out', $this->nombre_admon_out])
+            ->andFilterWhere(['like', 'cargo_admon_out', $this->cargo_admon_out])
+            ->andFilterWhere(['like', 'mail_admon_out', $this->mail_admon_out])
+            ->andFilterWhere(['like', 'nombre_resp_acad_out', $this->nombre_resp_acad_out])
+            ->andFilterWhere(['like', 'cargo_resp_acad_out', $this->cargo_resp_acad_out])
+            ->andFilterWhere(['like', 'mail_resp_acad_out', $this->mail_resp_acad_out]);
 
         return $dataProvider;
     }

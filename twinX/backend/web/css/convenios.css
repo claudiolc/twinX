@@ -2,3 +2,8 @@
     margin-top: auto;
     margin-bottom: auto;
 }
+
+#notas > div > div.d-flex.flex-wrap > div {
+    margin-right: 1em;
+    min-width: 300px;
+}

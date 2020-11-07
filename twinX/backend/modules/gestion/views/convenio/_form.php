@@ -22,7 +22,7 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <div id="accordion">
+    <div id="accordion" class="mt-3">
 
         <div class="card">
             <div class="card-header" id="headingIdentificacion">
@@ -59,9 +59,6 @@ use yii\widgets\ActiveForm;
                         ]
                     ]) ?>
 
-                    <!-- Aquí tenemos trabajo -->
-                    <?//= $form->field($model, 'id_admon_out')->textInput() ?>
-
                     <?= $form->field($model, 'id_tutor')->widget(Select2::className(), [
                         'data' => ArrayHelper::map(User::find()->where(['tipo_usuario' => 'TUTOR'])->all(), 'id', 'nombreUsername'),
                         'theme' => Select2::THEME_KRAJEE_BS4,
@@ -86,7 +83,10 @@ use yii\widgets\ActiveForm;
                         <?= $form->field($model, 'movilidad_pas')->checkbox() ?>
                     </div>
 
-                    <?php $model->creado_por = Yii::$app->user->id ?>
+                    <?php
+                        $model->creado_por = Yii::$app->user->id;
+                        echo $form->field($model, 'creado_por')->textInput(['style' => 'display:none;'])->label('', ['style' => 'display:none;']);
+                    ?>
                 </div>
             </div>
         </div>
@@ -161,17 +161,20 @@ use yii\widgets\ActiveForm;
                         <div class="card-header">
                             Vigencia del convenio
                         </div>
-                        <div class="card-body">
+                        <div class="card-body mb-3">
                             <label class="control-label">Fechas de validez</label>
                             <?= DatePicker::widget([
                                     'model' => $model,
                                     'attribute' => 'anno_inicio',
                                     'attribute2' => 'anno_fin',
-                                    'options' => ['placeholder' => 'Fecha de comienzo'],
-                                    'options2' => ['placeholder' => 'Fecha de finalización'],
+                                    'options' => ['placeholder' => 'Año de comienzo'],
+                                    'options2' => ['placeholder' => 'Año de finalización'],
                                     'type' => DatePicker::TYPE_RANGE,
                                     'form' => $form,
-                                    'separator' => 'hasta'
+                                    'separator' => 'hasta',
+                                    'pluginOptions' => [
+                                            'format' => 'yyyy',
+                                    ]
                                 ]
                             ) ?>
                         </div>
@@ -283,6 +286,110 @@ use yii\widgets\ActiveForm;
         </div>
 
         <div class="card">
+            <div class="card-header" id="headingAdmon">
+                <h5 class="mb-0">
+                    <button type="button" class="btn dropdown-toggle" data-toggle="collapse" data-target="#admon" aria-expanded="true" aria-controls="admon">
+                        Personal de administración
+                    </button>
+                </h5>
+            </div>
+
+            <div class="collapse" id="admon" aria-labelledby="headingAdmon" data-parent="#accordion">
+                <div class="card-body">
+
+                    <div class="card mb-3">
+                        <div class="card-header">
+                            Coordinador
+                        </div>
+                        <div class="card-body mb-3">
+                            <?= $form->field($model, 'nombre_coord')->textInput(['maxlength' => true]) ?>
+
+                            <?= $form->field($model, 'cargo_coord')->textInput(['maxlength' => true]) ?>
+
+                            <?= $form->field($model, 'email_coord')->textInput(['maxlength' => true]) ?>
+
+                            <?= $form->field($model, 'tlf_coord')->textInput(['maxlength' => true]) ?>
+
+                            <?= $form->field($model, 'address_coord')->textInput(['maxlength' => true]) ?>
+
+                            <?= $form->field($model, 'web_inf_acad')->textInput(['maxlength' => true]) ?>
+                        </div>
+                    </div>
+
+                    <div class="card mb-3" id="seccion-datos-personal">
+                        <div class="card-header">
+                            Incoming
+                        </div>
+                        <div class="card-body mb-3 d-flex justify-content-lg-around ">
+
+                            <div class="card w-50 mr-3">
+                                <div class="card-header">
+                                    Administración incoming
+                                </div>
+                                <div class="card-body mb-3">
+                                    <?= $form->field($model, 'nombre_admon_in')->textInput(['maxlength' => true]) ?>
+
+                                    <?= $form->field($model, 'cargo_admon_in')->textInput(['maxlength' => true]) ?>
+
+                                    <?= $form->field($model, 'mail_admon_in')->textInput(['maxlength' => true]) ?>
+                                </div>
+                            </div>
+
+                            <div class="card w-50">
+                                <div class="card-header">
+                                    Responsable académico incoming
+                                </div>
+                                <div class="card-body mb-3">
+                                    <?= $form->field($model, 'nombre_resp_acad_in')->textInput(['maxlength' => true]) ?>
+
+                                    <?= $form->field($model, 'cargo_resp_acad_in')->textInput(['maxlength' => true]) ?>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header" id="seccion-datos-personal">
+                            Outocoming
+                        </div>
+                        <div class="card-body d-flex flex-row justify-content-around">
+                            <div class="card w-50 mr-3">
+                                <div class="card-header">
+                                    Administración outcoming
+                                </div>
+                                <div class="card-body">
+                                    <?= $form->field($model, 'nombre_admon_out')->textInput(['maxlength' => true]) ?>
+
+                                    <?= $form->field($model, 'cargo_admon_out')->textInput(['maxlength' => true]) ?>
+
+                                    <?= $form->field($model, 'mail_admon_out')->textInput(['maxlength' => true]) ?>
+
+                                </div>
+                            </div>
+
+
+                            <div class="card w-50">
+                                <div class="card-header">
+                                    Responsable académico outcoming
+                                </div>
+                                <div class="card-body">
+                                    <?= $form->field($model, 'nombre_resp_acad_out')->textInput(['maxlength' => true]) ?>
+
+                                    <?= $form->field($model, 'cargo_resp_acad_out')->textInput(['maxlength' => true]) ?>
+
+                                    <?= $form->field($model, 'mail_resp_acad_out')->textInput(['maxlength' => true]) ?>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="card">
             <div class="card-header d-flex flex-row justify-content-between align-middle" id="headingNomOnline">
                 <h5 class="mb-0">
                     <button id="nominaciones-button" disabled type="button" class="btn dropdown-toggle" data-toggle="collapse" data-target="#nomOnline" aria-expanded="false" aria-controls="nomOnline">
@@ -294,67 +401,78 @@ use yii\widgets\ActiveForm;
 
             <div class="collapse" id="nomOnline" aria-labelledby="headingNomOnline" data-parent="#accordion">
                 <div class="card-body">
-                    <?= $form->field($model, 'nominacion_online')->checkbox() ?>
+                    <?= $form->field($model, 'fecha_online')->widget(DatePicker::className()) ?>
 
-                    <?= $form->field($model, 'link_nom_online')->textInput(['maxlength' => true]) ?>
+
+
+                   <div class="d-flex flex-row justify-content-between">
+                       <?= $form->field($model, 'link_nom_online')->textInput(['maxlength' => true])->label('Enlace') ?>
+
+                       <?= $form->field($model, 'user_online')->textInput(['maxlength' => true])->label('Usuario') ?>
+
+                       <?= $form->field($model, 'password_online')->textInput(['maxlength' => true])->label('Contraseña') ?>
+                   </div>
 
                     <?= $form->field($model, 'info_nom_online')->textarea(['rows' => 6]) ?>
 
-                    <?= $form->field($model, 'user_online')->textInput(['maxlength' => true]) ?>
-
-                    <?= $form->field($model, 'password_online')->textInput(['maxlength' => true]) ?>
-
-                    <?= $form->field($model, 'notas_online')->textInput(['maxlength' => true]) ?>
-
-                    <?= $form->field($model, 'fecha_online')->textInput() ?>
                 </div>
             </div>
         </div>
 
+        <div class="card">
+            <div class="card-header" id="headingRequisitos">
+                <h5 class="mb-0">
+                    <button type="button" class="btn dropdown-toggle" data-toggle="collapse" data-target="#requisitos" aria-expanded="false" aria-controls="requisitos">
+                        Requisitos
+                    </button>
+                </h5>
+            </div>
 
+            <div class="collapse" id="requisitos" aria-labelledby="headingRequisitos" data-parent="#accordion">
+                <div class="card-body">
+                <?= $form->field($model, 'req_titulacion')->textInput(['maxlength' => true]) ?>
 
+                <?= $form->field($model, 'req_curso')->textInput(['maxlength' => true]) ?>
 
+                <?= $form->field($model, 'observ_req_ling')->textarea(['rows' => 6]) ?>
+                </div>
+            </div>
+        </div>
 
+        <div class="card">
+            <div class="card-header" id="headingNotas">
+                <h5 class="mb-0">
+                    <button type="button" class="btn dropdown-toggle" data-toggle="collapse" data-target="#notas" aria-expanded="false" aria-controls="notas">
+                        Anotaciones
+                    </button>
+                </h5>
+            </div>
 
+            <div class="collapse" id="notas" aria-labelledby="headingNotas" data-parent="#accordion">
+                <div class="card-body">
+                    <?= $form->field($model, 'link_documentacion')->textInput(['maxlength' => true]) ?>
 
+                    <div class="d-flex flex-wrap justify-content-between">
+                        <?= $form->field($model, 'anotaciones')->textarea(['rows' => 6]) ?>
+
+                        <?= $form->field($model, 'info_tor')->textarea(['rows' => 6]) ?>
+
+                        <?= $form->field($model, 'observ_discapacidad')->textarea(['rows' => 6]) ?>
+
+                        <?= $form->field($model, 'memo_grading')->textarea(['rows' => 6]) ?>
+
+                        <?= $form->field($model, 'memo_visado')->textarea(['rows' => 6]) ?>
+
+                        <?= $form->field($model, 'memo_seguro')->textarea(['rows' => 6]) ?>
+
+                        <?= $form->field($model, 'memo_alojamiento')->textarea(['rows' => 6]) ?>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
 
-
-
-    <?= $form->field($model, 'anotaciones')->textarea(['rows' => 6]) ?>
-
-
-
-    <?= $form->field($model, 'req_titulacion')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'req_curso')->textInput(['maxlength' => true]) ?>
-
-
-
-    <?= $form->field($model, 'link_documentacion')->textInput(['maxlength' => true]) ?>
-
-
-
-
-
-    <?= $form->field($model, 'info_tor')->textarea(['rows' => 6]) ?>
-
-    <?= $form->field($model, 'observ_discapacidad')->textarea(['rows' => 6]) ?>
-
-    <?= $form->field($model, 'observ_req_ling')->textarea(['rows' => 6]) ?>
-
-
-
-    <?= $form->field($model, 'memo_grading')->textarea(['rows' => 6]) ?>
-
-    <?= $form->field($model, 'memo_visado')->textarea(['rows' => 6]) ?>
-
-    <?= $form->field($model, 'memo_seguro')->textarea(['rows' => 6]) ?>
-
-    <?= $form->field($model, 'memo_alojamiento')->textarea(['rows' => 6]) ?>
-
-    <div class="form-group">
+    <div class="form-group mt-3">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
     </div>
 

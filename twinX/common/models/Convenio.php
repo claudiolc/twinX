@@ -11,7 +11,6 @@ use Yii;
  * @property string $cod_area
  * @property string $cod_uni
  * @property string $cod_pais
- * @property int|null $id_admon_out
  * @property int $id_tutor ref a usuario pero tiene que ser un tutor, futura restricción
  * @property int $id_curso_creacion
  * @property int $creado_por
@@ -33,7 +32,6 @@ use Yii;
  * @property string $tipo_movilidad
  * @property string|null $user_online
  * @property string|null $password_online
- * @property string|null $notas_online
  * @property string|null $fecha_online
  * @property string|null $info_tor
  * @property string|null $observ_discapacidad
@@ -54,6 +52,23 @@ use Yii;
  * @property string|null $memo_visado
  * @property string|null $memo_seguro
  * @property string|null $memo_alojamiento
+ * @property string|null $nombre_coord
+ * @property string|null $cargo_coord
+ * @property string|null $email_coord
+ * @property string|null $tlf_coord
+ * @property string|null $address_coord
+ * @property string|null $web_inf_acad
+ * @property string|null $nombre_admon_in
+ * @property string|null $cargo_admon_in
+ * @property string|null $mail_admon_in
+ * @property string|null $nombre_resp_acad_in
+ * @property string|null $cargo_resp_acad_in
+ * @property string|null $nombre_admon_out
+ * @property string|null $cargo_admon_out
+ * @property string|null $mail_admon_out
+ * @property string|null $nombre_resp_acad_out
+ * @property string|null $cargo_resp_acad_out
+ * @property string|null $mail_resp_acad_out
  *
  * @property AsignaturaExt[] $asignaturaExts
  * @property Curso $cursoCreacion
@@ -61,7 +76,6 @@ use Yii;
  * @property User $creadoPor
  * @property Area $codArea
  * @property Universidad $codPais0
- * @property AdmonOut $admonOut
  * @property User $tutor
  * @property Estudiante[] $estudiantes
  * @property ReqLingConv[] $reqLingConvs
@@ -83,16 +97,18 @@ class Convenio extends \yii\db\ActiveRecord
     {
         return [
             [['cod_area', 'cod_uni', 'cod_pais', 'id_tutor', 'id_curso_creacion', 'creado_por', 'num_becas_in', 'num_becas_out', 'meses_in', 'meses_out', 'anno_inicio', 'anno_fin', 'tipo_movilidad'], 'required'],
-            [['id_admon_out', 'id_tutor', 'id_curso_creacion', 'creado_por', 'num_becas_in', 'num_becas_out', 'meses_in', 'meses_out', 'anno_inicio', 'anno_fin', 'nominacion_online', 'movilidad_pdi', 'movilidad_pas'], 'integer'],
+            [['id_tutor', 'id_curso_creacion', 'creado_por', 'num_becas_in', 'num_becas_out', 'meses_in', 'meses_out', 'anno_inicio', 'anno_fin', 'nominacion_online', 'movilidad_pdi', 'movilidad_pas'], 'integer'],
             [['anotaciones', 'info_nom_online', 'tipo_movilidad', 'info_tor', 'observ_discapacidad', 'observ_req_ling', 'memo_grading', 'memo_visado', 'memo_seguro', 'memo_alojamiento'], 'string'],
             [['fecha_online', 'begin_nom_1s', 'end_nom_1s', 'begin_nom_2s', 'end_nom_2s', 'begin_app_1s', 'end_app_1s', 'begin_app_2s', 'end_app_2s', 'begin_mov_1s', 'end_mov_1s', 'begin_mov_2s', 'end_mov_2s'], 'safe'],
-            [['cod_area', 'cod_uni', 'cod_pais', 'req_titulacion', 'req_curso', 'link_nom_online', 'link_documentacion', 'user_online', 'password_online', 'notas_online'], 'string', 'max' => 255],
+            [['cod_area', 'cod_uni', 'cod_pais', 'req_titulacion', 'req_curso', 'link_nom_online', 'link_documentacion', 'user_online', 'password_online'], 'string', 'max' => 255],
+            [['nombre_coord', 'address_coord', 'web_inf_acad', 'nombre_admon_in', 'cargo_admon_in', 'mail_admon_in', 'nombre_resp_acad_in', 'cargo_resp_acad_in', 'nombre_admon_out', 'cargo_admon_out', 'mail_admon_out', 'nombre_resp_acad_out', 'cargo_resp_acad_out', 'mail_resp_acad_out'], 'string', 'max' => 50],
+            [['cargo_coord', 'email_coord'], 'string', 'max' => 100],
+            [['tlf_coord'], 'string', 'max' => 20],
             [['id_curso_creacion'], 'exist', 'skipOnError' => true, 'targetClass' => Curso::className(), 'targetAttribute' => ['id_curso_creacion' => 'id']],
             [['cod_pais'], 'exist', 'skipOnError' => true, 'targetClass' => Pais::className(), 'targetAttribute' => ['cod_pais' => 'iso']],
             [['creado_por'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['creado_por' => 'id']],
             [['cod_area'], 'exist', 'skipOnError' => true, 'targetClass' => Area::className(), 'targetAttribute' => ['cod_area' => 'cod_isced']],
             [['cod_pais', 'cod_uni'], 'exist', 'skipOnError' => true, 'targetClass' => Universidad::className(), 'targetAttribute' => ['cod_pais' => 'cod_pais', 'cod_uni' => 'cod_uni']],
-            [['id_admon_out'], 'exist', 'skipOnError' => true, 'targetClass' => AdmonOut::className(), 'targetAttribute' => ['id_admon_out' => 'id']],
             [['id_tutor'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['id_tutor' => 'id']],
         ];
     }
@@ -107,7 +123,6 @@ class Convenio extends \yii\db\ActiveRecord
             'cod_area' => 'Área',
             'cod_uni' => 'Universidad',
             'cod_pais' => 'País',
-            'id_admon_out' => 'Id Admon Out',
             'id_tutor' => 'Tutor',
             'id_curso_creacion' => 'Curso de creación',
             'creado_por' => 'Creado por',
@@ -129,7 +144,6 @@ class Convenio extends \yii\db\ActiveRecord
             'tipo_movilidad' => 'Tipo de movilidad',
             'user_online' => 'Usuario para las nominaciones online',
             'password_online' => 'Contraseña para las nominaciones online',
-            'notas_online' => 'Anotaciones sobre las nominaciones online',
             'fecha_online' => 'Fecha de las nominaciones online',
             'info_tor' => 'Información sobre el TOR',
             'observ_discapacidad' => 'Observaciones de discapacidad',
@@ -150,6 +164,23 @@ class Convenio extends \yii\db\ActiveRecord
             'memo_visado' => 'Anotaciones sobre el visado',
             'memo_seguro' => 'Anotaciones sobre el seguro escolar',
             'memo_alojamiento' => 'Anotaciones sobre el alojamiento',
+            'nombre_coord' => 'Nombre Coord',
+            'cargo_coord' => 'Cargo Coord',
+            'email_coord' => 'Email Coord',
+            'tlf_coord' => 'Tlf Coord',
+            'address_coord' => 'Address Coord',
+            'web_inf_acad' => 'Web Inf Acad',
+            'nombre_admon_in' => 'Nombre Admon In',
+            'cargo_admon_in' => 'Cargo Admon In',
+            'mail_admon_in' => 'Mail Admon In',
+            'nombre_resp_acad_in' => 'Nombre Resp Acad In',
+            'cargo_resp_acad_in' => 'Cargo Resp Acad In',
+            'nombre_admon_out' => 'Nombre Admon Out',
+            'cargo_admon_out' => 'Cargo Admon Out',
+            'mail_admon_out' => 'Mail Admon Out',
+            'nombre_resp_acad_out' => 'Nombre Resp Acad Out',
+            'cargo_resp_acad_out' => 'Cargo Resp Acad Out',
+            'mail_resp_acad_out' => 'Mail Resp Acad Out',
         ];
     }
 
@@ -211,16 +242,6 @@ class Convenio extends \yii\db\ActiveRecord
     public function getCodPais0()
     {
         return $this->hasOne(Universidad::className(), ['cod_pais' => 'cod_pais', 'cod_uni' => 'cod_uni']);
-    }
-
-    /**
-     * Gets query for [[AdmonOut]].
-     *
-     * @return \yii\db\ActiveQuery|\common\models\query\AdmonOutQuery
-     */
-    public function getAdmonOut()
-    {
-        return $this->hasOne(AdmonOut::className(), ['id' => 'id_admon_out']);
     }
 
     /**

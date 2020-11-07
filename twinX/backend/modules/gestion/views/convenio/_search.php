@@ -26,9 +26,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'cod_pais') ?>
 
-    <?= $form->field($model, 'id_admon_out') ?>
-
-    <?php // echo $form->field($model, 'id_tutor') ?>
+    <?= $form->field($model, 'id_tutor') ?>
 
     <?php // echo $form->field($model, 'id_curso_creacion') ?>
 
@@ -70,8 +68,6 @@ use yii\widgets\ActiveForm;
 
     <?php // echo $form->field($model, 'password_online') ?>
 
-    <?php // echo $form->field($model, 'notas_online') ?>
-
     <?php // echo $form->field($model, 'fecha_online') ?>
 
     <?php // echo $form->field($model, 'info_tor') ?>
@@ -111,6 +107,40 @@ use yii\widgets\ActiveForm;
     <?php // echo $form->field($model, 'memo_seguro') ?>
 
     <?php // echo $form->field($model, 'memo_alojamiento') ?>
+
+    <?php // echo $form->field($model, 'nombre_coord') ?>
+
+    <?php // echo $form->field($model, 'cargo_coord') ?>
+
+    <?php // echo $form->field($model, 'email_coord') ?>
+
+    <?php // echo $form->field($model, 'tlf_coord') ?>
+
+    <?php // echo $form->field($model, 'address_coord') ?>
+
+    <?php // echo $form->field($model, 'web_inf_acad') ?>
+
+    <?php // echo $form->field($model, 'nombre_admon_in') ?>
+
+    <?php // echo $form->field($model, 'cargo_admon_in') ?>
+
+    <?php // echo $form->field($model, 'mail_admon_in') ?>
+
+    <?php // echo $form->field($model, 'nombre_resp_acad_in') ?>
+
+    <?php // echo $form->field($model, 'cargo_resp_acad_in') ?>
+
+    <?php // echo $form->field($model, 'nombre_admon_out') ?>
+
+    <?php // echo $form->field($model, 'cargo_admon_out') ?>
+
+    <?php // echo $form->field($model, 'mail_admon_out') ?>
+
+    <?php // echo $form->field($model, 'nombre_resp_acad_out') ?>
+
+    <?php // echo $form->field($model, 'cargo_resp_acad_out') ?>
+
+    <?php // echo $form->field($model, 'mail_resp_acad_out') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
