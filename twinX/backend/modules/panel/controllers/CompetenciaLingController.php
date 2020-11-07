@@ -1,19 +1,18 @@
 <?php
 
-namespace backend\modules\gestion\controllers;
+namespace backend\modules\panel\controllers;
 
-use common\models\ConvenioForm;
 use Yii;
-use common\models\Convenio;
-use common\models\search\ConvenioSearch;
+use common\models\CompetenciaLing;
+use common\models\search\CompetenciaLingSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * ConvenioController implements the CRUD actions for Convenio model.
+ * CompetenciaLingController implements the CRUD actions for CompetenciaLing model.
  */
-class ConvenioController extends Controller
+class CompetenciaLingController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -31,12 +30,12 @@ class ConvenioController extends Controller
     }
 
     /**
-     * Lists all Convenio models.
+     * Lists all CompetenciaLing models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new ConvenioSearch();
+        $searchModel = new CompetenciaLingSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -46,7 +45,7 @@ class ConvenioController extends Controller
     }
 
     /**
-     * Displays a single Convenio model.
+     * Displays a single CompetenciaLing model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -59,13 +58,13 @@ class ConvenioController extends Controller
     }
 
     /**
-     * Creates a new Convenio model.
+     * Creates a new CompetenciaLing model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new ConvenioForm();
+        $model = new CompetenciaLing();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -77,7 +76,7 @@ class ConvenioController extends Controller
     }
 
     /**
-     * Updates an existing Convenio model.
+     * Updates an existing CompetenciaLing model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -85,9 +84,7 @@ class ConvenioController extends Controller
      */
     public function actionUpdate($id)
     {
-        if (($model = ConvenioForm::findOne($id)) === null) {
-            throw new NotFoundHttpException('La página solicitada no existe.');
-        }
+        $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -99,7 +96,7 @@ class ConvenioController extends Controller
     }
 
     /**
-     * Deletes an existing Convenio model.
+     * Deletes an existing CompetenciaLing model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -113,15 +110,15 @@ class ConvenioController extends Controller
     }
 
     /**
-     * Finds the Convenio model based on its primary key value.
+     * Finds the CompetenciaLing model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Convenio the loaded model
+     * @return CompetenciaLing the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Convenio::findOne($id)) !== null) {
+        if (($model = CompetenciaLing::findOne($id)) !== null) {
             return $model;
         }
 

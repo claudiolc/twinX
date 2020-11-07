@@ -77,6 +77,12 @@
             'active' => in_array(\Yii::$app->controller->id, ['curso'])
         ],
 
+        [
+            'label' => 'Competencias lingüísticas',
+            'url' => ['/panel/competencia-ling'],
+            'active' => in_array(\Yii::$app->controller->id, ['competencia-ling'])
+        ],
+
 
     ];
 

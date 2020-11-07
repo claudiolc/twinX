@@ -3,6 +3,7 @@
 namespace common\models;
 
 use Yii;
+use yii\db\Exception;
 
 /**
  * This is the model class for table "convenio".
@@ -18,7 +19,6 @@ use Yii;
  * @property int $num_becas_out
  * @property int $meses_in
  * @property int $meses_out
- * @property string|null $anotaciones
  * @property int $anno_inicio
  * @property int $anno_fin
  * @property string|null $req_titulacion
@@ -98,8 +98,8 @@ class Convenio extends \yii\db\ActiveRecord
         return [
             [['cod_area', 'cod_uni', 'cod_pais', 'id_tutor', 'id_curso_creacion', 'creado_por', 'num_becas_in', 'num_becas_out', 'meses_in', 'meses_out', 'anno_inicio', 'anno_fin', 'tipo_movilidad'], 'required'],
             [['id_tutor', 'id_curso_creacion', 'creado_por', 'num_becas_in', 'num_becas_out', 'meses_in', 'meses_out', 'anno_inicio', 'anno_fin', 'nominacion_online', 'movilidad_pdi', 'movilidad_pas'], 'integer'],
-            [['anotaciones', 'info_nom_online', 'tipo_movilidad', 'info_tor', 'observ_discapacidad', 'observ_req_ling', 'memo_grading', 'memo_visado', 'memo_seguro', 'memo_alojamiento'], 'string'],
-            [['fecha_online', 'begin_nom_1s', 'end_nom_1s', 'begin_nom_2s', 'end_nom_2s', 'begin_app_1s', 'end_app_1s', 'begin_app_2s', 'end_app_2s', 'begin_mov_1s', 'end_mov_1s', 'begin_mov_2s', 'end_mov_2s'], 'safe'],
+            [['info_nom_online', 'tipo_movilidad', 'info_tor', 'observ_discapacidad', 'observ_req_ling', 'memo_grading', 'memo_visado', 'memo_seguro', 'memo_alojamiento'], 'string'],
+            [['fecha_online', 'begin_nom_1s', 'end_nom_1s', 'begin_nom_2s', 'end_nom_2s', 'begin_app_1s', 'end_app_1s', 'begin_app_2s', 'end_app_2s', 'begin_mov_1s', 'end_mov_1s', 'begin_mov_2s', 'end_mov_2s', 'requisitos'], 'safe'],
             [['cod_area', 'cod_uni', 'cod_pais', 'req_titulacion', 'req_curso', 'link_nom_online', 'link_documentacion', 'user_online', 'password_online'], 'string', 'max' => 255],
             [['nombre_coord', 'address_coord', 'web_inf_acad', 'nombre_admon_in', 'cargo_admon_in', 'mail_admon_in', 'nombre_resp_acad_in', 'cargo_resp_acad_in', 'nombre_admon_out', 'cargo_admon_out', 'mail_admon_out', 'nombre_resp_acad_out', 'cargo_resp_acad_out', 'mail_resp_acad_out'], 'string', 'max' => 50],
             [['cargo_coord', 'email_coord'], 'string', 'max' => 100],
@@ -130,7 +130,6 @@ class Convenio extends \yii\db\ActiveRecord
             'num_becas_out' => 'Número de becas OUT',
             'meses_in' => 'Meses IN',
             'meses_out' => 'Meses OUT',
-            'anotaciones' => 'Anotaciones',
             'anno_inicio' => 'Año de inicio del convenio',
             'anno_fin' => 'Año de finalización',
             'req_titulacion' => 'Requisitos de la titulación',
@@ -287,4 +286,9 @@ class Convenio extends \yii\db\ActiveRecord
     {
         return $this->cod_pais . ' ' . $this->cod_uni . '/' . $this->cod_area;
     }
+
+    /////////////////////////////////////////////////////////
+
+
+
 }

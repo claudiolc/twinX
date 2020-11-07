@@ -45,7 +45,6 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]) ?>
 
-    <?php //\yii\widgets\Pjax::begin();  ?>
     <div class="ajaxContent" data-url="<?= Url::to(['/panel/envio-mail-fase']); ?>"></div>
 
 </div>

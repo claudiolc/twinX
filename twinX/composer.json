@@ -24,7 +24,8 @@
         "yiisoft/yii2-jui": "^2.0",
         "kartik-v/yii2-widget-datepicker": "dev-master",
         "kartik-v/yii2-field-range": "*",
-        "kartik-v/yii2-widget-touchspin": "dev-master"
+        "kartik-v/yii2-widget-touchspin": "dev-master",
+        "kartik-v/yii2-detail-view": "dev-master"
 
 
     },

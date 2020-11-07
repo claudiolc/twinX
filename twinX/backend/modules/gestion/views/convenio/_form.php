@@ -430,6 +430,20 @@ use yii\widgets\ActiveForm;
 
             <div class="collapse" id="requisitos" aria-labelledby="headingRequisitos" data-parent="#accordion">
                 <div class="card-body">
+
+                <?= $form->field($model, 'requisitos')->widget(Select2::className(), [
+                        'name' => 'Requisitos lingüísticos',
+                        'data' => ArrayHelper::map(\common\models\CompetenciaLing::find()->all(), 'id', 'lenguaNivel'),
+                        'options' => [
+                                'placeholder' => 'Selecciona las competencias lingüísticas',
+                                'multiple' => 'true'
+                        ],
+
+                        'pluginOptions' => [
+                                'allowClear' => true,
+                        ]
+                ]); ?>
+
                 <?= $form->field($model, 'req_titulacion')->textInput(['maxlength' => true]) ?>
 
                 <?= $form->field($model, 'req_curso')->textInput(['maxlength' => true]) ?>
@@ -453,8 +467,6 @@ use yii\widgets\ActiveForm;
                     <?= $form->field($model, 'link_documentacion')->textInput(['maxlength' => true]) ?>
 
                     <div class="d-flex flex-wrap justify-content-between">
-                        <?= $form->field($model, 'anotaciones')->textarea(['rows' => 6]) ?>
-
                         <?= $form->field($model, 'info_tor')->textarea(['rows' => 6]) ?>
 
                         <?= $form->field($model, 'observ_discapacidad')->textarea(['rows' => 6]) ?>
