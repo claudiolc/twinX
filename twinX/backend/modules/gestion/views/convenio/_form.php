@@ -14,6 +14,8 @@ use yii\widgets\ActiveForm;
 /* @var $this yii\web\View */
 /* @var $model common\models\Convenio */
 /* @var $form yii\widgets\ActiveForm */
+
+\backend\assets\GestionAsset::register($this);
 ?>
 
 <div class="convenio-form">
@@ -25,7 +27,7 @@ use yii\widgets\ActiveForm;
         <div class="card">
             <div class="card-header" id="headingIdentificacion">
                 <h5 class="mb-0">
-                    <button type="button" class="btn w-100" data-toggle="collapse" data-target="#identificacion" aria-expanded="true" aria-controls="identificacion">
+                    <button type="button" class="btn dropdown-toggle" data-toggle="collapse" data-target="#identificacion" aria-expanded="true" aria-controls="identificacion">
                         Identificación
                     </button>
                 </h5>
@@ -77,6 +79,13 @@ use yii\widgets\ActiveForm;
                     ]) ?>
 
                     <?= $form->field($model, 'tipo_movilidad')->dropDownList([ 'ERASMUS' => 'ERASMUS', 'ARQUS' => 'ARQUS', 'ERASMUS_DI' => 'ERASMUS DI', 'ERASMUS_PARTNER' => 'ERASMUS PARTNER', 'INTERCAMBIO' => 'INTERCAMBIO', 'LIBRE_MOVILIDAD' => 'LIBRE MOVILIDAD', ], ['prompt' => 'Seleccione un tipo de movilidad']) ?>
+
+                    <div class="d-flex flex-row justify-content-around mt-4">
+                        <?= $form->field($model, 'movilidad_pdi')->checkbox() ?>
+
+                        <?= $form->field($model, 'movilidad_pas')->checkbox() ?>
+                    </div>
+
                     <?php $model->creado_por = Yii::$app->user->id ?>
                 </div>
             </div>
@@ -87,7 +96,7 @@ use yii\widgets\ActiveForm;
         <div class="card">
             <div class="card-header" id="headingBecas">
                 <h5 class="mb-0">
-                    <button type="button" class="btn w-100 collapsed" data-toggle="collapse" data-target="#becas" aria-expanded="false" aria-controls="becas">
+                    <button type="button" class="btn dropdown-toggle" data-toggle="collapse" data-target="#becas" aria-expanded="false" aria-controls="becas">
                         Becas
                     </button>
                 </h5>
@@ -139,7 +148,7 @@ use yii\widgets\ActiveForm;
         <div class="card">
             <div class="card-header" id="headingPlazos">
                 <h5 class="mb-0">
-                    <button type="button" class="btn w-100 collapsed" data-toggle="collapse" data-target="#plazos" aria-expanded="false" aria-controls="plazos">
+                    <button type="button" class="btn dropdown-toggle" data-toggle="collapse" data-target="#plazos" aria-expanded="false" aria-controls="plazos">
                         Plazos
                     </button>
                 </h5>
@@ -269,7 +278,35 @@ use yii\widgets\ActiveForm;
                             ) ?>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
 
+        <div class="card">
+            <div class="card-header d-flex flex-row justify-content-between align-middle" id="headingNomOnline">
+                <h5 class="mb-0">
+                    <button id="nominaciones-button" disabled type="button" class="btn dropdown-toggle" data-toggle="collapse" data-target="#nomOnline" aria-expanded="false" aria-controls="nomOnline">
+                        Nominaciones online
+                    </button>
+                </h5>
+                <?= $form->field($model, 'nominacion_online')->checkbox()?>
+            </div>
+
+            <div class="collapse" id="nomOnline" aria-labelledby="headingNomOnline" data-parent="#accordion">
+                <div class="card-body">
+                    <?= $form->field($model, 'nominacion_online')->checkbox() ?>
+
+                    <?= $form->field($model, 'link_nom_online')->textInput(['maxlength' => true]) ?>
+
+                    <?= $form->field($model, 'info_nom_online')->textarea(['rows' => 6]) ?>
+
+                    <?= $form->field($model, 'user_online')->textInput(['maxlength' => true]) ?>
+
+                    <?= $form->field($model, 'password_online')->textInput(['maxlength' => true]) ?>
+
+                    <?= $form->field($model, 'notas_online')->textInput(['maxlength' => true]) ?>
+
+                    <?= $form->field($model, 'fecha_online')->textInput() ?>
                 </div>
             </div>
         </div>
@@ -293,25 +330,13 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'req_curso')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'nominacion_online')->textInput() ?>
 
-    <?= $form->field($model, 'link_nom_online')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'info_nom_online')->textarea(['rows' => 6]) ?>
 
     <?= $form->field($model, 'link_documentacion')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'movilidad_pdi')->textInput() ?>
 
-    <?= $form->field($model, 'movilidad_pas')->textInput() ?>
 
-    <?= $form->field($model, 'user_online')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'password_online')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'notas_online')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'fecha_online')->textInput() ?>
 
     <?= $form->field($model, 'info_tor')->textarea(['rows' => 6]) ?>
 

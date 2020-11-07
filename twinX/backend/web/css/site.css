@@ -205,3 +205,10 @@ table {
     background-color: #883997;
     color: white;
 }
+
+/* BOTONES HEADER TARJETAS (CARD) */
+
+.card-header .btn:focus{
+    outline: none;
+    box-shadow: none;
+}
