@@ -36,7 +36,7 @@ use yii\widgets\ActiveForm;
             <div class="collapse show" id="identificacion" aria-labelledby="headingIdentificacion" data-parent="#accordion">
                 <div class="card-body">
                     <?= $form->field($model, 'cod_area')->widget(Select2::className(), [
-                        'data' => ArrayHelper::map(Area::find()->all(), 'cod_isced', 'nombre_area'),
+                        'data' => ArrayHelper::map(Area::find()->all(), 'cod_isced', 'areaCompleta'),
                         'theme' => Select2::THEME_KRAJEE_BS4,
                         'options' => [
                             'placeholder' => 'Seleccione una área',
@@ -59,13 +59,6 @@ use yii\widgets\ActiveForm;
                         ]
                     ]) ?>
 
-                    <?= $form->field($model, 'id_tutor')->widget(Select2::className(), [
-                        'data' => ArrayHelper::map(User::find()->where(['tipo_usuario' => 'TUTOR'])->all(), 'id', 'nombreUsername'),
-                        'theme' => Select2::THEME_KRAJEE_BS4,
-                        'options' => [
-                            'placeholder' => 'Seleccione un tutor',
-                        ]
-                    ]) ?>
 
                     <?= $form->field($model, 'id_curso_creacion')->widget(Select2::className(), [
                         'data' => ArrayHelper::map(Curso::find()->all(), 'id', 'curso'),
@@ -75,7 +68,7 @@ use yii\widgets\ActiveForm;
                         ]
                     ]) ?>
 
-                    <?= $form->field($model, 'tipo_movilidad')->dropDownList([ 'ERASMUS' => 'ERASMUS', 'ARQUS' => 'ARQUS', 'ERASMUS_DI' => 'ERASMUS DI', 'ERASMUS_PARTNER' => 'ERASMUS PARTNER', 'INTERCAMBIO' => 'INTERCAMBIO', 'LIBRE_MOVILIDAD' => 'LIBRE MOVILIDAD', ], ['prompt' => 'Seleccione un tipo de movilidad']) ?>
+                    <?= $form->field($model, 'tipo_movilidad')->dropDownList([ 'ERASMUS' => 'ERASMUS', 'ARQUS' => 'ARQUS', 'ERASMUS DI' => 'ERASMUS DI', 'ERASMUS PARTNER' => 'ERASMUS PARTNER', 'INTERCAMBIO' => 'INTERCAMBIO', 'LIBRE MOVILIDAD' => 'LIBRE MOVILIDAD', ], ['prompt' => 'Seleccione un tipo de movilidad']) ?>
 
                     <div class="d-flex flex-row justify-content-around mt-4">
                         <?= $form->field($model, 'movilidad_pdi')->checkbox() ?>
@@ -302,17 +295,17 @@ use yii\widgets\ActiveForm;
                             Coordinador
                         </div>
                         <div class="card-body mb-3">
-                            <?= $form->field($model, 'nombre_coord')->textInput(['maxlength' => true]) ?>
+                            <?= $form->field($model, 'nombre_coord')->textInput(['maxlength' => true])->label('Nombre') ?>
 
-                            <?= $form->field($model, 'cargo_coord')->textInput(['maxlength' => true]) ?>
+                            <?= $form->field($model, 'cargo_coord')->textInput(['maxlength' => true])->label('Cargo') ?>
 
-                            <?= $form->field($model, 'email_coord')->textInput(['maxlength' => true]) ?>
+                            <?= $form->field($model, 'email_coord')->textInput(['maxlength' => true])->label('Correo electrónico') ?>
 
-                            <?= $form->field($model, 'tlf_coord')->textInput(['maxlength' => true]) ?>
+                            <?= $form->field($model, 'tlf_coord')->textInput(['maxlength' => true])->label('Teléfono') ?>
 
-                            <?= $form->field($model, 'address_coord')->textInput(['maxlength' => true]) ?>
+                            <?= $form->field($model, 'address_coord')->textInput(['maxlength' => true])->label('Dirección') ?>
 
-                            <?= $form->field($model, 'web_inf_acad')->textInput(['maxlength' => true]) ?>
+                            <?= $form->field($model, 'web_inf_acad')->textInput(['maxlength' => true])->label('Web de información académica') ?>
                         </div>
                     </div>
 
@@ -324,14 +317,14 @@ use yii\widgets\ActiveForm;
 
                             <div class="card w-50 mr-3">
                                 <div class="card-header">
-                                    Administración incoming
+                                    Responsable en administración incoming
                                 </div>
                                 <div class="card-body mb-3">
-                                    <?= $form->field($model, 'nombre_admon_in')->textInput(['maxlength' => true]) ?>
+                                    <?= $form->field($model, 'nombre_admon_in')->textInput(['maxlength' => true])->label('Nombre') ?>
 
-                                    <?= $form->field($model, 'cargo_admon_in')->textInput(['maxlength' => true]) ?>
+                                    <?= $form->field($model, 'cargo_admon_in')->textInput(['maxlength' => true])->label('Cargo') ?>
 
-                                    <?= $form->field($model, 'mail_admon_in')->textInput(['maxlength' => true]) ?>
+                                    <?= $form->field($model, 'mail_admon_in')->textInput(['maxlength' => true])->label('Correo electrónico') ?>
                                 </div>
                             </div>
 
@@ -340,9 +333,9 @@ use yii\widgets\ActiveForm;
                                     Responsable académico incoming
                                 </div>
                                 <div class="card-body mb-3">
-                                    <?= $form->field($model, 'nombre_resp_acad_in')->textInput(['maxlength' => true]) ?>
+                                    <?= $form->field($model, 'nombre_resp_acad_in')->textInput(['maxlength' => true])->label('Nombre') ?>
 
-                                    <?= $form->field($model, 'cargo_resp_acad_in')->textInput(['maxlength' => true]) ?>
+                                    <?= $form->field($model, 'cargo_resp_acad_in')->textInput(['maxlength' => true])->label('Cargo') ?>
 
                                 </div>
                             </div>
@@ -351,19 +344,19 @@ use yii\widgets\ActiveForm;
 
                     <div class="card">
                         <div class="card-header" id="seccion-datos-personal">
-                            Outocoming
+                            Outgoing
                         </div>
                         <div class="card-body d-flex flex-row justify-content-around">
                             <div class="card w-50 mr-3">
                                 <div class="card-header">
-                                    Administración outcoming
+                                    Responsable en administración outgoing
                                 </div>
                                 <div class="card-body">
-                                    <?= $form->field($model, 'nombre_admon_out')->textInput(['maxlength' => true]) ?>
+                                    <?= $form->field($model, 'nombre_admon_out')->textInput(['maxlength' => true])->label('Nombre') ?>
 
-                                    <?= $form->field($model, 'cargo_admon_out')->textInput(['maxlength' => true]) ?>
+                                    <?= $form->field($model, 'cargo_admon_out')->textInput(['maxlength' => true])->label('Cargo') ?>
 
-                                    <?= $form->field($model, 'mail_admon_out')->textInput(['maxlength' => true]) ?>
+                                    <?= $form->field($model, 'mail_admon_out')->textInput(['maxlength' => true])->label('Correo electrónico') ?>
 
                                 </div>
                             </div>
@@ -371,14 +364,14 @@ use yii\widgets\ActiveForm;
 
                             <div class="card w-50">
                                 <div class="card-header">
-                                    Responsable académico outcoming
+                                    Responsable académico outgoing
                                 </div>
                                 <div class="card-body">
-                                    <?= $form->field($model, 'nombre_resp_acad_out')->textInput(['maxlength' => true]) ?>
+                                    <?= $form->field($model, 'nombre_resp_acad_out')->textInput(['maxlength' => true])->label('Nombre') ?>
 
-                                    <?= $form->field($model, 'cargo_resp_acad_out')->textInput(['maxlength' => true]) ?>
+                                    <?= $form->field($model, 'cargo_resp_acad_out')->textInput(['maxlength' => true])->label('Cargo') ?>
 
-                                    <?= $form->field($model, 'mail_resp_acad_out')->textInput(['maxlength' => true]) ?>
+                                    <?= $form->field($model, 'mail_resp_acad_out')->textInput(['maxlength' => true])->label('Correo electrónico') ?>
 
                                 </div>
                             </div>
@@ -485,7 +478,7 @@ use yii\widgets\ActiveForm;
     </div>
 
     <div class="form-group mt-3">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Guardar', ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

@@ -15,10 +15,10 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>
+    <p class="d-flex justify-content-end">
         <?= Html::a('Guardar', ['update', 'id' => $model->cod_isced], ['class' => 'btn btn-primary']) ?>
         <?= Html::a('Eliminar', ['delete', 'id' => $model->cod_isced], [
-            'class' => 'btn btn-danger',
+            'class' => 'btn btn-danger ml-2',
             'data' => [
                 'confirm' => '¿Confirma la eliminación de esta área?',
                 'method' => 'post',

@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p class="d-flex justify-content-end">
-        <?= Html::a('Create Convenio', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Nuevo convenio', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php Pjax::begin(); ?>
@@ -25,13 +25,28 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            'codConvenio',
-//            'cod_area',
-//            'cod_uni',
-//            'cod_pais',
+            'cod_pais',
+            'cod_uni',
+            'cod_area',
+            [
+                    'attribute' => 'codConvenio',
+                    'label' => 'Convenio',
+                    'format' => 'raw',
+            ],
+            [
+                'attribute' => 'codUni.nombreCodigo',
+                'label' => 'Universidad'
+            ],
+            [
+                'attribute' => 'codArea.areaCompleta',
+                'label' => 'Nombre de la área'
+            ],
+            'tipo_movilidad',
+
+
+
 //            'id_admon_out',
             //'id_tutor',
             //'id_curso_creacion',
@@ -51,7 +66,7 @@ $this->params['breadcrumbs'][] = $this->title;
             //'link_documentacion',
             //'movilidad_pdi',
             //'movilidad_pas',
-            //'tipo_movilidad',
+
             //'user_online',
             //'password_online',
             //'notas_online',
@@ -78,7 +93,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
             [
                 'class' => 'yii\grid\ActionColumn',
-                'template' => '{view} {update} {delete}',
+                'template' => '{view} {update}',
                 'header' => 'Acciones'
             ],
         ],

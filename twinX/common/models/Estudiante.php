@@ -61,17 +61,17 @@ class Estudiante extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id_usuario' => 'Id Usuario',
-            'dni' => 'Dni',
-            'id_convenio' => 'Id Convenio',
-            'id_titulacion' => 'Id Titulacion',
-            'telefono2' => 'Telefono2',
-            'email_go_ugr' => 'Email Go Ugr',
-            'f_nacimiento' => 'F Nacimiento',
-            'tipo_estudiante' => 'Tipo Estudiante',
-            'cesion_datos' => 'Cesion Datos',
-            'nota_expediente' => 'Nota Expediente',
-            'beca_mec' => 'Beca Mec',
+            'id_usuario' => 'Usuario',
+            'dni' => 'DNI',
+            'id_convenio' => 'Convenio',
+            'id_titulacion' => 'Titulación',
+            'telefono2' => 'Telefono 2',
+            'email_go_ugr' => 'Email goUGR',
+            'f_nacimiento' => 'Fecha de nacimiento',
+            'tipo_estudiante' => 'Tipo de estudiante',
+            'cesion_datos' => 'Cesión de datos',
+            'nota_expediente' => 'Nota del expediente',
+            'beca_mec' => 'Becario MEC',
         ];
     }
 
@@ -132,5 +132,10 @@ class Estudiante extends \yii\db\ActiveRecord
     public static function find()
     {
         return new \common\models\query\EstudianteQuery(get_called_class());
+    }
+
+    public function getNombreEstudiante() {
+        $claseIndicador = $this->tipo_estudiante == 'OUTGOING' ? '#FF3131' : '#2AC8F3';
+        return '<i class="fas fa-circle" style="color:' . $claseIndicador . '"></i> ' . $this->usuario->nombre;
     }
 }

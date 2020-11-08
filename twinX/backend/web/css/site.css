@@ -212,3 +212,10 @@ table {
     outline: none;
     box-shadow: none;
 }
+
+/* ICONOS CONVENIOS */
+.convenio-icon {
+    max-width: 25px;
+    max-height: 25px;
+    margin-right: 10px;
+}

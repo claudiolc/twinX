@@ -65,4 +65,9 @@ class Area extends \yii\db\ActiveRecord
     {
         return new \common\models\query\AreaQuery(get_called_class());
     }
+
+    public function getAreaCompleta()
+    {
+        return $this->cod_isced . ' ' . $this->nombre_isced . ' (' . $this->nombre_area . ')';
+    }
 }

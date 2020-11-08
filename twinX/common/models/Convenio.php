@@ -4,6 +4,7 @@ namespace common\models;
 
 use Yii;
 use yii\db\Exception;
+use yii\helpers\Html;
 
 /**
  * This is the model class for table "convenio".
@@ -12,7 +13,6 @@ use yii\db\Exception;
  * @property string $cod_area
  * @property string $cod_uni
  * @property string $cod_pais
- * @property int $id_tutor ref a usuario pero tiene que ser un tutor, futura restricción
  * @property int $id_curso_creacion
  * @property int $creado_por
  * @property int $num_becas_in
@@ -75,8 +75,7 @@ use yii\db\Exception;
  * @property Pais $codPais
  * @property User $creadoPor
  * @property Area $codArea
- * @property Universidad $codPais0
- * @property User $tutor
+ * @property Universidad $codUni
  * @property Estudiante[] $estudiantes
  * @property ReqLingConv[] $reqLingConvs
  */
@@ -96,8 +95,8 @@ class Convenio extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['cod_area', 'cod_uni', 'cod_pais', 'id_tutor', 'id_curso_creacion', 'creado_por', 'num_becas_in', 'num_becas_out', 'meses_in', 'meses_out', 'anno_inicio', 'anno_fin', 'tipo_movilidad'], 'required'],
-            [['id_tutor', 'id_curso_creacion', 'creado_por', 'num_becas_in', 'num_becas_out', 'meses_in', 'meses_out', 'anno_inicio', 'anno_fin', 'nominacion_online', 'movilidad_pdi', 'movilidad_pas'], 'integer'],
+            [['cod_area', 'cod_uni', 'cod_pais', 'id_curso_creacion', 'creado_por', 'num_becas_in', 'num_becas_out', 'meses_in', 'meses_out', 'anno_inicio', 'anno_fin', 'tipo_movilidad'], 'required'],
+            [['id_curso_creacion', 'creado_por', 'num_becas_in', 'num_becas_out', 'meses_in', 'meses_out', 'anno_inicio', 'anno_fin', 'nominacion_online', 'movilidad_pdi', 'movilidad_pas'], 'integer'],
             [['info_nom_online', 'tipo_movilidad', 'info_tor', 'observ_discapacidad', 'observ_req_ling', 'memo_grading', 'memo_visado', 'memo_seguro', 'memo_alojamiento'], 'string'],
             [['fecha_online', 'begin_nom_1s', 'end_nom_1s', 'begin_nom_2s', 'end_nom_2s', 'begin_app_1s', 'end_app_1s', 'begin_app_2s', 'end_app_2s', 'begin_mov_1s', 'end_mov_1s', 'begin_mov_2s', 'end_mov_2s', 'requisitos'], 'safe'],
             [['cod_area', 'cod_uni', 'cod_pais', 'req_titulacion', 'req_curso', 'link_nom_online', 'link_documentacion', 'user_online', 'password_online'], 'string', 'max' => 255],
@@ -108,9 +107,7 @@ class Convenio extends \yii\db\ActiveRecord
             [['cod_pais'], 'exist', 'skipOnError' => true, 'targetClass' => Pais::className(), 'targetAttribute' => ['cod_pais' => 'iso']],
             [['creado_por'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['creado_por' => 'id']],
             [['cod_area'], 'exist', 'skipOnError' => true, 'targetClass' => Area::className(), 'targetAttribute' => ['cod_area' => 'cod_isced']],
-            [['cod_pais', 'cod_uni'], 'exist', 'skipOnError' => true, 'targetClass' => Universidad::className(), 'targetAttribute' => ['cod_pais' => 'cod_pais', 'cod_uni' => 'cod_uni']],
-            [['id_tutor'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['id_tutor' => 'id']],
-        ];
+            [['cod_pais', 'cod_uni'], 'exist', 'skipOnError' => true, 'targetClass' => Universidad::className(), 'targetAttribute' => ['cod_pais' => 'cod_pais', 'cod_uni' => 'cod_uni']],];
     }
 
     /**
@@ -123,7 +120,6 @@ class Convenio extends \yii\db\ActiveRecord
             'cod_area' => 'Área',
             'cod_uni' => 'Universidad',
             'cod_pais' => 'País',
-            'id_tutor' => 'Tutor',
             'id_curso_creacion' => 'Curso de creación',
             'creado_por' => 'Creado por',
             'num_becas_in' => 'Número de becas IN',
@@ -234,23 +230,13 @@ class Convenio extends \yii\db\ActiveRecord
     }
 
     /**
-     * Gets query for [[CodPais0]].
+     * Gets query for [[CodUni]].
      *
      * @return \yii\db\ActiveQuery|\common\models\query\UniversidadQuery
      */
-    public function getCodPais0()
+    public function getCodUni()
     {
         return $this->hasOne(Universidad::className(), ['cod_pais' => 'cod_pais', 'cod_uni' => 'cod_uni']);
-    }
-
-    /**
-     * Gets query for [[Tutor]].
-     *
-     * @return \yii\db\ActiveQuery|\common\models\query\UserQuery
-     */
-    public function getTutor()
-    {
-        return $this->hasOne(User::className(), ['id' => 'id_tutor']);
     }
 
     /**
@@ -284,7 +270,40 @@ class Convenio extends \yii\db\ActiveRecord
 
     public function getCodConvenio()
     {
-        return $this->cod_pais . ' ' . $this->cod_uni . '/' . $this->cod_area;
+        $path = '@web/images/icons/' . $this->codPais->iso. '.png';
+        return  Html::img($path, ['class' => 'convenio-icon']) . $this->cod_pais . ' ' . $this->cod_uni . '/' . $this->cod_area;
+    }
+
+    public function getCodConvenioNoIcon()
+    {
+        return  $this->cod_pais . ' ' . $this->cod_uni . '/' . $this->cod_area;
+    }
+
+    public function getTipoMovilidad()
+    {
+        switch($this->tipo_movilidad){
+            case('ERASMUS PARTNER'):
+                return 'Erasmus partner';
+                break;
+            case('ERASMUS'):
+                return 'Erasmus';
+                break;
+            case('ERASMUS DI'):
+                return 'Erasmus: dimensión internacional';
+                break;
+            case('ARQUS'):
+                return 'Arqus';
+                break;
+            case('INTERCAMBIO'):
+                return 'Intercambio';
+                break;
+            case('LIBRE MOVILIDAD'):
+                return 'Libre movilidad';
+                break;
+            default:
+                return $this->tipo_movilidad;
+                break;
+        }
     }
 
     /////////////////////////////////////////////////////////

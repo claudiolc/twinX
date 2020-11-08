@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p class="d-flex justify-content-end">
-        <?= Html::a('Create Estudiante', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Nuevo estudiante', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php Pjax::begin(); ?>
@@ -26,12 +26,23 @@ $this->params['breadcrumbs'][] = $this->title;
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
+            [
+                    'attribute' => 'nombreEstudiante',
+                    'format' => 'raw',
+                    'label' => 'Nombre',
+                    'headerOptions' => [
+                            'style' => 'min-width:300px;'
+                    ]
+            ],
+            'usuario.username',
 
-            'id_usuario',
             'dni',
-            'id_convenio',
+            [
+                'attribute' => 'convenio.codConvenio',
+                'label' => 'Convenio',
+                'format' => 'raw'
+            ],
             'id_titulacion',
-            'telefono2',
             //'email_go_ugr:email',
             //'f_nacimiento',
             //'tipo_estudiante',
