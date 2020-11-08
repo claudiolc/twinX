@@ -35,12 +35,11 @@ $this->params['breadcrumbs'][] = $this->title;
                     ]
             ],
             'usuario.username',
-
             'dni',
             [
-                'attribute' => 'convenio.codConvenio',
+                'attribute' => 'codConvenio',
                 'label' => 'Convenio',
-                'format' => 'raw'
+                'format' => 'raw',
             ],
             'id_titulacion',
             //'email_go_ugr:email',

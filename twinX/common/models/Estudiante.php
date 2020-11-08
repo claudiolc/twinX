@@ -138,4 +138,9 @@ class Estudiante extends \yii\db\ActiveRecord
         $claseIndicador = $this->tipo_estudiante == 'OUTGOING' ? '#FF3131' : '#2AC8F3';
         return '<i class="fas fa-circle" style="color:' . $claseIndicador . '"></i> ' . $this->usuario->nombre;
     }
+
+    public function getCodConvenio()
+    {
+        return $this->convenio->getCodConvenio();
+    }
 }

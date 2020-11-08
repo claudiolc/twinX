@@ -11,6 +11,7 @@ use common\models\Estudiante;
  */
 class EstudianteSearch extends Estudiante
 {
+    public $codConvenio;
     /**
      * {@inheritdoc}
      */
@@ -20,6 +21,7 @@ class EstudianteSearch extends Estudiante
             [['id_usuario', 'id_convenio', 'id_titulacion', 'telefono2', 'cesion_datos', 'beca_mec'], 'integer'],
             [['dni', 'email_go_ugr', 'f_nacimiento', 'tipo_estudiante'], 'safe'],
             [['nota_expediente'], 'number'],
+            ['codConvenio', 'safe']
         ];
     }
 
@@ -49,6 +51,8 @@ class EstudianteSearch extends Estudiante
             'query' => $query,
         ]);
 
+        $query->joinWith(['convenio.codPais', 'convenio.codArea', 'convenio.codUni']);
+
         $this->load($params);
 
         if (!$this->validate()) {
@@ -56,6 +60,12 @@ class EstudianteSearch extends Estudiante
             // $query->where('0=1');
             return $dataProvider;
         }
+
+        $dataProvider->sort->attributes['codConvenio'] = [
+            'asc' => ['pais.iso' => SORT_ASC],
+            'desc' => ['pais.iso' => SORT_DESC],
+            'default' => SORT_DESC
+        ];
 
         // grid filtering conditions
         $query->andFilterWhere([
@@ -71,7 +81,10 @@ class EstudianteSearch extends Estudiante
 
         $query->andFilterWhere(['like', 'dni', $this->dni])
             ->andFilterWhere(['like', 'email_go_ugr', $this->email_go_ugr])
-            ->andFilterWhere(['like', 'tipo_estudiante', $this->tipo_estudiante]);
+            ->andFilterWhere(['like', 'tipo_estudiante', $this->tipo_estudiante])
+            ->andFilterWhere(['like', 'pais.iso', $this->codConvenio])
+            ->orFilterWhere(['like', 'area.cod_isced', $this->codConvenio])
+            ->orFilterWhere(['like', 'universidad.cod_uni', $this->codConvenio]);
 
         return $dataProvider;
     }

@@ -27,9 +27,6 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
 
             'id',
-            'cod_pais',
-            'cod_uni',
-            'cod_area',
             [
                     'attribute' => 'codConvenio',
                     'label' => 'Convenio',
@@ -39,6 +36,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'codUni.nombreCodigo',
                 'label' => 'Universidad'
             ],
+            'cod_pais',
             [
                 'attribute' => 'codArea.areaCompleta',
                 'label' => 'Nombre de la área'
