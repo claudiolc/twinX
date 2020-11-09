@@ -156,6 +156,17 @@ a:hover {
     color: white;
 }
 
+/* CARETS (Flechas de ordenación en las tablas) */
+
+a.desc:after {
+    content: '▼';
+}
+
+a.asc:after {
+    content: '▲';
+}
+
+
 /* SIDEBAR */
 
 #sidebar {

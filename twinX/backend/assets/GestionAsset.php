@@ -12,7 +12,8 @@ class GestionAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-      'css/convenios.css'
+        'css/convenios.css',
+        'css/estudiante.css'
     ];
     public $js = [
         'js/convenios.js',

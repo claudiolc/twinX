@@ -31,8 +31,7 @@ class CompetenciaLing extends \yii\db\ActiveRecord
     {
         return [
             [['lengua', 'nivel'], 'required'],
-            [['nivel'], 'string'],
-            [['lengua'], 'string', 'max' => 255],
+            [['nivel', 'lengua'], 'string'],
         ];
     }
 

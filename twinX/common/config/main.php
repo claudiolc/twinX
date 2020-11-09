@@ -15,7 +15,11 @@ return [
             'rules' => [
             ],
         ],
+        'formatter' => [
+            'dateFormat' => 'dd/MM/yyyy'
+        ]
     ],
     'language' => 'es',
     'name' => 'twinX',
+
 ];

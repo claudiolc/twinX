@@ -16,6 +16,7 @@ use yii\web\IdentityInterface;
  * @property string $password_reset_token
  * @property string $verification_token
  * @property string $email
+ * @property string $foto
  * @property string $auth_key
  * @property integer $status
  * @property integer $created_at
@@ -25,7 +26,7 @@ use yii\web\IdentityInterface;
  * @property string $nombre
  * @property string $tipo_usuario
  * @property string $telefono
- * @property string $sexo
+ * @property string $genero
  *
  * @property Convenio[] $convenios
  * @property Convenio[] $convenios0
@@ -70,9 +71,9 @@ class User extends ActiveRecord implements IdentityInterface
         return [
             ['status', 'default', 'value' => self::STATUS_INACTIVE],
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_INACTIVE, self::STATUS_DELETED]],
-            [['email', 'nombre', 'tipo_usuario', 'telefono', 'sexo'], 'required'],
-            [['tipo_usuario', 'sexo'], 'string'],
-            [['email'], 'string', 'max' => 255],
+            [['email', 'nombre', 'tipo_usuario', 'telefono', 'genero'], 'required'],
+            [['tipo_usuario', 'genero'], 'string'],
+            [['email', 'foto'], 'string', 'max' => 255],
             [['nombre'], 'string', 'max' => 50],
             [['telefono'], 'string', 'max' => 20],
             [['username'], 'unique'],
@@ -87,12 +88,13 @@ class User extends ActiveRecord implements IdentityInterface
             'id' => 'ID',
             'username' => 'Nombre de usuario',
             'email' => 'Correo electrónico',
+            'foto' => 'Foto de perfil',
             'status' => 'Estado',
             'created_at' => 'Fecha de registro',
             'nombre' => 'Nombre',
             'tipo_usuario' => 'Tipo de usuario',
             'telefono' => 'Teléfono',
-            'sexo' => 'Sexo',
+            'genero' => 'Género',
             'created_at' => 'Fecha de registro',
             'updated_at' => 'Última actualización'
         ];

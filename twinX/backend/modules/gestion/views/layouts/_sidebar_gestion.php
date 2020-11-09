@@ -1,17 +1,17 @@
 <?php
 $items = [
     [
-        'label' => 'Dashboard',
+        'label' => '<i class="fas fa-chart-line"></i> Dashboard',
         'url' => ['/gestion/dashboard'],
         'active' => in_array(\Yii::$app->controller->id, ['dashboard'])
     ],
     [
-        'label' => 'Convenios',
+        'label' => '<i class="fas fa-university"></i> Convenios',
         'url' => ['/gestion/convenio'],
         'active' => in_array(\Yii::$app->controller->id, ['convenio'])
     ],
     [
-        'label' => 'Estudiantes',
+        'label' => '<i class="fas fa-user-graduate"></i> Estudiantes',
         'url' => ['/gestion/estudiante'],
         'active' => in_array(\Yii::$app->controller->id, ['estudiante'])
     ],

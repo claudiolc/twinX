@@ -167,7 +167,8 @@ use yii\widgets\ActiveForm;
                                     'separator' => 'hasta',
                                     'pluginOptions' => [
                                             'format' => 'yyyy',
-                                    ]
+                                    ],
+
                                 ]
                             ) ?>
                         </div>
@@ -187,7 +188,10 @@ use yii\widgets\ActiveForm;
                                     'options2' => ['placeholder' => 'Fecha de finalización'],
                                     'type' => DatePicker::TYPE_RANGE,
                                     'form' => $form,
-                                    'separator' => 'hasta'
+                                    'separator' => 'hasta',
+                                    'pluginOptions' => [
+                                        'format' => 'yyyy-MM-dd'
+                                    ],
                                 ]
                             ) ?>
 
@@ -200,8 +204,11 @@ use yii\widgets\ActiveForm;
                                     'options2' => ['placeholder' => 'Fecha de finalización'],
                                     'type' => DatePicker::TYPE_RANGE,
                                     'form' => $form,
-                                    'separator' => 'hasta'
-                                ]
+                                    'separator' => 'hasta',
+                                    'pluginOptions' => [
+                                        'format' => 'yyyy-MM-dd'
+                                    ]
+                            ]
                             ) ?>
                         </div>
                     </div>
@@ -221,9 +228,12 @@ use yii\widgets\ActiveForm;
                                     'options2' => ['placeholder' => 'Fecha de finalización'],
                                     'type' => DatePicker::TYPE_RANGE,
                                     'form' => $form,
-                                    'separator' => 'hasta'
-                                ]
-                            ) ?>
+                                    'separator' => 'hasta',
+                                    'pluginOptions' => [
+                                        'format' => 'yyyy-MM-dd'
+                                    ]
+
+                                ]) ?>
 
                             <label class="control-label mt-2">Segundo semestre</label>
                             <?= DatePicker::widget([
@@ -234,9 +244,11 @@ use yii\widgets\ActiveForm;
                                     'options2' => ['placeholder' => 'Fecha de finalización'],
                                     'type' => DatePicker::TYPE_RANGE,
                                     'form' => $form,
-                                    'separator' => 'hasta'
-                                ]
-                            ) ?>
+                                    'separator' => 'hasta',
+                                    'pluginOptions' => [
+                                        'format' => 'yyyy-MM-dd'
+                                    ]
+                            ]) ?>
 
                         </div>
                     </div>
@@ -250,15 +262,17 @@ use yii\widgets\ActiveForm;
                             <label class="control-label">Primer semestre</label>
                             <?= DatePicker::widget([
                                     'model' => $model,
-                                    'attribute' => 'begin_mov_2s',
-                                    'attribute2' => 'end_mov_2s',
+                                    'attribute' => 'begin_mov_1s',
+                                    'attribute2' => 'end_mov_1s',
                                     'options' => ['placeholder' => 'Fecha de comienzo'],
                                     'options2' => ['placeholder' => 'Fecha de finalización'],
                                     'type' => DatePicker::TYPE_RANGE,
                                     'form' => $form,
-                                    'separator' => 'hasta'
-                                ]
-                            ) ?>
+                                    'separator' => 'hasta',
+                                    'pluginOptions' => [
+                                        'format' => 'yyyy-MM-dd'
+                                    ]
+                            ]) ?>
 
                             <label class="control-label mt-2">Segundo semestre</label>
                             <?= DatePicker::widget([
@@ -269,9 +283,11 @@ use yii\widgets\ActiveForm;
                                     'options2' => ['placeholder' => 'Fecha de finalización'],
                                     'type' => DatePicker::TYPE_RANGE,
                                     'form' => $form,
-                                    'separator' => 'hasta'
-                                ]
-                            ) ?>
+                                    'separator' => 'hasta',
+                                    'pluginOptions' => [
+                                        'format' => 'yyyy-MM-dd'
+                                    ]
+                            ]) ?>
                         </div>
                     </div>
                 </div>

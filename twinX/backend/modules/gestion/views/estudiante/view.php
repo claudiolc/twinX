@@ -1,46 +1,247 @@
-<?php
+    <?php
 
-use yii\helpers\Html;
-use yii\widgets\DetailView;
+    use yii\helpers\Html;
+    use yii\widgets\DetailView;
 
-/* @var $this yii\web\View */
-/* @var $model common\models\Estudiante */
+    /* @var $this yii\web\View */
+    /* @var $model common\models\Estudiante */
 
-$this->title = $model->id_usuario;
-$this->params['breadcrumbs'][] = ['label' => 'Estudiantes', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
-\yii\web\YiiAsset::register($this);
-?>
-<div class="estudiante-view">
+    $this->title = $model->usuario->nombre;
+    $this->params['breadcrumbs'][] = ['label' => 'Estudiantes', 'url' => ['index']];
+    $this->params['breadcrumbs'][] = $this->title;
+    \yii\web\YiiAsset::register($this);
+    \backend\assets\GestionAsset::register($this);
+    ?>
+    <div class="estudiante-view">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+        <h1><?= $model->nombreEstudiante ?></h1>
 
-    <p class="d-flex justify-content-end">
-        <?= Html::a('Update', ['update', 'id' => $model->id_usuario], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->id_usuario], [
-            'class' => 'btn btn-danger ml-2',
-            'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
-                'method' => 'post',
+        <div class="d-flex flex-row">
+            <?= Html::img($model->usuario->foto, ['class' => 'profile-pic shadow-sm'])?>
+        </div>
+        <p class="d-flex justify-content-end">
+            <?= Html::a('Mail', 'mailto:'.$model->usuario->email, ['class' => 'btn btn-success'] ) ?>
+            <?= Html::a('Editar', ['update', 'id' => $model->id_usuario], ['class' => 'btn btn-primary ml-2']) ?>
+            <?= Html::a('Eliminar', ['delete', 'id' => $model->id_usuario], [
+                'class' => 'btn btn-danger ml-2',
+                'data' => [
+                    'confirm' => '¿ESTÁ SERGURO/A DE QUERER ELIMINAR ESTE ESTUDIANTE?',
+                    'method' => 'post',
+                ],
+            ]) ?>
+
+        </p>
+
+
+
+        <?= \kartik\detail\DetailView::widget([
+            'model' => $model,
+            'attributes' => [
+                [
+                        'columns' => [
+                            [
+                                'group' => true,
+                                'label' => 'Datos personales',
+                                'groupOptions' => ['class' => 'w-50'],
+                            ],
+                            [
+                                'group' => true,
+                                'label' => 'Movilidad',
+                                'groupOptions' => ['class' => 'w-50'],
+
+                            ],
+                        ],
+                        'rowOptions'=>['style' => 'background-color: #883997; color: white;']
+                ],
+                [
+                        'columns' => [
+                            [
+                                    'attribute' => 'tipo_estudiante',
+                                    'labelColOptions' => ['class' => 'w-25'],
+                                    'valueColOptions' => ['class' => 'w-25']
+                            ],
+                            [
+                                'attribute' => 'codConvenio',
+                                'label' => 'Convenio',
+                                'value' => Html::a($model->codConvenio, ['convenio/view', 'id' => $model->convenio->id], ['class' => 'btn btn-outline-primary']),
+                                'labelColOptions' => ['class' => 'w-25'],
+                                'valueColOptions' => ['class' => 'w-25'],
+                                'format' => 'raw'
+
+                            ],
+
+                        ]
+                ],
+                [
+                        'columns' => [
+                            [
+                                'attribute' => 'usuario',
+                                'value' => $model->usuario->username,
+                                'label' => 'Username',
+                                'labelColOptions' => ['class' => 'w-25'],
+                                'valueColOptions' => ['class' => 'w-25']
+
+                            ],
+//                            [
+//                                'attribute' => 'acuerdoEstudios',
+//                                'value' => $model->acuerdoEstudios->id,
+//
+//                            ],
+
+                        ]
+                ],
+
+                [
+                    'columns' => [
+                            [
+                                    'attribute' => 'usuario',
+                                    'value' => function($s, $widget){
+                                        $genero = $widget->model->usuario->genero;
+                                        if($genero == 'M')
+                                            return 'Masculino';
+                                        elseif ($genero == 'F')
+                                            return 'Femenino';
+                                        else
+                                            return 'Otro';
+                                    },
+                                    'label' => 'Género',
+                                    'labelColOptions' => ['class' => 'w-25'],
+                                    'valueColOptions' => ['class' => 'w-25']
+
+                            ],
+                            [
+                                'attribute' => 'nombreTitulacion',
+                                'label' => 'Titulación',
+                                'labelColOptions' => ['class' => 'w-25'],
+                                'valueColOptions' => ['class' => 'w-25']
+                            ],
+
+
+                    ]
+                ],
+                [
+                    'columns' => [
+                        [
+                            'attribute' => 'dni',
+                            'labelColOptions' => ['class' => 'w-25'],
+                            'valueColOptions' => ['class' => 'w-25']
+                        ],
+                        [
+                                'attribute' => 'cesion_datos',
+                                'value' => $model->cesion_datos ? '<i class="fas fa-check"></i>' : '<i class="fas fa-times"></i>',
+                                'format' => 'raw',
+                                'labelColOptions' => ['class' => 'w-25'],
+                                'valueColOptions' => ['class' => 'w-25']
+                        ],
+
+
+                    ]
+                ],
+                [
+                    'columns' => [
+
+                    [
+                        'attribute' => 'usuario',
+                        'value' => $model->usuario->telefono,
+                        'label' => 'Teléfono',
+                        'labelColOptions' => ['class' => 'w-12.5'],
+                        'valueColOptions' => ['class' => 'w-12.5']
+
+                    ],
+                    [
+                        'attribute' => 'telefono2',
+                        'labelColOptions' => ['class' => 'w-12.5'],
+                        'valueColOptions' => ['class' => 'w-12.5']
+
+                    ],
+                    [
+                        'attribute' => 'beca_mec',
+                        'value' => $model->beca_mec ? '<i class="fas fa-check"></i>' : '<i class="fas fa-times"></i>',
+                        'labelColOptions' => ['class' => 'w-25'],
+                        'valueColOptions' => ['class' => 'w-25'],
+                        'format' => 'raw'
+                    ],
+
+
+
+                    ]
+                ],
+                [
+                    'columns' => [
+
+
+                        [
+                            'attribute' => 'usuario',
+                            'value' => $model->usuario->email,
+                            'label' => 'Email',
+                            'labelColOptions' => ['class' => 'w-12.5'],
+                            'valueColOptions' => ['class' => 'w-12.5']
+
+                        ],
+                        [
+                            'attribute' => 'email_go_ugr',
+                            'labelColOptions' => ['class' => 'w-12.5'],
+                            'valueColOptions' => ['class' => 'w-12.5']
+
+                        ],
+                        [
+                            'attribute' => 'nota_expediente',
+                            'labelColOptions' => ['class' => 'w-25'],
+                            'valueColOptions' => ['class' => 'w-25']
+                        ],
+
+
+
+                    ]
+                ],
+                [
+                    'columns' => [
+                        [
+                            'attribute' => 'f_nacimiento',
+                            'format' => 'date',
+                            'labelColOptions' => ['class' => 'w-25'],
+                            'valueColOptions' => ['class' => 'w-25'],
+                        ],
+                        [
+                            'attribute' => 'notaCompetenciaLing',
+                            'label' => 'Nota de competencias lingüísticas',
+                            'labelColOptions' => ['class' => 'w-25'],
+                            'valueColOptions' => ['class' => 'w-25'],
+                        ]
+                    ]
+                ],
+                [
+                    'columns' => [
+                        [
+                            'attribute' => 'usuario',
+                            'value' => $model->usuario->created_at,
+                            'label' => 'Fecha de registro',
+                            'format' => 'datetime',
+                            'labelColOptions' => ['class' => 'w-25'],
+                            'valueColOptions' => ['class' => 'w-25'],
+                        ],
+                        [
+                            'attribute' => 'notaParticipacion',
+                            'label' => 'Nota de participación',
+                            'labelColOptions' => ['class' => 'w-25'],
+                            'valueColOptions' => ['class' => 'w-25'],
+                        ]
+
+                    ]
+                ],
+                [
+                        'attribute' => 'relClEsts[]',
+                        'value' => function($form, $widget){
+                            $competencias = [];
+                            foreach ($widget->model->relClEsts as $comp){
+                                $competencias[] = \common\models\CompetenciaLing::find()->where(['id' => $comp->id_cl])->one()->lenguaNivel;
+                            }
+
+                            return implode(', ', $competencias);
+                        },
+                        'label' => 'Competencias lingüísticas'
+                ]
             ],
         ]) ?>
-    </p>
 
-    <?= DetailView::widget([
-        'model' => $model,
-        'attributes' => [
-            'id_usuario',
-            'dni',
-            'id_convenio',
-            'id_titulacion',
-            'telefono2',
-            'email_go_ugr:email',
-            'f_nacimiento',
-            'tipo_estudiante',
-            'cesion_datos',
-            'nota_expediente',
-            'beca_mec',
-        ],
-    ]) ?>
-
-</div>
+    </div>

@@ -34,14 +34,19 @@ $this->params['breadcrumbs'][] = $this->title;
                             'style' => 'min-width:300px;'
                     ]
             ],
-            'usuario.username',
-            'dni',
             [
                 'attribute' => 'codConvenio',
                 'label' => 'Convenio',
                 'format' => 'raw',
             ],
-            'id_titulacion',
+            [
+                    'attribute' => 'nombreTitulacion',
+                    'label' => 'Titulación'
+            ],
+            'username',
+            'email',
+            'dni',
+
             //'email_go_ugr:email',
             //'f_nacimiento',
             //'tipo_estudiante',
@@ -51,7 +56,12 @@ $this->params['breadcrumbs'][] = $this->title;
 
             [
                 'class' => 'yii\grid\ActionColumn',
-                'template' => '{view} {update} {delete}',
+                'template' => '{view} {convenio}' ,
+                'buttons' => [
+                        'convenio' => function($url, $model, $key){
+                            return Html::a('<i class="fas fa-university"></i>', ['convenio/view', 'id' => $model->convenio->id], ['class' => 'btn btn-outline-success', 'title' => 'Convenio']);
+                        },
+                ],
                 'header' => 'Acciones'
             ],
         ],

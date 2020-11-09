@@ -12,7 +12,7 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'lengua')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'lengua')->dropDownList([ 'INGLÉS' => 'INGLÉS', 'ALEMÁN' => 'ALEMÁN', 'FRANCÉS' => 'FRANCÉS', 'ITALIANO' => 'ITALIANO', 'RUSO' => 'RUSO', 'CHECO' => 'CHECO' ], ['prompt' => '']) ?>
 
     <?= $form->field($model, 'nivel')->dropDownList([ 'B1' => 'B1', 'B2' => 'B2', 'C1' => 'C1', 'C2' => 'C2', ], ['prompt' => '']) ?>
 

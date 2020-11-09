@@ -5,18 +5,34 @@ use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Convenio */
-$activo = '<i alt="Convenio activo" style="color:limegreen;"  class="fas fa-sm fa-check-circle"></i>';
 
-$inactivo =  '<i alt="Convenio inactivo" style="color:red;" class="fas fa-sm fa-times-circle"></i>';
-$estado = $model->anno_fin > date('Y') ?  $activo : $inactivo;
-$this->title = $model->codConvenio;
+if($model->anno_fin > date('Y'))
+    $estado = $this->render('indicador', [
+            'icono' => 'fas fa-sm fa-check-circle',
+            'color' => 'bg-success',
+            'texto' => 'Convenio activo'
+    ]);
+elseif ($model->anno_fin < date('Y'))
+    $estado = $this->render('indicador', [
+        'icono' => 'fas fa-sm fa-times-circle',
+        'color' => 'bg-danger',
+        'texto' => 'Convenio inactivo'
+    ]);
+else
+    $estado = $this->render('indicador', [
+        'icono' => 'fas fa-sm fa-exclamation-triangle',
+        'color' => 'bg-warning',
+        'texto' => 'Próxima caducidad'
+    ]);
+
+$this->title = $model->codConvenioNoIcon;
 $this->params['breadcrumbs'][] = ['label' => 'Convenios', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
 <div class="convenio-view">
 
-    <h1><?= $this->title . ' ' . $estado?></h1>
+    <h1 class="d-flex flex-row align-items-center"><?= $model->codConvenio . ' ' . $estado?></h1>
 
     <p class="d-flex justify-content-end">
         <?= Html::a('Editar', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>

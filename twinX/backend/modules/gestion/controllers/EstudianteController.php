@@ -2,12 +2,14 @@
 
 namespace backend\modules\gestion\controllers;
 
+use common\models\EstudianteForm;
 use Yii;
 use common\models\Estudiante;
 use common\models\search\EstudianteSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * EstudianteController implements the CRUD actions for Estudiante model.
@@ -64,7 +66,7 @@ class EstudianteController extends Controller
      */
     public function actionCreate()
     {
-        $model = new Estudiante();
+        $model = new EstudianteForm();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id_usuario]);
@@ -84,7 +86,9 @@ class EstudianteController extends Controller
      */
     public function actionUpdate($id)
     {
-        $model = $this->findModel($id);
+        if (($model = EstudianteForm::findOne($id)) === null) {
+            throw new NotFoundHttpException('La página solicitada no existe.');
+        }
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id_usuario]);

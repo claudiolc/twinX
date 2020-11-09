@@ -11,7 +11,7 @@ use common\models\Estudiante;
  */
 class EstudianteSearch extends Estudiante
 {
-    public $codConvenio;
+    public $codConvenio, $username, $nombreEstudiante, $nombreTitulacion, $email;
     /**
      * {@inheritdoc}
      */
@@ -21,7 +21,7 @@ class EstudianteSearch extends Estudiante
             [['id_usuario', 'id_convenio', 'id_titulacion', 'telefono2', 'cesion_datos', 'beca_mec'], 'integer'],
             [['dni', 'email_go_ugr', 'f_nacimiento', 'tipo_estudiante'], 'safe'],
             [['nota_expediente'], 'number'],
-            ['codConvenio', 'safe']
+            [['codConvenio', 'username', 'nombreEstudiante', 'nombreTitulacion', 'email'], 'safe']
         ];
     }
 
@@ -67,6 +67,30 @@ class EstudianteSearch extends Estudiante
             'default' => SORT_DESC
         ];
 
+        $dataProvider->sort->attributes['username'] = [
+            'asc' => ['user.username' => SORT_ASC],
+            'desc' => ['user.username' => SORT_DESC],
+            'default' => SORT_DESC
+        ];
+
+        $dataProvider->sort->attributes['nombreTitulacion'] = [
+            'asc' => ['titulacion.nombre' => SORT_ASC],
+            'desc' => ['titulacion.nombre' => SORT_DESC],
+            'default' => SORT_DESC
+        ];
+
+        $dataProvider->sort->attributes['email'] = [
+            'asc' => ['user.email' => SORT_ASC],
+            'desc' => ['user.email' => SORT_DESC],
+            'default' => SORT_DESC
+        ];
+
+        $dataProvider->sort->attributes['nombreEstudiante'] = [
+            'asc' => ['user.nombre' => SORT_ASC],
+            'desc' => ['user.nombre' => SORT_DESC],
+            'default' => SORT_DESC
+        ];
+
         // grid filtering conditions
         $query->andFilterWhere([
             'id_usuario' => $this->id_usuario,
@@ -84,7 +108,11 @@ class EstudianteSearch extends Estudiante
             ->andFilterWhere(['like', 'tipo_estudiante', $this->tipo_estudiante])
             ->andFilterWhere(['like', 'pais.iso', $this->codConvenio])
             ->orFilterWhere(['like', 'area.cod_isced', $this->codConvenio])
-            ->orFilterWhere(['like', 'universidad.cod_uni', $this->codConvenio]);
+            ->orFilterWhere(['like', 'universidad.cod_uni', $this->codConvenio])
+            ->andFilterWhere(['like', 'user.username', $this->username])
+            ->andFilterWhere(['like', 'user.nombre', $this->nombreEstudiante])
+            ->andFilterWhere(['like', 'user.email', $this->email])
+            ->andFilterWhere(['like', 'titulacion.nombre', $this->nombreTitulacion]);
 
         return $dataProvider;
     }

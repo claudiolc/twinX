@@ -306,6 +306,16 @@ class Convenio extends \yii\db\ActiveRecord
         }
     }
 
+    public function getNombreCodUni()
+    {
+        return $this->codUni->getNombreCodigo();
+    }
+
+    public function getAreaCompleta()
+    {
+        return $this->codArea->getAreaCompleta();
+    }
+
     /////////////////////////////////////////////////////////
 
 

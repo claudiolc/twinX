@@ -33,12 +33,12 @@ $this->params['breadcrumbs'][] = $this->title;
                     'format' => 'raw',
             ],
             [
-                'attribute' => 'codUni.nombreCodigo',
+                'attribute' => 'nombreCodUni',
                 'label' => 'Universidad'
             ],
             'cod_pais',
             [
-                'attribute' => 'codArea.areaCompleta',
+                'attribute' => 'areaCompleta',
                 'label' => 'Nombre de la área'
             ],
             'tipo_movilidad',
@@ -91,7 +91,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
             [
                 'class' => 'yii\grid\ActionColumn',
-                'template' => '{view} {update}',
+                'template' => '{view}',
                 'header' => 'Acciones'
             ],
         ],

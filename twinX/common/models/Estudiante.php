@@ -43,7 +43,7 @@ class Estudiante extends \yii\db\ActiveRecord
         return [
             [['id_usuario', 'dni', 'id_convenio', 'id_titulacion', 'f_nacimiento', 'tipo_estudiante'], 'required'],
             [['id_usuario', 'id_convenio', 'id_titulacion', 'telefono2', 'cesion_datos', 'beca_mec'], 'integer'],
-            [['f_nacimiento'], 'safe'],
+            [['f_nacimiento', 'requisitos'], 'safe'],
             [['tipo_estudiante'], 'string'],
             [['nota_expediente'], 'number'],
             [['dni', 'email_go_ugr'], 'string', 'max' => 255],
@@ -65,7 +65,7 @@ class Estudiante extends \yii\db\ActiveRecord
             'dni' => 'DNI',
             'id_convenio' => 'Convenio',
             'id_titulacion' => 'Titulación',
-            'telefono2' => 'Telefono 2',
+            'telefono2' => 'Teléfono 2',
             'email_go_ugr' => 'Email goUGR',
             'f_nacimiento' => 'Fecha de nacimiento',
             'tipo_estudiante' => 'Tipo de estudiante',
@@ -134,7 +134,8 @@ class Estudiante extends \yii\db\ActiveRecord
         return new \common\models\query\EstudianteQuery(get_called_class());
     }
 
-    public function getNombreEstudiante() {
+    public function getNombreEstudiante()
+    {
         $claseIndicador = $this->tipo_estudiante == 'OUTGOING' ? '#FF3131' : '#2AC8F3';
         return '<i class="fas fa-circle" style="color:' . $claseIndicador . '"></i> ' . $this->usuario->nombre;
     }
@@ -142,5 +143,64 @@ class Estudiante extends \yii\db\ActiveRecord
     public function getCodConvenio()
     {
         return $this->convenio->getCodConvenio();
+    }
+
+    public function getUsername()
+    {
+        return $this->usuario->username;
+    }
+
+    public function getEmail()
+    {
+        return $this->usuario->email;
+    }
+
+    public function getNombreTitulacion()
+    {
+        return $this->titulacion->nombre . ' (' .$this->titulacion->id . ')';
+    }
+
+    public function getNotaCompetenciaLing()
+    {
+        $compConvenioRaw = $this->convenio->reqLingConvs;
+        $compEstudianteRaw = $this->relClEsts;
+        $compConvenio = [];
+        $compEstudiante = [];
+        $extra = 0;
+        $valores = [
+            'B1' => 0.5,
+            'B2' => 1,
+            'C1' => 1.5,
+            'C2' => 2
+        ];
+
+        foreach ($compConvenioRaw as $cC) {
+            $compConvenio []= $cC->comp;
+        }
+
+        foreach ($compEstudianteRaw as $cE) {
+            $compEstudiante []= $cE->cl;
+        }
+
+        foreach ($compEstudiante as $cE){
+            if(in_array($cE, $compConvenio))
+                unset($compConvenio[$cE->id]); // No tenemos en cuenta las competencias que requiere el convenio
+        }
+
+        foreach ($compEstudiante as $cE){
+            foreach ($compConvenio as $cC){
+                if($cE->lengua == $cC->lengua){
+                    if($valores[$cE->nivel] > $valores[$cC->nivel])
+                        $extra += $valores[$cE->nivel];
+                }
+            }
+        }
+
+        return $extra;
+    }
+
+    public function getNotaParticipacion()
+    {
+        return $this->nota_expediente + $this->getNotaCompetenciaLing();
     }
 }

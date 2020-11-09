@@ -11,7 +11,7 @@ use common\models\Convenio;
  */
 class ConvenioSearch extends Convenio
 {
-    public $codConvenio;
+    public $codConvenio, $nombreCodUni, $areaCompleta;
 
     /**
      * {@inheritdoc}
@@ -21,7 +21,7 @@ class ConvenioSearch extends Convenio
         return [
             [['id', 'id_curso_creacion', 'creado_por', 'num_becas_in', 'num_becas_out', 'meses_in', 'meses_out', 'anno_inicio', 'anno_fin', 'nominacion_online', 'movilidad_pdi', 'movilidad_pas'], 'integer'],
             [['cod_area', 'cod_uni', 'cod_pais', 'req_titulacion', 'req_curso', 'link_nom_online', 'info_nom_online', 'link_documentacion', 'tipo_movilidad', 'user_online', 'password_online', 'fecha_online', 'info_tor', 'observ_discapacidad', 'observ_req_ling', 'begin_nom_1s', 'end_nom_1s', 'begin_nom_2s', 'end_nom_2s', 'begin_app_1s', 'end_app_1s', 'begin_app_2s', 'end_app_2s', 'begin_mov_1s', 'end_mov_1s', 'begin_mov_2s', 'end_mov_2s', 'memo_grading', 'memo_visado', 'memo_seguro', 'memo_alojamiento', 'nombre_coord', 'cargo_coord', 'email_coord', 'tlf_coord', 'address_coord', 'web_inf_acad', 'nombre_admon_in', 'cargo_admon_in', 'mail_admon_in', 'nombre_resp_acad_in', 'cargo_resp_acad_in', 'nombre_admon_out', 'cargo_admon_out', 'mail_admon_out', 'nombre_resp_acad_out', 'cargo_resp_acad_out', 'mail_resp_acad_out'], 'safe'],
-            [['codConvenio'], 'safe'],
+            [['codConvenio', 'nombreCodUni', 'areaCompleta'], 'safe'],
         ];
     }
 
@@ -58,6 +58,18 @@ class ConvenioSearch extends Convenio
         $dataProvider->sort->attributes['codConvenio'] = [
             'asc' => ['pais.iso' => SORT_ASC],
             'desc' => ['pais.iso' => SORT_DESC],
+            'default' => SORT_DESC
+        ];
+
+        $dataProvider->sort->attributes['nombreCodUni'] = [
+            'asc' => ['universidad.nombre' => SORT_ASC],
+            'desc' => ['universidad.nombre' => SORT_DESC],
+            'default' => SORT_DESC
+        ];
+
+        $dataProvider->sort->attributes['areaCompleta'] = [
+            'asc' => ['area.cod_isced' => SORT_ASC],
+            'desc' => ['area.cod_isced' => SORT_DESC],
             'default' => SORT_DESC
         ];
 
@@ -135,7 +147,12 @@ class ConvenioSearch extends Convenio
             ->andFilterWhere(['like', 'mail_resp_acad_out', $this->mail_resp_acad_out])
             ->andFilterWhere(['like', 'pais.iso', $this->codConvenio])
             ->orFilterWhere(['like', 'area.cod_isced', $this->codConvenio])
-            ->orFilterWhere(['like', 'universidad.cod_uni', $this->codConvenio]);
+            ->orFilterWhere(['like', 'universidad.cod_uni', $this->codConvenio])
+            ->andFilterWhere(['like', 'universidad.nombre', $this->nombreCodUni])
+            ->orFilterWhere(['like', 'universidad.cod_uni', $this->nombreCodUni])
+            ->andFilterWhere(['like', 'area.cod_isced', $this->areaCompleta])
+            ->orFilterWhere(['like', 'area.nombre_isced', $this->areaCompleta])
+            ->orFilterWhere(['like', 'area.nombre_area', $this->areaCompleta]);
 
 
 

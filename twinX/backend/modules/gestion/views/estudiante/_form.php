@@ -46,6 +46,19 @@ use yii\widgets\ActiveForm;
 
     ]) ?>
 
+    <?= $form->field($model, 'requisitos')->widget(Select2::className(), [
+        'name' => 'Requisitos lingüísticos',
+        'data' => ArrayHelper::map(\common\models\CompetenciaLing::find()->all(), 'id', 'lenguaNivel'),
+        'options' => [
+            'placeholder' => 'Selecciona las competencias lingüísticas',
+            'multiple' => 'true'
+        ],
+
+        'pluginOptions' => [
+            'allowClear' => true,
+        ]
+    ]); ?>
+
     <?= $form->field($model, 'telefono2')->textInput() ?>
 
     <?= $form->field($model, 'email_go_ugr')->textInput(['maxlength' => true]) ?>
@@ -57,9 +70,10 @@ use yii\widgets\ActiveForm;
                 'attribute' => 'f_nacimiento',
                 'removeButton' => false,
                 'class' => 'mb-3',
+                'convertFormat' => true,
                 'pluginOptions' => [
                     'autoclose'=>true,
-                    'format' => 'dd/mm/yyyy',
+                    'format' => 'yyyy-MM-dd',
 
                 ],
                 'options' => [
