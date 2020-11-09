@@ -203,4 +203,9 @@ class Estudiante extends \yii\db\ActiveRecord
     {
         return $this->nota_expediente + $this->getNotaCompetenciaLing();
     }
+
+    public function getNombreConvenio()
+    {
+        return $this->usuario->nombre . ' - ' . $this->convenio->getCodConvenioNoIcon();
+    }
 }

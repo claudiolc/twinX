@@ -16,6 +16,12 @@ $items = [
         'active' => in_array(\Yii::$app->controller->id, ['estudiante'])
     ],
 
+    [
+        'label' => '<i class="fas fa-scroll"></i> Acuerdos de estudios',
+        'url' => ['/gestion/acuerdo-estudios'],
+        'active' => in_array(\Yii::$app->controller->id, ['acuerdo-estudios'])
+    ],
+
 ];
 
 echo $this->render('@backend/views/layouts/_sidebar_base.php', ['items' => $items]);

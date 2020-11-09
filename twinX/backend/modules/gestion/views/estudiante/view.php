@@ -82,11 +82,20 @@
                                 'valueColOptions' => ['class' => 'w-25']
 
                             ],
-//                            [
-//                                'attribute' => 'acuerdoEstudios',
-//                                'value' => $model->acuerdoEstudios->id,
-//
-//                            ],
+                            [
+                                'attribute' => 'relClEsts[]',
+                                'value' => function($form, $widget){
+                                    $competencias = [];
+                                    foreach ($widget->model->relClEsts as $comp){
+                                        $competencias[] = \common\models\CompetenciaLing::find()->where(['id' => $comp->id_cl])->one()->lenguaNivel;
+                                    }
+
+                                    return implode(', ', $competencias);
+                                },
+                                'label' => 'Competencias lingüísticas',
+                                'labelColOptions' => ['class' => 'w-25'],
+                                'valueColOptions' => ['class' => 'w-25']
+                            ]
 
                         ]
                 ],
@@ -229,18 +238,7 @@
 
                     ]
                 ],
-                [
-                        'attribute' => 'relClEsts[]',
-                        'value' => function($form, $widget){
-                            $competencias = [];
-                            foreach ($widget->model->relClEsts as $comp){
-                                $competencias[] = \common\models\CompetenciaLing::find()->where(['id' => $comp->id_cl])->one()->lenguaNivel;
-                            }
 
-                            return implode(', ', $competencias);
-                        },
-                        'label' => 'Competencias lingüísticas'
-                ]
             ],
         ]) ?>
 

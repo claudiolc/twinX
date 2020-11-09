@@ -73,7 +73,7 @@ use yii\widgets\ActiveForm;
                 'convertFormat' => true,
                 'pluginOptions' => [
                     'autoclose'=>true,
-                    'format' => 'yyyy-MM-dd',
+                    'format' => 'yyyy-mm-dd',
 
                 ],
                 'options' => [

@@ -190,7 +190,7 @@ use yii\widgets\ActiveForm;
                                     'form' => $form,
                                     'separator' => 'hasta',
                                     'pluginOptions' => [
-                                        'format' => 'yyyy-MM-dd'
+                                        'format' => 'yyyy-mm-dd'
                                     ],
                                 ]
                             ) ?>
@@ -206,7 +206,7 @@ use yii\widgets\ActiveForm;
                                     'form' => $form,
                                     'separator' => 'hasta',
                                     'pluginOptions' => [
-                                        'format' => 'yyyy-MM-dd'
+                                        'format' => 'yyyy-mm-dd'
                                     ]
                             ]
                             ) ?>
@@ -230,7 +230,7 @@ use yii\widgets\ActiveForm;
                                     'form' => $form,
                                     'separator' => 'hasta',
                                     'pluginOptions' => [
-                                        'format' => 'yyyy-MM-dd'
+                                        'format' => 'yyyy-mm-dd'
                                     ]
 
                                 ]) ?>
@@ -246,7 +246,7 @@ use yii\widgets\ActiveForm;
                                     'form' => $form,
                                     'separator' => 'hasta',
                                     'pluginOptions' => [
-                                        'format' => 'yyyy-MM-dd'
+                                        'format' => 'yyyy-mm-dd'
                                     ]
                             ]) ?>
 
@@ -270,7 +270,7 @@ use yii\widgets\ActiveForm;
                                     'form' => $form,
                                     'separator' => 'hasta',
                                     'pluginOptions' => [
-                                        'format' => 'yyyy-MM-dd'
+                                        'format' => 'yyyy-mm-dd'
                                     ]
                             ]) ?>
 
@@ -285,7 +285,7 @@ use yii\widgets\ActiveForm;
                                     'form' => $form,
                                     'separator' => 'hasta',
                                     'pluginOptions' => [
-                                        'format' => 'yyyy-MM-dd'
+                                        'format' => 'yyyy-mm-dd'
                                     ]
                             ]) ?>
                         </div>
