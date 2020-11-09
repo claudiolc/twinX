@@ -20,7 +20,7 @@ class AcuerdoEstudiosSearch extends AcuerdoEstudios
         return [
             [['id', 'id_estudiante', 'id_tutor', 'fase', 'id_curso', 'n_solicitud_RRII'], 'integer'],
             [['timestamp_creacion', 'periodo', 'necesidades', 'begin_movilidad', 'end_movilidad', 'timestamp_nominacion', 'link_documentacion', 'convocatoria', 'estado_validacion'], 'safe'],
-            [['convenio', 'nombreEstudiante', 'tipoMovilidad', 'tutor'], 'safe'],
+            [['convenio', 'nombreEstudiante', 'tipoMovilidad', 'tutor', 'curso'], 'safe'],
         ];
     }
 
@@ -50,13 +50,38 @@ class AcuerdoEstudiosSearch extends AcuerdoEstudios
             'query' => $query,
         ]);
 
-        $query->joinWith(['estudiante', 'estudiante.convenio', 'estudiante.usuario', 'curso']);
+        $query->joinWith(['estudiante', 'tutor', 'curso', 'estudiante.convenio', 'estudiante.usuario', 'estudiante.convenio.codPais', 'estudiante.convenio.codArea', 'estudiante.convenio.codUni', 'estudiante.usuario']);
 
         $dataProvider->sort->attributes['nombreEstudiante'] = [
-            'asc' => ['estudiante.nombreEstudiante' => SORT_ASC],
-            'desc' => ['estudiante.nombreEstudiante' => SORT_DESC],
+            'asc' => ['user.nombre' => SORT_ASC],
+            'desc' => ['user.nombre' => SORT_DESC],
             'default' => SORT_DESC
         ];
+
+        $dataProvider->sort->attributes['tipoMovilidad'] = [
+            'asc' => ['convenio.tipo_movilidad' => SORT_ASC],
+            'desc' => ['convenio.tipo_movilidad' => SORT_DESC],
+            'default' => SORT_DESC
+        ];
+
+        $dataProvider->sort->attributes['tutor'] = [
+            'asc' => ['user.nombre' => SORT_ASC],
+            'desc' => ['user.nombre' => SORT_DESC],
+            'default' => SORT_DESC
+        ];
+
+        $dataProvider->sort->attributes['curso'] = [
+            'asc' => ['curso.curso' => SORT_ASC],
+            'desc' => ['curso.curso' => SORT_DESC],
+            'default' => SORT_DESC
+        ];
+
+        $dataProvider->sort->attributes['convenio'] = [
+            'asc' => ['convenio.cod_pais' => SORT_ASC],
+            'desc' => ['convenio.cod_pais' => SORT_DESC],
+            'default' => SORT_DESC
+        ];
+
 
         $this->load($params);
 
@@ -84,7 +109,14 @@ class AcuerdoEstudiosSearch extends AcuerdoEstudios
             ->andFilterWhere(['like', 'necesidades', $this->necesidades])
             ->andFilterWhere(['like', 'link_documentacion', $this->link_documentacion])
             ->andFilterWhere(['like', 'convocatoria', $this->convocatoria])
-            ->andFilterWhere(['like', 'estado_validacion', $this->estado_validacion]);
+            ->andFilterWhere(['like', 'estado_validacion', $this->estado_validacion])
+            ->andFilterWhere(['like', 'pais.iso', $this->convenio])
+            ->orFilterWhere(['like', 'area.cod_isced', $this->convenio])
+            ->orFilterWhere(['like', 'universidad.cod_uni', $this->convenio])
+            ->andFilterWhere(['like', 'user.nombre', $this->nombreEstudiante])
+            ->andFilterWhere(['like', 'user.nombre', $this->tutor])
+            ->andFilterWhere(['like', 'convenio.tipo_movilidad', $this->tipoMovilidad])
+            ->andFilterWhere(['like', 'curso.curso', $this->curso]);
 
         return $dataProvider;
     }

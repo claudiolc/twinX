@@ -53,6 +53,7 @@ class AcuerdoEstudios extends \yii\db\ActiveRecord
             [['id_curso'], 'exist', 'skipOnError' => true, 'targetClass' => Curso::className(), 'targetAttribute' => ['id_curso' => 'id']],
             [['id_estudiante'], 'exist', 'skipOnError' => true, 'targetClass' => Estudiante::className(), 'targetAttribute' => ['id_estudiante' => 'id_usuario']],
             [['id_tutor'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['id_tutor' => 'id']],
+            [['id_curso', 'id_estudiante'], 'unique', 'targetAttribute' => ['id_curso', 'id_estudiante']],
         ];
     }
 

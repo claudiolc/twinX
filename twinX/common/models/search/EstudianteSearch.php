@@ -51,7 +51,7 @@ class EstudianteSearch extends Estudiante
             'query' => $query,
         ]);
 
-        $query->joinWith(['convenio.codPais', 'convenio.codArea', 'convenio.codUni']);
+        $query->joinWith(['convenio.codPais', 'convenio.codArea', 'convenio.codUni', 'usuario', 'titulacion']);
 
         $this->load($params);
 

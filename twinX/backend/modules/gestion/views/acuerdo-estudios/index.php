@@ -31,13 +31,11 @@ $this->params['breadcrumbs'][] = $this->title;
                     'format' => 'raw'
             ],
             [
-                    'attribute' =>'estudiante',
-                    'value' => 'nombreEstudiante',
+                    'attribute' => 'nombreEstudiante',
                     'format' => 'raw'
             ],
             [
-                'attribute' =>'estudiante',
-                'value' => 'tipoMovilidad',
+                'attribute' =>'tipoMovilidad',
                 'label' => 'Tipo de movilidad'
             ],
             [

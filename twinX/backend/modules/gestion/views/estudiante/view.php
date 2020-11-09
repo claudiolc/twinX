@@ -1,7 +1,6 @@
     <?php
 
     use yii\helpers\Html;
-    use yii\widgets\DetailView;
 
     /* @var $this yii\web\View */
     /* @var $model common\models\Estudiante */
@@ -21,6 +20,12 @@
         </div>
         <p class="d-flex justify-content-end">
             <?= Html::a('Mail', 'mailto:'.$model->usuario->email, ['class' => 'btn btn-success'] ) ?>
+            <?php
+            $contenido = '';
+                if(!empty($model->acuerdoEstudios))
+                    $contenido = Html::a('Acuerdo de estudios', ['acuerdo-estudios/view', 'id' => $model->acuerdoEstudios[0]->id], ['class' => 'btn btn-info ml-2']);
+                echo $contenido;
+            ?>
             <?= Html::a('Editar', ['update', 'id' => $model->id_usuario], ['class' => 'btn btn-primary ml-2']) ?>
             <?= Html::a('Eliminar', ['delete', 'id' => $model->id_usuario], [
                 'class' => 'btn btn-danger ml-2',
