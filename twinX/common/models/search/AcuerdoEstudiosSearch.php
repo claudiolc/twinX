@@ -2,6 +2,7 @@
 
 namespace common\models\search;
 
+use common\models\User;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use common\models\AcuerdoEstudios;
@@ -50,7 +51,10 @@ class AcuerdoEstudiosSearch extends AcuerdoEstudios
             'query' => $query,
         ]);
 
-        $query->joinWith(['estudiante', 'tutor', 'curso', 'estudiante.convenio', 'estudiante.usuario', 'estudiante.convenio.codPais', 'estudiante.convenio.codArea', 'estudiante.convenio.codUni', 'estudiante.usuario']);
+        $query->joinWith(['estudiante', 'curso', 'estudiante.convenio', 'estudiante.usuario', 'estudiante.convenio.codPais', 'estudiante.convenio.codArea', 'estudiante.convenio.codUni', 'estudiante.usuario',
+            'tutor' => function ($q) {
+            $q->from(User::tableName() . ' usr');
+        }]);
 
         $dataProvider->sort->attributes['nombreEstudiante'] = [
             'asc' => ['user.nombre' => SORT_ASC],
@@ -114,7 +118,7 @@ class AcuerdoEstudiosSearch extends AcuerdoEstudios
             ->orFilterWhere(['like', 'area.cod_isced', $this->convenio])
             ->orFilterWhere(['like', 'universidad.cod_uni', $this->convenio])
             ->andFilterWhere(['like', 'user.nombre', $this->nombreEstudiante])
-            ->andFilterWhere(['like', 'user.nombre', $this->tutor])
+            ->andFilterWhere(['like', 'usr.nombre', $this->tutor])
             ->andFilterWhere(['like', 'convenio.tipo_movilidad', $this->tipoMovilidad])
             ->andFilterWhere(['like', 'curso.curso', $this->curso]);
 

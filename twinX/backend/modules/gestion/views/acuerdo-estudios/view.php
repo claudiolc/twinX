@@ -30,21 +30,33 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'id_estudiante',
-            'id_tutor',
+            [
+                'attribute' => 'nombreEstudiante',
+                'label' => 'Estudiante',
+                'format' => 'raw',
+                'value' => Html::a($model->nombreEstudiante, ['estudiante/view', 'id' => $model->estudiante->id_usuario], ['class' => 'btn btn-outline-primary'])
+            ],
+            [
+                'attribute' => 'convenio',
+                'format' => 'raw',
+                'value' => Html::a($model->convenio, ['convenio/view', 'id' => $model->estudiante->convenio->id], ['class' => 'btn btn-outline-primary'])
+            ],
+            [
+                'attribute' => 'tutor.nombreUsername',
+                'format' => 'raw',
+                'label' => 'Tutor'
+            ],
             'timestamp_creacion',
             'periodo',
             'fase',
-            'id_curso',
+            'curso.curso',
             'necesidades:ntext',
             'begin_movilidad',
             'end_movilidad',
             'timestamp_nominacion',
-            'timestamp_registro',
             'link_documentacion',
             'n_solicitud_RRII',
             'convocatoria',
-            'estado_validacion',
         ],
     ]) ?>
 

@@ -23,7 +23,7 @@
             <?php
             $contenido = '';
                 if(!empty($model->acuerdoEstudios))
-                    $contenido = Html::a('Acuerdo de estudios', ['acuerdo-estudios/view', 'id' => $model->acuerdoEstudios[0]->id], ['class' => 'btn btn-info ml-2']);
+                    $contenido = Html::a('Acuerdos de estudios', ['acuerdo-estudios/index', 'id' => $model->id_usuario], ['class' => 'btn btn-info ml-2']);
                 echo $contenido;
             ?>
             <?= Html::a('Editar', ['update', 'id' => $model->id_usuario], ['class' => 'btn btn-primary ml-2']) ?>

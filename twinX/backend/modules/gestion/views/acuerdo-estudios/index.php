@@ -23,16 +23,23 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
+        'filterModel' => $searchModel != null ? $searchModel : null,
         'columns' => [
             'id',
             [
                     'attribute' => 'convenio',
-                    'format' => 'raw'
+                    'format' => 'raw',
+                    'headerOptions' => [
+                        'style' => 'min-width: 200px;'
+                    ]
             ],
             [
                     'attribute' => 'nombreEstudiante',
-                    'format' => 'raw'
+                    'format' => 'raw',
+                    'label' => 'Estudiante',
+                    'headerOptions' => [
+                            'style' => 'min-width: 200px;'
+                    ]
             ],
             [
                 'attribute' =>'tipoMovilidad',
@@ -50,6 +57,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
             [
                 'attribute' => 'nominacion',
+                'label' => 'Nominación',
                 'format' => 'raw'
             ],
 

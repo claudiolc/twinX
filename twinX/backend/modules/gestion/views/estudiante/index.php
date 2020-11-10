@@ -63,7 +63,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         'acuerdo_estudios' => function($url, $model, $key){
                             $contenido = '';
                             if(!empty($model->acuerdoEstudios))
-                                $contenido = Html::a('<i class="fas fa-scroll"></i>', ['acuerdo-estudios/view', 'id' => $model->acuerdoEstudios[array_key_last($model->acuerdoEstudios)]->id], ['class' => 'btn btn-outline-info', 'title' => 'Acuerdo de estudios']);
+                                $contenido = Html::a('<i class="fas fa-scroll"></i>', ['acuerdo-estudios/index', 'id' => $model->id_usuario], ['class' => 'btn btn-outline-info', 'title' => 'Acuerdo de estudios']);
                             return $contenido;
                         },
                 ],

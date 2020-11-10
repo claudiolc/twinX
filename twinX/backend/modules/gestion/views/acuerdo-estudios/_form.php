@@ -38,7 +38,7 @@ use yii\widgets\ActiveForm;
 
 
 
-    <?= $form->field($model, 'periodo')->dropDownList([ 'PRIMERO' => 'Primer cuatrimestre', 'SEGUNDO' => 'Segundo cuatrimestre', 'C_COMPLETO' => 'Curso completo', ], ['prompt' => 'Seleccione un periodo']) ?>
+    <?= $form->field($model, 'periodo')->dropDownList([ 'Primer cuatrimestre' => 'Primer cuatrimestre', 'Segundo cuatrimestre' => 'Segundo cuatrimestre', 'Curso completo' => 'Curso completo', ], ['prompt' => 'Seleccione un periodo']) ?>
 
     <?= $form->field($model, 'fase')->textInput() ?>
 

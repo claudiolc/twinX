@@ -3,17 +3,16 @@
 namespace backend\modules\gestion\controllers;
 
 use Yii;
-use common\models\AcuerdoEstudios;
-use common\models\search\AcuerdoEstudiosSearch;
-use yii\data\ActiveDataProvider;
+use common\models\Expediente;
+use common\models\search\ExpedienteSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * AcuerdoEstudiosController implements the CRUD actions for AcuerdoEstudios model.
+ * ExpedienteController implements the CRUD actions for Expediente model.
  */
-class AcuerdoEstudiosController extends Controller
+class ExpedienteController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -31,23 +30,13 @@ class AcuerdoEstudiosController extends Controller
     }
 
     /**
-     * Lists all AcuerdoEstudios models.
+     * Lists all Expediente models.
      * @return mixed
      */
-    public function actionIndex($id = null)
+    public function actionIndex()
     {
-        if($id != null){
-            $dataProvider = new ActiveDataProvider([
-                'query' => AcuerdoEstudios::find()->where(['id_estudiante' => $id])
-            ]);
-
-            $searchModel = null;
-        }
-        else{
-            $searchModel = new AcuerdoEstudiosSearch();
-            $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-        }
-
+        $searchModel = new ExpedienteSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
@@ -56,7 +45,7 @@ class AcuerdoEstudiosController extends Controller
     }
 
     /**
-     * Displays a single AcuerdoEstudios model.
+     * Displays a single Expediente model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -69,13 +58,13 @@ class AcuerdoEstudiosController extends Controller
     }
 
     /**
-     * Creates a new AcuerdoEstudios model.
+     * Creates a new Expediente model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new AcuerdoEstudios();
+        $model = new Expediente();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -87,7 +76,7 @@ class AcuerdoEstudiosController extends Controller
     }
 
     /**
-     * Updates an existing AcuerdoEstudios model.
+     * Updates an existing Expediente model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -107,7 +96,7 @@ class AcuerdoEstudiosController extends Controller
     }
 
     /**
-     * Deletes an existing AcuerdoEstudios model.
+     * Deletes an existing Expediente model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -121,15 +110,15 @@ class AcuerdoEstudiosController extends Controller
     }
 
     /**
-     * Finds the AcuerdoEstudios model based on its primary key value.
+     * Finds the Expediente model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return AcuerdoEstudios the loaded model
+     * @return Expediente the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = AcuerdoEstudios::findOne($id)) !== null) {
+        if (($model = Expediente::findOne($id)) !== null) {
             return $model;
         }
 

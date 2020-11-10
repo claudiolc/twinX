@@ -21,6 +21,16 @@ $items = [
         'url' => ['/gestion/acuerdo-estudios'],
         'active' => in_array(\Yii::$app->controller->id, ['acuerdo-estudios'])
     ],
+    [
+        'label' => '<i class="fas fa-book"></i> Expedientes',
+        'url' => ['/gestion/expediente'],
+        'active' => in_array(\Yii::$app->controller->id, ['expediente'])
+    ],
+    [
+        'label' => '<i class="fas fa-user-tie"></i> Tutores',
+        'url' => ['/gestion/tutores'],
+        'active' => in_array(\Yii::$app->controller->id, ['tutores'])
+    ],
 
 ];
 

@@ -37,7 +37,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'nombre',
             'tipo_usuario',
             'telefono',
-            'sexo',
+            'genero',
 
             [
                     'class' => 'yii\grid\ActionColumn',
