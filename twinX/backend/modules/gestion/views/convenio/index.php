@@ -41,6 +41,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'areaCompleta',
                 'label' => 'Nombre de la área'
             ],
+
             'tipo_movilidad',
 
 

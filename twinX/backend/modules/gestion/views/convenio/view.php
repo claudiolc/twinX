@@ -5,6 +5,7 @@ use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Convenio */
+/* @var $ae \common\models\AcuerdoEstudios[] */
 
 if($model->anno_fin > date('Y'))
     $estado = $this->render('indicador', [
@@ -517,6 +518,67 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
         <div class="card">
+            <div class="card-header" id="headingAEs">
+                <h5 class="mb-0">
+                    <button type="button" class="btn dropdown-toggle" data-toggle="collapse" data-target="#AEs" aria-expanded="false" aria-controls="notas">
+                        Acuerdos de estudios
+                    </button>
+                </h5>
+            </div>
+
+            <div class="collapse multi-collapse" id="AEs" aria-labelledby="headingAEs">
+                <div class="card-body">
+                    <?= \yii\grid\GridView::widget([
+                            'dataProvider' => $ae,
+                            'columns' => [
+                                'id',
+                                [
+                                    'attribute' => 'convenio',
+                                    'format' => 'raw'
+                                ],
+                                [
+                                    'attribute' => 'nombreEstudiante',
+                                    'format' => 'raw'
+                                ],
+                                [
+                                    'attribute' =>'tipoMovilidad',
+                                    'label' => 'Tipo de movilidad'
+                                ],
+                                [
+                                    'attribute' =>'tutor',
+                                    'value' => 'tutor.nombre'
+                                ],
+                                'periodo',
+                                [
+                                    'attribute' =>'curso',
+                                    'value' => 'curso.curso'
+                                ],
+
+                                [
+                                    'attribute' => 'nominacion',
+                                    'format' => 'raw'
+                                ],
+                                [
+                                    'class' => 'yii\grid\ActionColumn',
+                                    'template' => '{view}',
+                                    'header' => 'Acciones',
+                                    'buttons' =>[
+                                        'view' => function($url, $model, $key){
+                                            return Html::a('<i class="fas fa-eye"></i>', ['acuerdo-estudios/view', 'id' => $model->id], ['class' => 'btn btn-outline-primary']);
+                                        },
+                                    ]
+                                ],
+                            ]
+                    ])
+
+                    ?>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="card">
             <div class="card-header d-flex flex-row justify-content-between align-middle" id="headingNomOnline">
                 <h5 class="mb-0">
                     <button id="nominaciones-button" type="button" class="btn dropdown-toggle" data-toggle="collapse" data-target="#nomOnline" aria-expanded="false" aria-controls="nomOnline">
@@ -627,6 +689,8 @@ $this->params['breadcrumbs'][] = $this->title;
                     ]) ?>
                 </div>
             </div>
+
+
         </div>
     </div>
 

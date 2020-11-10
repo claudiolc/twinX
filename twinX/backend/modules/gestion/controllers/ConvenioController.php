@@ -2,10 +2,13 @@
 
 namespace backend\modules\gestion\controllers;
 
+use common\models\AcuerdoEstudios;
 use common\models\ConvenioForm;
+use common\models\Estudiante;
 use Yii;
 use common\models\Convenio;
 use common\models\search\ConvenioSearch;
+use yii\data\ArrayDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -53,8 +56,28 @@ class ConvenioController extends Controller
      */
     public function actionView($id)
     {
+        $ae = [];
+        $model = $this->findModel($id);
+
+        foreach($model->estudiantes as $estudiante){
+            if(!empty($estudiante->acuerdoEstudios)){
+                    $ae []= $estudiante->acuerdoEstudios[array_key_last($estudiante->acuerdoEstudios)];
+            }
+        }
+
+        $AeProvider = new ArrayDataProvider([
+            'allModels' => $ae,
+            'pagination' => [
+                'pageSize' => 5,
+            ],
+            'sort' => [
+                'attributes' => ['id'],
+            ],
+        ]);
+
         return $this->render('view', [
-            'model' => $this->findModel($id),
+            'model' => $model,
+            'ae' => $AeProvider
         ]);
     }
 
