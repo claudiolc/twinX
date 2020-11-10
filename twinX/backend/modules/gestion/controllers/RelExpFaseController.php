@@ -1,22 +1,19 @@
 <?php
 
-namespace backend\modules\panel\controllers;
+namespace backend\modules\gestion\controllers;
 
-use common\models\TipoExpediente;
 use Yii;
-use common\models\FaseExpediente;
+use common\models\RelExpFase;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use common\models\search\FaseExpedienteSearch;
 
 /**
- * FaseExpedienteController implements the CRUD actions for FaseExpediente model.
+ * RelExpFaseController implements the CRUD actions for RelExpFase model.
  */
-class FaseExpedienteController extends Controller
+class RelExpFaseController extends Controller
 {
-
     /**
      * {@inheritdoc}
      */
@@ -33,25 +30,34 @@ class FaseExpedienteController extends Controller
     }
 
     /**
-     * Lists all FaseExpediente models.
+     * Lists all RelExpFase models.
      * @return mixed
      */
-    public function actionIndex()
+    public function actionIndex($idExpediente = false)
     {
+        $path = '';
+        $query = RelExpFase::find();
 
-        $searchModel = new FaseExpedienteSearch();
+        if($idExpediente) {
+            $path = '@backend/modules/gestion/views/rel-exp-fase/';
+            $query = RelExpFase::find()->where(['id_exp' => $idExpediente]);
+        }
 
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+        ]);
 
-        return $this->render('index', [
+        return $this->render($path . 'index', [
             'dataProvider' => $dataProvider,
-            'searchModel' => $searchModel,
+            'idExpediente' => $idExpediente,
         ]);
     }
 
+
+
     /**
-     * Displays a single FaseExpediente model.
+     * Displays a single RelExpFase model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -64,45 +70,65 @@ class FaseExpedienteController extends Controller
     }
 
     /**
-     * Creates a new FaseExpediente model.
+     * Creates a new RelExpFase model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate()
+    public function actionCreate($idExpediente = null)
     {
-        $model = new FaseExpediente();
+        $model = new RelExpFase();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post()) && $model->save() && !$idExpediente) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
+        else if($model->load(Yii::$app->request->post()) && $model->save()){
+            return $this->actionIndex(true);
+        }
 
-        return $this->render('create', [
+        $path = '@backend/modules/gestion/views/rel-exp-fase/create';
+//        $path = 'create';
+//        if($idExpediente) {
+//            $path = '@backend/modules/gestion/views/expediente/view-new-fase';
+//        }
+
+        return $this->render($path, [
             'model' => $model,
+            'idExpediente' => $idExpediente
         ]);
     }
 
     /**
-     * Updates an existing FaseExpediente model.
+     * Updates an existing RelExpFase model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionUpdate($id)
+    public function actionUpdate($id, $idExpediente = null)
     {
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
+        else if($model->load(Yii::$app->request->post()) && $model->save()){
+            return $this->actionIndex(true);
+        }
 
-        return $this->render('update', [
+        $path = 'update';
+
+        if($idExpediente) {
+            $path = '@backend/modules/gestion/views/expediente/view-update-fase';
+        }
+
+        return $this->render($path, [
             'model' => $model,
+            'idExpediente' => $idExpediente
         ]);
     }
 
     /**
-     * Deletes an existing FaseExpediente model.
+     * Deletes an existing RelExpFase model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -116,25 +142,18 @@ class FaseExpedienteController extends Controller
     }
 
     /**
-     * Finds the FaseExpediente model based on its primary key value.
+     * Finds the RelExpFase model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return FaseExpediente the loaded model
+     * @return RelExpFase the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = FaseExpediente::findOne($id)) !== null) {
+        if (($model = RelExpFase::findOne($id)) !== null) {
             return $model;
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
-    }
-
-    public function actionViewLinkMail($id)
-    {
-        return $this->render('view-link-mail', [
-            'model' => $this->findModel($id),
-        ]);
     }
 }

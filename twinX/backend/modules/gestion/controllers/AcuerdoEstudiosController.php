@@ -34,16 +34,23 @@ class AcuerdoEstudiosController extends Controller
      * Lists all AcuerdoEstudios models.
      * @return mixed
      */
-    public function actionIndex($id = null)
+    public function actionIndex($id = null, $tutor = null)
     {
-        if($id != null){
+        if($id != null) {
             $dataProvider = new ActiveDataProvider([
                 'query' => AcuerdoEstudios::find()->where(['id_estudiante' => $id])
             ]);
 
             $searchModel = null;
         }
-        else{
+        else if($tutor != null) {
+            $dataProvider = new ActiveDataProvider([
+                'query' => AcuerdoEstudios::find()->where(['id_tutor' => $tutor])
+            ]);
+
+            $searchModel = null;
+        }
+        else {
             $searchModel = new AcuerdoEstudiosSearch();
             $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
         }

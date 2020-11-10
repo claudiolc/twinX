@@ -159,4 +159,9 @@ class AcuerdoEstudios extends \yii\db\ActiveRecord
     {
         return $this->estudiante->getNombreEstudiante();
     }
+
+    public function getEstudianteConvenio()
+    {
+        return $this->estudiante->usuario->nombre . ' - ' . $this->estudiante->convenio->getCodConvenioNoIcon();
+    }
 }

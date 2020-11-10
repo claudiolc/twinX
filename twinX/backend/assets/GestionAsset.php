@@ -17,6 +17,7 @@ class GestionAsset extends AssetBundle
     ];
     public $js = [
         'js/convenios.js',
+        'js/expediente.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',

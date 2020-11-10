@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model common\models\FaseExpediente */
 
-$this->title = $model->id;
+$this->title = 'Fase #'.$model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Fases de expedientes', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
@@ -39,12 +39,13 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                     'attribute' => 'fase_final',
                     'value' => function($model){
-                        return $model->fase_final == 1 ? 'Sí' : 'No';
-                    }
+                        return $model->fase_final == 1 ? '<i class="fas fa-check"></i>' : '<i class="fas fa-times"></i>';
+                    },
+                    'format' => 'raw'
             ]
         ],
     ]) ?>
 
-    <div class="ajaxContent" data-url="<?= Url::to(['/panel/envio-mail-fase']); ?>"></div>
+<!--    <div class="ajaxContent" data-url="--><?//= Url::to(['/panel/envio-mail-fase']); ?><!--"></div>-->
 
 </div>

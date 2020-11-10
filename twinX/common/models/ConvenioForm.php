@@ -52,14 +52,16 @@ class ConvenioForm extends Convenio
             }
         }
 
-        foreach ($nuevos as $requisito) {
-            $relacion = new ReqLingConv();
+        if(!empty($nuevos)) {
+            foreach ($nuevos as $requisito) {
+                $relacion = new ReqLingConv();
 
-            $relacion->id_conv = $this->id;
-            $relacion->id_comp = $requisito;
+                $relacion->id_conv = $this->id;
+                $relacion->id_comp = $requisito;
 
-            if (!$relacion->save()) {
-                throw new Exception('Error al guardar el requisito lingüístico');
+                if (!$relacion->save()) {
+                    throw new Exception('Error al guardar el requisito lingüístico');
+                }
             }
         }
     }

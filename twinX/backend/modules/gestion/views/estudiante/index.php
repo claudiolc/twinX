@@ -55,15 +55,15 @@ $this->params['breadcrumbs'][] = $this->title;
 
             [
                 'class' => 'yii\grid\ActionColumn',
-                'template' => '{view} {convenio} {acuerdo_estudios}' ,
+                'template' => '{view} {convenio} {acuerdos_estudios}' ,
                 'buttons' => [
                         'convenio' => function($url, $model, $key){
                             return Html::a('<i class="fas fa-university"></i>', ['convenio/view', 'id' => $model->convenio->id], ['class' => 'btn btn-outline-success', 'title' => 'Convenio']);
                         },
-                        'acuerdo_estudios' => function($url, $model, $key){
+                        'acuerdos_estudios' => function($url, $model, $key){
                             $contenido = '';
                             if(!empty($model->acuerdoEstudios))
-                                $contenido = Html::a('<i class="fas fa-scroll"></i>', ['acuerdo-estudios/index', 'id' => $model->id_usuario], ['class' => 'btn btn-outline-info', 'title' => 'Acuerdo de estudios']);
+                                $contenido = Html::a('<i class="fas fa-scroll"></i>', ['acuerdo-estudios/index', 'id' => $model->id_usuario], ['class' => 'btn btn-outline-info', 'title' => 'Acuerdos de estudios de '.$model->usuario->nombre]);
                             return $contenido;
                         },
                 ],

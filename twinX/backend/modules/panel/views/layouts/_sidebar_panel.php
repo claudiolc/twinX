@@ -14,7 +14,7 @@
                 'onClick' => 'toggleCollapse();',
                 'class' => 'dropdown-parent'
             ],
-            'active' => in_array(\Yii::$app->controller->id, ['tipo-expediente', 'fase-expediente']),
+            'active' => in_array(\Yii::$app->controller->id, ['tipo-expediente', 'fase-expediente', 'envio-mail-fase']),
 
         ],
         [
@@ -29,7 +29,7 @@
         [
             'label' => '<p class="pl-4 m-0">Fases de expedientes</p>',
             'url' => ['/panel/fase-expediente'],
-            'active' => in_array(\Yii::$app->controller->id, ['fase-expediente']),
+            'active' => in_array(\Yii::$app->controller->id, ['fase-expediente', 'envio-mail-fase']),
             'options' => [
                 'class' => 'dropdown-node collapse'
             ]

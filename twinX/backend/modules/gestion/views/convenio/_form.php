@@ -75,11 +75,6 @@ use yii\widgets\ActiveForm;
 
                         <?= $form->field($model, 'movilidad_pas')->checkbox() ?>
                     </div>
-
-                    <?php
-                        $model->creado_por = Yii::$app->user->id;
-                        echo $form->field($model, 'creado_por')->textInput(['style' => 'display:none;'])->label('', ['style' => 'display:none;']);
-                    ?>
                 </div>
             </div>
         </div>

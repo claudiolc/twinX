@@ -95,7 +95,7 @@ class Convenio extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['cod_area', 'cod_uni', 'cod_pais', 'id_curso_creacion', 'creado_por', 'num_becas_in', 'num_becas_out', 'meses_in', 'meses_out', 'anno_inicio', 'anno_fin', 'tipo_movilidad'], 'required'],
+            [['cod_area', 'cod_uni', 'cod_pais', 'id_curso_creacion', 'num_becas_in', 'num_becas_out', 'meses_in', 'meses_out', 'anno_inicio', 'anno_fin', 'tipo_movilidad'], 'required'],
             [['id_curso_creacion', 'creado_por', 'num_becas_in', 'num_becas_out', 'meses_in', 'meses_out', 'anno_inicio', 'anno_fin', 'nominacion_online', 'movilidad_pdi', 'movilidad_pas'], 'integer'],
             [['info_nom_online', 'tipo_movilidad', 'info_tor', 'observ_discapacidad', 'observ_req_ling', 'memo_grading', 'memo_visado', 'memo_seguro', 'memo_alojamiento'], 'string'],
             [['fecha_online', 'begin_nom_1s', 'end_nom_1s', 'begin_nom_2s', 'end_nom_2s', 'begin_app_1s', 'end_app_1s', 'begin_app_2s', 'end_app_2s', 'begin_mov_1s', 'end_mov_1s', 'begin_mov_2s', 'end_mov_2s', 'requisitos'], 'safe'],
@@ -105,7 +105,7 @@ class Convenio extends \yii\db\ActiveRecord
             [['tlf_coord'], 'string', 'max' => 20],
             [['id_curso_creacion'], 'exist', 'skipOnError' => true, 'targetClass' => Curso::className(), 'targetAttribute' => ['id_curso_creacion' => 'id']],
             [['cod_pais'], 'exist', 'skipOnError' => true, 'targetClass' => Pais::className(), 'targetAttribute' => ['cod_pais' => 'iso']],
-            [['creado_por'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['creado_por' => 'id']],
+            //[['creado_por'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['creado_por' => 'id']],
             [['cod_area'], 'exist', 'skipOnError' => true, 'targetClass' => Area::className(), 'targetAttribute' => ['cod_area' => 'cod_isced']],
             [['cod_pais', 'cod_uni'], 'exist', 'skipOnError' => true, 'targetClass' => Universidad::className(), 'targetAttribute' => ['cod_pais' => 'cod_pais', 'cod_uni' => 'cod_uni']],];
     }
@@ -314,6 +314,13 @@ class Convenio extends \yii\db\ActiveRecord
     public function getAreaCompleta()
     {
         return $this->codArea->getAreaCompleta();
+    }
+
+    public function save($runValidation = true, $attributeNames = null)
+    {
+        $this->creado_por = Yii::$app->user->id;
+
+       return parent::save($runValidation, $attributeNames);
     }
 
     /////////////////////////////////////////////////////////

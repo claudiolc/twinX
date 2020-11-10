@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p class="d-flex justify-content-end">
-        <?= Html::a('Create Expediente', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Nuevo expediente', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php Pjax::begin(); ?>
@@ -27,15 +27,44 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
-            'id_ae',
-            'id_tipo_exp',
+            [
+                    'attribute' => 'id',
+                    'headerOptions' => [
+                            'style' => 'width:100px;'
+                    ]
+            ],
+            [
+                    'attribute' => 'nombreEstudiante',
+                    'label' => 'Estudiante',
+                    'format' => 'raw'
+
+            ],
+            [
+                'attribute' => 'convenio',
+                'label' => 'Convenio',
+                'format' => 'raw'
+
+            ],
+            [
+                    'attribute' => 'descripcionTipoExp',
+                    'label' => 'Tipo de expediente'
+            ],
+            [
+                'attribute' => 'fase',
+                'label' => 'Fase actual'
+            ],
+            [
+                'attribute' => 'horaFase',
+                'label' => 'Hora de actualización',
+                'format' => 'datetime'
+            ],
 
             [
                 'class' => 'yii\grid\ActionColumn',
-                'template' => '{view} {update} {delete}',
+                'template' => '{view}',
                 'header' => 'Acciones'
             ],
+
         ],
     ]); ?>
 

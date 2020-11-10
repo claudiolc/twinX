@@ -48,8 +48,8 @@ class Expediente extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'id_ae' => 'Id Ae',
-            'id_tipo_exp' => 'Id Tipo Exp',
+            'id_ae' => 'Acuerdo de estudios',
+            'id_tipo_exp' => 'Tipo de expediente',
         ];
     }
 
@@ -120,5 +120,36 @@ class Expediente extends \yii\db\ActiveRecord
     public static function find()
     {
         return new \common\models\query\ExpedienteQuery(get_called_class());
+    }
+
+    public function getnombreEstudiante()
+    {
+        return $this->ae->estudiante->nombreEstudiante;
+    }
+
+    public function getDescripcionTipoExp()
+    {
+        return $this->tipoExp->descripcionIO;
+    }
+
+    public function getFase()
+    {
+        if (!empty($this->relExpFases))
+            return $this->relExpFases[array_key_last($this->relExpFases)]->fase->descripcion;
+        else
+            return null;
+    }
+
+    public function getConvenio()
+    {
+        return $this->ae->estudiante->codConvenio;
+    }
+
+    public function getHoraFase()
+    {
+        if (!empty($this->relExpFases))
+            return $this->relExpFases[array_key_last($this->relExpFases)]->timestamp;
+        else
+            return null;
     }
 }

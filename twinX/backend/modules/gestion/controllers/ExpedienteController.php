@@ -2,9 +2,11 @@
 
 namespace backend\modules\gestion\controllers;
 
+use common\models\RelExpFase;
 use Yii;
 use common\models\Expediente;
 use common\models\search\ExpedienteSearch;
+use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -50,10 +52,15 @@ class ExpedienteController extends Controller
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionView($id)
+    public function actionView($id, $path = 'view')
     {
-        return $this->render('view', [
+//        $fases = new ActiveDataProvider([
+//            'query' => RelExpFase::find()->where(['id_exp' => $id])
+//        ]);
+
+        return $this->render($path, [
             'model' => $this->findModel($id),
+//            'fases' => $fases,
         ]);
     }
 
@@ -123,5 +130,9 @@ class ExpedienteController extends Controller
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
+    }
+
+    public function actionViewNewFase($id){
+        $this->actionView($id, 'view-new-fase');
     }
 }

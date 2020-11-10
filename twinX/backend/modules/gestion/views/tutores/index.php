@@ -31,6 +31,20 @@ $this->params['breadcrumbs'][] = $this->title;
             'telefono',
             'genero',
 
+            [
+                'class' => 'yii\grid\ActionColumn',
+                'template' => '{acuerdos}',
+                'header' => 'Acciones',
+                'buttons' => [
+                    'acuerdos' => function($url, $model, $key){
+                        $contenido = '';
+                        if(!empty($model->acuerdos))
+                            $contenido = Html::a('<i class="fas fa-scroll"></i>', ['acuerdo-estudios/index', 'tutor' => $model->id], ['class' => 'btn btn-outline-info', 'title' => 'Acuerdos de estudios de ' . $model->nombre]);
+                        return $contenido;
+                    },
+                ],
+            ],
+
         ],
     ]); ?>
 

@@ -29,7 +29,7 @@ use yii\web\IdentityInterface;
  * @property string $genero
  *
  * @property Convenio[] $convenios
- * @property Convenio[] $convenios0
+ * @property AcuerdoEstudios[] $acuerdos
  * @property DeadlineAviso[] $deadlineAvisos
  * @property Estudiante $estudiante
  * @property Evento[] $eventos
@@ -111,13 +111,13 @@ class User extends ActiveRecord implements IdentityInterface
     }
 
     /**
-     * Gets query for [[Convenios0]].
+     * Gets query for [[acuerdos]].
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getConveniosAsTutor()
+    public function getAcuerdos()
     {
-        return $this->hasMany(Convenio::className(), ['id_tutor' => 'id']);
+        return $this->hasMany(AcuerdoEstudios::className(), ['id_tutor' => 'id']);
     }
 
     /**

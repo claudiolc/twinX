@@ -2,6 +2,6 @@
 
 <?php include('_view.php') ?>
 
-<?= $relExpFase->actionIndex($model->id) ?>
+<?= $relExpFase->actionCreate($model->id) ?>
 
 <?php $this->title = 'Expediente #' . $model->id; ?>
