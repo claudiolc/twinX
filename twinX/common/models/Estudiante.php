@@ -208,4 +208,13 @@ class Estudiante extends \yii\db\ActiveRecord
     {
         return $this->usuario->nombre . ' - ' . $this->convenio->getCodConvenioNoIcon();
     }
+
+    public function getCompetenciasLing(){
+        $competencias = [];
+        foreach ($this->relClEsts as $comp){
+            $competencias[] = \common\models\CompetenciaLing::find()->where(['id' => $comp->id_cl])->one()->lenguaNivel;
+        }
+
+        return implode(', ', $competencias);
+    }
 }

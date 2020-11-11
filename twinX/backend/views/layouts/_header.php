@@ -23,17 +23,20 @@ if (Yii::$app->user->isGuest) {
     $menuItems[] = ['label' => 'Gestión', 'url' => ['/gestion'], 'active' => in_array(\Yii::$app->controller->module->id, ['gestion'])];
     $menuItems[] = ['label' => 'Calendario', 'url' => ['/calendario'], 'active' => in_array(\Yii::$app->controller->module->id, ['calendario'])];
     $menuItems[] = ['label' => 'Panel de control', 'url' => ['/panel'], 'active' => in_array(\Yii::$app->controller->module->id, ['panel'])];
+    $menuItems[] = ['label' => '<i class="fas fa-lg fa-envelope"></i>', 'url' => ['/gestion/mensaje'], 'active' => in_array(\Yii::$app->controller->module->id, ['mensaje']),
+        'options' => ['class' => 'ml-auto mr-5']];
     $menuItems[] = ['label' => 'Salir ('.Yii::$app->user->identity->username.')',
         'url' => ['/site/logout'],
         'linkOptions' => [
             'data-method' => 'post',
         ],
-        'options' => ['class' => 'ml-auto']
+        'options' => ['class' => '']
     ];
 }
 echo Nav::widget([
     'options' => ['class' => 'navbar-nav w-100'],
     'items' => $menuItems,
+    'encodeLabels' => false
 ]);
 NavBar::end();
 ?>

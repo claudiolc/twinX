@@ -9,7 +9,7 @@ use yii\widgets\DetailView;
 
 $relExpFase = new \backend\modules\gestion\controllers\RelExpFaseController('rel-exp-fase', Yii::$app->getModule('rel-exp-fase'));
 
-
+$this->title = 'Expediente #' . $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Expedientes', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
@@ -43,6 +43,14 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'convenio',
                 'label' => 'Convenio',
                 'format' => 'raw'
+            ],
+            [
+                    'attribute' => 'ae.estudiante.nombreTitulacion',
+                    'label' => 'Titulación'
+            ],
+            [
+                'attribute' => 'ae.estudiante.competenciasLing',
+                'label' => 'Competencias lingüísticas'
             ],
             [
                 'attribute' => 'descripcionTipoExp',

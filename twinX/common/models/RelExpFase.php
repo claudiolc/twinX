@@ -3,6 +3,7 @@
 namespace common\models;
 
 use Yii;
+use yii\i18n\Formatter;
 
 /**
  * This is the model class for table "rel_exp_fase".
@@ -42,6 +43,7 @@ class RelExpFase extends \yii\db\ActiveRecord
             [['id_exp'], 'exist', 'skipOnError' => true, 'targetClass' => Expediente::className(), 'targetAttribute' => ['id_exp' => 'id']],
             [['id_fase'], 'exist', 'skipOnError' => true, 'targetClass' => FaseExpediente::className(), 'targetAttribute' => ['id_fase' => 'id']],
             [['id_gestor'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['id_gestor' => 'id']],
+            [['id_exp', 'id_fase'], 'unique', 'targetAttribute' => ['id_exp', 'id_fase']],
         ];
     }
 
@@ -51,12 +53,12 @@ class RelExpFase extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id_exp' => 'Id Exp',
-            'id_fase' => 'Id Fase',
-            'id_gestor' => 'Id Gestor',
+            'id_exp' => 'Expediente',
+            'id_fase' => 'Fase',
+            'id_gestor' => 'Gestor',
             'procesado' => 'Procesado',
-            'timestamp' => 'Timestamp',
-            'info' => 'Info',
+            'timestamp' => 'Fecha de modificación',
+            'info' => 'Información',
         ];
     }
 
@@ -102,7 +104,7 @@ class RelExpFase extends \yii\db\ActiveRecord
     public function save($runValidation = true, $attributeNames = null)
     {
         $this->id_gestor = Yii::$app->user->id;
-        $this->timestamp = strtotime('now');
+        $this->timestamp = date('yy-m-d H:i:s');
 
         return parent::save($runValidation, $attributeNames);
     }

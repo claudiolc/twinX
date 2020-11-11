@@ -2,19 +2,17 @@
 
 namespace backend\modules\gestion\controllers;
 
-use common\models\RelExpFase;
 use Yii;
-use common\models\Expediente;
-use common\models\search\ExpedienteSearch;
-use yii\data\ActiveDataProvider;
+use common\models\Mensaje;
+use common\models\search\MensajeSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * ExpedienteController implements the CRUD actions for Expediente model.
+ * MensajeController implements the CRUD actions for Mensaje model.
  */
-class ExpedienteController extends Controller
+class MensajeController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -32,12 +30,12 @@ class ExpedienteController extends Controller
     }
 
     /**
-     * Lists all Expediente models.
+     * Lists all Mensaje models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new ExpedienteSearch();
+        $searchModel = new MensajeSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -47,32 +45,26 @@ class ExpedienteController extends Controller
     }
 
     /**
-     * Displays a single Expediente model.
+     * Displays a single Mensaje model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionView($id, $path = 'view', $rel = null)
+    public function actionView($id)
     {
-//        $fases = new ActiveDataProvider([
-//            'query' => RelExpFase::find()->where(['id_exp' => $id])
-//        ]);
-
-        return $this->render($path, [
+        return $this->render('view', [
             'model' => $this->findModel($id),
-            'idRel' => $rel,
-//            'fases' => $fases,
         ]);
     }
 
     /**
-     * Creates a new Expediente model.
+     * Creates a new Mensaje model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Expediente();
+        $model = new Mensaje();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -84,7 +76,7 @@ class ExpedienteController extends Controller
     }
 
     /**
-     * Updates an existing Expediente model.
+     * Updates an existing Mensaje model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -104,7 +96,7 @@ class ExpedienteController extends Controller
     }
 
     /**
-     * Deletes an existing Expediente model.
+     * Deletes an existing Mensaje model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -118,26 +110,18 @@ class ExpedienteController extends Controller
     }
 
     /**
-     * Finds the Expediente model based on its primary key value.
+     * Finds the Mensaje model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Expediente the loaded model
+     * @return Mensaje the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Expediente::findOne($id)) !== null) {
+        if (($model = Mensaje::findOne($id)) !== null) {
             return $model;
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
-    }
-
-    public function actionViewNewFase($id){
-        return $this->actionView($id, 'view-new-fase');
-    }
-
-    public function actionViewUpdateFase($id, $rel){
-        return $this->actionView($id, 'view-update-fase', $rel);
     }
 }

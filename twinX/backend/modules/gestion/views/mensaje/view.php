@@ -4,14 +4,14 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model common\models\TipoExpediente */
+/* @var $model common\models\Mensaje */
 
-$this->title = $model->descripcion;
-$this->params['breadcrumbs'][] = ['label' => 'Tipos de expediente', 'url' => ['index']];
+$this->title = $model->id;
+$this->params['breadcrumbs'][] = ['label' => 'Mensajes', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
-<div class="tipo-expediente-view">
+<div class="mensaje-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -20,7 +20,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Eliminar', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger ml-2',
             'data' => [
-                'confirm' => '¿Confirma la eliminación de este tipo de expediente?',
+                'confirm' => '¿Confirma la eliminación de este elemento?',
                 'method' => 'post',
             ],
         ]) ?>
@@ -30,8 +30,13 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'descripcion',
-            'tipo_estudiante',
+            'timestamp',
+            'id_emisor',
+            'id_receptor',
+            'leido',
+            'etiqueta',
+            'asunto',
+            'cuerpo:ntext',
         ],
     ]) ?>
 

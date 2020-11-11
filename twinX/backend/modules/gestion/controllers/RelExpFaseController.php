@@ -74,11 +74,11 @@ class RelExpFaseController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate($idExpediente = null)
+    public function actionCreate($expediente = null)
     {
         $model = new RelExpFase();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save() && !$idExpediente) {
+        if ($model->load(Yii::$app->request->post()) && $model->save() && !$expediente) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
         else if($model->load(Yii::$app->request->post()) && $model->save()){
@@ -86,14 +86,10 @@ class RelExpFaseController extends Controller
         }
 
         $path = '@backend/modules/gestion/views/rel-exp-fase/create';
-//        $path = 'create';
-//        if($idExpediente) {
-//            $path = '@backend/modules/gestion/views/expediente/view-new-fase';
-//        }
 
         return $this->render($path, [
             'model' => $model,
-            'idExpediente' => $idExpediente
+            'expediente' => $expediente
         ]);
     }
 
@@ -104,11 +100,11 @@ class RelExpFaseController extends Controller
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionUpdate($id, $idExpediente = null)
+    public function actionUpdate($id, $exp = null)
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post()) && $model->save() && !$exp) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
         else if($model->load(Yii::$app->request->post()) && $model->save()){
@@ -117,13 +113,13 @@ class RelExpFaseController extends Controller
 
         $path = 'update';
 
-        if($idExpediente) {
-            $path = '@backend/modules/gestion/views/expediente/view-update-fase';
+        if($exp) {
+            $path = '@backend/modules/gestion/views/rel-exp-fase/update';
         }
 
         return $this->render($path, [
             'model' => $model,
-            'idExpediente' => $idExpediente
+            'exp' => $exp
         ]);
     }
 
@@ -134,9 +130,23 @@ class RelExpFaseController extends Controller
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionDelete($id)
+    public function actionDelete($id, $idExpediente = false)
     {
         $this->findModel($id)->delete();
+
+        if($idExpediente)
+            return $this->redirect(['/gestion/expediente/view?id='.$idExpediente]);
+
+        return $this->redirect(['index']);
+    }
+    public function actionProcesarFase($id, $idExpediente = false)
+    {
+       $model = $this->findModel($id);
+       $model->procesado = 1;
+       $model->save();
+
+        if($idExpediente)
+            return $this->redirect(['/gestion/expediente/view?id='.$idExpediente]);
 
         return $this->redirect(['index']);
     }

@@ -26,7 +26,7 @@ $this->params['breadcrumbs'][] = $this->title;
         ]) ?>
     </p>
 
-    <?= DetailView::widget([
+    <?= \kartik\detail\DetailView::widget([
         'model' => $model,
         'attributes' => [
             'id',
@@ -42,21 +42,53 @@ $this->params['breadcrumbs'][] = $this->title;
                 'value' => Html::a($model->convenio, ['convenio/view', 'id' => $model->estudiante->convenio->id], ['class' => 'btn btn-outline-primary'])
             ],
             [
-                'attribute' => 'tutor.nombreUsername',
+                    'columns' => [
+                            [
+                                    'attribute' => 'estudiante',
+                                    'value' => $model->estudiante->nota_expediente,
+                                    'label' => 'Nota del expediente'
+                            ],
+                            [
+                                'attribute' => 'estudiante',
+                                'value' => $model->estudiante->notaCompetenciaLing,
+                                'label' => 'Nota de competencias lingüísticas'
+                            ],
+                            [
+                                'attribute' => 'estudiante',
+                                'value' => $model->estudiante->notaParticipacion,
+                                'label' => 'Nota de participación'
+                            ],
+                    ]
+            ],
+            [
+                'attribute' => 'tutor',
+                'value' => $model->tutor->nombreUsername,
                 'format' => 'raw',
-                'label' => 'Tutor'
             ],
             'timestamp_creacion',
-            'periodo',
-            'fase',
-            'curso.curso',
+            [
+                    'columns' => [
+                        'periodo',
+                        'fase',
+                        'convocatoria',
+                ],
+            ],
+
+            [
+                'attribute' => 'curso',
+                'value' => $model->curso->curso,
+            ],
             'necesidades:ntext',
-            'begin_movilidad',
-            'end_movilidad',
+            [
+                    'columns' => [
+                        'begin_movilidad',
+                        'end_movilidad',
+                    ],
+            ],
+
             'timestamp_nominacion',
             'link_documentacion',
             'n_solicitud_RRII',
-            'convocatoria',
         ],
     ]) ?>
 

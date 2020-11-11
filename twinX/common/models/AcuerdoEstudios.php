@@ -73,7 +73,7 @@ class AcuerdoEstudios extends \yii\db\ActiveRecord
             'necesidades' => 'Necesidades',
             'begin_movilidad' => 'Comienzo de la movilidad',
             'end_movilidad' => 'Fin de la movilidad',
-            'timestamp_nominacion' => 'Fecha de nominacion',
+            'timestamp_nominacion' => 'Fecha de nominación',
             'link_documentacion' => 'Enlace a documentación',
             'n_solicitud_RRII' => 'Nº de solicitud RRII',
             'convocatoria' => 'Convocatoria',

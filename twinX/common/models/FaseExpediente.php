@@ -112,4 +112,14 @@ class FaseExpediente extends \yii\db\ActiveRecord
     {
         return new \common\models\query\FaseExpedienteQuery(get_called_class());
     }
+
+    public function getDescripcionIO()
+    {
+        if($this->tipoExp->tipo_estudiante == 'OUTGOING')
+            $io = ' [O]';
+        else
+            $io = ' [I]';
+
+        return $this->descripcion . $io;
+    }
 }

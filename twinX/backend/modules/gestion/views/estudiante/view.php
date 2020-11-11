@@ -88,15 +88,7 @@
 
                             ],
                             [
-                                'attribute' => 'relClEsts[]',
-                                'value' => function($form, $widget){
-                                    $competencias = [];
-                                    foreach ($widget->model->relClEsts as $comp){
-                                        $competencias[] = \common\models\CompetenciaLing::find()->where(['id' => $comp->id_cl])->one()->lenguaNivel;
-                                    }
-
-                                    return implode(', ', $competencias);
-                                },
+                                'attribute' => 'competenciasLing',
                                 'label' => 'Competencias lingüísticas',
                                 'labelColOptions' => ['class' => 'w-25'],
                                 'valueColOptions' => ['class' => 'w-25']

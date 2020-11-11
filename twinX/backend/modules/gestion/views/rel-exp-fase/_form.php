@@ -9,7 +9,7 @@ use yii\widgets\ActiveForm;
 /* @var $this yii\web\View */
 /* @var $model common\models\RelExpFase */
 /* @var $form yii\widgets\ActiveForm */
-/* @var $idExpediente boolean */
+/* @var $expediente \common\models\Expediente */
 
 ?>
 
@@ -21,16 +21,15 @@ use yii\widgets\ActiveForm;
 
     $arrayIdExp = [];
 
-    if($idExpediente){
-        $arrayIdExp = ['readonly' => true, 'value' => $idExpediente];
+    if($expediente){
+        $arrayIdExp = ['readonly' => true, 'value' => $expediente->id];
     }
-
-
     ?>
-    <?= $form->field($model, 'id_exp')->textInput() ?>
+
+    <?= $form->field($model, 'id_exp')->textInput($arrayIdExp) ?>
 
     <?= $form->field($model, 'id_fase')->widget(Select2::className(), [
-        'data' => ArrayHelper::map(FaseExpediente::find()->all(), 'id', 'descripcionIO'),
+        'data' => ArrayHelper::map(FaseExpediente::find()->where(['id_tipo_exp' => $expediente->id_tipo_exp])->all(), 'id', 'descripcionIO'),
         'theme' => Select2::THEME_KRAJEE_BS4,
         'options' => [
             'placeholder' => 'Seleccione una fase',

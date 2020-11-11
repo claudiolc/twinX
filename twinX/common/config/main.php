@@ -5,6 +5,8 @@ return [
         '@npm'   => '@vendor/npm-asset',
     ],
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
+    'language' => 'es',
+    'timeZone' => 'Europe/Madrid',
     'components' => [
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -17,9 +19,9 @@ return [
         ],
         'formatter' => [
             'dateFormat' => 'dd/MM/yyyy'
-        ]
+        ],
+
     ],
-    'language' => 'es',
     'name' => 'twinX',
 
 ];
