@@ -56,14 +56,10 @@ class ConvenioController extends Controller
      */
     public function actionView($id)
     {
-        $ae = [];
         $model = $this->findModel($id);
+        $ae = $model->getAcuerdos();
 
-        foreach($model->estudiantes as $estudiante){
-            if(!empty($estudiante->acuerdoEstudios)){
-                    $ae []= $estudiante->acuerdoEstudios[array_key_last($estudiante->acuerdoEstudios)];
-            }
-        }
+
 
         $AeProvider = new ArrayDataProvider([
             'allModels' => $ae,

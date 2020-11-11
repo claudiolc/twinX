@@ -26,7 +26,15 @@ $this->params['breadcrumbs'][] = $this->title;
         'filterModel' => $searchModel,
         'columns' => [
 
-            'id',
+            [
+                'attribute' => 'numAcuerdos',
+                'label' => 'Nº de acuerdos'
+            ],
+            [
+                'attribute' => 'nominadosAcuerdos',
+                'label' => 'Nominados totales',
+                'format' => 'raw'
+            ],
             [
                     'attribute' => 'codConvenio',
                     'label' => 'Convenio',
@@ -36,11 +44,11 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'nombreCodUni',
                 'label' => 'Universidad'
             ],
-            'cod_pais',
             [
                 'attribute' => 'areaCompleta',
                 'label' => 'Nombre de la área'
             ],
+
 
             'tipo_movilidad',
 

@@ -316,6 +316,50 @@ class Convenio extends \yii\db\ActiveRecord
         return $this->codArea->getAreaCompleta();
     }
 
+    public function getAcuerdos()
+    {
+        $ae = [];
+        foreach($this->estudiantes as $estudiante){
+            if(!empty($estudiante->acuerdoEstudios)){
+                $ae []= $estudiante->acuerdoEstudios[array_key_last($estudiante->acuerdoEstudios)];
+            }
+        }
+
+        return $ae;
+    }
+
+    public function getNumAcuerdos()
+    {
+        return count($this->getAcuerdos());
+    }
+
+    public function getNominadosAcuerdos()
+    {
+        $ae = $this->getAcuerdos();
+        $aeIn = [];
+        $aeOut = [];
+        $nomIn = 0;
+        $nomOut = 0;
+
+        foreach($ae as $item) {
+            if ($item->estudiante->tipo_estudiante == 'INCOMING') {
+                $aeIn[] = $item;
+                if ($item->timestamp_nominacion) {
+                    $nomIn++;
+                }
+            } else{
+                $aeOut[] = $item;
+                if ($item->timestamp_nominacion) {
+                    $nomOut++;
+                }
+            }
+        }
+
+
+        return $nomOut . '/' . count($aeOut) . ' <i class="fas fa-circle" style="color:#FF3131;"></i>' . '<br>' .
+               $nomIn . '/' . count($aeIn) . ' <i class="fas fa-circle" style="color:#2AC8F3;"></i>';
+    }
+
     public function save($runValidation = true, $attributeNames = null)
     {
         $this->creado_por = Yii::$app->user->id;
@@ -323,7 +367,6 @@ class Convenio extends \yii\db\ActiveRecord
        return parent::save($runValidation, $attributeNames);
     }
 
-    /////////////////////////////////////////////////////////
 
 
 

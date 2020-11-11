@@ -6,16 +6,28 @@ use yii\widgets\Pjax;
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\search\MensajeSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
+/* @var $bandeja string */
 
-$this->title = 'Mensajes';
+$this->title = $bandeja == 'INBOX' ? 'Bandeja de entrada' : 'Mensajes enviados';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="mensaje-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <p class="d-flex justify-content-end">
-        <?= Html::a('Create Mensaje', ['create'], ['class' => 'btn btn-success']) ?>
+    <p class="d-flex justify-content-between mt-5">
+        <?php
+            if($bandeja == 'INBOX') {
+                $mensaje = 'Elementos enviados';
+                $link = 'enviados';
+            }
+            else {
+                $mensaje = 'Bandeja de entrada';
+                $link = 'bandeja-entrada';
+            }
+            echo Html::a($mensaje, [$link], ['class' => 'btn btn-info'])
+        ?>
+        <?= Html::a('Nuevo mensaje', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php Pjax::begin(); ?>
@@ -25,20 +37,32 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-            'id',
-            'timestamp',
-            'id_emisor',
-            'id_receptor',
-            'leido',
+            [
+                'attribute' => '',
+                'value' => function($model){
+                    return $model->leido ? '<i class="fas fa-envelope-open"></i>' : '<i class="fas fa-envelope"></i>';
+                },
+                'format' => 'raw',
+            ],
+            'asunto',
+            [
+                'attribute' => $bandeja == 'INBOX' ? 'nombreEmisor' : 'nombreReceptor',
+                'label' => $bandeja == 'INBOX' ? 'Emisor' : 'Receptor'
+            ],
+            [
+                    'attribute' => 'timestamp',
+                    'value' => function($model){
+                        return date('d/m/yy H:i:s', Yii::$app->formatter->asTimestamp($model->timestamp) - 3600);
+//                        return Yii::$app->formatter->as$model->timestamp
+                    }
+            ],
             //'etiqueta',
-            //'asunto',
+
             //'cuerpo:ntext',
 
             [
                 'class' => 'yii\grid\ActionColumn',
-                'template' => '{view} {update} {delete}',
+                'template' => '{view} {delete}',
                 'header' => 'Acciones'
             ],
         ],

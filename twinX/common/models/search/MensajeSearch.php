@@ -11,6 +11,8 @@ use common\models\Mensaje;
  */
 class MensajeSearch extends Mensaje
 {
+    public $nombreEmisor, $nombreReceptor;
+
     /**
      * {@inheritdoc}
      */
@@ -19,6 +21,7 @@ class MensajeSearch extends Mensaje
         return [
             [['id', 'id_emisor', 'id_receptor', 'leido'], 'integer'],
             [['timestamp', 'etiqueta', 'asunto', 'cuerpo'], 'safe'],
+            [['nombreEmisor', 'nombreReceptor'], 'safe'],
         ];
     }
 
@@ -38,17 +41,34 @@ class MensajeSearch extends Mensaje
      *
      * @return ActiveDataProvider
      */
-    public function search($params)
+    public function searchQuery($params)
     {
         $query = Mensaje::find();
 
+        $query->joinWith(['emisor', 'receptor']);
+
         // add conditions that should always apply here
+
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);
 
+        $dataProvider->sort->attributes['nombreEmisor'] = [
+            'asc' => ['user.nombre' => SORT_ASC],
+            'desc' => ['user.nombre' => SORT_DESC],
+            'default' => SORT_DESC
+        ];
+
+        $dataProvider->sort->attributes['nombreReceptor'] = [
+            'asc' => ['user.nombre' => SORT_ASC],
+            'desc' => ['user.nombre' => SORT_DESC],
+            'default' => SORT_DESC
+        ];
+
         $this->load($params);
+
+
 
         if (!$this->validate()) {
             // uncomment the following line if you do not want to return any records when validation fails
@@ -67,7 +87,18 @@ class MensajeSearch extends Mensaje
 
         $query->andFilterWhere(['like', 'etiqueta', $this->etiqueta])
             ->andFilterWhere(['like', 'asunto', $this->asunto])
-            ->andFilterWhere(['like', 'cuerpo', $this->cuerpo]);
+            ->andFilterWhere(['like', 'cuerpo', $this->cuerpo])
+            ->andFilterWhere(['like', 'user.nombre', $this->nombreEmisor])
+            ->andFilterWhere(['like', 'user.nombre', $this->nombreReceptor]);
+
+        return $query;
+    }
+
+    public function search($query)
+    {
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query
+        ]);
 
         return $dataProvider;
     }

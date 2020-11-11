@@ -82,7 +82,7 @@ class RelExpFaseController extends Controller
             return $this->redirect(['view', 'id' => $model->id]);
         }
         else if($model->load(Yii::$app->request->post()) && $model->save()){
-            return $this->actionIndex(true);
+            return $this->actionIndex($expediente);
         }
 
         $path = '@backend/modules/gestion/views/rel-exp-fase/create';

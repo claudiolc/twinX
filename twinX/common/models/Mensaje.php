@@ -52,10 +52,10 @@ class Mensaje extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'timestamp' => 'Timestamp',
-            'id_emisor' => 'Id Emisor',
-            'id_receptor' => 'Id Receptor',
-            'leido' => 'Leido',
+            'timestamp' => 'Fecha',
+            'id_emisor' => 'Emisor',
+            'id_receptor' => 'Destinatario',
+            'leido' => 'Leído',
             'etiqueta' => 'Etiqueta',
             'asunto' => 'Asunto',
             'cuerpo' => 'Cuerpo',
@@ -89,5 +89,25 @@ class Mensaje extends \yii\db\ActiveRecord
     public static function find()
     {
         return new \common\models\query\MensajeQuery(get_called_class());
+    }
+
+    public function save($runValidation = true, $attributeNames = null, $avoidUpdate = false)
+    {
+        if(!$avoidUpdate) {
+            $this->timestamp = date('yy-m-d H:i:s');
+            $this->id_emisor = Yii::$app->user->id;
+        }
+
+        return parent::save($runValidation, $attributeNames);
+    }
+
+    public function getNombreEmisor()
+    {
+        return $this->emisor->nombre;
+    }
+
+    public function getNombreReceptor()
+    {
+        return $this->receptor->nombre;
     }
 }

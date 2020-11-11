@@ -1,5 +1,8 @@
 <?php
 
+use common\models\User;
+use kartik\select2\Select2;
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
@@ -12,22 +15,22 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'timestamp')->textInput() ?>
-
-    <?= $form->field($model, 'id_emisor')->textInput() ?>
-
-    <?= $form->field($model, 'id_receptor')->textInput() ?>
-
-    <?= $form->field($model, 'leido')->textInput() ?>
-
-    <?= $form->field($model, 'etiqueta')->dropDownList([ 'IMPORTANTE' => 'IMPORTANTE', 'ELIMINADO' => 'ELIMINADO', ], ['prompt' => '']) ?>
+    <?= $form->field($model, 'id_receptor')->widget(Select2::className(), [
+        'data' => ArrayHelper::map(User::find()->where(['<>', 'id', Yii::$app->user->id])->all(), 'id', 'nombreUsername'),
+        'theme' => Select2::THEME_KRAJEE_BS4,
+        'options' => [
+            'placeholder' => 'Seleccione un destinatario',
+        ]
+    ]) ?>
 
     <?= $form->field($model, 'asunto')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'cuerpo')->textarea(['rows' => 6]) ?>
 
+    <?= $form->field($model, 'etiqueta')->dropDownList([ 'Importante' => 'Importante', 'Poco prioritario' => 'Poco prioritario'], ['prompt' => '']) ?>
+
     <div class="form-group">
-        <?= Html::submitButton('Guardar', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Enviar', ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>
