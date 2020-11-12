@@ -44,7 +44,7 @@ class EstudianteForm extends Estudiante
         }
         else if(!empty($this->requisitos)){
             foreach ($this->requisitos as $requisito) {
-                if (!in_array($requisito, $this->_requisitos)) {
+                if (!empty($this->_requisitos) and !in_array($requisito, $this->_requisitos)) {
                     $nuevos[] = $requisito;
                 }
             }

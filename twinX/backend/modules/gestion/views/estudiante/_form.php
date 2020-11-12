@@ -19,7 +19,7 @@ use yii\widgets\ActiveForm;
     <?php $form = ActiveForm::begin(); ?>
 
     <?= $form->field($model, 'id_usuario')->widget(Select2::className(), [
-            'data' => ArrayHelper::map(User::find()->all(), 'id', 'nombreUsername'),
+            'data' => ArrayHelper::map(User::find()->where(['tipo_usuario' => 'ESTUDIANTE'])->all(), 'id', 'nombreUsername'),
             'theme' => Select2::THEME_KRAJEE_BS4,
             'options' => [
                 'placeholder' => 'Seleccione un usuario',
@@ -47,15 +47,17 @@ use yii\widgets\ActiveForm;
     ]) ?>
 
     <?= $form->field($model, 'requisitos')->widget(Select2::className(), [
-        'name' => 'Requisitos lingüísticos',
         'data' => ArrayHelper::map(\common\models\CompetenciaLing::find()->all(), 'id', 'lenguaNivel'),
         'options' => [
             'placeholder' => 'Selecciona las competencias lingüísticas',
-            'multiple' => 'true'
+            'multiple' => 'true',
+
         ],
 
         'pluginOptions' => [
             'allowClear' => true,
+            'label' => 'Competencias lingüísticas',
+
         ]
     ]); ?>
 
@@ -73,7 +75,7 @@ use yii\widgets\ActiveForm;
                 'convertFormat' => true,
                 'pluginOptions' => [
                     'autoclose'=>true,
-                    'format' => 'yyyy-mm-dd',
+                    'format' => 'yyyy-MM-dd',
 
                 ],
                 'options' => [

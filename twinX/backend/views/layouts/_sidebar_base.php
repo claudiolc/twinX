@@ -7,7 +7,7 @@
 use kartik\nav\NavX;
 \backend\assets\PanelAsset::register($this);
 ?>
-<div class="align-items-center ml-5">
+<div class="align-items-center mt-5" style="margin-left:5em">
     <div class="flex-column">
         <h1>Menú</h1>
 

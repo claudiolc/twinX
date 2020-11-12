@@ -2,6 +2,8 @@
 
 namespace common\models\query;
 
+use common\models\Mensaje;
+
 /**
  * This is the ActiveQuery class for [[\common\models\Mensaje]].
  *
@@ -30,5 +32,10 @@ class MensajeQuery extends \yii\db\ActiveQuery
     public function one($db = null)
     {
         return parent::one($db);
+    }
+
+    public function noLeidos()
+    {
+        return Mensaje::find()->where(['id_receptor' => \Yii::$app->user->id, 'leido' => '0']);
     }
 }

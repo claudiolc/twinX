@@ -35,7 +35,7 @@ class Mensaje extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['timestamp', 'id_emisor', 'id_receptor', 'etiqueta', 'cuerpo'], 'required'],
+            [['timestamp', 'id_emisor', 'id_receptor', 'cuerpo'], 'required'],
             [['timestamp'], 'safe'],
             [['id_emisor', 'id_receptor', 'leido'], 'integer'],
             [['etiqueta', 'cuerpo'], 'string'],

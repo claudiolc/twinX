@@ -1,11 +1,14 @@
 <?php
+
+use kartik\datecontrol\Module;
+
 return [
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
     ],
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
-    'language' => 'es',
+    'language' => 'es-ES',
     'timeZone' => 'Europe/Madrid',
     'components' => [
         'cache' => [
@@ -18,7 +21,14 @@ return [
             ],
         ],
         'formatter' => [
-            'dateFormat' => 'dd/MM/yyyy'
+            'class' => 'yii\i18n\Formatter',
+            'dateFormat' => 'dd/MM/yyyy',
+            'datetimeFormat' => 'dd/MM/yyyy H:i:s',
+
+            'timeFormat' => 'H:i:s',
+            'locale' => 'es-ES',
+            'defaultTimeZone' => 'Europe/Madrid',
+
         ],
 
     ],

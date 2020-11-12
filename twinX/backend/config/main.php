@@ -20,6 +20,10 @@ return [
         'gestion' => [
             'class' => '\backend\modules\gestion\Gestion',
             'layout' => 'gestion'
+        ],
+        'calendario' => [
+            'class' => '\backend\modules\calendario\Calendario',
+            'layout' => 'calendario'
         ]
     ],
 //    'homeUrl' => '',

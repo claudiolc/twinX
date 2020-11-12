@@ -1,5 +1,6 @@
 <?php
 
+use common\models\Mensaje;
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
@@ -62,8 +63,20 @@ $this->params['breadcrumbs'][] = $this->title;
 
             [
                 'class' => 'yii\grid\ActionColumn',
-                'template' => '{view} {delete}',
-                'header' => 'Acciones'
+                'template' => '{view} {leido}',
+                'header' => 'Acciones',
+                'buttons' => [
+                  'leido' => function($url, $model, $key){
+                                $contenido = '';
+                                if($model->id_receptor == Yii::$app->user->id)
+                                    if($model->leido)
+                                        $contenido = Html::a('<i class="fas fa-eye-slash"></i>', ['mensaje/leido', 'id' => $model->id, 'leido' => '0'], ['class' => 'btn btn-outline-info', 'title' => 'Marcar como no leído']);
+                                    else
+                                        $contenido = Html::a('<i class="fas fa-check-double"></i>', ['mensaje/leido', 'id' => $model->id, 'leido' => '1'], ['class' => 'btn btn-outline-info', 'title' => 'Marcar como leído']);
+
+                                return $contenido;
+                        },
+                ],
             ],
         ],
     ]); ?>

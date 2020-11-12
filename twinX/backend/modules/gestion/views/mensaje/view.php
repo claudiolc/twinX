@@ -24,7 +24,10 @@ $this->params['breadcrumbs'][] = $this->title;
 //            ],
 //        ]) ?>-->
 
-        <?= Html::a('Marcar como no leído', ['no-leido', 'id' => $model->id], ['class' => 'btn btn-primary ml-2'])?>
+        <?php
+            if($model->id_receptor == Yii::$app->user->id)
+                echo Html::a('Marcar como no leído', ['leido', 'id' => $model->id, 'leido' => '0'], ['class' => 'btn btn-primary ml-2'])
+        ?>
     </p>
 
     <?= \kartik\detail\DetailView::widget([

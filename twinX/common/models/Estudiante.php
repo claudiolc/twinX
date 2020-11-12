@@ -72,6 +72,7 @@ class Estudiante extends \yii\db\ActiveRecord
             'cesion_datos' => 'Cesión de datos',
             'nota_expediente' => 'Nota del expediente',
             'beca_mec' => 'Becario MEC',
+            'requisitos' => 'Competencias lingüísticas'
         ];
     }
 

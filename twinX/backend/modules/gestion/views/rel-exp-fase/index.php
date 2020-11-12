@@ -50,7 +50,7 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                     'attribute' => 'timestamp',
                     'value' => function($model) {
-                                return date('d/m/yy H:i:s', Yii::$app->formatter->asTimestamp($model->timestamp) - 3600) . ' (' . Yii::$app->formatter->asRelativeTime($model->timestamp, date('H:i:s')) . ')';
+                                return date('d/m/yy H:i:s', Yii::$app->formatter->asTimestamp($model->timestamp)) . ' (' . Yii::$app->formatter->asRelativeTime($model->timestamp, date('H:i:s')) . ')';
                                 },
             ],
             'info',

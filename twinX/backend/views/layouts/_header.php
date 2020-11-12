@@ -11,6 +11,9 @@ NavBar::begin([
     'options' => [
 //      'class' => 'bg-dark'
     ],
+    'innerContainerOptions' => [
+        'class' => 'container-fluid ml-5 mr-5'
+    ]
 ]);
 
 if (Yii::$app->user->isGuest) {
@@ -29,21 +32,35 @@ if (Yii::$app->user->isGuest) {
 
 
 } else {
-    $numUnread = Mensaje::find()->where(['id_receptor' => \Yii::$app->user->id, 'leido' => null])->count();
+    $numMsgUnread = Mensaje::find()->noLeidos()->count();
+    $numNotfUnseen = \common\models\Recordatorio::find()->notificaciones()->count();
+
     $unread = '';
-    if($numUnread > 0){
-        $unread = '<p class="bg-danger text-white rounded-circle pl-2 pr-2 ml-1 mb-0">'. $numUnread . '</p>';
+    $unseen = '';
+
+    if($numMsgUnread > 0){
+        $unread = Yii::$app->view->render('indicadorNoleidos', ['num' => $numMsgUnread]);
+    }
+
+    if($numNotfUnseen > 0){
+        $unseen = Yii::$app->view->render('indicadorNoleidos', ['num' => $numNotfUnseen]);
     }
 
     $mailElement = '<div class="d-flex flex-row align-items-center">
-                        <i class="fas fa-lg fa-envelope" style="margin-top:1%;"></i>' . $unread .
+                        <i class="fas fa-lg fa-envelope mt-1"></i>' . $unread .
                     '</div>';
+
+    $bellElement = '<div class="d-flex flex-row align-items-center">
+                        <i class="fas fa-lg fa-bell mt-1"></i>' . $unseen .
+        '</div>';
 
     $menuItems[] = ['label' => 'Gestión', 'url' => ['/gestion'], 'active' => in_array(\Yii::$app->controller->module->id, ['gestion'])];
     $menuItems[] = ['label' => 'Calendario', 'url' => ['/calendario'], 'active' => in_array(\Yii::$app->controller->module->id, ['calendario'])];
     $menuItems[] = ['label' => 'Panel de control', 'url' => ['/panel'], 'active' => in_array(\Yii::$app->controller->module->id, ['panel'])];
     $menuItems[] = ['label' => $mailElement, 'url' => ['/gestion/mensaje/bandeja-entrada'], 'active' => in_array(\Yii::$app->controller->id, ['mensaje']),
-        'options' => ['class' => 'ml-auto mr-5'], 'labelOptions' => ['class' => 'd-flex flex-row']];
+        'options' => ['class' => 'ml-auto mr-2'], 'labelOptions' => ['class' => 'd-flex flex-row']];
+    $menuItems[] = ['label' => $bellElement, 'url' => ['/calendario/notificaciones'], 'active' => in_array(\Yii::$app->controller->id, ['notificaciones']),
+        'options' => ['class' => 'mr-5'], 'labelOptions' => ['class' => 'd-flex flex-row']];
     $menuItems[] = ['label' => 'Salir ('.Yii::$app->user->identity->username.')',
         'url' => ['/site/logout'],
         'linkOptions' => [
@@ -55,7 +72,8 @@ if (Yii::$app->user->isGuest) {
 echo Nav::widget([
     'options' => ['class' => 'navbar-nav w-100'],
     'items' => $menuItems,
-    'encodeLabels' => false
+    'encodeLabels' => false,
+
 ]);
 NavBar::end();
 ?>

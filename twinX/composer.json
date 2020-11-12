@@ -25,7 +25,9 @@
         "kartik-v/yii2-widget-datepicker": "dev-master",
         "kartik-v/yii2-field-range": "*",
         "kartik-v/yii2-widget-touchspin": "dev-master",
-        "kartik-v/yii2-detail-view": "dev-master"
+        "kartik-v/yii2-detail-view": "dev-master",
+        "kartik-v/yii2-datecontrol": "dev-master",
+        "kartik-v/yii2-widget-datetimepicker": "dev-master"
 
 
     },

@@ -1,18 +1,18 @@
 <?php
 
-namespace backend\modules\gestion\controllers;
+namespace backend\modules\calendario\controllers;
 
 use Yii;
-use common\models\Mensaje;
-use common\models\search\MensajeSearch;
+use common\models\Recordatorio;
+use common\models\search\RecordatorioSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * MensajeController implements the CRUD actions for Mensaje model.
+ * RecordatorioController implements the CRUD actions for Recordatorio model.
  */
-class MensajeController extends Controller
+class RecordatorioController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -30,64 +30,43 @@ class MensajeController extends Controller
     }
 
     /**
-     * Lists all Mensaje models.
+     * Lists all Recordatorio models.
      * @return mixed
      */
-    public function actionRoute($bandeja)
+    public function actionIndex()
     {
-        $searchModel = new MensajeSearch();
+        $searchModel = new RecordatorioSearch();
         $query = $searchModel->searchQuery(Yii::$app->request->queryParams);
-
-        if($bandeja == 'INBOX')
-            $query->andWhere(['id_receptor' => Yii::$app->user->id]);
-        else
-            $query->andWhere(['id_emisor' => Yii::$app->user->id]);
-
+        $query->andWhere(['id_creador' => Yii::$app->user->id]);
         $dataProvider = $searchModel->search($query);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
-            'bandeja' => $bandeja
         ]);
     }
 
-    public function actionBandejaEntrada()
-    {
-        return $this->actionRoute($bandeja = 'INBOX');
-    }
-
-    public function actionEnviados()
-    {
-        return $this->actionRoute($bandeja = 'SENT');
-    }
-
     /**
-     * Displays a single Mensaje model.
+     * Displays a single Recordatorio model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionView($id)
     {
-        $model = $this->findModel($id);
-        if(!$model->leido and $model->id_receptor == Yii::$app->user->id) {
-            $model->leido = 1;
-            $model->save(true, null, true);
-        }
         return $this->render('view', [
-            'model' => $model,
+            'model' => $this->findModel($id),
         ]);
     }
 
     /**
-     * Creates a new Mensaje model.
+     * Creates a new Recordatorio model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Mensaje();
+        $model = new Recordatorio();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -99,15 +78,27 @@ class MensajeController extends Controller
     }
 
     /**
-     * Updates an existing Mensaje model.
+     * Updates an existing Recordatorio model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
+    public function actionUpdate($id)
+    {
+        $model = $this->findModel($id);
+
+        if ($model->load(Yii::$app->request->post()) && $model->save(true, null, true)) {
+            return $this->redirect(['view', 'id' => $model->id]);
+        }
+
+        return $this->render('update', [
+            'model' => $model,
+        ]);
+    }
 
     /**
-     * Deletes an existing Mensaje model.
+     * Deletes an existing Recordatorio model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -121,28 +112,26 @@ class MensajeController extends Controller
     }
 
     /**
-     * Finds the Mensaje model based on its primary key value.
+     * Finds the Recordatorio model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Mensaje the loaded model
+     * @return Recordatorio the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Mensaje::findOne($id)) !== null) {
+        if (($model = Recordatorio::findOne($id)) !== null) {
             return $model;
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
 
-    public function actionLeido($id, $leido)
-    {
+    public function actionCompletado($id, $completado){
         $model = $this->findModel($id);
-        $model->leido = $leido;
+        $model->completado = $completado;
         $model->save(true, null, true);
 
-
-        return $this->redirect(['bandeja-entrada']);
+        return $this->redirect(['index']);
     }
 }
