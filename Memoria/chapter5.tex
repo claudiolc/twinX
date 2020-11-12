@@ -12,9 +12,9 @@ La priorización de la lista de tareas suele estar hecha por el llamado \textit{
 
 Más técnicamente, cada uno de los componentes de esta lista son acciones que el usuario podrá desarrollar. Esto es algo característico de Scrum y su constante enfoque en el usuario, todo ello en relación con su activa participación con el equipo de desarrollo durante todo el proceso. Pues bien, estas capacitaciones que el usuario final tendrá reciben el nombre de \textbf{historias de usuario}, y es la forma que se tiene en esta metodología ágil de nombrar a los clásicos requisitos. Suponen una reducción en la documentación, ya que no se necesitan especificar demasiados elementos a priori. No obstante y como ya comentamos en secciones pasadas, el número de tareas y, por tanto, de historias de usuario, puede variar, pues al comienzo de cada sprint se realiza una reunión para evaluar los trabajos del equipo de desarrollo y se vuelve a revisar la priorización que se ha hecho de las tareas en el \textit{product backlog}.
 
-En referencia a esas «grandes tareas» que hemos mencionado anteriormente y que ya tenemos definidas, podríamos decir que dentro de ellas se esconden otras pequeñas tareas que nos son más sencillas de seguir a la hora del desarrollo. Es decir, son historias de usuario encerradas en otra más grande que alberga a todas ellas. Esto se conoce en el argot de Scrum como \textbf{épicas}. Así, «hacer uso del panel de control» sería una épica, pues dentro de ella irían historias de usuario como «ver un listado con todos los tipos de expedientes».
+En referencia a esas «grandes tareas» que hemos mencionado anteriormente y que ya tenemos definidas, podríamos decir que dentro de ellas se esconden otras de menor generalidad que nos son más sencillas de descomponer o comprender a la hora del desarrollo. Es decir, son una serie de historias de usuario encerradas en otra más grande que alberga a todas ellas. Esto se conoce en el argot de Scrum como \textbf{épicas}. Así, «hacer uso del panel de control» sería una épica, pues dentro de ella irían historias de usuario como «ver un listado con todos los tipos de expedientes».
 
-En la tabla \ref{tab:listadoHU} encontramos el backlog genérico del desarrollo, como producto de la síntesis que se puede hacer de las secciones \ref{subsec:propuesta} y~\ref{subsec:sprints}, donde hemos incluido las historias de usuario a desarrollar para la primera versión de twinX, en sus épicas correspondientes. Entendemos que todas las historias numeradas como «x.1», «x.2», ..., «x.n» pertenecen todas a la épica (historia de usuario) «x». Recordemos también que el significado de «historia de usuario» no es otro que una acción a desarrollar por el usuario final del sistema, por lo que siempre tienen que estar descritas desde su punto de vista. Es asunto del desarrollador el cuestionarse las tareas (de código en su mayoría) que implica realizar cada una de ellas, por lo que para la elaboración del backlog no nos centraremos en esas tareas a llevar a cabo en cuanto a implementación, sino a satisfacción de las necesidades del usuario.
+En la tabla \ref{tab:listadoHU} encontramos el backlog genérico del desarrollo, como producto de la síntesis que se puede hacer de las secciones \ref{subsec:propuesta} y~\ref{subsec:sprints}, donde hemos incluido las historias de usuario a desarrollar para la primera versión de twinX, en sus épicas correspondientes. Entendemos que todas las historias numeradas como «x.1», «x.2», ..., «x.n» pertenecen todas a la épica «x». Recordemos también que el significado de «historia de usuario» no es otro que una acción a desarrollar por el usuario final del sistema, por lo que siempre tienen que estar descritas desde su punto de vista. Es asunto del desarrollador el cuestionarse las tareas (de código en su mayoría) que implica realizar cada una de ellas, por lo que para la elaboración del backlog no nos centraremos en esas tareas a llevar a cabo en cuanto a implementación, sino a satisfacción de las necesidades del usuario.
 
 \begin{table}[h]
 	\begin{center}
@@ -279,7 +279,7 @@ A continuación, vamos a ofrecer una serie de tarjetas de todas y cada una de es
 	\begin{center}
 		\begin{tabular}{ | c | c | c | } 
 			\hline
-			\textbf{Identificación} & \parbox[t]{7cm}{HU2 - Gestionar el trabajo diario de la oficina: estudianets, expedientes, acuerdos de estudios, convenios y tutores.}  & \textbf{Sprint:} 1 \\
+			\textbf{Identificación} & \parbox[t]{7cm}{HU2 - Gestionar el trabajo diario de la oficina: estudiantes, expedientes, acuerdos de estudios, convenios y tutores.}  & \textbf{Sprint:} 1 \\
 			\hline
 			\textbf{Descripción} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{El menú de gestión es el que frecuentarán los trabajadores de la oficina, donde gestionarán todo lo que rodea a la movilidad internacional en la facultad.} \\
 			\hline
@@ -609,7 +609,7 @@ A continuación, vamos a ofrecer una serie de tarjetas de todas y cada una de es
 			\textbf{Tareas} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{
 				\begin{itemize}
 					\item Construir el modelo de mensaje con Gii.
-					\item Construir la tabla CRUD con Yii.
+					\item Construir la tabla CRUD con Gii.
 					\item Modificar la interfaz para asemejarla a una bandeja de entrada de mensajes.
 					\item Configurar las notificaciones de recepción de mensajes.
 				\end{itemize}
@@ -620,3 +620,17 @@ A continuación, vamos a ofrecer una serie de tarjetas de todas y cada una de es
 		\label{tab:HU4}
 	\end{center}
 \end{table}
+
+Hemos plasmado un total de 19 historias de usuario, con las tareas que implicará cada una. Es obvio que en la práctica, no solo variará el número de tareas asociado a las HHUU, sino que muy probablemente, tampoco acabemos implementando exactamente las que tenemos aquí, sino que podrían surgir otras o incluso cambiar la priorización de unas a otras en el cambio del sprint 1 al 2. Sobre la implementación de las historias de usuario y el progreso que las acompaña, hablaremos en el capítulo \ref{implementacion}
+
+
+\newpage
+\section{Modelo de la base de datos}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[page=2,width=\textwidth,height=\textheight,trim=0 0 0 10cm, clip=true]{pdf/modelo_bd}
+	\label{modeloBD}
+	\caption{Modelo de la base de datos de twinX}
+\end{figure}
+
