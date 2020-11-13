@@ -40,8 +40,9 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute' => 'fase_final',
                 'value' => function($model){
-                    return $model->fase_final ? 'Sí' : 'No';
-                }
+                    return $model->fase_final == 1 ? '<i class="fas fa-check"></i>' : '<i class="fas fa-times"></i>';
+                },
+                'format' => 'raw'
             ],
             [
                 'class' => 'yii\grid\ActionColumn',

@@ -110,8 +110,6 @@ class EnvioMailFaseController extends Controller
         $model->id_fase = $id;
         return $this->render('@backend/modules/panel/views/envio-mail-fase/create', [
             'model' => $model,
-            'mails' => $this->getAllMails(),
-            'fases' => $this->getAllFases(),
         ]);
     }
 
@@ -132,8 +130,6 @@ class EnvioMailFaseController extends Controller
 
         return $this->render('update', [
             'model' => $model,
-            'fases' =>$this->getAllFases(),
-            'mails' => $this->getAllMails(),
         ]);
     }
 
@@ -172,34 +168,6 @@ class EnvioMailFaseController extends Controller
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
-    }
-
-    protected function getAllMails()
-    {
-        $model = new MailPredef();
-        $mails = [];
-
-        $result = $model->find()->select(['id', 'titulo'])->all();
-
-        foreach ($result as $res) {
-            $mails[$res->id] = $res->titulo;
-        }
-
-        return $mails;
-    }
-
-    protected function getAllFases()
-    {
-        $model = new FaseExpediente();
-        $fases = [];
-
-        $result = $model->find()->select(['id', 'descripcion'])->all();
-
-        foreach ($result as $res) {
-            $fases[$res->id] = $res->descripcion;
-        }
-
-        return $fases;
     }
 
 }

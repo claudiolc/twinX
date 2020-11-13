@@ -7,7 +7,7 @@ use yii\widgets\ActiveForm;
 /* @var $this yii\web\View */
 /* @var $model common\models\FaseExpediente */
 /* @var $form yii\widgets\ActiveForm */
-/* @var $tiposExp TipoExpediente */
+
 ?>
 
 <div class="fase-expediente-form">
@@ -18,8 +18,7 @@ use yii\widgets\ActiveForm;
 
     ?>
 
-    <?= $form->field($model, 'id_tipo_exp')->dropDownList($tiposExp); ?>
-
+    <?= $form->field($model, 'id_tipo_exp')->dropDownList(\yii\helpers\ArrayHelper::map(TipoExpediente::find()->all(), 'id', 'descripcion')); ?>
     <?= $form->field($model, 'descripcion')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'fase_final')->checkbox() ?>

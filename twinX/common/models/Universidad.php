@@ -83,4 +83,9 @@ class Universidad extends \yii\db\ActiveRecord
     {
         return new \common\models\query\UniversidadQuery(get_called_class());
     }
+
+    public function getNombreCodigo()
+    {
+        return $this->nombre . ' (' . $this->cod_uni . ')';
+    }
 }

@@ -15,10 +15,10 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>
+    <p class="d-flex justify-content-end">
         <?= Html::a('Editar', ['update', 'cod_uni' => $model->cod_uni, 'cod_pais' => $model->cod_pais], ['class' => 'btn btn-primary']) ?>
         <?= Html::a('Eliminar', ['delete', 'cod_uni' => $model->cod_uni, 'cod_pais' => $model->cod_pais], [
-            'class' => 'btn btn-danger',
+            'class' => 'btn btn-danger ml-2',
             'data' => [
                 'confirm' => '¿Confirma la eliminación de esta universidad?',
                 'method' => 'post',

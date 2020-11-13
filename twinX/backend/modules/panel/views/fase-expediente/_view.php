@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model common\models\FaseExpediente */
 
-$this->title = $model->id;
+$this->title = 'Fase #'.$model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Fases de expedientes', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
@@ -16,10 +16,10 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>
+    <p class="d-flex justify-content-end">
         <?= Html::a('Editar', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
         <?= Html::a('Eliminar', ['delete', 'id' => $model->id], [
-            'class' => 'btn btn-danger',
+            'class' => 'btn btn-danger ml-2',
             'data' => [
                 'confirm' => '¿Confirma el borrado de esta fase de expediente?',
                 'method' => 'post',
@@ -39,13 +39,13 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                     'attribute' => 'fase_final',
                     'value' => function($model){
-                        return $model->fase_final == 1 ? 'Sí' : 'No';
-                    }
+                        return $model->fase_final == 1 ? '<i class="fas fa-check"></i>' : '<i class="fas fa-times"></i>';
+                    },
+                    'format' => 'raw'
             ]
         ],
     ]) ?>
 
-    <?php //\yii\widgets\Pjax::begin();  ?>
-    <div class="ajaxContent" data-url="<?= Url::to(['/panel/envio-mail-fase']); ?>"></div>
+<!--    <div class="ajaxContent" data-url="--><?//= Url::to(['/panel/envio-mail-fase']); ?><!--"></div>-->
 
 </div>

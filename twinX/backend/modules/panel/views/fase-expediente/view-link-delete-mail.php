@@ -22,3 +22,5 @@ $this->params['breadcrumbs'][] = $this->title;
 <?php include('_view.php') ?>
 
 <?php echo $envioMailFase->actionDeleteByFaseId($id ,$model->id) ?>
+
+<?php $this->title = 'Fase #'.$model->id; ?>

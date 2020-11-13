@@ -15,10 +15,10 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>
+    <p class="d-flex justify-content-end">
         <?= Html::a('Editar', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
         <?= Html::a('Eliminar', ['delete', 'id' => $model->id], [
-            'class' => 'btn btn-danger',
+            'class' => 'btn btn-danger ml-2',
             'data' => [
                 'confirm' => '¿Confirma la eliminación de este usuario?',
                 'method' => 'post',
@@ -31,14 +31,14 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             'username',
-            'auth_key',
-            'password_hash',
-            'password_reset_token',
+//            'auth_key',
+//            'password_hash',
+//            'password_reset_token',
             'email:email',
 //            'status',
-            'created_at',
-            'updated_at',
-            'verification_token',
+            'created_at:datetime',
+            'updated_at:datetime',
+//            'verification_token',
             'nombre',
             'tipo_usuario',
             'telefono',

@@ -11,10 +11,11 @@ use Yii;
  * @property string $nombre
  *
  * @property Convenio[] $convenios
- * @property Universidad[] $universidads
+ * @property Universidad[] $universidades
  */
 class Pais extends \yii\db\ActiveRecord
 {
+
     /**
      * {@inheritdoc}
      */
@@ -61,7 +62,7 @@ class Pais extends \yii\db\ActiveRecord
      *
      * @return \yii\db\ActiveQuery|\common\models\query\UniversidadQuery
      */
-    public function getUniversidads()
+    public function getUniversidades()
     {
         return $this->hasMany(Universidad::className(), ['cod_pais' => 'iso']);
     }
@@ -73,5 +74,16 @@ class Pais extends \yii\db\ActiveRecord
     public static function find()
     {
         return new \common\models\query\PaisQuery(get_called_class());
+    }
+
+
+    public function getNombreLogo()
+    {
+        return ''.$this->nombre;
+    }
+
+    public function getNombreISO()
+    {
+        return $this->nombre . ' (' . $this->iso . ')';
     }
 }

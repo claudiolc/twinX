@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model common\models\Pais */
 
-$this->title = $model->iso;
+$this->title = $model->nombre;
 $this->params['breadcrumbs'][] = ['label' => 'Pais', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
@@ -15,12 +15,12 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>
-        <?= Html::a('Update', ['update', 'id' => $model->iso], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->iso], [
-            'class' => 'btn btn-danger',
+    <p class="d-flex justify-content-end">
+        <?= Html::a('Editar', ['update', 'id' => $model->iso], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Eliminar', ['delete', 'id' => $model->iso], [
+            'class' => 'btn btn-danger ml-2',
             'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
+                'confirm' => '¿Confirma la eliminación de este país?',
                 'method' => 'post',
             ],
         ]) ?>

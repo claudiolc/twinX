@@ -156,12 +156,23 @@ a:hover {
     color: white;
 }
 
+/* CARETS (Flechas de ordenación en las tablas) */
+
+a.desc:after {
+    content: '▼';
+}
+
+a.asc:after {
+    content: '▲';
+}
+
+
 /* SIDEBAR */
 
 #sidebar {
     padding-left: 0;
     padding-right: 0;
-    max-width: 250px;
+    max-width: 275px;
 }
 
 #sidebar, .shadow {
@@ -194,3 +205,29 @@ th, tr {
 table {
     max-width: inherit;
 }
+
+/* SELECTOR CON DROPDOWN */
+
+.select2-container--krajee-bs4 .select2-results__option--highlighted[aria-selected] {
+    background-color: #ba68c8;
+}
+
+.select2-container--krajee-bs4 .select2-results__option.select2-results__option--selected, .select2-container--krajee-bs4 .select2-results__option[aria-selected=true] {
+    background-color: #883997;
+    color: white;
+}
+
+/* BOTONES HEADER TARJETAS (CARD) */
+
+.card-header .btn:focus{
+    outline: none;
+    box-shadow: none;
+}
+
+/* ICONOS CONVENIOS */
+.convenio-icon {
+    max-width: 25px;
+    max-height: 25px;
+    margin-right: 10px;
+}
+

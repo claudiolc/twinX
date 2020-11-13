@@ -76,4 +76,10 @@ class TipoExpediente extends \yii\db\ActiveRecord
     {
         return new \common\models\query\TipoExpedienteQuery(get_called_class());
     }
+
+    public function getDescripcionIO()
+    {
+        $indicador = $this->tipo_estudiante == 'INCOMING' ? ' [I]' : ' [O]';
+        return $this->descripcion . $indicador;
+    }
 }

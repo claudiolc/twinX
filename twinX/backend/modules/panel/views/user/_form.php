@@ -25,7 +25,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'telefono')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'sexo')->dropDownList([ 'F' => 'Femenino', 'M' => 'Masculino', 'O' => 'Otro', ], ['prompt' => '']) ?>
+    <?= $form->field($model, 'genero')->dropDownList([ 'F' => 'Femenino', 'M' => 'Masculino', 'O' => 'Otro', ], ['prompt' => '']) ?>
 
     <div class="form-group">
         <?= Html::submitButton('Guardar', ['class' => 'btn btn-success']) ?>

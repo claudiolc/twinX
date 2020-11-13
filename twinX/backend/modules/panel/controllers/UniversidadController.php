@@ -74,7 +74,6 @@ class UniversidadController extends Controller
 
         return $this->render('create', [
             'model' => $model,
-            'paises' => $this->getAllPaises()
         ]);
     }
 
@@ -129,19 +128,5 @@ class UniversidadController extends Controller
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
-    }
-
-    protected function getAllPaises()
-    {
-        $model = new Pais();
-        $paises = [];
-
-        $result = $model->find()->select(['iso', 'nombre'])->all();
-
-        foreach ($result as $res) {
-            $paises[$res->iso] = $res->nombre;
-        }
-
-        return $paises;
     }
 }

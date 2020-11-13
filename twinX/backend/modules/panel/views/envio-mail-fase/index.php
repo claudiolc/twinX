@@ -14,7 +14,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p class="d-flex justify-content-end">
-        <a class="btn btn-success" href="create.php">Nuevo envío de mail</a>
+        <a class="btn btn-success" href="/panel/envio-mail-fase/create">Nuevo envío de mail</a>
     </p>
 
     <?php Pjax::begin(); ?>

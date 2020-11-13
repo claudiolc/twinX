@@ -4,7 +4,7 @@ use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\FaseExpediente */
-/* @var $tiposExp \common\models\TipoExpediente */
+
 
 
 $this->title = 'Nueva fase de expediente';
@@ -17,7 +17,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= $this->render('_form', [
         'model' => $model,
-        'tiposExp' => $tiposExp,
     ]) ?>
 
 </div>
