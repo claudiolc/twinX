@@ -1,0 +1,8 @@
+.notificacion-dashboard a{
+    text-decoration: none;
+    color: black;
+}
+
+.notificacion-dashboard:hover{
+    background: #F7F7F7;
+}

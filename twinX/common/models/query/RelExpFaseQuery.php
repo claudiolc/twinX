@@ -31,4 +31,10 @@ class RelExpFaseQuery extends \yii\db\ActiveQuery
     {
         return parent::one($db);
     }
+
+    public function expedientesSinProcesar()
+    {
+        return $this->where(['id_gestor' => \Yii::$app->user->id])
+                    ->andWhere(['procesado' => '0']);
+    }
 }

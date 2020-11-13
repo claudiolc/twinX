@@ -36,6 +36,6 @@ class MensajeQuery extends \yii\db\ActiveQuery
 
     public function noLeidos()
     {
-        return Mensaje::find()->where(['id_receptor' => \Yii::$app->user->id, 'leido' => '0']);
+        return $this->where(['id_receptor' => \Yii::$app->user->id, 'leido' => '0']);
     }
 }

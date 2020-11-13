@@ -2,52 +2,73 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'My Yii Application';
+$this->title = 'Dashboard';
+
+$notificaciones = \common\models\Recordatorio::find()->notificaciones();
+$mensajes = \common\models\Mensaje::find()->noLeidos();
+$expedientes = \common\models\RelExpFase::find()->expedientesSinProcesar();
+
+\backend\assets\GestionAsset::register($this);
 ?>
-<div class="site-index">
 
-    <div class="jumbotron">
-        <h1>Congratulations!</h1>
+<h1 class="mb-5"><?php echo $this->title ?></h1>
 
-        <p class="lead">You have successfully created your Yii-powered application.</p>
-
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
+<div class="d-flex flex-wrap align-items-start justify-content-around">
+    <div class="card shadow mb-3" style="min-width: 25%">
+        <div class="card-header d-flex flex-column align-items-center justify-content-between">
+            <h2 class="rounded-circle pr-3 pl-3 pb-1 pt-1" style="background-color: #883997; color: white;"><?php echo  $notificaciones->count() ?></h2>
+            <h6><?= $notificaciones->count() == 1 ? 'Notificación pendiente' : 'Notificaciones pendientes' ?></h6>
+        </div>
+        <div class="card-body">
+            <?php
+            foreach ($notificaciones->all() as $notificacion) {
+                echo '<div class="card p-3 notificacion-dashboard mb-1">';
+                $output = '<h5>' . $notificacion->titulo . '</h5> ';
+                $output .= '<p>' . $notificacion->descripcion . '</p>';
+                $output .= '<p class="text-muted d-flex flex-row-reverse">' . Yii::$app->formatter->asRelativeTime($notificacion->timestamp) . '</p>';
+                echo \yii\helpers\Html::a($output, ['/calendario/recordatorio/view', 'id' => $notificacion->id]);
+                echo '</div>';
+            }
+            ?>
+        </div>
     </div>
 
-    <div class="body-content">
-
-        <div class="row">
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
-            </div>
+    <div class="card shadow mb-3" style="min-width: 25%">
+        <div class="card-header d-flex flex-column align-items-center justify-content-between">
+            <h2 class="rounded-circle pr-3 pl-3 pb-1 pt-1" style="background-color: #883997; color: white;"><?php echo  $mensajes->count() ?></h2>
+            <h6><?= ($mensajes->count() == 1 ? 'Mensaje ' : 'Mensajes ') . 'sin leer' ?></h6>
         </div>
+        <div class="card-body">
+            <?php
+            foreach ($mensajes->all() as $mensaje) {
+                echo '<div class="card p-3 notificacion-dashboard mb-1">';
+                $output = '<h5>' . $mensaje->asunto . '</h5> ';
+                $output .= '<p>' . $mensaje->cuerpo . '</p>';
+                $output .= '<p class="text-muted d-flex flex-row-reverse">' . Yii::$app->formatter->asRelativeTime($mensaje->timestamp) . '</p>';
+                echo \yii\helpers\Html::a($output, ['/gestion/mensaje/view', 'id' => $mensaje->id]);
+                echo '</div>';
+            }
+            ?>
+        </div>
+    </div>
 
+    <div class="card shadow mb-3" style="min-width: 25%">
+        <div class="card-header d-flex flex-column align-items-center justify-content-between">
+            <h2 class="rounded-circle pr-3 pl-3 pb-1 pt-1" style="background-color: #883997; color: white;"><?php echo  $expedientes->count() ?></h2>
+            <h6><?= ($expedientes->count() == 1 ? 'Expediente ' : 'Expedientes ') . 'sin procesar' ?></h6>
+        </div>
+        <div class="card-body">
+            <?php
+            foreach ($expedientes->all() as $expediente) {
+                echo '<div class="card p-3 notificacion-dashboard mb-1">';
+                $output = '<h4>' . $expediente->exp->ae->estudiante->nombreEstudiante . '<h4>';
+                $output .= '<h5>' . $expediente->exp->tipoExp->descripcion . '</h5> ';
+                $output .= '<p>' . $expediente->fase->descripcion . '</p>';
+                $output .= '<p class="text-muted d-flex flex-row-reverse">' . Yii::$app->formatter->asRelativeTime($expediente->timestamp) . '</p>';
+                echo \yii\helpers\Html::a($output, ['/gestion/expediente/view', 'id' => $expediente->id_exp]);
+                echo '</div>';
+            }
+            ?>
+        </div>
     </div>
 </div>
