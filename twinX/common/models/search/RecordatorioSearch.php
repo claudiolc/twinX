@@ -53,6 +53,12 @@ class RecordatorioSearch extends Recordatorio
 
         $query->joinWith('usrAviso');
 
+        $dataProvider->sort->attributes['usrAviso'] = [
+            'asc' => ['user.nombre' => SORT_ASC],
+            'desc' => ['user.nombre' => SORT_DESC],
+            'default' => SORT_DESC
+        ];
+
         $this->load($params);
 
         if (!$this->validate()) {

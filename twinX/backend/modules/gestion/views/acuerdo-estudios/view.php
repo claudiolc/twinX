@@ -46,17 +46,23 @@ $this->params['breadcrumbs'][] = $this->title;
                             [
                                     'attribute' => 'estudiante',
                                     'value' => $model->estudiante->nota_expediente,
-                                    'label' => 'Nota del expediente'
+                                    'label' => 'Nota del expediente',
+                                    'valueColOptions' => ['style' => 'width:19%; background:white;'],
+                                    'labelColOptions' => ['style' => 'background:white;']
                             ],
                             [
                                 'attribute' => 'estudiante',
                                 'value' => $model->estudiante->notaCompetenciaLing,
-                                'label' => 'Nota de competencias lingüísticas'
+                                'label' => 'Nota de competencias lingüísticas',
+                                'valueColOptions' => ['style' => 'background:white;'],
+                                'labelColOptions' => ['style' => 'background:white;']
                             ],
                             [
                                 'attribute' => 'estudiante',
                                 'value' => $model->estudiante->notaParticipacion,
-                                'label' => 'Nota de participación'
+                                'label' => 'Nota de participación',
+                                'valueColOptions' => ['style' => 'background:white;'],
+                                'labelColOptions' => ['style' => 'background:white;']
                             ],
                     ]
             ],

@@ -73,20 +73,20 @@ $this->params['breadcrumbs'][] = $this->title;
                                             [
                                                 'attribute' => 'cod_area',
                                                 'value' => $model->codArea->areaCompleta,
-                                                'valueColOptions'=>['style'=>'width:25%'],
-                                                'labelColOptions'=>['style'=>'width:10%']
+                                                'valueColOptions'=>['style'=>'width:25%; background: white'],
+                                                'labelColOptions'=>['style'=>'width:10%; background: white']
                                             ],
                                             [
                                                 'attribute' => 'cod_uni',
                                                 'value' => $model->codUni->nombreCodigo,
-                                                'valueColOptions'=>['style'=>'width:25%'],
-                                                'labelColOptions'=>['style'=>'width:10%']
+                                                'valueColOptions'=>['style'=>'width:25%; background: white'],
+                                                'labelColOptions'=>['style'=>'width:10%; background: white']
                                             ],
                                             [
                                                 'attribute' => 'cod_pais',
                                                 'value' => $model->codPais->nombreISO,
-                                                'valueColOptions'=>['style'=>'width:25%'],
-                                                'labelColOptions'=>['style'=>'width:10%']
+                                                'valueColOptions'=>['style'=>'width:25%; background: white'],
+                                                'labelColOptions'=>['style'=>'width:10%; background: white']
                                             ],
                                         ],
                                     ],
@@ -190,153 +190,139 @@ $this->params['breadcrumbs'][] = $this->title;
                                     'anno_fin',
                                 ],
                             ],
-                            [
-                                'group'=>true,
-                                'label'=>'Nominaciones',
-                                'rowOptions'=>['style' => 'background-color: #883997; color: white;']
-                            ],
-
-                            [
-                                'group'=>true,
-                                'label'=>'Primer semestre',
-                                'rowOptions'=>['style' => 'background-color: #ba68c8;']
-                            ],
-
-                            [
-                                'columns' => [
-                                    [
-                                        'attribute' => 'begin_nom_1s',
-                                        'label' => 'Comienzo'
-
-                                    ],
-                                    [
-                                        'attribute' =>  'end_nom_1s',
-                                        'label' => 'Fin'
-
-                                    ],
-
-                                ],
-                            ],
-
-                            [
-                                'group'=>true,
-                                'label'=>'Segundo semestre',
-                                'rowOptions'=>['style' => 'background-color: #ba68c8;']
-                            ],
-
-                            [
-                                'columns' => [
-                                    [
-                                        'attribute' => 'begin_nom_2s',
-                                        'label' => 'Comienzo'
-
-                                    ],
-                                    [
-                                        'attribute' => 'end_nom_2s',
-                                        'label' => 'Fin'
-                                    ],
-
-                                ],
-                            ],
-                            [
-                                'group'=>true,
-                                'label'=>'Aplicaciones',
-                                'rowOptions'=>['style' => 'background-color: #883997; color: white;']
-                            ],
-
-                            [
-                                'group'=>true,
-                                'label'=>'Primer semestre',
-                                'rowOptions'=>['style' => 'background-color: #ba68c8;']
-                            ],
-
-                            [
-                                'columns' => [
-                                    [
-                                        'attribute' => 'begin_app_1s',
-                                        'label' => 'Comienzo'
-
-                                    ],
-                                    [
-                                        'attribute' =>  'end_app_1s',
-                                        'label' => 'Fin'
-
-                                    ],
-
-                                ],
-                            ],
-
-                            [
-                                'group'=>true,
-                                'label'=>'Segundo semestre',
-                                'rowOptions'=>['style' => 'background-color: #ba68c8;']
-                            ],
-
-                            [
-                                'columns' => [
-                                    [
-                                        'attribute' => 'begin_app_2s',
-                                        'label' => 'Comienzo'
-
-                                    ],
-                                    [
-                                        'attribute' => 'end_app_2s',
-                                        'label' => 'Fin'
-                                    ],
-
-                                ],
-                            ],
-
-                            [
-                                'group'=>true,
-                                'label'=>'Movilidad',
-                                'rowOptions'=>['style' => 'background-color: #883997; color: white;']
-                            ],
-
-                            [
-                                'group'=>true,
-                                'label'=>'Primer semestre',
-                                'rowOptions'=>['style' => 'background-color: #ba68c8;']
-                            ],
-
-                            [
-                                'columns' => [
-                                    [
-                                        'attribute' => 'begin_mov_1s',
-                                        'label' => 'Comienzo'
-
-                                    ],
-                                    [
-                                        'attribute' =>  'end_mov_1s',
-                                        'label' => 'Fin'
-
-                                    ],
-
-                                ],
-                            ],
-
-                            [
-                                'group'=>true,
-                                'label'=>'Segundo semestre',
-                                'rowOptions'=>['style' => 'background-color: #ba68c8;']
-                            ],
-
-                            [
-                                'columns' => [
-                                    [
-                                        'attribute' => 'begin_mov_2s',
-                                        'label' => 'Comienzo'
-
-                                    ],
-                                    [
-                                        'attribute' => 'end_mov_2s',
-                                        'label' => 'Fin'
-                                    ],
-
-                                ],
-                            ],
                         ]
-                    ]) ?>
+                    ])?>
+
+                    <div class="mt-3">
+                        <?= \kartik\detail\DetailView::widget([
+                            'model' => $model,
+                            'mode' => 'view',
+                            'attributes' =>[
+                                [
+                                    'columns' => [
+                                        [
+                                            'group'=>true,
+                                            'label'=>'Nominaciones',
+                                            'groupOptions'=>['style' => 'background-color: #883997; color: white; width:30%;']
+                                        ],
+                                        [
+                                            'group'=>true,
+                                            'label'=>'Aplicaciones',
+                                            'groupOptions'=>['style' => 'background-color: #883997; color: white; width:30%;']
+                                        ],
+                                        [
+                                            'group'=>true,
+                                            'label'=>'Movilidad',
+                                            'groupOptions'=>['style' => 'background-color: #883997; color: white; width:30%;']
+                                        ],
+                                    ]
+                                ],
+                                [
+                                    'group'=>true,
+                                    'label'=>'Primer semestre',
+                                    'rowOptions'=>['style' => 'background-color: #ba68c8;']
+                                ],
+
+                                [
+                                    'columns' => [
+                                        [
+                                            'attribute' => 'begin_nom_1s',
+                                            'label' => 'Comienzo',
+                                            'labelColOptions'=>['class'=>'label-plazos'],
+                                            'valueColOptions'=>['class'=>'value-plazos']
+
+                                        ],
+                                        [
+                                            'attribute' =>  'end_nom_1s',
+                                            'label' => 'Fin',
+                                            'labelColOptions'=>['class'=>'label-plazos'],
+                                            'valueColOptions'=>['class'=>'value-plazos']
+
+                                        ],
+                                        [
+                                            'attribute' => 'begin_app_1s',
+                                            'label' => 'Comienzo',
+                                            'labelColOptions'=>['class'=>'label-plazos'],
+                                            'valueColOptions'=>['class'=>'value-plazos']
+
+                                        ],
+                                        [
+                                            'attribute' =>  'end_app_1s',
+                                            'label' => 'Fin',
+                                            'labelColOptions'=>['class'=>'label-plazos'],
+                                            'valueColOptions'=>['class'=>'value-plazos']
+
+                                        ],
+                                        [
+                                            'attribute' => 'begin_mov_1s',
+                                            'label' => 'Comienzo',
+                                            'labelColOptions'=>['class'=>'label-plazos'],
+                                            'valueColOptions'=>['class'=>'value-plazos']
+
+                                        ],
+                                        [
+                                            'attribute' =>  'end_mov_1s',
+                                            'label' => 'Fin',
+                                            'labelColOptions'=>['class'=>'label-plazos'],
+                                            'valueColOptions'=>['class'=>'value-plazos']
+
+                                        ],
+
+
+                                    ],
+                                ],
+                                [
+                                    'group'=>true,
+                                    'label'=>'Segundo semestre',
+                                    'rowOptions'=>['style' => 'background-color: #ba68c8;']
+                                ],
+                                [
+                                    'columns' => [
+                                        [
+                                            'attribute' => 'begin_nom_2s',
+                                            'label' => 'Comienzo',
+                                            'labelColOptions'=>['class'=>'label-plazos'],
+                                            'valueColOptions'=>['class'=>'value-plazos']
+
+                                        ],
+                                        [
+                                            'attribute' => 'end_nom_2s',
+                                            'label' => 'Fin',
+                                            'labelColOptions'=>['class'=>'label-plazos'],
+                                            'valueColOptions'=>['class'=>'value-plazos']
+                                        ],
+                                        [
+                                            'attribute' => 'begin_app_2s',
+                                            'label' => 'Comienzo',
+                                            'labelColOptions'=>['class'=>'label-plazos'],
+                                            'valueColOptions'=>['class'=>'value-plazos']
+
+                                        ],
+                                        [
+                                            'attribute' => 'end_app_2s',
+                                            'label' => 'Fin',
+                                            'labelColOptions'=>['class'=>'label-plazos'],
+                                            'valueColOptions'=>['class'=>'value-plazos']
+                                        ],
+                                        [
+                                            'attribute' => 'begin_mov_2s',
+                                            'label' => 'Comienzo',
+                                            'labelColOptions'=>['class'=>'label-plazos'],
+                                            'valueColOptions'=>['class'=>'value-plazos']
+
+                                        ],
+                                        [
+                                            'attribute' => 'end_mov_2s',
+                                            'label' => 'Fin',
+                                            'labelColOptions'=>['class'=>'label-plazos'],
+                                            'valueColOptions'=>['class'=>'value-plazos']
+                                        ],
+
+                                    ],
+                                ],
+                            ]
+                        ]) ?>
+                    </div>
             </div>
         </div>
 
