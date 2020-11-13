@@ -6,7 +6,7 @@ use yii\widgets\Pjax;
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Envio Mail Fases';
+$this->title = 'Envío de mails en fase';
 $this->params['breadcrumbs'][] = $this->title;
 
 ?>
@@ -25,9 +25,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
             [
                 'attribute' => 'mail',
                 'value' => 'mail.titulo',

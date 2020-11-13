@@ -9,7 +9,7 @@ use yii\widgets\DetailView;
 
 $relExpFase = new \backend\modules\gestion\controllers\RelExpFaseController('rel-exp-fase', Yii::$app->getModule('rel-exp-fase'));
 
-$this->title = 'Expediente #' . $model->id;
+$this->title = 'Expediente #' . $model->id . ': ' . $model->getDescripcionTipoExp();
 $this->params['breadcrumbs'][] = ['label' => 'Expedientes', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
