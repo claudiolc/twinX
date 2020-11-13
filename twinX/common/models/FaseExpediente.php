@@ -48,7 +48,7 @@ class FaseExpediente extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'id_tipo_exp' => 'Id Tipo Exp',
+            'id_tipo_exp' => 'Tipo de expediente',
             'descripcion' => 'Descripción',
             'fase_final' => 'Fase final',
         ];

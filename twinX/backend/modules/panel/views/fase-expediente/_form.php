@@ -18,7 +18,7 @@ use yii\widgets\ActiveForm;
 
     ?>
 
-    <?= $form->field($model, 'id_tipo_exp')->dropDownList(\yii\helpers\ArrayHelper::map(TipoExpediente::find()->all(), 'id', 'descripcion')); ?>
+    <?= $form->field($model, 'id_tipo_exp')->dropDownList(\yii\helpers\ArrayHelper::map(TipoExpediente::find()->all(), 'id', 'descripcionIO')); ?>
     <?= $form->field($model, 'descripcion')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'fase_final')->checkbox() ?>

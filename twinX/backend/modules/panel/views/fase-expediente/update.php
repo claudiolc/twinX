@@ -7,7 +7,7 @@ use yii\helpers\Html;
 /* @var $model common\models\FaseExpediente */
 
 
-$this->title = 'Editar fase #'. $model->id . 'del tipo de expediente #' . $model->id_tipo_exp;
+$this->title = 'Modificación de fase: '. $model->descripcion . ' (' . $model->tipoExp->descripcion . ')';
 $this->params['breadcrumbs'][] = ['label' => 'Fases de expedientes', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Guardar';
