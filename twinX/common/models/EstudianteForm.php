@@ -44,29 +44,35 @@ class EstudianteForm extends Estudiante
         }
         else if(!empty($this->requisitos)){
             foreach ($this->requisitos as $requisito) {
-                if (!empty($this->_requisitos) and !in_array($requisito, $this->_requisitos)) {
+                if (empty($this->_requisitos) or !in_array($requisito, $this->_requisitos)) {
                     $nuevos[] = $requisito;
                 }
             }
         }
 
-        foreach ($nuevos as $requisito) {
-            $relacion = new RelClEst();
+        if(!empty($nuevos)) {
+            foreach ($nuevos as $requisito) {
+                $relacion = new RelClEst();
 
-            $relacion->id_est = $this->id_usuario;
-            $relacion->id_cl = $requisito;
+                $relacion->id_est = $this->id_usuario;
+                $relacion->id_cl = $requisito;
 
-            if (!$relacion->save()) {
-                throw new Exception('Error al guardar el requisito lingüístico');
+                if (!$relacion->save()) {
+                    throw new Exception('Error al guardar el requisito lingüístico');
+                }
             }
         }
     }
 
     protected function deleteOldRequisitos()
     {
+        //$this->relClEsts obtiene los requisitos del estudiante actual.
+        //Si hubiera alguno que se ha eliminado en el Select2 y que por tanto no se ha marcado
+        //pero estuviera guardado de antes, se borra
+
         foreach ($this->relClEsts as $requisito) {
-            if (!in_array($requisito->id, $this->requisitos) && $requisito->delete() === false) {
-                throw new Exception('Failed to save related records.');
+            if (!in_array($requisito->id_cl, $this->requisitos) && $requisito->delete() === false) {
+                throw new Exception('Error al eliminar los requisitos antiguos');
             }
         }
     }
@@ -74,7 +80,7 @@ class EstudianteForm extends Estudiante
     public function afterFind()
     {
         foreach ($this->relClEsts as $requisito) {
-            $this->requisitos[] = $requisito->id;
+            $this->requisitos[] = $requisito->id_cl;
         }
 
         $this->_requisitos = $this->requisitos;

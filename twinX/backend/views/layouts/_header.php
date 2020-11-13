@@ -52,7 +52,7 @@ if (Yii::$app->user->isGuest) {
 
     $bellElement = '<div class="d-flex flex-row align-items-center">
                         <i class="fas fa-lg fa-bell mt-1"></i>' . $unseen .
-        '</div>';
+                    '</div>';
 
     $menuItems[] = ['label' => 'Gestión', 'url' => ['/gestion'], 'active' => in_array(\Yii::$app->controller->module->id, ['gestion'])];
     $menuItems[] = ['label' => 'Calendario', 'url' => ['/calendario'], 'active' => in_array(\Yii::$app->controller->module->id, ['calendario'])];
