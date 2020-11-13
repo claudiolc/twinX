@@ -14,13 +14,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <p class="d-flex justify-content-end w-100">
-
-        <?= Html::a('Crear usuario', ['create'], ['class' => 'btn btn-success']) ?>
-
-    </p>
-
-
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'columns' => [
