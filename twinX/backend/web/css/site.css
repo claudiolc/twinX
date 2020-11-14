@@ -169,6 +169,14 @@ a.asc:after {
 
 /* SIDEBAR */
 
+#sidebar a {
+    color: black;
+}
+
+#sidebar i {
+    color: #883997
+}
+
 #sidebar {
     padding-left: 0;
     padding-right: 0;
@@ -185,7 +193,7 @@ a.asc:after {
     width: 100%;
 }
 
-#sidebar .active {
+#sidebar .active, #sidebar .active i {
     color: black;
     background: #ba68c8;
 }

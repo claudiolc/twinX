@@ -23,7 +23,8 @@ $expedientes = \common\models\RelExpFase::find()->expedientesSinProcesar();
             <?php
             foreach ($notificaciones->all() as $notificacion) {
                 echo '<div class="card p-3 notificacion-dashboard mb-1">';
-                $output = '<h5>' . $notificacion->titulo . '</h5> ';
+                $output = '<h5>Recordatorio</h5>';
+                $output .= '<h6>' . $notificacion->titulo . '</h6> ';
                 $output .= '<p>' . $notificacion->descripcion . '</p>';
                 $output .= '<p class="text-muted d-flex flex-row-reverse">' . Yii::$app->formatter->asRelativeTime($notificacion->timestamp) . '</p>';
                 echo \yii\helpers\Html::a($output, ['/calendario/recordatorio/view', 'id' => $notificacion->id]);
@@ -44,7 +45,9 @@ $expedientes = \common\models\RelExpFase::find()->expedientesSinProcesar();
                 echo '<div class="card p-3 notificacion-dashboard mb-1">';
                 $output = '<h5 class="' . ($mensaje->etiqueta == 'Importante' ? 'etiqueta-importante' : '') .'">' . $mensaje->asunto . '</h5> ';
                 $output .= '<p>' . $mensaje->cuerpo . '</p>';
-                $output .= '<p class="text-muted d-flex flex-row-reverse">' . Yii::$app->formatter->asRelativeTime($mensaje->timestamp) . '</p>';
+                $output .= '<div class=" d-flex flex-row justify-content-between">' .
+                            '<p class="text-muted">' . $mensaje->emisor->nombre . '</p>' .
+                            '<p class="text-muted">' . Yii::$app->formatter->asRelativeTime($mensaje->timestamp) . '</p>' . '</div>';
                 echo \yii\helpers\Html::a($output, ['/gestion/mensaje/view', 'id' => $mensaje->id]);
                 echo '</div>';
             }

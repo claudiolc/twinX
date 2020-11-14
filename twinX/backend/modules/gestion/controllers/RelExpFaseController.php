@@ -40,7 +40,7 @@ class RelExpFaseController extends Controller
 
         if($idExpediente) {
             $path = '@backend/modules/gestion/views/rel-exp-fase/';
-            $query = RelExpFase::find()->where(['id_exp' => $idExpediente]);
+            $query = $query->where(['id_exp' => $idExpediente]);
         }
 
 
@@ -82,7 +82,7 @@ class RelExpFaseController extends Controller
             return $this->redirect(['view', 'id' => $model->id]);
         }
         else if($model->load(Yii::$app->request->post()) && $model->save()){
-            return $this->actionIndex($expediente);
+            return $this->actionIndex($expediente->id);
         }
 
         $path = '@backend/modules/gestion/views/rel-exp-fase/create';
@@ -100,26 +100,26 @@ class RelExpFaseController extends Controller
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionUpdate($id, $exp = null)
+    public function actionUpdate($id, $idExpediente = null)
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save() && !$exp) {
+        if ($model->load(!$idExpediente &&Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
         else if($model->load(Yii::$app->request->post()) && $model->save()){
-            return $this->actionIndex(true);
+            return $this->actionIndex($idExpediente->id);
         }
 
         $path = 'update';
 
-        if($exp) {
+        if($idExpediente) {
             $path = '@backend/modules/gestion/views/rel-exp-fase/update';
         }
 
         return $this->render($path, [
             'model' => $model,
-            'exp' => $exp
+            'idExpediente' => $idExpediente
         ]);
     }
 

@@ -4,7 +4,7 @@ use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\RelExpFase */
-/* @var $exp \common\models\Expediente */
+/* @var $idExpediente \common\models\Expediente */
 
 $this->title = 'Modificar fase: ' . $model->fase->descripcion . ' del expediente #' . $model->exp->id;
 $this->params['breadcrumbs'][] = ['label' => 'Rel Exp Fases', 'url' => ['index']];
@@ -17,7 +17,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
     <?= $this->render('_form', [
         'model' => $model,
-        'expediente' => $exp,
+        'expediente' => $idExpediente,
     ]) ?>
 
 </div>
