@@ -17,7 +17,7 @@ Yii::$app->view->render('@backend/modules/calendario/views/recordatorio/gridview
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p class="d-flex justify-content-end">
-        <?= Html::a('Create Recordatorio', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Nuevo recordatorio', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php Pjax::begin(); ?>

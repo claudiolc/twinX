@@ -6,3 +6,7 @@
 .notificacion-dashboard:hover{
     background: #F7F7F7;
 }
+
+.etiqueta-importante{
+    color: red;
+}

@@ -42,7 +42,7 @@ $expedientes = \common\models\RelExpFase::find()->expedientesSinProcesar();
             <?php
             foreach ($mensajes->all() as $mensaje) {
                 echo '<div class="card p-3 notificacion-dashboard mb-1">';
-                $output = '<h5>' . $mensaje->asunto . '</h5> ';
+                $output = '<h5 class="' . ($mensaje->etiqueta == 'Importante' ? 'etiqueta-importante' : '') .'">' . $mensaje->asunto . '</h5> ';
                 $output .= '<p>' . $mensaje->cuerpo . '</p>';
                 $output .= '<p class="text-muted d-flex flex-row-reverse">' . Yii::$app->formatter->asRelativeTime($mensaje->timestamp) . '</p>';
                 echo \yii\helpers\Html::a($output, ['/gestion/mensaje/view', 'id' => $mensaje->id]);
