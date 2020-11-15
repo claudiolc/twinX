@@ -48,8 +48,15 @@
 \newglossaryentry{Incoming}
 {
 	name=Estudiante \textit{Incoming},
-	plural=Estudiantes \textit{Incoming},
-	description={Estudiante extranjero que viene de acogida a la universidad local o de origen, como también se la conoce.}
+	plural=estudiantes \textit{Incoming},
+	description={Estudiante extranjero que viene de acogida a la universidad local o de origen, como también se la conoce. También se les atribuye el nombre de estudiantes entrantes.}
+}
+
+\newglossaryentry{Outgoing}
+{
+	name=Estudiante \textit{Outgoing},
+	plural=estudiantes \textit{Outgoing},
+	description={Estudiante de la universidad de Granada que va a hacer su movilidad en una universidad extranjera. También se les atribuye el nombre de estudiantes salientes.}
 }
 
 \newglossaryentry{Socio}
@@ -115,6 +122,13 @@ description={Usuario con el mayor número de permisos en twinX. Puede gestionar 
 	name=Gestor de twinX,
 	plural=gestores de twinX,
 	description={Módulo de la aplicación que permite añadir información a bajo nivel (al \gls{administradortwinX}), como las universidades, los países o los emails predefinidos.}
+}
+
+\newglossaryentry{mensajePredefinidotwinX}
+{
+	name=Mensaje predefinido de twinX,
+	plural=mensajes predefinidos de twinX,
+	description={Estructura de datos que almacena un correo electrónico: su destinatario, el asunto y el cuerpo del mensaje. Suelen ser utilizados para avisar a varios individuos sobre un evento en el transcurso de un \gls{ExpedientetwinX}. Suelen disparar el evento de envío de estos correos el cambio de una \gls{FaseExpedientetwinX}, y en TWINS recibían el nombre de «mail tipo».}
 }
 
 \glsaddall
