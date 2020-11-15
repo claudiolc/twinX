@@ -44,7 +44,7 @@ No solo es posible ver con mayor claridad las características del modelo en el 
 
 En la práctica, el código que tenemos en DBML para generar el modelo de la figura \ref{fig:modeloBD} es:
 
-\newpage
+\lstset{breaklines=true}
 \begin{lstlisting}
 	// ENTIDADES BASICAS
 	
@@ -516,9 +516,9 @@ En la práctica, el código que tenemos en DBML para generar el modelo de la fig
 	
 \end{lstlisting}
 
-Y como resultado, podemos traducir todo ello a código SQL, quedando de la siguiente manera:
-\lstset{breaklines=true}
-\begin{lstlisting}[language=sql]
+Y como resultado, podemos traducir todo ello a código MySQL, quedando de la siguiente manera:
+
+\begin{minted}[frame=lines, breaklines]{mysql}
 	
 	CREATE TABLE `centro` (
 	`id` int PRIMARY KEY AUTO_INCREMENT,
@@ -914,7 +914,7 @@ Y como resultado, podemos traducir todo ello a código SQL, quedando de la sigui
 	
 	ALTER TABLE `mensaje` ADD FOREIGN KEY (`id_receptor`) REFERENCES `user` (`id`);
 	
-\end{lstlisting}
+\end{minted}
 
 Una vez generado este código en SQL, podemos introducirlo directamente en phpMyAdmin para obtener todas las tablas creadas para que no tengamos que «traducirlo» por nosotros mismos o crear las tablas desde cero a través de la interfaz.
 
@@ -1046,7 +1046,7 @@ De la implementación del \textit{sidebar} de esta parte (el panel), destacamos 
 
 Para conseguir el funcionamiento de \textit{dropdown}, hemos escrito el siguiente código con jQuery (\texttt{backend/web/js/dropdown\_expediente\_panel.js}):
 
-\begin{minted}[frame=lines]{javascript}
+\begin{minted}[frame=lines,breaklines]{javascript}
 	let submenusExpedientes = ['tipo-expediente', 'fase-expediente', 'envio-mail-fase'];
 	$(document).ready(function() {
 		submenusExpedientes.forEach(function (str) {
@@ -1056,7 +1056,32 @@ Para conseguir el funcionamiento de \textit{dropdown}, hemos escrito el siguient
 	});
 \end{minted}
 
-El resultado es el menú de la figura \ref{fig:usuariostwinX}. Normalmente, las tablas CRUD suelen tener un botón verde que permiten crear un nuevo registro, pero en el caso de los usuarios, se ha eliminado, ya que al crearlo manualmente desde este menú, no se genera un hash para la contraseña, al mismo tiempo que tampoco tiene gran relevancia el poder crear usuarios desde el panel de control, cuando el principal interés está puesto en gestionar los permisos de los integrantes de la comunidad.
+Tras la creación del menú CRUD de los usuarios (el modelo ya está creado con anterioridad con la migración), se crean, por un lado, la clase de controlador, \texttt{UserController.php}, dentro de \texttt{backend/modules/panel/controllers}. Un nivel más arriba, en \texttt{views}, se tiene una nueva carpeta llama \texttt{user}, que posee los siguientes archivos:
+
+\begin{itemize}
+	\item \textbf{\texttt{\_form.php}}: es el formulario (\texttt{ActiveForm} de Yii, que renderiza un elemento \texttt{form} de HTML) que es utilizado por las vistas que necesiten cargar el formulario de datos de un usuario en la base de datos.
+	\item \textbf{\texttt{create.php}}: es el receptor de la acción \texttt{create} del controlador, el cual renderiza el formulario \texttt{\_form.php} para crear un usuario nuevo.
+	\item \textbf{\texttt{update.php}}: también carga el mismo formulario, pero recibe la acción \texttt{update} del controlador, el cual envía la información que ya se tiene sobre un usuario en concreto.
+	\item \textbf{\texttt{view.php}}: la vista de los datos del usuario en detalle.
+\end{itemize}
+
+Cada uno de estos archivos conforma la vista de un componente; en este caso, el de usuario.
+
+Sobre los controladores, diremos que son los orquestadores de lo que se ve en pantalla, hasta el punto de que, de alguna manera, al escribir en la barra de direcciones \texttt{localhost/panel/user/view?id=3}, lo que ocurre es que se llama al método \texttt{actionView} de la clase \texttt{UserController}. Es decir, se llama al método \texttt{actionX} de la clase \texttt{yController}, donde claramente «x» es \texttt{view} en nuestro caso e «y», \texttt{User}. Con esto, y tras la atenta visualización de la ausencia, como se podría esperar, de un archivo \texttt{delete.php} en la vista, podemos imaginar que al ir a \texttt{localhost/panel/user/delete?\\id=3} se ejecutará el método \texttt{actionDelete}, que al igual que \texttt{actionView} acepta el parámetro \texttt{\$id}. Pensemos, pues, que para eliminar un registro no necesitamos ninguna vista, pero sí un método en el controlador. Al fin y al cabo, ese método ordenará al modelo eliminar el registro, que es lo único que necesitábamos.
+
+Los modelos son clases más sencillas, las cuales tienen la especificación de los atributos que tiene la tabla en concreto en base de datos, los métodos para recuperar los objetos de otros modelos a los que referencian (por ejemplo, como hemos dicho antes, una universidad pertenece a un país y, por tanto, el objeto del modelo de \texttt{Pais} estará dentro de \texttt{Universidad}), y otros métodos que generalmente creemos nosotros para acceder a datos externos de manera más rápida.
+
+Una vez hemos hecho un recorrido por los tres grandes tipos de clases que tenemos, modelos, vistas y controladores, podemos entonces comprender el significado de nuestro patrón arquitectónico, el significado y la influencia que tiene en twinX y lo coherente que es el establecer esta separación.
+
+Volviendo al desarrollo, tras crear con Gii la tabla CRUD (figura \ref{fig:giicruduser}), el resultado es el menú de la figura \ref{fig:usuariostwinX}. Normalmente, las tablas CRUD suelen tener un botón verde que permiten crear un nuevo registro, pero en el caso de los usuarios, se ha eliminado, ya que al crearlo manualmente desde este menú, no se genera un hash para la contraseña, al mismo tiempo que tampoco tiene gran relevancia el poder crear usuarios desde el panel de control, cuando el principal interés está puesto en gestionar los permisos de los integrantes de la comunidad.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{Capturas de twinX/gii_crud_user}
+	\caption{Generación de la tabla CRUD de User}
+	\label{fig:giicruduser}
+\end{figure}
+
 
 \begin{figure}
 	\centering
@@ -1074,7 +1099,7 @@ Como ya hemos señalado con anterioridad, se tomó la decisión de mantener las 
 	\label{fig:vistatitulaciontwinX}
 \end{figure}
 
-Por defecto, Gii pone los botones justo a la izquierda de las cabeceras de las tablas y de las vistas. Sin embargo, hemos tomado la decisión de modificar esto, como se puede apreciar en la figura \ref{fig:vistatitulaciontwinX}, donde los botones de «editar» y «eliminar» están a la derecha. El motivo es porque mayormente en las tablas del menú \texttt{index} de cada categoría, como la de la figura \ref{fig:fasesexpedientesindex} se podía ver un exceso de información de haber dejado el botón en la izquierda, pues tendríamos el título, el indicador del total de elementos de la tabla y el botón. Por tanto, hemos dejado todos los botones a la izquierda en las sucesivas vistas de los menús de toda la plataforma. Por supuesto, no hemos hecho los cambios de forma manual, sino que se ha modificado el código del generador de Gii para que todas las genere automáticamente como describimos. Esto es posible modificando el archivo \texttt{index.php} para la tabla del menú y el \texttt{view.php} para la vista de un registro en el directorio \texttt{vendor/yiisoft/yii2-gii/src/generators/crud/default/views}\footnote{Este directorio no se encuentra en el respositorio de GitHub \cite{repogit}, dado que forma parte de los archivos del motor de Yii y se encuentran dentro del archivo \texttt{.gitignore}, por lo que no se guardan, dado que pueden obtenerse clonando el repositorio de Yii \cite{yii2advanced}}.
+Por defecto, Gii pone los botones justo a la izquierda de las cabeceras de las tablas y de las vistas. Sin embargo, hemos tomado la decisión de modificar esto, como se puede apreciar en la figura \ref{fig:vistatitulaciontwinX}, donde los botones de «editar» y «eliminar» están a la derecha. El motivo es porque mayormente en las tablas del menú \texttt{index} de cada categoría, como la de la figura \ref{fig:fasesexpedientesindex} se podía ver un exceso de información de haber dejado el botón en la izquierda, pues tendríamos el título, el indicador del total de elementos de la tabla y el botón. Por tanto, hemos dejado todos los botones a la izquierda en las sucesivas vistas de los menús de toda la plataforma. Por supuesto, no hemos hecho los cambios de forma manual, sino que se ha modificado el código del generador de Gii para que todas las genere automáticamente como describimos. Esto es posible modificando el archivo \texttt{index.php} para la tabla del menú y el \texttt{view.php} para la vista de un registro en el directorio \texttt{vendor/yiisoft/yii2-gii/src/generators/crud/default/views}\footnote{Este directorio no se encuentra en el respositorio de GitHub \cite{repogit}, dado que forma parte de los archivos del motor de Yii y se encuentran dentro del archivo \texttt{.gitignore}, por lo que no se guardan, dado que pueden obtenerse clonando el repositorio de Yii \cite{yii2advanced}}. Sobre el primero de los archivos, diremos que también hemos hecho las pertinentes modificaciones para que cada una de las vistas tenga el botón del ojo (acceso a la vista en detalle) el lápiz (para editar la entrada) y la papelera (para la eliminación) para interaccionar con cada registro en concreto.
 
 \begin{figure}
 	\centering
@@ -1087,12 +1112,14 @@ Por último, vamos a destacar la vista de una fase de expediente. Recordemos que
 
 \begin{figure}
 	\centering
-	\includegraphics[width=\textwidth]{"Capturas de twinX/fases_expedientes_vista"}
+	\includegraphics[width=\textwidth]{Capturas de twinX/fases_expedientes_vista}
 	\caption{Vista de una fase de expediente en twinX}
 	\label{fig:fasesexpedientesvista}
 \end{figure}
 
-\section{Desarrollo del módulo de gestión}
 
+
+\section{Desarrollo del módulo de gestión}
+\label{sec:gestion}
 
 
