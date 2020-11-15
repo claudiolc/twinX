@@ -631,7 +631,7 @@ Cada vez tenemos una idea más clara de cómo va a ser twinX, pero antes hemos d
 
 Nótese la importancia de dedicar tiempo al desarrollo de esta tarea: estableciendo las restricciones necesarias, aunque tengamos algún olvido a la hora de implementar la interfaz con la que el usuario interaccionará, siempre tendremos el respaldo de que la base de datos no comprometerá su estado de consistencia. Por ejemplo, no podemos dejar que se elimine un acuerdo de estudios para el cual hay algún estudiante registrado. O incluso tampoco podemos crear más de un acuerdo de estudios para un estudiante por curso.
 
-El modelo de la base de datos creado es el que se propone en la figura \ref{fig:modeloBD}. El análisis ha dado lugar a un total de 30 tablas, donde se contemplan funcionalidades que no están previstas de implementación en los dos primeros sprints, como son por ejemplo el historial de mensajes enviados, los acuerdos favoritos de un gestor o la confección del acuerdo de estudios a través de la plataforma. No obstante, el diseño se ha pensado para tener en cuenta el futuro desarrollo de twinX y así no desviarlo de la línea de las ideas principales que ya hay definidas.
+El modelo de la base de datos creado es el que se propone en la figura \ref{fig:modeloBD}. El análisis ha dado lugar a un total de 30 tablas, donde se contemplan funcionalidades que no están previstas de implementación en los dos primeros sprints, como son por ejemplo el historial de mensajes enviados, los acuerdos favoritos de un gestor o la confección del acuerdo de estudios a través de la plataforma. No obstante, el diseño se ha pensado para tener en cuenta el futuro desarrollo de twinX y así no desviarlo de la línea de las ideas principales que ya hay definidas. El diagrama ha sido realizado con la herramienta dbdiagram.io \cite{dbdiagram}.
 
 \begin{figure}[H]
 	\centering
@@ -664,4 +664,4 @@ Su funcionamiento es sencillo: en primera instancia, el usuario establece conexi
 \end{figure}
 
 
-El framework escogido para el desarrollo de twinX, Yii2, impulsa esta arquitectura mediante su funcionamiento separado en modelos, vistas y controladores, como ya veremos en el capítulo próximo.
+El framework escogido para el desarrollo de twinX, Yii2, impulsa este patrón mediante su funcionamiento separado en modelos, vistas y controladores, como ya veremos en el capítulo próximo. Sin embargo, el MVC no constituye la arquitectura de la aplicación al completo, sino que también intervienen la capa de conexión con la base de datos y la capa lógica. Ambas están suministradas por el propio framework, con el manejo de las mismas de forma interna, dando acceso a ellas a través de objetos.
