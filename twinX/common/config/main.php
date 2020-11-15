@@ -1,7 +1,5 @@
 <?php
 
-use kartik\datecontrol\Module;
-
 return [
     'aliases' => [
         '@bower' => '@vendor/bower-asset',

@@ -194,12 +194,16 @@ a.asc:after {
     width: 100%;
 }
 
-#sidebar .active, #sidebar .active i{
+#sidebar .active, #sidebar .active i, #sidebar .dropdown-parent i{
     color: black;
 }
 
-#sidebar .active, #sidebar .active i :not(.fa-caret-down) {
+#sidebar .active {
     background: #ba68c8;
+}
+
+#sidebar .dropdown-parent .active i {
+    color: white;
 }
 
 
