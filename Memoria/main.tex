@@ -36,6 +36,8 @@ cleardoublepage=empty,abstractoff,BCOR=5mm,paper=a4,fontsize=12pt,main=spanish]{
 
 \usepackage{pbox}
 
+\usepackage{pdfpages}
+
 
 
 % Plantilla classicthesis
@@ -73,6 +75,7 @@ manychapters,pdfspacing]{classicthesis}
 \addto\captionsspanish{%
 	\renewcommand\appendixname{Anexo}
 	\renewcommand\appendixpagename{Anexos}
+	\renewcommand{\listtablename}{Índice de tablas}
 }
 
 % Color institucional UGR
@@ -177,6 +180,10 @@ manychapters,pdfspacing]{classicthesis}
 % 4. Diseño de la interfaz de usuario
 
 \input{chapter4.tex}
+
+% 4. Diseño técnico
+
+\input{chapter5.tex}
 
 % -------------------------------------------------------------------
 % Bibliography
