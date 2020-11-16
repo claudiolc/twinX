@@ -155,13 +155,21 @@ Lo primero que nos encontramos tras abrir la aplicación, es una pantalla de log
 Tras identificarnos, nos topamos, antes de llegar a la pantalla principal, con tres pantallas más:
 
 \begin{itemize}
-	\item El calendario (figura \ref{fig:calendario}) proporciona una vista genérica de todos los eventos que tienen lugar y que conciernen a la ORI-FyL o que tratan de asuntos relacionados con la misma. También se guardan plazos para realizar determinadas tareas. Los eventos del calendario\footnote{Nótese la especificación de «evento de calendario» o «\gls{EventoExpedienteTWINS}» en las definiciones correspondientes para establecer la diferenciación entre eventos que tienen que ver con la planificación en el calendario y los que componen los \glspl{ExpedienteTWINS}} son públicos a todos los usuarios de TWINS y en la creación de las entradas en él se permite establecer un(a) encargado/a de la tarea, de modo que de un vistazo puedan verse los avisos pendientes que se tienen para un determinado evento.
+	\item El calendario (figura \ref{fig:calendario}) proporciona una vista genérica de todos los eventos que tienen lugar y que conciernen a la ORI-FyL o que tratan de asuntos relacionados con la misma. También se guardan plazos para realizar determinadas tareas. Los eventos del calendario\footnote{Nótese la especificación de «evento de calendario» o «\gls{EventoExpedienteTWINS}» en las definiciones correspondientes para establecer la diferenciación entre eventos que tienen que ver con la planificación en el calendario y los que componen los \glspl{ExpedienteTWINS}} son públicos a todos los usuarios de TWINS y en la creación de las entradas en él se permite establecer un(a) encargado/a de la tarea (figura \ref{fig:nuevatarea}), de modo que de un vistazo puedan verse los avisos pendientes que se tienen para un determinado evento.
 	
 	\begin{figure}
 		\includegraphics[width=\textwidth]{img/Capturas de TWINS/calendario.png}
 		\caption[Calendario de TWINS]{Vista del calendario en TWINS con los eventos existentes y visibles por todos los usuarios}
 		\label{fig:calendario}
 	\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\linewidth]{img/Capturas de TWINS/nuevaTarea}
+	\caption[Creación de un nuevo evento en TWINS]{Creación de un nuevo evento en TWINS con la posibilidad de asignar tareas a otros usuarios}
+	\label{fig:nuevatarea}
+\end{figure}
+
 	
 	
 	\item La pantalla de avisos (figura \ref{fig:avisos}) nos alerta de las acciones que tenemos que realizar con mayor urgencia, dado que han sido programadas para tenerlas listas para una fecha cercana y necesitan de la atención del usuario al que se notifica. Los avisos, al igual que un mensaje cualquiera, tienen emisor y receptor; es decir, hay alguien que los crea y los dirige a otra persona. Cuando se añade un evento al calendario, se especifican ambos actores, de modo que cuando está próxima la fecha de alguna tarea, se crea el aviso y notifica a aquel al cual le ha sido asignada. Normalmente, un usuario solo puede visualizar los avisos que le han sido dirigidos, salvo el administrador, quien puede ver todos los avisos de todos los usuarios aparte de los propios

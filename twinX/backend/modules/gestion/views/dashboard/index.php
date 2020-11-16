@@ -41,7 +41,7 @@ $expedientes = \common\models\RelExpFase::find()->expedientesSinProcesar();
         </div>
         <div class="card-body">
             <?php
-            foreach ($mensajes->all() as $mensaje) {
+            foreach ($mensajes->with('emisor')->all() as $mensaje) {
                 echo '<div class="card p-3 notificacion-dashboard mb-1">';
                 $output = '<h5 class="' . ($mensaje->etiqueta == 'Importante' ? 'etiqueta-importante' : '') .'">' . $mensaje->asunto . '</h5> ';
                 $output .= '<p>' . $mensaje->cuerpo . '</p>';
@@ -62,7 +62,7 @@ $expedientes = \common\models\RelExpFase::find()->expedientesSinProcesar();
         </div>
         <div class="card-body">
             <?php
-            foreach ($expedientes->all() as $expediente) {
+            foreach ($expedientes->with('exp')->with('exp.ae')->with('fase')->all() as $expediente) {
                 echo '<div class="card p-3 notificacion-dashboard mb-1">';
                 $output = '<h4>' . $expediente->exp->ae->estudiante->nombreEstudiante . '<h4>';
                 $output .= '<h5>' . $expediente->exp->tipoExp->descripcion . '</h5> ';
