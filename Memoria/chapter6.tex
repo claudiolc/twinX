@@ -7,9 +7,9 @@ Hasta ahora, con todas las piezas de información que hemos generado acerca del 
 
 Para llevar a cabo la programación de este sitio web, aunque utilicemos herramientas más sofisticadas, éstas están basadas en los clásicos lenguajes web: \textbf{HTML} (\textit{HyperText Markup Language}) \cite{html} para la estructuración de la web y la identificación de los distintos elementos, \textbf{CSS} \cite{css} (\textit{Cascading Style Sheets}) para aplicar estilo a la vista (posicionamiento, colores, visibilidad, etc.) y JavaScript \cite{javascript}, para implementar funciones más complejas a cada componente de la web. Para el manejo de estos dos últimos, contaremos con la ayuda de dos librerías con un gran potencial. Para el estilo, usaremos \textbf{Bootstrap} \cite{bootstrap} en su cuarta versión y para JavaScript utilizaremos \textbf{jQuery} \cite{jquery}. Nos permitirán ahorrar mucho tiempo, ya que en ambos casos podemos hacer uso de funciones o palabras clave que evitarán el tener que escribir numerosas líneas de código en cada uno de los lenguajes a los que complementan.
 
-Como ya hemos mencionado en varias ocasiones, el desarrollo va a ser llevado a cabo con la ayuda de Yii2 Framework. En su segunda versión, este framework hace uso del lenguaje de programación PHP para orquestar múltiples tareas que resultan algo engorrosas de llevar a cabo sin su ayuda, como son, por ejemplo, las operaciones con la base de datos o la generación de código del que partir para dar forma a la vista, modelo o controlador de alguna de las secciones de twinX \cite{yii}.
+Como ya hemos mencionado en varias ocasiones, el desarrollo va a ser llevado a cabo con la ayuda de \textbf{Yii2 Framework}\footnote{Sus siglas significan \textit{Yes, it is!}}. En su segunda versión, este framework hace uso del lenguaje de programación PHP para orquestar múltiples tareas que resultan engorrosas de llevar a cabo sin su ayuda y que pueden extenderse demasiado, como son, por ejemplo, las operaciones con la base de datos o la generación de código del que partir para dar forma a la vista, modelo o controlador de alguna de las secciones de twinX \cite{yii}. Hoy en día, en proyectos de desarrollo, sería muy complicado prescindir de una herramienta como esta, ya que las alternativas son numerosas y completas.
 
-Entre sus características, destacamos el generador de código Gii (figura \ref{fig:gii}), que puede automatizar la creación, por ejemplo, de la clase de un modelo, o incluso de una tabla CRUD al completo (esto es, su vista y su controlador). Tan solo tenemos que indicar cuál es la tabla de la base de datos sobre la que queremos generar los fragmentos de código, y atendiendo a las restricciones creadas en la misma, se puede obtener fácilmente una clase instanciable para recuperar o guardar información en su tabla. Del mismo modo, al crear una tabla CRUD, tendríamos directamente en nuestro sitio web una interfaz donde pueden verse los registros almacenados en la base de datos, con la posibilidad de crear nuevos, eliminarlos o incluso filtrarlos y editarlos. No cabe duda del potencial de esta característica, la cual nos permitirá ahorrar mucho tiempo y seguridad a la hora de desarrollar y de depositar la confianza en código automáticamente generado y sin errores.
+Entre sus características, destacamos el generador de código \textbf{Gii} (figura \ref{fig:gii}), que puede automatizar la creación, por ejemplo, de la clase de un modelo, o incluso de una tabla CRUD al completo (esto es, su vista y su controlador). Tan solo tenemos que indicar cuál es la tabla de la base de datos sobre la que queremos generar los fragmentos de código, y atendiendo a las restricciones creadas en la misma, se puede obtener fácilmente una clase instanciable para recuperar o guardar información en su tabla. Del mismo modo, al crear una tabla CRUD, tendríamos directamente en nuestro sitio web una interfaz donde pueden verse los registros almacenados en la base de datos, con la posibilidad de crear nuevos, eliminarlos o incluso filtrarlos y editarlos. No cabe duda del potencial de esta característica, la cual nos permitirá ahorrar mucho tiempo y seguridad a la hora de desarrollar y de depositar la confianza en código automáticamente generado y sin errores.
 
 \begin{figure}
 	\centering
@@ -21,26 +21,27 @@ Entre sus características, destacamos el generador de código Gii (figura \ref{
 
 Para comenzar a usar Yii, lo primero que tenemos que hacer es hacernos con el gestor de dependencias de PHP \textbf{Composer} \cite{composer} y descargarnos el esqueleto de un proyecto en Yii2 avanzado \cite{yii2advanced}. Para ello, basta con escribir:
 
-\par\noindent\rule{\textwidth}{0.4pt}
+\par\noindent\rule{\textwidth}{0.4pt}\linebreak
+\\
 \texttt{composer create-project --prefer-dist yiisoft/yii2-app-advanced twinX}
-\smallskip
+\par\noindent\rule{\textwidth}{0.4pt}
 
-Y con ello ya tendríamos la carpeta con nuestro proyecto. Concretamente este directorio es el que tenemos que servir y al que nos conectaremos para visualizar nuestra web. También tenemos que seguir los pasos en el repositorio de GitHub de yiisoft para aplicar los ajustes necesarios derivados del renombramiento y redireccionamiento de URLs en el servidor. También tendremos que instalar algunas dependencias haciendo uso de la orden \texttt{composer install} y de iniciar el entorno de desarrollo con el archivo \texttt{ini} de PHP que incluye el repositorio que hemos clonado.
+Y con ello ya tendríamos la carpeta con nuestro proyecto. Concretamente este directorio es el que tenemos que servir y al que nos conectaremos para visualizar nuestra web. También tenemos que seguir los pasos en el repositorio de GitHub de yiisoft para aplicar los ajustes necesarios derivados del renombramiento y redireccionamiento de URLs en el servidor. Además, tendremos que instalar algunas dependencias haciendo uso de la orden \texttt{composer install} y de iniciar el entorno de desarrollo con el archivo \texttt{ini} de PHP que incluye el repositorio que hemos clonado.
 
 A continuación, procederemos con la instalación de la pila software \textbf{XAMPP} (Apache, MariaDB, PHP y Perl). En Windows, es una instalación sencilla a través de una interfaz de usuario, por lo que no requiere un gran tiempo. Es importante que, una vez instalado, situemos la carpeta del proyecto dentro del directorio \texttt{htdocs}, en la raíz de la carpeta de instalación de xampp. Se recomienda instalar en el directorio C:\ en Windows. En nuestro caso, hemos hecho los ajustes necesarios para poder situar esta carpeta en otro directorio desde donde se trabaja con el repositorio GitHub del proyecto, para que de forma más cómoda podamos salvaguardar el progreso del desarrollo de forma periódica sin tener que copiar archivos de un directorio que esté fuera del repositorio.
 
-Esta pila contiene también la apliación \textbf{phpMyAdmin}, que ha sido también una gran ayuda para poder visualizar las tablas en base de datos, acceder a registros concretos o ejecutar código SQL desde una interfaz gráfica. Frente a una terminal desde donde manejar la base de datos, presenta una menor tasa de errores al introducir órdenes, pues la información puede verse a golpe de click y con una presentación más vistosa.
+Esta pila contiene la aplicación \textbf{phpMyAdmin}, que ha sido también una gran ayuda para poder visualizar las tablas en base de datos, acceder a registros concretos o ejecutar código MySQL desde una interfaz gráfica. Frente a una terminal desde donde manejar la base de datos, presenta una menor tasa de errores al introducir órdenes, pues la información puede verse a golpe de click y con una presentación más vistosa.
 
-Sobre GitHub, al comienzo de la redacción de esta memoria se creó el repositorio \cite{repogit} donde, mediante la creación de ramas, hemos ido guardando en distintos commits las versiones del proyecto. Una vez creada una pieza de valor, se hacía una mezcla (\textit{merge}) a la rama \texttt{master}, de modo que cada rama se creaba con un fin, para añadir una nueva funcionalidad, sin depender del funcionamiento de las demás, para que poco a poco se puedan ir integrando las funcionalidades en su totalidad.
+Sobre GitHub, el repositorio se creó  al comienzo de la redacción de esta memoria \cite{repogit}, donde mediante la creación de ramas hemos ido guardando en distintos \textit{commits} las progresivas versiones del proyecto. Una vez creada una pieza de valor, se hacía una mezcla (\textit{merge}) a la rama \texttt{master}, de modo que cada rama se creaba con un fin, para añadir una nueva funcionalidad, sin depender del funcionamiento de las demás y que poco a poco se puedan ir integrando todas las características en su totalidad.
 
-Finalmente, otro de los protagonistas del desarollo es el IDE (\textit{integrated development environment}) con que se ha programado twinX. En este caso, haciendo uso de su licencia educativa, se ha usado PhpStorm \cite{phpstorm}. Ha sido esencial, pues hemos descartado otras herramientas como Visual Studio Code ya que no tienen tan buen integración con PHP y Yii en sí como tiene este IDE. Destacan también características como su guardado automático inteligente, su potente búsqueda de archivos y sus cómodos atajos de teclado. Todo ello han hecho el proceso de desarrollo muy cómodo y liviano.
+Finalmente, otro de los protagonistas del desarollo es el IDE\footnote{\textit{Integrated Development Environment}} con que se ha programado twinX. En este caso, haciendo uso de su licencia educativa, se ha usado \textbf{PhpStorm} \cite{phpstorm}. Ha sido esencial, pues hemos descartado otras herramientas como Visual Studio Code ya que no tienen tan buen integración con PHP y Yii en sí como tiene este IDE. Destacan también características como su guardado automático inteligente, su potente búsqueda de archivos y sus cómodos atajos de teclado. Todo ello han hecho el proceso de desarrollo muy cómodo y liviano.
 
 
 \section{Creación de la base de datos}
 
-Tal y como hemos indicado en la sección \ref{sec:modelobd}, para crear el esquema del modelo de la base de datos, hemos usado la herramienta dbdiagram.io \cite{dbdiagram}. Ésta tiene mucho potencial, pues no es un simple creador de diagramas. Su principal característica es la confección de la parte gráfica mediante una especie de lenguaje creado por los mismos creadores, DBML \cite{dbml}. Con él, se pueden especificar tablas, atributos, estructuras de enumeración y características de los atributos, como claves externas, primarias, cardinalidades y la posibilidad de que un atributo pueda o no ser nulo. Gracias a ello, se ha podido mejorar progresivamente el modelo de la base de datos, pues un cambio en el código implica una variación en la visualización de las tablas, bien sea con algún atributo de más o alguna nueva relación entre tablas.
+Tal y como hemos indicado en la sección \ref{sec:modelobd}, para crear el esquema del modelo de la base de datos, hemos usado la herramienta \textbf{dbdiagram.io} \cite{dbdiagram}. Ésta tiene mucho potencial, pues no es un simple creador de diagramas. Su principal característica es la confección de la parte gráfica mediante una especie de lenguaje creado por los mismos creadores, \textbf{DBML} \cite{dbml}. Con él, se pueden especificar tablas, atributos, estructuras de enumeración y características de los atributos, como claves externas, primarias, cardinalidades y nulidad. Gracias a ello, se ha podido mejorar progresivamente el modelo de la base de datos, pues un cambio en el código implica una variación en la visualización de las tablas, bien sea con algún atributo de más o alguna nueva relación entre tablas.
 
-No solo es posible ver con mayor claridad las características del modelo en el código en DBML, sino que también tiene la gran posibilidad de exportarlo a otro lenguaje como es SQL. De este modo, con tan solo unos clicks, se obtienen las órdenes que posteriormente phpMyAdmin entenderá y podrá crear todas las tablas por nosotros, con todas las restricciones establecidas y ahorrando, así, mucho tiempo.
+No solo es posible ver con mayor claridad las características del modelo en el código en DBML, sino que también tiene la gran posibilidad de exportarlo a otro lenguaje como es MySQL. De este modo, con tan solo unos clicks, se obtienen las órdenes que posteriormente nuestra base de datos entenderá y podrá crear todas las tablas por nosotros, con todas las restricciones establecidas y ahorrando, así, mucho tiempo.
 
 En la práctica, el código que tenemos en DBML para generar el modelo de la figura \ref{fig:modeloBD} es:
 
@@ -916,8 +917,6 @@ Y como resultado, podemos traducir todo ello a código MySQL, quedando de la sig
 	
 \end{minted}
 
-Una vez generado este código en SQL, podemos introducirlo directamente en phpMyAdmin para obtener todas las tablas creadas para que no tengamos que «traducirlo» por nosotros mismos o crear las tablas desde cero a través de la interfaz.
-
 Otra muy buena opción hubiera sido la de las migraciones. Las migraciones en Yii2 son unas clases especiales capaces de crear tablas en la base de datos. Lo mejor de todo ello es que una vez estén creados los modelos en la aplicación, podemos actualizar las migraciones si queremos modificar algún atributo o tabla, por lo que tan solo tendríamos que crear las nuevas migraciones pertinentes para que los cambios surtan efecto no solo en la base de datos, sino también en la clase del modelo, lo que permite que nos despreocupemos sobre si un cambio en la base de datos llevará a algún tipo de error en el código ya escrito.
 
 \section{Desarrollo del Panel de Control}
@@ -977,7 +976,7 @@ Dentro del directorio del proyecto, encontramos las carpetas \texttt{backend} y 
 
 También eliminamos el paquete de \texttt{bootstrap} con Composer e instalaremos \texttt{bootstrap4} en su lugar, dado que el que viene por defecto es la versión anterior y el actual permitirá dar un aire más actual a twinX. Es un proceso más tedioso de lo que parece, porque hay que sustituir todas las dependencias de \texttt{bootstrap} por \texttt{bootstrap4}, lo que nos llevará a más de un error inesperado al usar algún trozo de código ya programado que use la antigua librería.
 
-Lo primero que hacemos es crear un módulo llamado «panel» desde el generador Gii. Esto crea el directorio \texttt{backend/modules/panel}, con los subdirectorios correspondientes. Entonces, con esto que acabamos de hacer, podemos englobar todas las funcionalidades que hemos comentado en un directorio denominado \texttt{panel}. Es decir, esto, junto a la utilización de URLs limpias, nos permitirían identificar las distintas localidades del módulo como por ejemplo \texttt{localhost/panel/pais}.
+Lo primero que hacemos es crear un módulo llamado «panel» desde el generador Gii. Esto crea el directorio \texttt{backend/modules/panel}, con los subdirectorios correspondientes. Entonces, con lo que acabamos de hacer, podemos englobar todas las funcionalidades que hemos comentado en un directorio denominado \texttt{panel}. Es decir, esto, junto a la utilización de URLs limpias, nos permitiría identificar las distintas localidades del módulo como por ejemplo \texttt{localhost/panel/pais}.
 
 El primer menú que crearemos será el de usuarios. Al seguir los pasos que se especifican en el repositorio de GitHub \cite{yii2advanced}, tenemos ya creada una clase de migración para una tabla llamada \texttt{user}. Hemos aprovechado la migración y hemos añadido nuevos atributos a la misma, para poder equipararlos con los necesarios en la tabla en nuestro modelo. Es importante usar esta misma tabla, con la migración por defecto, ya que contiene atributos como \texttt{password\_hash} y otros derivados del motor genérico del sitio para la identificación de los usuarios que ya viene implementada por defecto, como son la recuperación de la contraseña, el envío de emails para la confirmación de la cuenta, etc. Entonces, al tener todos esos atributos, aparecerán en la tabla de usuarios en la vista. Por tanto, nuestra misión principal aquí y en la creación de las demás CRUD del panel es modificar los atributos que se muestran, no solamente en la vista de la tabla, sino también en la vista de detalle (donde se muestran todos los datos al completo) y en el formulario de creación / edición del registro.
 
@@ -1122,4 +1121,486 @@ Por último, vamos a destacar la vista de una fase de expediente. Recordemos que
 \section{Desarrollo del módulo de gestión}
 \label{sec:gestion}
 
+Para desarrollar esta parte de la aplicación, también se ha creado un módulo y las tablas CRUD pertinentes para cada una de las secciones de Gestión. Recordamos que es el corazón de la aplicación, donde los gestores acudirían diariamente a desempeñar su trabajo: consulta de la información referente a un estudiante, tramitación de algún expediente, cambios en su acuerdo de estudios, etc.
 
+\subsection{Integración del menú de convenios}
+
+Uno de los mayores desafíos ha sido, como era de imaginar a la hora de ver el modelo de la base de datos (figura \ref{fig:modeloBD}), el diseñar un formulario para los convenios recogido y no puesto tal cual sale de Gii. Para ello hemos empleado el objeto de Bootstrap \texttt{card} y \texttt{accordion}. Conforme vamos desplegando cada una de las secciones, las otras se cierran para no ocupar espacio en la pantalla y hacer que el usuario se centre en la introducción de los datos en una sección concreta. También hemos usado tarjetas a distintos niveles para estructurar los formularios de la mejor manera posible (figuras \ref{fig:creacionconvenio1} y \ref{fig:creacionconvenio2})
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{Capturas de twinX/creacion_convenio_1}
+	\caption{Creación de un convenio en twinX}
+	\label{fig:creacionconvenio1}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{Capturas de twinX/creacion_convenio_2}
+	\caption[Creación de un convenio en twinX 2]{Creación de un convenio en twinX: introducción de datos de los responsables externos}
+	\label{fig:creacionconvenio2}
+\end{figure}
+
+Por defecto, Gii espera que en campos donde en la tabla se tiene una restricción de clave externa se introduzca, mediante un campo de texto libre, un identificador, por ejemplo, del país del convenio. Sin embargo, esta es una de los numerosos cambios que se comienzan haciendo al recibir el código generado: adaptarlo al usuario. Para ello y durante todo el proyecto en general, hemos hecho uso de librerías del autor \textit{Kartik} \cite{krajee} y como resultado, tenemos elementos que ya están disponibles en Yii2 como es la inserción de un menú \textit{dropdown} para escoger entre varias opciones, pero potenciado con una búsqueda, por ejemplo, como se aprecia en la figura \ref{fig:creacionconvenio3}. Pensemos que elementos como este son indispensables, pues en el uso cotidiano, twinX almacenaría cientos de estudiantes, decenas de universidades y convenios tal y como hace TWINS hasta el momento; por tanto, la opción de un desplegable estático no funcionaría en este contexto. Su uso es verdaderamente sencillo, una vez que nos familiarizamos con la sintaxis:
+
+\begin{minted}[frame=lines]{php}
+	<?php
+	(...)	
+	 <?= $form->field($model, 'cod_pais')->widget(Select2::className(), [
+		'data' => ArrayHelper::map(Pais::find()->all(), 'iso', 'nombreISO'),
+		'theme' => Select2::THEME_KRAJEE_BS4,
+		'options' => [
+			'placeholder' => 'Seleccione un país',
+		]
+	]) ?>
+	
+\end{minted}
+
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\linewidth]{Capturas de twinX/creacion_convenio_3}
+	\caption[Creación de un convenio en twinX 3]{Creación de un convenio en twinX: introducción de datos externos al modelo \texttt{Convenio}}
+	\label{fig:creacionconvenio3}
+\end{figure}
+
+Otra dificultad de la implementación del formulario de los convenios estaba en la selección de los requisitos lingüísticos. Éstos se almacenan en una tabla aparte, pero existe una relación muchos a muchos que relaciona un convenio con varias competencias o la pertenencia de una sola competencia a muchos convenios. El problema estaba cuando queríamos asociar un par \texttt{(id\_convenio, id\_requisito)} sin tener de antemano la ID del convenio que se está creando. Para ello ha sido necesario crear una \textbf{transacción}. Es decir, primeramente tenemos que asegurarnos de que guardamos todos los datos del convenio. Acto seguido, asociar los requisitos lingüísticos que se han escogido para el convenio a crear y, después, guardar los cambios. Si alguna de estas acciones no prospera, tendremos que cancelar todo y devolver la tabla a su estado anterior. Esto podemos conseguirlo sobrecargando el método de guardado, \texttt{save}.
+Es más, también hemos de tener en cuenta que el tratamiento de los requisitos puede darse en la edición del convenio, con lo cual, puede haber requisitos ya en la tabla que tenemos que recuperar, y a la hora de ejecutar la transacción, evaluar cuáles estaban ya en la tabla de la relación convenio - requisito y dejarlos intactos, cuáles han de ser eliminados y cuáles insertados como nuevos registros.
+Para ello, tenemos que crear una nueva clase \texttt{ConvenioForm} que e\texttt{Convenio} (modelo) y herede sus métodos. Entonces, programamos toda esta funcionalidad que hemos descrito y solo cuando sea necesario, hacemos la llamada a este nuevo modelo. Una de las características más novedosas es la sobrecarga del método \texttt{afterFind}, que ejecuta justo después de buscar la recuperación de los requisitos actuales del convenio (si los tiene). Gracias a ello, podemos trabajar con un array de requisitos y ejecutar las acciones descritas:
+
+\begin{minted}[frame=lines]{php}
+<?php
+(...)
+
+class ConvenioForm extends Convenio
+{
+	public $requisitos = [];
+	private $_requisitos;
+	
+	public function save($runValidation = true, $attributeNames = null)
+	{
+		$transaction = \Yii::$app->db->beginTransaction();
+		
+		try {
+			if (!parent::save($runValidation, $attributeNames)) {
+				return false;
+			}
+			
+			$this->addNewRequisitos();
+			$this->deleteOldRequisitos();
+			
+			$transaction->commit();
+			
+		}
+		
+		catch (Exception $e) {
+			$transaction->rollBack();
+			
+			throw $e;
+		}
+		
+		return true;
+	}
+	
+	protected function addNewRequisitos()
+	{
+		$nuevos = [];
+		
+		if ($this->isNewRecord) {
+			$nuevos = $this->requisitos;
+		}
+		else if(!empty($this->requisitos)){
+			foreach ($this->requisitos as $requisito) {
+				if (!in_array($requisito, $this->_requisitos)) {
+					$nuevos[] = $requisito;
+				}
+			}
+		}
+		
+		if(!empty($nuevos)) {
+			foreach ($nuevos as $requisito) {
+				$relacion = new ReqLingConv();
+				
+				$relacion->id_conv = $this->id;
+				$relacion->id_comp = $requisito;
+				
+				if (!$relacion->save()) {
+					throw new Exception('Error al guardar el requisito lingüístico');
+				}
+			}
+		}
+	}
+	
+	protected function deleteOldRequisitos()
+	{
+		foreach ($this->reqLingConvs as $requisito) {
+			if (!in_array($requisito->id, $this->requisitos) && $requisito->delete() === false) {
+				throw new Exception('Failed to save related records.');
+			}
+		}
+	}
+	
+	public function afterFind()
+	{
+		foreach ($this->reqLingConvs as $requisito) {
+			$this->requisitos[] = $requisito->id;
+		}
+		
+		$this->_requisitos = $this->requisitos;
+		
+		parent::afterFind();
+		
+	}
+}
+\end{minted}
+
+El proceso llevado a cabo en \texttt{EstudianteForm} es muy similar, dado que también necesitamos, en el formulario de un estudiante, especificar las competencias lingüísticas que posee.
+
+En el menú de convenios (figura \ref{fig:menuconveniotwinX}) hemos tenido que cambiar bastantes cosas. Para ello, ha sido necesario crear bastantes métodos en el modelo de Convenio. Por ejemplo, para obtener el ratio de estudiantes nominados del total de estudiantes que contiene el convenio. O los convenios con su código completo (código ISO del país, código de la universidad y área de conocimiento según el ISCED\footnote{International Standard Classification of Education}). Del mismo modo, hemos tenido que ajustar la visualización de los nombres de la universidad o del área completos, ya que la generación de código automática solo mostraba los ID en la base de datos:
+
+\begin{minted}[frame=lines]{php}
+<?php
+(...)
+<?= GridView::widget([
+	'dataProvider' => $dataProvider,
+	'filterModel' => $searchModel,
+	'columns' => [
+	
+		[
+			'attribute' => 'numAcuerdos',
+			'label' => 'Nº de acuerdos'
+		],
+		[
+			'attribute' => 'nominadosAcuerdos',
+			'label' => 'Nominados totales',
+			'format' => 'raw'
+		],
+		[
+			'attribute' => 'codConvenio',
+			'label' => 'Convenio',
+			'format' => 'raw',
+		],
+		[
+			'attribute' => 'nombreCodUni',
+			'label' => 'Universidad'
+		],
+		[
+			'attribute' => 'areaCompleta',
+			'label' => 'Nombre de la área'
+		],
+	
+	
+		'tipo_movilidad',
+	
+		[
+		'class' => 'yii\grid\ActionColumn',
+			'template' => '{view}',
+			'header' => 'Acciones'
+		],
+	],
+]); ?>
+\end{minted}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\linewidth]{Capturas de twinX/menu_convenio}
+	\caption{Menú de convenios en twinX}
+	\label{fig:menuconveniotwinX}
+\end{figure}
+
+Todos los atributos que vemos en el código son generados por métodos creados en el modelo:
+
+\begin{minted}[frame=lines]{php}
+<?php
+(...)
+public function getNombreCodUni()
+{
+	return $this->codUni->getNombreCodigo();
+}
+
+public function getAreaCompleta()
+{
+	return $this->codArea->getAreaCompleta();
+}
+\end{minted}
+
+También podríamos haber hecho ese acceso desde la vista, pero aunque no es una buena práctica, nos complicaría mucho las cosas. El tener los atributos definidos en el modelo, nos permite acceder a ellos desde una clase especial de la que aún no hemos hablado. Son las clases de búsqueda, y se encuentran en \texttt{common/models/search}, nombradas como \texttt{ConvenioSearch} en caso del convenio. Es ahí donde tenemos que decir qué atributos propios hemos definido en nuestro modelo, para poder unir las tablas a las que refieren y así poder hacer tanto búsquedas como ordenaciones, introduciendo términos en los campos de texto de debajo de la cabecera de la tabla y haciendo click en los nombres de los atributos respectivamente. Para conseguir este comportamiento, ha sido necesario hacer en primer lugar, los atributos seguros (\textit{safe}):
+
+\begin{minted}[frame=lines]{php}
+<?php
+(...)
+class ConvenioSearch extends Convenio
+{
+	public $codConvenio, $nombreCodUni, $areaCompleta;
+	
+	/**
+	* {@inheritdoc}
+	*/
+	public function rules()
+	{
+		return [
+		(...)
+		[['codConvenio', 'nombreCodUni', 'areaCompleta'], 'safe'],
+		];
+	}
+	
+	(...)
+}
+\end{minted}
+
+Después, hacer la unión de la tabla con las demás y configurar las ordenaciones:
+
+\begin{minted}[frame=lines]{php}
+<?php
+(...)
+public function search($params)
+{
+	$query = Convenio::find();
+	
+	///
+	$query->joinWith(['codPais', 'codArea', 'codUni']);
+	
+	// add conditions that should always apply here
+	
+	$dataProvider = new ActiveDataProvider([
+	'query' => $query,
+	]);
+	
+	///
+	$dataProvider->sort->attributes['codConvenio'] = [
+	'asc' => ['pais.iso' => SORT_ASC],
+	'desc' => ['pais.iso' => SORT_DESC],
+	'default' => SORT_DESC
+	];
+	
+	$dataProvider->sort->attributes['nombreCodUni'] = [
+	'asc' => ['universidad.nombre' => SORT_ASC],
+	'desc' => ['universidad.nombre' => SORT_DESC],
+	'default' => SORT_DESC
+	];
+	
+	$dataProvider->sort->attributes['areaCompleta'] = [
+	'asc' => ['area.cod_isced' => SORT_ASC],
+	'desc' => ['area.cod_isced' => SORT_DESC],
+	'default' => SORT_DESC
+	];
+
+	(...)
+}
+
+(...)
+
+?>
+\end{minted}
+
+Y por último, añadir el filtrado a las búsquedas que se hagan introduciendo texto:
+
+\begin{minted}[frame=lines]{php}
+<?php
+(...)
+
+->andFilterWhere(['like', 'pais.iso', $this->codConvenio])
+->orFilterWhere(['like', 'area.cod_isced', $this->codConvenio])
+->orFilterWhere(['like', 'universidad.cod_uni', $this->codConvenio])
+->andFilterWhere(['like', 'universidad.nombre', $this->nombreCodUni])
+->orFilterWhere(['like', 'universidad.cod_uni', $this->nombreCodUni])
+->andFilterWhere(['like', 'area.cod_isced', $this->areaCompleta])
+->orFilterWhere(['like', 'area.nombre_isced', $this->areaCompleta])
+->orFilterWhere(['like', 'area.nombre_area', $this->areaCompleta]);
+
+(...)
+
+?>
+\end{minted}
+
+Esto es extensible a todas las clases donde hemos usado atributos modificados y Yii no conoce la manera de aplicar los filtros, por lo que es obligatorio hacerlo cuando queremos ofrecer otra manera de comunicar la información distinta a la que ofrece el framework por defecto. En muchos casos esto se complica bastante. Por ejemplo, en la unión de las tablas:
+
+\begin{minted}[frame=lines,breaklines]{php}
+<?php
+(...)
+
+$query->joinWith(['ae.estudiante.usuario', 'ae.estudiante.convenio.codPais', 'tipoExp', 'relExpFases.fase', 'ae.estudiante.convenio.codArea']);
+
+?>
+\end{minted}
+
+Este es el código de la clase \texttt{ExpedienteSearch.php}, dadas las numerosas referencias a otras clases externas a ella.
+
+Una vez comentadas las vistas de creación, actualización y de menú principal, vamos a abordar la de vista (figura \ref{fig:vistaconveniotwinX}). Los datos se han separado en distintas secciones de nuevo, pero sin el comportamiento de acordeón que impedía abrir más de una sección al mismo tiempo. Para la vista se debe dar más libertad al usuario, y siempre puede contraer las secciones a su gusto; en cambio, para el formulario, es más importante forzar centrar su atención en una parte de los datos en concreto.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\linewidth]{Capturas de twinX/vista_convenio}
+	\caption{Vista de los convenios en twinX}
+	\label{fig:vistaconveniotwinX}
+\end{figure}
+
+
+Destaca también el testigo de convenio activo, que indica si la fecha de vigencia del convenio es superior a la actual (convenio activo), si es inferior (inactivo) o si iguala al año (próxima caducidad)
+
+\subsection{Integración del menú de estudiantes}
+
+Respecto de los convenios, una de las cosas más destacable ya ha sido comentada: hemos necesitado ejecutar otra transacción para elegir las competencias lingüísticas de los estudiantes en su formulario (figura \ref{fig:formularioestudiantetwinX}) y para ello hemos creado una clase \texttt{EstudianteForm} que extiende a \texttt{Estudiante}.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\linewidth]{Capturas de twinX/formulario_estudiante}
+	\caption{Creación de un estudiante en twinX}
+	\label{fig:formularioestudiantetwinX}
+\end{figure}
+
+Desde el menú de estudiantes (figura \ref{fig:menuestudiantestwinX}) podemos pivotar hacia su convenio (icono verde) o hacia su acuerdo de estudios (icono turquesa). Al lado del nombre del estudiante, figura un círculo de color rojo o azul, según si es saliente o entrante, respectivamente, como apuesta de rediseño de rellenar el fondo del nombre del estudiante de uno de estos colores en TWINS según su modalidad (figura \ref{fig:alumnos}).
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\linewidth]{Capturas de twinX/menu_estudiante}
+	\caption{Menú de estudiantes en twinX}
+	\label{fig:menuestudiantestwinX}
+\end{figure}
+
+La vista del estudiante (\ref{fig:vistaestudiantetwinX}) también ha tenido un importante rediseño. Se ha vuelto a tener en cuenta la necesidad de tener accesos directos a demás información del usuario y respecto del boceto que creamos para esta vista (figura \ref{fig:estudiante_detalleWF}) destaca el haber prescindido del  excesivo uso de iconos que se hizo en el \textit{wireframe}, algo bastante positivo, ya que no se alcanzaba a entender bien en todos los casos a qué dato correspondía cada campo.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\linewidth]{Capturas de twinX/vista_estudiante}
+	\caption{Vista de estudiante en twinX}
+	\label{fig:vistaestudiantetwinX}
+\end{figure}
+
+Llegados a este punto, señalamos la generación automática de la nota de competencia lingüística y de participación de un estudiante. En TWINS, ambas puntuaciones tenían que guardarse en dos atributos por separado, pero se ha creído conveniente desarrollar un algoritmo para el cálculo de las notas.
+De acuerdo con las exigencias del convenio, si un estudiante tiene la misma competencia que se le requiere, no se le atribuye una nota extra. Sin embargo, a partir de B1 (que es lo mínimo que se puede requerir), se puede premiar con 1 punto adicional si el estudiante tiene un nivel B2, 1.5 puntos si es C1 o 2 puntos si su título es de C2, independientemente del nivel que se parta; esto es, si el estudiante tiene un C1 pero le requieren un B2 o B1, se le suman 1.5 puntos extra, y 2 puntos en caso de poseer un nivel C2 pero le requirieran C1 o inferior.
+
+Entonces, en el modelo de \texttt{Estudiante}, el algoritmo es el siguiente:
+
+\begin{minted}[frame=lines,breaklines]{php}
+<?php
+(...)
+public function getNotaCompetenciaLing()
+{
+	$compConvenioRaw = $this->convenio->reqLingConvs;
+	$compEstudianteRaw = $this->relClEsts;
+	$compConvenio = [];
+	$compEstudiante = [];
+	$extra = 0;
+	$valores = [
+	'B1' => 0.5,
+	'B2' => 1,
+	'C1' => 1.5,
+	'C2' => 2
+	];
+	
+	foreach ($compConvenioRaw as $cC) {
+		$compConvenio []= $cC->comp;
+	}
+	
+	foreach ($compEstudianteRaw as $cE) {
+		$compEstudiante []= $cE->cl;
+	}
+	
+	foreach ($compEstudiante as $cE){
+		if(in_array($cE, $compConvenio))
+		unset($compConvenio[$cE->id]); // No tenemos en cuenta las competencias que requiere el convenio
+	}
+	
+	foreach ($compEstudiante as $cE){
+		foreach ($compConvenio as $cC){
+			if($cE->lengua == $cC->lengua){
+				if($valores[$cE->nivel] > $valores[$cC->nivel])
+				$extra += $valores[$cE->nivel];
+			}
+		}
+	}
+	
+	return $extra;
+}
+
+(...)
+?>
+\end{minted}
+
+Entonces, el valor devuelto por el método es la nota de competencia lingüística que se muestra en la figura \ref{fig:vistaestudiantetwinX} y la nota de participación, la suma de ésta con la del expediente, ya es con esa nota con la que participa en el sorteo de las plazas de movilidad. Con este algoritmo, ahorramos un total de dos atributos en la tabla de estudiante, y teniendo en cuenta que la cantidad de registros a almacenar en el día a día es elevado, podemos considerar esta como una mejora significativa.
+
+\subsection{Integración del menú de expedientes}
+
+Sin pasar por el menú de acuerdos de estudios debida la carencia de novedades respecto a todo lo ya expuesto que se repite a lo largo del desarrollo, entramos de lleno en los expedientes. Si bien ni el menú ni el formulario presentan características excesivamente novedosas, sí podemos encontrar un gran cambio en su vista (figura \ref{fig:vistaexpedientestwinX}).
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\linewidth]{Capturas de twinX/vista_expediente}
+	\caption{Vista de expedientes en twinX}
+	\label{fig:vistaexpedientetwinX}
+\end{figure}
+
+Si bien un expediente puede ser el de la nominación de un estudiante \textit{incoming}, necesitamos especificar por qué parte del proceso de nominación va. Recordemos que esto se posibilitaba con las fases, y que cada fase implicaba un envío de correos electrónicos en su \textbf{procesamiento}. Pues bien, al igual que en TWINS, lo más oportuno es ver el expediente del estudiante y su situación actual, con un historial de todo lo ya ocurrido en dicho registro. Esto lo hemos hecho posible embebiendo un menú en otro; en este caso, aunque pueda pensarse que es el de la tabla \texttt{fase\_expediente}, en realidad se trata del de \texttt{rel\_fase\_exp} (relación de fase con expediente), donde se guarda información de la fase con respecto del expediente (que no es más que la relación de un acuerdo y un tipo de expediente).
+
+En este caso, aunque utilicemos la librería de JavaScript \textbf{AJAX} (integrada en Yii como Pjax), necesitamos crear vistas compuestas; esto es, vistas que mantengan la información del expediente en la parte de arriba mientras que en la parte de abajo se pueda estar renderizando el formulario de una fase o el menú que muestra todas las fases de un expediente. Estas dos últimas son las únicas posibilidades de variación de la interfaz que comentamos, pero volviendo al \textit{modus operandi} de Yii, recordemos que crear y actualizar son dos acciones distintas a ojos del controlador, aunque ambas usen el mismo formulario. Por tanto, necesitaremos los siguientes elementos:
+
+\begin{itemize}
+	\item \textbf{\texttt{\_view.php}}: donde almacenaremos la vista compartida y persistente de \texttt{Expediente}.
+	\item \textbf{\texttt{view.php}}: la vista predeterminada con la información del expediente y sus fases.
+	\item \textbf{\texttt{view-new-fase.php}}: carga la vista del expediente y el formulario de creación de una nueva fase.
+	\item \textbf{\texttt{view-new-fase.php}}: carga la vista del expediente y el formulario de modificaicón de una fase ya existente.
+\end{itemize}
+
+Dentro de las tres últimas, creamos una instancia del controlador \texttt{RelFaseExpController.php} desde el que se llama al menú, al creador y al actualizador respectivamente:
+
+\begin{minted}[frame=lines]{php}
+	<?php include('_view.php') ?>
+	
+	<?= $relExpFase->actionCreate($model) ?>
+	
+	<?php $this->title = 'Expediente #' . $model->id; ?>
+\end{minted}
+
+Dado que en las tres vistas se precisa de una instancia del controlador, es en \texttt{\_view.php} donde se sitúa la llamada:
+
+\begin{minted}[frame=lines, breaklines]{php}
+<?php
+(...)
+
+$relExpFase = new \backend\modules\gestion\controllers\RelExpFaseController('rel-exp-fase', Yii::$app->getModule('rel-exp-fase'));
+
+(...)
+?>
+\end{minted}
+
+Entonces, dado que es al controlador de \texttt{Expediente} al que se llama para cargar las distintas vistas compuestas, es él mismo quien tiene que orquestar las llamadas a los métodos \texttt{action} de su propia clase (\texttt{ExpedienteController.php}). Dado que a ojos del expediente, lo que se está cargando es su vista (que recordemos que persiste siempre ante los cambios que pueda haber en la parte de abajo de las fases), las llamadas las hace a su propio método \texttt{actionView}. No obstante, hemos hecho modificaciones a éste, de modo que ahora acepta un parámetro que indica cuál vista tiene que cargar, si \texttt{view-new-fase} o \texttt{view-update-fase} en caso de que no sea la predeterminada. En el último caso, aceptaría un tercer argumento: el id de la entrada en la tabla \texttt{rel\_exp\_fase}, para saber qué solicitar a su modelo a posteriori.
+
+Una vez llegado el flujo a uno de los archivos que permiten crear o modificar una fase para el expediente, se llama al método \texttt{actionCreate} o \texttt{actionUpdate} de \texttt{RelExpFase.php}, pero con una novedad: se pasa como argumento el \texttt{Expediente} actual, que por tanto el formulario ya tiene que llevar relleno en el campo destinado a ello. Lo mismo pasa con la actualización. En el caso de la vista de la lista de las fases de un expediente, también se necesita el ID del expediente que se visualiza, para devolver tan solo aquellas fases pertenecientes a dicho expediente. Esto se consigue modificando el método \texttt{actionIndex} de \texttt{RelExpFaseController.php} de la siguiente forma:
+
+\begin{minted}[frame=lines, breaklines]{php}
+<?php
+(...)
+
+public function actionIndex($idExpediente = false)
+{
+	$path = '';
+	$query = RelExpFase::find();
+	
+	if($idExpediente) {
+		$path = '@backend/modules/gestion/views/rel-exp-fase/';
+		$query = $query->where(['id_exp' => $idExpediente]);
+	}
+	
+	
+	$dataProvider = new ActiveDataProvider([
+	'query' => $query,
+	]);
+	
+	return $this->render($path . 'index', [
+	'dataProvider' => $dataProvider,
+	'idExpediente' => $idExpediente,
+	]);
+}
+
+(...)
+?>
+\end{minted}
+
+
+
+
+
+\subsection{Integración del dashboard}
+
+\section{Desarrollo del módulo de calendario}
