@@ -122,7 +122,7 @@ A continuación, vamos a ofrecer una serie de tarjetas de todas y cada una de es
 			\textbf{Tareas} & \multicolumn{2}{>{\centering\arraybackslash}p{0.5\linewidth}|}{
 				\begin{itemize}
 					\item Construir el modelo de Usuario con Gii.
-					\item Construir la tabla CRUD con Gii.
+					\item Construir la tabla CRUD\footnotemark con Gii.
 				\end{itemize}
 			} \\		
 			\hline			
@@ -130,7 +130,8 @@ A continuación, vamos a ofrecer una serie de tarjetas de todas y cada una de es
 		\caption{Tabla de la HU1.1}
 		\label{tab:HU1.1}
 	\end{center}
-\end{table}
+\end{table}~
+\footnotetext{Create, Read, Update \& Delete (crear, leer, actualizar y borrar)}
 
 
 \begin{table}[H]
@@ -623,21 +624,20 @@ A continuación, vamos a ofrecer una serie de tarjetas de todas y cada una de es
 
 Hemos plasmado un total de 19 historias de usuario, con las tareas que implicará cada una. Es obvio que en la práctica, no solo variará el número de tareas asociado a las HHUU, sino que muy probablemente, tampoco acabemos implementando exactamente las que tenemos aquí, sino que podrían surgir otras o incluso cambiar la priorización de unas a otras en el cambio del sprint 1 al 2. Sobre la implementación de las historias de usuario y el progreso que las acompaña, hablaremos en el capítulo \ref{implementacion}
 
-
-\newpage
 \section{Modelo de la base de datos}
+\label{sec:modelobd}
 
 Cada vez tenemos una idea más clara de cómo va a ser twinX, pero antes hemos de especificar uno de los puntos más importantes para hacer posible el producto final como es la base de datos. En ella, tenemos que especificar las restricciones que hay, cuáles atributos tienen que ser compartidos entre tablas (claves externas), cuáles no se pueden repetir en una relación (claves primarias) y cuáles no pueden estar vacíos.
 
 Nótese la importancia de dedicar tiempo al desarrollo de esta tarea: estableciendo las restricciones necesarias, aunque tengamos algún olvido a la hora de implementar la interfaz con la que el usuario interaccionará, siempre tendremos el respaldo de que la base de datos no comprometerá su estado de consistencia. Por ejemplo, no podemos dejar que se elimine un acuerdo de estudios para el cual hay algún estudiante registrado. O incluso tampoco podemos crear más de un acuerdo de estudios para un estudiante por curso.
 
-El modelo de la base de datos creado es el que se propone en la figura \ref{fig:modeloBD}. El análisis ha dado lugar a un total de 30 tablas, donde se contemplan funcionalidades que no están previstas de implementación en los dos primeros sprints, como son por ejemplo el historial de mensajes enviados, los acuerdos favoritos de un gestor o la confección del acuerdo de estudios a través de la plataforma. No obstante, el diseño se ha pensado para tener en cuenta el futuro desarrollo de twinX y así no desviarlo de la línea de las ideas principales que ya hay definidas.
+El modelo de la base de datos creado es el que se propone en la figura \ref{fig:modeloBD}. El análisis ha dado lugar a un total de 30 tablas, donde se contemplan funcionalidades que no están previstas de implementación en los dos primeros sprints, como son por ejemplo el historial de mensajes enviados, los acuerdos favoritos de un gestor o la confección del acuerdo de estudios a través de la plataforma. No obstante, el diseño se ha pensado para tener en cuenta el futuro desarrollo de twinX y así no desviarlo de la línea de las ideas principales que ya hay definidas. El diagrama ha sido realizado con la herramienta dbdiagram.io \cite{dbdiagram}.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[page=2,width=\textwidth,height=\textheight,trim=0 0 0 10cm, clip=true]{pdf/modelo_bd}
-	\label{fig:modeloBD}
 	\caption{Modelo de la base de datos de twinX}
+	\label{fig:modeloBD}
 \end{figure}
 
 El cambio con respecto a TWINS es muy grande. Si bien es cierto que en la aplicación ya existente se pueden encontrar tablas para fines varios que no figuran en la planificación de twinX, hay muchas tablas que pueden evitarse; aunque, sobre todo, prima la duplicidad y redundancia de atributos. Por ejemplo, en TWINS se almacenaban algunos atributos como la nota extra que se tiene al optar por una plaza de movilidad en función de las competencias lingüísticas, algo que es fácilmente calculable comparando los requisitos que exige el convenio y las competencias del estudiante. En función de ello, se puede asignar una mayor nota si procede.
@@ -664,4 +664,4 @@ Su funcionamiento es sencillo: en primera instancia, el usuario establece conexi
 \end{figure}
 
 
-El framework escogido para el desarrollo de twinX, Yii2, impulsa esta arquitectura mediante su funcionamiento separado en modelos, vistas y controladores, como ya veremos en el capítulo próximo.
+El framework escogido para el desarrollo de twinX, Yii2, impulsa este patrón mediante su funcionamiento separado en modelos, vistas y controladores, como ya veremos en el capítulo próximo. Sin embargo, el MVC no constituye la arquitectura de la aplicación al completo, sino que también intervienen la capa de conexión con la base de datos y la capa lógica. Ambas están suministradas por el propio framework, con el manejo de las mismas de forma interna, dando acceso a ellas a través de objetos.

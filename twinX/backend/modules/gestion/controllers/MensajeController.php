@@ -98,13 +98,6 @@ class MensajeController extends Controller
         ]);
     }
 
-    /**
-     * Updates an existing Mensaje model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param integer $id
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
-     */
 
     /**
      * Deletes an existing Mensaje model.
@@ -113,12 +106,12 @@ class MensajeController extends Controller
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionDelete($id)
-    {
-        $this->findModel($id)->delete();
-
-        return $this->redirect(['index']);
-    }
+//    public function actionDelete($id)
+//    {
+//        $this->findModel($id)->delete();
+//
+//        return $this->redirect(['index']);
+//    }
 
     /**
      * Finds the Mensaje model based on its primary key value.
