@@ -4,6 +4,7 @@
 Hasta ahora, con todas las piezas de información que hemos generado acerca del desarrollo, hemos podido, en efecto, discernir entre tres grandes grupos de tareas: la gestión, el calendario y el panel de control. Así pues, estableceremos la separación del desarrollo en estos tres grandes bloques de trabajo, con la previa especificación de las herramientas a utilizar y del trabajo anterior al comienzo del proceso de programación, propiamente dicho, que implican la puesta a punto de la base de datos y del servidor para probar y desarrollar nuestra aplicación.
 
 \section{Herramientas para el desarrollo de twinX}
+\label{sec:herramientasdesarrollo}
 
 Para llevar a cabo la programación de este sitio web, aunque utilicemos herramientas más sofisticadas, éstas están basadas en los clásicos lenguajes web: \textbf{HTML} (\textit{HyperText Markup Language}) \cite{html} para la estructuración de la web y la identificación de los distintos elementos, \textbf{CSS} \cite{css} (\textit{Cascading Style Sheets}) para aplicar estilo a la vista (posicionamiento, colores, visibilidad, etc.) y JavaScript \cite{javascript}, para implementar funciones más complejas a cada componente de la web. Para el manejo de estos dos últimos, contaremos con la ayuda de dos librerías con un gran potencial. Para el estilo, usaremos \textbf{Bootstrap} \cite{bootstrap} en su cuarta versión y para JavaScript utilizaremos \textbf{jQuery} \cite{jquery}. Nos permitirán ahorrar mucho tiempo, ya que en ambos casos podemos hacer uso de funciones o palabras clave que evitarán el tener que escribir numerosas líneas de código en cada uno de los lenguajes a los que complementan.
 
@@ -1168,7 +1169,7 @@ Otra dificultad de la implementación del formulario de los convenios estaba en 
 Es más, también hemos de tener en cuenta que el tratamiento de los requisitos puede darse en la edición del convenio, con lo cual, puede haber requisitos ya en la tabla que tenemos que recuperar, y a la hora de ejecutar la transacción, evaluar cuáles estaban ya en la tabla de la relación convenio - requisito y dejarlos intactos, cuáles han de ser eliminados y cuáles insertados como nuevos registros.
 Para ello, tenemos que crear una nueva clase \texttt{ConvenioForm} que e\texttt{Convenio} (modelo) y herede sus métodos. Entonces, programamos toda esta funcionalidad que hemos descrito y solo cuando sea necesario, hacemos la llamada a este nuevo modelo. Una de las características más novedosas es la sobrecarga del método \texttt{afterFind}, que ejecuta justo después de buscar la recuperación de los requisitos actuales del convenio (si los tiene). Gracias a ello, podemos trabajar con un array de requisitos y ejecutar las acciones descritas:
 
-\begin{minted}[frame=lines]{php}
+\begin{minted}[frame=lines, breaklines]{php}
 <?php
 (...)
 
