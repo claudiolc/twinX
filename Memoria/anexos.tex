@@ -1,6 +1,6 @@
-\chapter*{Anexos}
-\begin{appendices}
-	\section*{Reunión de toma de contacto}
+\appendix
+\chapter{Reuniones con el cliente}
+	\section{Reunión de toma de contacto}
 	\label{reunion1}
 		\textit{18 de febrero de 2020}\\
 		
@@ -12,7 +12,7 @@
 		
 		A pesar de su interés en la reutilización de esta herramienta que tras un año de esfuerzos está posibilitando gestionar de mejor manera la información en la oficina, se les comunica que el proyecto a construir empezaría desde cero, pudiendo así adaptarlo a otras tecnologías que facilitarían sus labores diarias considerablemente, más aún de lo que la actual solución lo hace. Es más, cabe destacar la imposibilidad de utilizar un software como es Microsoft Office\textregistered \ en un proyecto como este, dada la privatización de la licencia y las restricciones que éste pueda poner al desarrollo, que aún no se conocen, pero siempre serán menores si no se tiene fijada una herramienta sobre la cual tenga que radicar el resto del sistema.
 		
-	\section*{Reunión de preparación del proyecto}
+	\section{Reunión de preparación del proyecto}
 	\label{reunion2}
 	
 	\textit{17 de marzo de 2020}\\
@@ -33,7 +33,7 @@
 	
 	Finalmente, pasamos a tratar el objetivo de mi Trabajo Fin de Grado. Con varias ideas sobre la mesa, finalmente se habla de una conversión de TWINS a la web, puesto que sería mucho más útil en cuanto a extensibilidad a otras facultades y; es más, una vez se haga el desarrollo web (con las mejoras que ya ello tiene de partida), sería más fácil integrar más servicios y añadir características. Para la realización, aparte del compromiso de Chelo para con su disponibilidad y colaboración con el trabajo, comenta la posibilidad de ceder acceso a TWINS para poder examinarlo bien y hacer un análisis completo, algo que resulta esencial para poder llevar a cabo el proyecto.
 	
-	\section*{Reunión de presentación de TWINS}
+	\section{Reunión de presentación de TWINS}
 	\label{reunion3}
 	
 	\textit{7 de abril de 2020}\\
@@ -54,7 +54,7 @@
 	
 	Tras aproximadamente dos horas de presentación, concluye la reunión, tras haber ido por muchos de los detalles de la aplicación (aunque no todos, por lo que probablemente se precise de más reuniones). Con todo ello, puede hacerse un análisis y así arrancar el proyecto de twinX.
 		
-	\section*{Reunión de orientación para la instalación de TWINS}
+	\section{Reunión de orientación para la instalación de TWINS}
 	\label{reunion4}
 	
 	\textit{18 de abril de 2020}\\
@@ -68,5 +68,883 @@
 	En esta reunión se dieron las instrucciones necesarias para la instalación de TWINS, a partir de los dos archivos necesarios para ello: por un lado, el de la aplicación; por otro, el de los datos a importar por la primera.
 	
 	Todo ello fue indicado por Miguel Ángel tras haber recibido firmado por parte de Rosana (tutora) y Claudio (estudiante) el correspondiente compromiso de confidencialidad para con la información de carácter sensible que alberga TWINS, si bien es cierto que ya había sido sustituida por otras cadenas de texto gran parte de la misma, imposibilitando la difusión de los datos. Sin embargo, estos cambios no supusieron ningún impedimento para el correcto análisis de la aplicación, que se centró mayormente en sus funcionalidades.
+	
+	\chapter{Código en DBML para la generación del modelo de la base de datos}
+	\label{anexo:dbml}
+	
+	\lstset{breaklines=true}
+	\begin{lstlisting}
+		// ENTIDADES BASICAS
 		
-\end{appendices}
+		Table centro as CEN {
+			id int [pk, increment]
+			nombre varchar [not null, unique]
+		}
+		
+		Table curso as CURSO {
+			id int [pk, increment]
+			curso varchar(4) [not null]
+		}
+		
+		Table mail_predef as MAIL {
+			id int [pk, increment]
+			titulo varchar [not null, unique]
+			asunto varchar [not null]
+			cuerpo text [not null]
+		}
+		
+		Table titulacion as TIT {
+			id int [pk]
+			nombre varchar [not null, unique]
+			id_centro int [not null]
+		}
+		
+		Ref: TIT.id_centro > CEN.id
+		
+		Table asignatura as ASIG {
+			id int [pk]
+			id_tit int [not null]
+			nombre varchar [not null]
+			ects int [not null]
+			cuatrimestre cuatrimestre [not null]
+			tipo tipo_asignatura [not null]
+		}
+		
+		Ref: ASIG.id_tit > TIT.id
+		
+		Table asignatura_ext as EXT_ASIG {
+			id int [pk]
+			id_conv int [not null] 
+			nombre varchar [not null]
+			ects int [not null]
+			id_curso int [ref: > CURSO.id, not null] 
+			cuatrimestre cuatrimestre [not null]
+		}
+		
+		Ref: EXT_ASIG.id_conv > CON.id
+		
+		Table pais as P {
+			iso varchar [pk]
+			nombre varchar [not null]
+		}
+		
+		Table universidad as UNI {
+			cod_uni varchar [not null]
+			cod_pais varchar [not null]
+			nombre varchar [not null]
+			direccion varchar 
+			web varchar
+			email varchar
+			
+			Indexes {
+				(cod_pais, cod_uni) [pk]
+			}
+		}
+		
+		Ref: UNI.cod_pais > P.iso
+		
+		Table area as AR {
+			cod_isced varchar [pk]
+			nombre_isced varchar [not null]
+			nombre_area varchar 
+			
+		}
+		
+		// USUARIOS Y TIPOS
+		
+		Table user as U {
+			id int [pk, increment]
+			username varchar
+			nombre varchar
+			tipo tipo_usuario
+			password varchar
+			email varchar
+			telefono varchar
+			genero genero
+		}
+		
+		Table estudiante as EST{
+			id_usuario int [not null]
+			dni varchar [not null, unique] // PUEDE SER NIE
+			id_convenio int [not null]
+			id_titulacion int [not null]
+			telefono2 int 
+			email_go_ugr varchar 
+			f_nacimiento datetime [not null]
+			tipo_estudiante tipo_estudiante [not null]
+			cesion_datos boolean 
+			nota_expediente double 
+			beca_mec boolean
+		}
+		
+		Ref: EST.id_titulacion > TIT.id
+		Ref: U.id - EST.id_usuario
+		Ref: EST.id_convenio > CON.id
+		
+		
+		// CONVENIOS Y ACUERDOS
+		
+		Table competencia_ling as CL {
+			id int [pk, increment]
+			lengua varchar [not null]
+			nivel nivel_idioma [not null]
+		}
+		
+		Table rel_cl_est {
+			id int [pk, increment]
+			id_cl int [ref: > CL.id, not null]
+			id_est int [ref: > EST.id_usuario, not null]
+		}
+		
+		Table req_ling_conv {
+			id int [pk, increment]
+			id_comp int [ref: > CL.id, not null]
+			id_conv int [ref: > CON.id, not null]
+		}
+		
+		Table convenio as CON {
+			id int [pk, increment]
+			cod_area varchar [not null]
+			cod_uni varchar [not null]
+			cod_pais varchar [not null]
+			id_admon_out int
+			
+			id_curso_creacion int [ref: > CURSO.id, not null]
+			creado_por int [not null]
+			
+			num_becas_in int [not null]
+			num_becas_out int [not null]
+			
+			meses_in int [not null]
+			meses_out int [not null]
+			
+			anno_inicio int [not null]
+			anno_fin int [not null]
+			
+			req_titulacion varchar
+			req_curso varchar
+			
+			nominacion_online boolean 
+			link_nom_online varchar 
+			info_nom_online text
+			
+			link_documentacion varchar
+			
+			movilidad_pdi boolean 
+			movilidad_pas boolean 
+			
+			tipo_movilidad tipo_movilidad [not null]
+			
+			user_online varchar
+			password_online varchar
+			fecha_online datetime
+			
+			info_tor text 
+			
+			observ_discapacidad text
+			observ_req_ling text 
+			
+			begin_nom_1s datetime
+			end_nom_1s datetime
+			begin_nom_2s datetime
+			end_nom_2s datetime
+			begin_app_1s datetime
+			end_app_1s datetime
+			begin_app_2s datetime
+			end_app_2s datetime
+			begin_mov_1s datetime
+			end_mov_1s datetime
+			begin_mov_2s datetime
+			end_mov_2s datetime
+			
+			memo_grading text
+			memo_visado text
+			memo_seguro text
+			memo_alojamiento text
+			
+			nombre_coord varchar
+			cargo_coord varchar
+			email_coord varchar
+			tlf_coord varchar
+			address_coord varchar [note:"Por defecto igual que la de la universidad"]
+			web_inf_acad varchar
+			
+			nombre_admon_in varchar
+			cargo_admon_in varchar
+			mail_admon_in varchar
+			nombre_resp_acad_in varchar
+			cargo_resp_acad_in varchar
+			
+			nombre_admon_out varchar
+			cargo_admon_out varchar
+			mail_admon_out varchar
+			nombre_resp_acad_out varchar
+			cargo_resp_acad_out varchar
+			mail_resp_acad_out varchar
+			
+		}
+		
+		Ref: P.iso < CON.cod_pais
+		Ref: CON.creado_por > U.id
+		Ref: CON.cod_area > AR.cod_isced
+		Ref: CON.(cod_pais, cod_uni) > UNI.(cod_pais, cod_uni)
+		
+		
+		Table acuerdo_estudios as AE {
+			id int [pk, increment]
+			id_estudiante int [not null]
+			id_tutor int [not null]
+			
+			timestamp_creacion datetime [not null]
+			periodo cuatrimestre [not null]
+			fase int [not null]
+			id_curso int [ref: > CURSO.id, not null]
+			necesidades text
+			begin_movilidad date // comienzo individual del estudiante
+			end_movilidad date // fin individual del estudiante
+			timestamp_nominacion datetime 
+			timestamp_registro datetime [not null]
+			link_documentacion varchar
+			n_solicitud_RRII int
+			convocatoria convocatoria [not null]
+		}
+		
+		Ref: AE.id_estudiante > EST.id_usuario
+		Ref: AE.id_tutor > U.id
+		
+		Table ae_asigloc_asigext {
+			id_ae int
+			asig_loc int [ref: > ASIG.id]
+			asig_ext int [ref: > EXT_ASIG.id]
+			
+			Indexes {
+				(id_ae, asig_loc, asig_ext) [pk]
+			}
+		}
+		
+		Table renuncia as REN{
+			id int [pk, increment]
+			id_ae int  [not null, ref: - AE.id]
+			descripcion text [not null]
+			timestamp datetime [not null]
+		}
+		
+		// EXPEDIENTES, TIPOS DE EXPDIENTE Y FASES
+		
+		Table expediente as EXP{
+			id int [pk, increment]
+			id_ae int [not null]
+			id_tipo_exp int [not null]
+		}
+		
+		Ref: EXP.id_ae > AE.id
+		Ref: EXP.id_tipo_exp > TIPO_EXP.id
+		
+		Table tipo_expediente as TIPO_EXP {
+			id int [pk, increment]
+			descripcion varchar [not null]
+			tipo_estudiante tipo_estudiante [not null]
+		}
+		
+		Table fase_expediente as FAS_EXP {
+			id int [pk, increment]
+			id_tipo_exp int [not null]
+			descripcion varchar [not null]
+			fase_final boolean [default: 0]
+		}
+		
+		Ref: FAS_EXP.id_tipo_exp > TIPO_EXP.id
+		
+		Table envio_mail_fase {
+			id int [pk, increment]
+			id_mail int [ref: > MAIL.id, not null]
+			id_fase int [ref: > FAS_EXP.id, not null]
+			cargo cargo [not null]
+		}
+		
+		Table hist_envio_mail_fase {
+			id int [pk, increment]
+			id_mail int [ref: > MAIL.id, not null]
+			id_fase int [ref: > FAS_EXP.id, not null]
+			id_exp int [ref: > EXP.id, not null]
+			email varchar [not null]
+		}
+		
+		Table hist_envio_mail_fase_mod { // Mail modificado
+			id int [pk, increment]
+			asunto varchar
+			cuerpo text [not null]
+			id_fase int [ref: > FAS_EXP.id, not null]
+			id_exp int [ref: > EXP.id, not null]
+			email varchar [not null]
+		}
+		
+		Table rel_exp_fase as REL_EF {
+			id int [pk]
+			id_exp int [not null]
+			id_fase int [not null]
+			id_gestor int [not null]
+			procesado boolean 
+			timestamp datetime [not null]
+			info varchar
+		}
+		
+		Ref: REL_EF.id_exp - EXP.id
+		Ref: REL_EF.id_fase - FAS_EXP.id
+		Ref: REL_EF.id_gestor - U.id
+		
+		Table rel_exp_fav_gestor { 
+			id int [pk, increment]
+			id_exp int [ref: > EXP.id]
+			id_gestor int [ref: > U.id]
+			//tipo_usuario == GESTOR
+		}
+		
+		// CALENDARIO
+		
+		Table evento as EV {
+			id int [pk, increment]
+			id_creador int [not null]
+			titulo varchar [not null]
+			descripcion text
+			estado estado_evento_tarea [not null]
+			prioridad prioridad [not null, default: 'MEDIA']
+		}
+		
+		Ref: EV.id_creador - U.id //tipo == GESTOR
+		
+		Table tarea as TASK {
+			id int [pk, increment]
+			descripcion text [not null]
+			estado estado_evento_tarea [not null, default: 'PENDIENTE']
+		}
+		
+		Table deadline_aviso as DLA { 
+			id int [pk, increment]
+			fecha datetime [not null]
+			id_responsable int [not null]
+			id_evento int  [not null]
+			id_tarea int [not null]
+		}
+		
+		Ref: DLA.id_responsable > U.id // tipo == GESTOR
+		Ref: DLA.id_evento > EV.id
+		Ref: DLA.id_tarea > TASK.id
+		
+		Table recordatorio {
+			id int [pk, increment]
+			timestamp datetime [not null]
+			id_usuario int [ref: > U.id, not null]
+			deadline datetime [not null]
+			titulo varchar [not null]
+			descripcion text
+			completado boolean
+		}
+		
+		
+		// MENSAJES	
+		Table mensaje as MSG{
+			id int [pk, increment]
+			timestamp datetime [not null]
+			id_emisor int [not null]
+			id_receptor int [not null]
+			leido boolean
+			etiqueta etiqueta_msg [not null]
+			asunto varchar 
+			cuerpo text [not null]
+			
+		}
+		
+		Ref: MSG.id_emisor > U.id
+		Ref: MSG.id_receptor > U.id
+		
+		Enum tipo_asignatura {
+			TRONCAL
+			OBLIGATORIA
+			OPTATIVA
+		}
+		
+		Enum cargo {
+			COORDINADOR
+			ADMON_IN
+			ADMON_OUT
+			RESP_ADMON_OUT
+		}
+		
+		Enum nivel_idioma {
+			B1
+			B2
+			C1
+			C2
+		}
+		
+		
+		Enum etiqueta_msg {
+			IMPORTANTE
+			ELIMINADO
+		}
+		
+		Enum estado_evento_tarea {
+			PENDIENTE
+			EN_PROCESO
+			TERMINADO
+		}
+		
+		Enum prioridad {
+			ALTA
+			MEDIA
+			BAJA
+		}
+		
+		Enum estado_ae {
+			REVISION
+			DENEGADO
+			ACEPTADO
+			VIGENTE
+		}
+		
+		Enum convocatoria {
+			PRIMERA
+			SEGUNDA
+			EXTRAORDINARIA
+		}
+		
+		Enum tipo_movilidad {
+			ERASMUS
+			ARQUS
+			ERASMUS_DI
+			ERASMUS_PARTNER
+			INTERCAMBIO
+			LIBRE_MOVILIDAD
+		}
+		
+		Enum tipo_usuario {
+			SUPERUSUARIO
+			GESTOR
+			ESTUDIANTE
+			TUTOR
+		}
+		
+		Enum genero {
+			F
+			M
+			O
+		}
+		
+		Enum tipo_estudiante {
+			INCOMING
+			OUTGOING
+		}
+		
+		Enum cuatrimestre {
+			PRIMERO
+			SEGUNDO
+			C_COMPLETO
+		}
+		
+	\end{lstlisting}
+
+	\chapter{Código en MySQL generado a partir del \hyperref[anexo:dbml]{código en DBML}}
+	\label{anexo:mysql}
+	
+	\begin{minted}[breaklines]{mysql}
+		
+		CREATE TABLE `centro` (
+		`id` int PRIMARY KEY AUTO_INCREMENT,
+		`nombre` varchar(255) UNIQUE NOT NULL
+		);
+		
+		CREATE TABLE `curso` (
+		`id` int PRIMARY KEY AUTO_INCREMENT,
+		`curso` varchar(4) NOT NULL
+		);
+		
+		CREATE TABLE `mail_predef` (
+		`id` int PRIMARY KEY AUTO_INCREMENT,
+		`titulo` varchar(255) UNIQUE NOT NULL,
+		`asunto` varchar(255) NOT NULL,
+		`cuerpo` text NOT NULL
+		);
+		
+		CREATE TABLE `titulacion` (
+		`id` int PRIMARY KEY,
+		`nombre` varchar(255) UNIQUE NOT NULL,
+		`id_centro` int NOT NULL
+		);
+		
+		CREATE TABLE `asignatura` (
+		`id` int PRIMARY KEY,
+		`id_tit` int NOT NULL,
+		`nombre` varchar(255) NOT NULL,
+		`ects` int NOT NULL,
+		`cuatrimestre` ENUM ('PRIMERO', 'SEGUNDO', 'C_COMPLETO') NOT NULL,
+		`tipo` ENUM ('TRONCAL', 'OBLIGATORIA', 'OPTATIVA') NOT NULL
+		);
+		
+		CREATE TABLE `asignatura_ext` (
+		`id` int PRIMARY KEY,
+		`id_conv` int NOT NULL,
+		`nombre` varchar(255) NOT NULL,
+		`ects` int NOT NULL,
+		`id_curso` int NOT NULL,
+		`cuatrimestre` ENUM ('PRIMERO', 'SEGUNDO', 'C_COMPLETO') NOT NULL
+		);
+		
+		CREATE TABLE `pais` (
+		`iso` varchar(255) PRIMARY KEY,
+		`nombre` varchar(255) NOT NULL
+		);
+		
+		CREATE TABLE `universidad` (
+		`cod_uni` varchar(255) NOT NULL,
+		`cod_pais` varchar(255) NOT NULL,
+		`nombre` varchar(255) NOT NULL,
+		`direccion` varchar(255),
+		`web` varchar(255),
+		`email` varchar(255),
+		PRIMARY KEY (`cod_pais`, `cod_uni`)
+		);
+		
+		CREATE TABLE `area` (
+		`cod_isced` varchar(255) PRIMARY KEY,
+		`nombre_isced` varchar(255) NOT NULL,
+		`nombre_area` varchar(255)
+		);
+		
+		CREATE TABLE `user` (
+		`id` int PRIMARY KEY AUTO_INCREMENT,
+		`username` varchar(255),
+		`nombre` varchar(255),
+		`tipo` ENUM ('SUPERUSUARIO', 'GESTOR', 'ESTUDIANTE', 'TUTOR'),
+		`password` varchar(255),
+		`email` varchar(255),
+		`telefono` varchar(255),
+		`genero` ENUM ('F', 'M', 'O')
+		);
+		
+		CREATE TABLE `estudiante` (
+		`id_usuario` int NOT NULL,
+		`dni` varchar(255) UNIQUE NOT NULL,
+		`id_convenio` int NOT NULL,
+		`id_titulacion` int NOT NULL,
+		`telefono2` int,
+		`email_go_ugr` varchar(255),
+		`f_nacimiento` datetime NOT NULL,
+		`tipo_estudiante` ENUM ('INCOMING', 'OUTGOING') NOT NULL,
+		`cesion_datos` boolean,
+		`nota_expediente` double,
+		`beca_mec` boolean
+		);
+		
+		CREATE TABLE `competencia_ling` (
+		`id` int PRIMARY KEY AUTO_INCREMENT,
+		`lengua` varchar(255) NOT NULL,
+		`nivel` ENUM ('B1', 'B2', 'C1', 'C2') NOT NULL
+		);
+		
+		CREATE TABLE `rel_cl_est` (
+		`id` int PRIMARY KEY AUTO_INCREMENT,
+		`id_cl` int NOT NULL,
+		`id_est` int NOT NULL
+		);
+		
+		CREATE TABLE `req_ling_conv` (
+		`id` int PRIMARY KEY AUTO_INCREMENT,
+		`id_comp` int NOT NULL,
+		`id_conv` int NOT NULL
+		);
+		
+		CREATE TABLE `convenio` (
+		`id` int PRIMARY KEY AUTO_INCREMENT,
+		`cod_area` varchar(255) NOT NULL,
+		`cod_uni` varchar(255) NOT NULL,
+		`cod_pais` varchar(255) NOT NULL,
+		`id_admon_out` int,
+		`id_curso_creacion` int NOT NULL,
+		`creado_por` int NOT NULL,
+		`num_becas_in` int NOT NULL,
+		`num_becas_out` int NOT NULL,
+		`meses_in` int NOT NULL,
+		`meses_out` int NOT NULL,
+		`anno_inicio` int NOT NULL,
+		`anno_fin` int NOT NULL,
+		`req_titulacion` varchar(255),
+		`req_curso` varchar(255),
+		`nominacion_online` boolean,
+		`link_nom_online` varchar(255),
+		`info_nom_online` text,
+		`link_documentacion` varchar(255),
+		`movilidad_pdi` boolean,
+		`movilidad_pas` boolean,
+		`tipo_movilidad` ENUM ('ERASMUS', 'ARQUS', 'ERASMUS_DI', 'ERASMUS_PARTNER', 'INTERCAMBIO', 'LIBRE_MOVILIDAD') NOT NULL,
+		`user_online` varchar(255),
+		`password_online` varchar(255),
+		`fecha_online` datetime,
+		`info_tor` text,
+		`observ_discapacidad` text,
+		`observ_req_ling` text,
+		`begin_nom_1s` datetime,
+		`end_nom_1s` datetime,
+		`begin_nom_2s` datetime,
+		`end_nom_2s` datetime,
+		`begin_app_1s` datetime,
+		`end_app_1s` datetime,
+		`begin_app_2s` datetime,
+		`end_app_2s` datetime,
+		`begin_mov_1s` datetime,
+		`end_mov_1s` datetime,
+		`begin_mov_2s` datetime,
+		`end_mov_2s` datetime,
+		`memo_grading` text,
+		`memo_visado` text,
+		`memo_seguro` text,
+		`memo_alojamiento` text,
+		`nombre_coord` varchar(255),
+		`cargo_coord` varchar(255),
+		`email_coord` varchar(255),
+		`tlf_coord` varchar(255),
+		`address_coord` varchar(255) COMMENT 'Por defecto igual que la de la universidad',
+		`web_inf_acad` varchar(255),
+		`nombre_admon_in` varchar(255),
+		`cargo_admon_in` varchar(255),
+		`mail_admon_in` varchar(255),
+		`nombre_resp_acad_in` varchar(255),
+		`cargo_resp_acad_in` varchar(255),
+		`nombre_admon_out` varchar(255),
+		`cargo_admon_out` varchar(255),
+		`mail_admon_out` varchar(255),
+		`nombre_resp_acad_out` varchar(255),
+		`cargo_resp_acad_out` varchar(255),
+		`mail_resp_acad_out` varchar(255)
+		);
+		
+		CREATE TABLE `acuerdo_estudios` (
+		`id` int PRIMARY KEY AUTO_INCREMENT,
+		`id_estudiante` int NOT NULL,
+		`id_tutor` int NOT NULL,
+		`timestamp_creacion` datetime NOT NULL,
+		`periodo` ENUM ('PRIMERO', 'SEGUNDO', 'C_COMPLETO') NOT NULL,
+		`fase` int NOT NULL,
+		`id_curso` int NOT NULL,
+		`necesidades` text,
+		`begin_movilidad` date,
+		`end_movilidad` date,
+		`timestamp_nominacion` datetime,
+		`timestamp_registro` datetime NOT NULL,
+		`link_documentacion` varchar(255),
+		`n_solicitud_RRII` int,
+		`convocatoria` ENUM ('PRIMERA', 'SEGUNDA', 'EXTRAORDINARIA') NOT NULL
+		);
+		
+		CREATE TABLE `ae_asigloc_asigext` (
+		`id_ae` int,
+		`asig_loc` int,
+		`asig_ext` int,
+		PRIMARY KEY (`id_ae`, `asig_loc`, `asig_ext`)
+		);
+		
+		CREATE TABLE `renuncia` (
+		`id` int PRIMARY KEY AUTO_INCREMENT,
+		`id_ae` int NOT NULL,
+		`descripcion` text NOT NULL,
+		`timestamp` datetime NOT NULL
+		);
+		
+		CREATE TABLE `expediente` (
+		`id` int PRIMARY KEY AUTO_INCREMENT,
+		`id_ae` int NOT NULL,
+		`id_tipo_exp` int NOT NULL
+		);
+		
+		CREATE TABLE `tipo_expediente` (
+		`id` int PRIMARY KEY AUTO_INCREMENT,
+		`descripcion` varchar(255) NOT NULL,
+		`tipo_estudiante` ENUM ('INCOMING', 'OUTGOING') NOT NULL
+		);
+		
+		CREATE TABLE `fase_expediente` (
+		`id` int PRIMARY KEY AUTO_INCREMENT,
+		`id_tipo_exp` int NOT NULL,
+		`descripcion` varchar(255) NOT NULL,
+		`fase_final` boolean DEFAULT 0
+		);
+		
+		CREATE TABLE `envio_mail_fase` (
+		`id` int PRIMARY KEY AUTO_INCREMENT,
+		`id_mail` int NOT NULL,
+		`id_fase` int NOT NULL,
+		`cargo` ENUM ('COORDINADOR', 'ADMON_IN', 'ADMON_OUT', 'RESP_ADMON_OUT') NOT NULL
+		);
+		
+		CREATE TABLE `hist_envio_mail_fase` (
+		`id` int PRIMARY KEY AUTO_INCREMENT,
+		`id_mail` int NOT NULL,
+		`id_fase` int NOT NULL,
+		`id_exp` int NOT NULL,
+		`email` varchar(255) NOT NULL
+		);
+		
+		CREATE TABLE `hist_envio_mail_fase_mod` (
+		`id` int PRIMARY KEY AUTO_INCREMENT,
+		`asunto` varchar(255),
+		`cuerpo` text NOT NULL,
+		`id_fase` int NOT NULL,
+		`id_exp` int NOT NULL,
+		`email` varchar(255) NOT NULL
+		);
+		
+		CREATE TABLE `rel_exp_fase` (
+		`id` int PRIMARY KEY,
+		`id_exp` int NOT NULL,
+		`id_fase` int NOT NULL,
+		`id_gestor` int NOT NULL,
+		`procesado` boolean,
+		`timestamp` datetime NOT NULL,
+		`info` varchar(255)
+		);
+		
+		CREATE TABLE `rel_exp_fav_gestor` (
+		`id` int PRIMARY KEY AUTO_INCREMENT,
+		`id_exp` int,
+		`id_gestor` int
+		);
+		
+		CREATE TABLE `evento` (
+		`id` int PRIMARY KEY AUTO_INCREMENT,
+		`id_creador` int NOT NULL,
+		`titulo` varchar(255) NOT NULL,
+		`descripcion` text,
+		`estado` ENUM ('PENDIENTE', 'EN_PROCESO', 'TERMINADO') NOT NULL,
+		`prioridad` ENUM ('ALTA', 'MEDIA', 'BAJA') NOT NULL DEFAULT "MEDIA"
+		);
+		
+		CREATE TABLE `tarea` (
+		`id` int PRIMARY KEY AUTO_INCREMENT,
+		`descripcion` text NOT NULL,
+		`estado` ENUM ('PENDIENTE', 'EN_PROCESO', 'TERMINADO') NOT NULL DEFAULT "PENDIENTE"
+		);
+		
+		CREATE TABLE `deadline_aviso` (
+		`id` int PRIMARY KEY AUTO_INCREMENT,
+		`fecha` datetime NOT NULL,
+		`id_responsable` int NOT NULL,
+		`id_evento` int NOT NULL,
+		`id_tarea` int NOT NULL
+		);
+		
+		CREATE TABLE `recordatorio` (
+		`id` int PRIMARY KEY AUTO_INCREMENT,
+		`timestamp` datetime NOT NULL,
+		`id_usuario` int NOT NULL,
+		`deadline` datetime NOT NULL,
+		`titulo` varchar(255) NOT NULL,
+		`descripcion` text,
+		`completado` boolean
+		);
+		
+		CREATE TABLE `mensaje` (
+		`id` int PRIMARY KEY AUTO_INCREMENT,
+		`timestamp` datetime NOT NULL,
+		`id_emisor` int NOT NULL,
+		`id_receptor` int NOT NULL,
+		`leido` boolean,
+		`etiqueta` ENUM ('IMPORTANTE', 'ELIMINADO') NOT NULL,
+		`asunto` varchar(255),
+		`cuerpo` text NOT NULL
+		);
+		
+		ALTER TABLE `titulacion` ADD FOREIGN KEY (`id_centro`) REFERENCES `centro` (`id`);
+		
+		ALTER TABLE `asignatura` ADD FOREIGN KEY (`id_tit`) REFERENCES `titulacion` (`id`);
+		
+		ALTER TABLE `asignatura_ext` ADD FOREIGN KEY (`id_curso`) REFERENCES `curso` (`id`);
+		
+		ALTER TABLE `asignatura_ext` ADD FOREIGN KEY (`id_conv`) REFERENCES `convenio` (`id`);
+		
+		ALTER TABLE `universidad` ADD FOREIGN KEY (`cod_pais`) REFERENCES `pais` (`iso`);
+		
+		ALTER TABLE `estudiante` ADD FOREIGN KEY (`id_titulacion`) REFERENCES `titulacion` (`id`);
+		
+		ALTER TABLE `estudiante` ADD FOREIGN KEY (`id_usuario`) REFERENCES `user` (`id`);
+		
+		ALTER TABLE `estudiante` ADD FOREIGN KEY (`id_convenio`) REFERENCES `convenio` (`id`);
+		
+		ALTER TABLE `rel_cl_est` ADD FOREIGN KEY (`id_cl`) REFERENCES `competencia_ling` (`id`);
+		
+		ALTER TABLE `rel_cl_est` ADD FOREIGN KEY (`id_est`) REFERENCES `estudiante` (`id_usuario`);
+		
+		ALTER TABLE `req_ling_conv` ADD FOREIGN KEY (`id_comp`) REFERENCES `competencia_ling` (`id`);
+		
+		ALTER TABLE `req_ling_conv` ADD FOREIGN KEY (`id_conv`) REFERENCES `convenio` (`id`);
+		
+		ALTER TABLE `convenio` ADD FOREIGN KEY (`id_curso_creacion`) REFERENCES `curso` (`id`);
+		
+		ALTER TABLE `convenio` ADD FOREIGN KEY (`cod_pais`) REFERENCES `pais` (`iso`);
+		
+		ALTER TABLE `convenio` ADD FOREIGN KEY (`creado_por`) REFERENCES `user` (`id`);
+		
+		ALTER TABLE `convenio` ADD FOREIGN KEY (`cod_area`) REFERENCES `area` (`cod_isced`);
+		
+		ALTER TABLE `convenio` ADD FOREIGN KEY (`cod_pais`, `cod_uni`) REFERENCES `universidad` (`cod_pais`, `cod_uni`);
+		
+		ALTER TABLE `acuerdo_estudios` ADD FOREIGN KEY (`id_curso`) REFERENCES `curso` (`id`);
+		
+		ALTER TABLE `acuerdo_estudios` ADD FOREIGN KEY (`id_estudiante`) REFERENCES `estudiante` (`id_usuario`);
+		
+		ALTER TABLE `acuerdo_estudios` ADD FOREIGN KEY (`id_tutor`) REFERENCES `user` (`id`);
+		
+		ALTER TABLE `ae_asigloc_asigext` ADD FOREIGN KEY (`asig_loc`) REFERENCES `asignatura` (`id`);
+		
+		ALTER TABLE `ae_asigloc_asigext` ADD FOREIGN KEY (`asig_ext`) REFERENCES `asignatura_ext` (`id`);
+		
+		ALTER TABLE `renuncia` ADD FOREIGN KEY (`id_ae`) REFERENCES `acuerdo_estudios` (`id`);
+		
+		ALTER TABLE `expediente` ADD FOREIGN KEY (`id_ae`) REFERENCES `acuerdo_estudios` (`id`);
+		
+		ALTER TABLE `expediente` ADD FOREIGN KEY (`id_tipo_exp`) REFERENCES `tipo_expediente` (`id`);
+		
+		ALTER TABLE `fase_expediente` ADD FOREIGN KEY (`id_tipo_exp`) REFERENCES `tipo_expediente` (`id`);
+		
+		ALTER TABLE `envio_mail_fase` ADD FOREIGN KEY (`id_mail`) REFERENCES `mail_predef` (`id`);
+		
+		ALTER TABLE `envio_mail_fase` ADD FOREIGN KEY (`id_fase`) REFERENCES `fase_expediente` (`id`);
+		
+		ALTER TABLE `hist_envio_mail_fase` ADD FOREIGN KEY (`id_mail`) REFERENCES `mail_predef` (`id`);
+		
+		ALTER TABLE `hist_envio_mail_fase` ADD FOREIGN KEY (`id_fase`) REFERENCES `fase_expediente` (`id`);
+		
+		ALTER TABLE `hist_envio_mail_fase` ADD FOREIGN KEY (`id_exp`) REFERENCES `expediente` (`id`);
+		
+		ALTER TABLE `hist_envio_mail_fase_mod` ADD FOREIGN KEY (`id_fase`) REFERENCES `fase_expediente` (`id`);
+		
+		ALTER TABLE `hist_envio_mail_fase_mod` ADD FOREIGN KEY (`id_exp`) REFERENCES `expediente` (`id`);
+		
+		ALTER TABLE `rel_exp_fase` ADD FOREIGN KEY (`id_exp`) REFERENCES `expediente` (`id`);
+		
+		ALTER TABLE `rel_exp_fase` ADD FOREIGN KEY (`id_fase`) REFERENCES `fase_expedient` (`id`);
+		
+		ALTER TABLE `rel_exp_fase` ADD FOREIGN KEY (`id_gestor`) REFERENCES `user` (`id`);
+		
+		ALTER TABLE `rel_exp_fav_gestor` ADD FOREIGN KEY (`id_exp`) REFERENCES `expediente` (`id`);
+		
+		ALTER TABLE `rel_exp_fav_gestor` ADD FOREIGN KEY (`id_gestor`) REFERENCES `user` (`id`);
+		
+		ALTER TABLE `evento` ADD FOREIGN KEY (`id_creador`) REFERENCES `user` (`id`);
+		
+		ALTER TABLE `deadline_aviso` ADD FOREIGN KEY (`id_responsable`) REFERENCES `user` (`id`);
+		
+		ALTER TABLE `deadline_aviso` ADD FOREIGN KEY (`id_evento`) REFERENCES `evento` (`id`);
+		
+		ALTER TABLE `deadline_aviso` ADD FOREIGN KEY (`id_tarea`) REFERENCES `tarea` (`id`);
+		
+		ALTER TABLE `recordatorio` ADD FOREIGN KEY (`id_usuario`) REFERENCES `user` (`id`);
+		
+		ALTER TABLE `mensaje` ADD FOREIGN KEY (`id_emisor`) REFERENCES `user` (`id`);
+		
+		ALTER TABLE `mensaje` ADD FOREIGN KEY (`id_receptor`) REFERENCES `user` (`id`);
+		
+	\end{minted}
+
+
+		
+%\end{appendices}
