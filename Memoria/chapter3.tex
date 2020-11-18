@@ -129,11 +129,11 @@ Sin estas entrevistas, sería muy complicado llegar a hacer un producto que pued
 
 \section{Malla receptora de información}
 
-A las técnicas expuestas en \nameref{herramientasDT}, podemos sumar la creación de una malla que nos permita definir las partes claves de nuestro proyecto. Si bien es cierto que la \textit{Feedback Capture Grid} es mayormente utilizada para potenciar el aprendizaje tras las sesiones de pruebas, podríamos plasmar en ella los elementos que cualquier persona podría hacerse, sean o no actores que interactuarían o no con el producto final \cite{feedbackCaptureGrid}.
+A las técnicas expuestas en \nameref{herramientasDT}, podemos sumar la creación de una malla que nos permita definir las partes claves de nuestro proyecto. Si bien es cierto que la \textit{Feedback Capture Grid} es mayormente utilizada para potenciar el aprendizaje tras las sesiones de pruebas, podríamos plasmar en ella las preguntas que cualquier persona podría hacerse o las aportaciones que cupieran hacer, sean o no actores que utilizasen el producto final \cite{feedbackCaptureGrid}.
 
 Su creación consiste en la división en cuatro cuadrantes de una hoja de papel, por ejemplo. En los diferentes espacios, empezando en orden de izquierda a derecha y por la parte superior, se toma nota de las buenas ideas que se han percibido tras conocer el producto, los problemas o las críticas que se le pueden encontrar, las preguntas que pueda haber y, por último, las ideas para la mejora del software que se pudieran tener, a modo de trabajos futuros.
 
-En nuestro caso, hemos efectuado la malla (figura \ref{fig:malla}) para definir, a grandes rasgos, lo bueno que supone twinX ante TWINS, los impedimentos que tiene esta primera aproximación o proyecto piloto, las preguntas que podrían surgir por varias personas a la hora de conocer el producto (personal de administración, estudiantes, tutores...) y, por último, una serie de propuestas que se desarrollarán en la sección de trabajos futuros.
+En nuestro caso, hemos efectuado la malla (figura \ref{fig:malla}) para definir, a grandes rasgos, lo bueno que supone twinX ante TWINS, los impedimentos que tiene esta primera aproximación o proyecto piloto, las preguntas que podrían surgir por varias personas a la hora de conocer el producto (personal de administración, estudiantes, tutores...) y, por último, una serie de propuestas que se desarrollarán en la sección de \nameref{sec:trabajosfuturos}.
 
 
 \begin{figure}
@@ -153,7 +153,7 @@ Una vez hemos dado pinceladas de todo lo que tenemos, de qué podemos hacer, qu�
 \label{eleccionMetodologia}
 Para desarrollar twinX primero se ha de elegir una metodología. Tradicionalmente, los proyectos de software se construían siguiendo lo que se conocen como «metodologías pesadas» o tradicionales \cite{waterfall1}, largos procesos de desarrollo en los que se definen unas fases secuenciales por donde el producto iba pasando hasta tener una versión final. La metodología más sonada es la de «cascada» o \textit{waterfall} en inglés \cite{waterfall2}. En ella, tenían lugar unas estrictas etapas enfocadas a un grupo de tareas en concreto, como son la etapa de definición, la de diseño, la de codificación, la de pruebas y la de mejora. Todo ello daba lugar a documentaciones muy completas aunque innecesariamente extensas en muchos casos, a través de la implicación de mucha gente experta en la materia, capacitada para hacer las tareas definidas muy concretamente. La flexibilidad apenas estaba contemplada, puesto que la planificación era muy estricta y hacía peligrar la buena continuidad del proyecto.
 
-Hoy en día, apenas se utiliza este tipo de metodologías. En nuestro caso, queremos construir lo que sería tan sólo el comienzo del producto final. En otras palabras, nuestras condiciones no encajarían en una metodología en cascada, pues no tenemos unos requisitos estrictamente fijados, ya que vamos a crear una versión de TWINS no definitiva y la cual no se verá con todas las características implementadas. Además, es un cambio tan drástico el que se va a dar al transportar la aplicación a la web, que se precisa de la continua atención de una especie de «equipo supervisor», conformado por uno o varios usuarios finales del producto, que nos pueda proporcionar un \textit{feedback} sobre si nos estamos acercando o alejando de sus expectativas. Sobre esto último, diremos que no es que no se tuviera en cuenta en las metodologías tradicionales, pero no se primaba tanto como se debería, lo que hacía que el software perdiera calidad.
+Hoy en día, apenas se utiliza este tipo de metodologías. En nuestro caso, queremos construir lo que sería tan sólo el comienzo del producto final. En otras palabras, nuestras condiciones no encajarían en una metodología en cascada, pues no tenemos unos requisitos estrictamente fijados, ya que vamos a crear una versión de twinX no definitiva y la cual no se verá con todas las características implementadas. Además, es un cambio tan drástico el que se va a dar al transportar la aplicación a la web, que se precisa de la continua atención de una especie de «equipo supervisor», conformado por uno o varios usuarios finales del producto, que nos pueda proporcionar un \textit{feedback} sobre si nos estamos acercando o alejando de sus expectativas. Sobre esto último, diremos que no es que no se tuviera en cuenta en las metodologías tradicionales, pero no se primaba tanto como se debería, lo que hacía que el software perdiera calidad.
 
 Por todo ello, podemos aventurarnos a decir que nuestro proyecto encaja más en una \textbf{metodología ágil}. Este tipo de metodologías se basan en la adaptación a medios con necesidades cambiantes, con un desarrollo muy de cerca con el cliente, quien está presente junto con el equipo de desarrollo en las numerosas reuniones que se hacen a lo largo de la vida del proyecto. Es más, en el \textit{14th Annual State of Agile Report} \cite{stateofagile} podemos encontrar unas estadísticas sobre los beneficios que ha traído el uso de metodologías ágiles en el último año, entre las que podemos destacar la capacidad de manejar los cambios de prioridades, la reducción de riesgos en el proyecto o el mantenimiento del software. En este caso, el equipo de desarrollo es ajustado, pero no por ello dejaremos de lado la necesaria intervención de dos personas fundamentales que hacen el papel de clientes y que son:
 
@@ -169,7 +169,7 @@ En su primera versión, twinX incluirá la funcionalidad mínima de TWINS, de mo
 Más concretamente, contemplamos la implementación de:
 
 \begin{itemize}
-	\item El añadido, modificación y eliminación de información esencial (como son asignaturas, tipo de expediente --similar a \gls{ExpedienteTWINS}--, mensajes predefinidos, etc.)
+	\item El añadido, modificación y eliminación de información esencial (como son asignaturas, tipos de expediente --similar a \gls{ExpedienteTWINS}--, mensajes predefinidos, etc.)
 	\item La visualización de la información relevante a estudiantes (sus datos personales, expedientes abiertos, fases de los mismos, etc.)
 	\item La visualización de los \glspl{Convenio}, modificación de la información y el añadido de nuevos. Posibilidad de dos vistas: una de resumen y otra completa, tal y como se tiene en TWINS.
 	\item Calendario con eventos, tareas, tal y como se disponía en TWINS
@@ -191,29 +191,29 @@ En relación con la sección ~\ref{eleccionMetodologia}, la metodología concret
 
 En Scrum, se asume que el análisis, el diseño y los procesos de desarrollo son impredecibles, y por ello, tienen que ser iterativos; esto es, hay que estar constantemente comprobando el trabajo realizado, evaluando qué se ha hecho, para adaptarlo de la mejor manera posible a la situación del proyecto. Esta repetición recibe el nombre de \textbf{sprint}, y es una medida de esta metodología.
 
-Los sprints son flexibles y no lineales. Se podrían tomar como una caja negra que precisa de controles externos. De este modo, en cada iteración se pueden tener en cuenta todos los factores que se crean necesarios, de forma que se evite convertir el proceso en algo caótico y que se aleje de los objetivos del proyecto y, al mismo tiempo, se pueda maximizar la flexibilidad \cite{scrum}.
+Los sprints son flexibles y no lineales. Se podrían tomar como una caja negra que precisa de controles externos. De este modo, en cada iteración se pueden tener en cuenta todos los factores que se crean necesarios, de forma que se evite convertir el proceso en algo caótico y que se aleje de los objetivos del proyecto. \cite{scrum}.
 
 Vamos a agrupar en tres bloques las fases de la metodología Scrum:
 \begin{itemize}
 	\item \textbf{Preparación.} Podemos diferenciar dos subfases:
 	\begin{itemize}
-		\item Planificación: donde se estiman el coste y el tiempo del proceso
-		\item Arquitectura: para decidir cómo se van a implementar los elementos de la lista de trabajos pendientes o \textit{backlog}
+		\item Planificación: donde se estiman el coste y el tiempo del proceso.
+		\item Arquitectura: para decidir cómo se van a implementar los elementos de la lista de trabajos pendientes o \textit{backlog}.
 	\end{itemize} 
-	\item \textbf{Desarrollo:} donde se lleva a cabo la realización de los sprints acordados en la fase anterior. Se desarrollan nuevas funcionalidades, respetando las variables del tiempo, requisitos, calidad, coste y competición. El fin de esta fase está condicionado a cuán bien se interacciona con las variables mencionadas.
+	\item \textbf{Desarrollo:} donde se lleva a cabo la realización de los sprints acordados en la fase anterior. Se desarrollan nuevas funcionalidades, respetando las variables del tiempo, requisitos, calidad, coste y competición. El fin de esta fase está condicionado a cuán bien se interacciona con las medidas mencionadas.
 	\item \textbf{Finalización:} preparación para el lanzamiento del producto, donde se incluye la documentación final, y unas pruebas que se realizan con anterioridad a la versión final del software.
 \end{itemize}
 
 \subsection{Planificación en sprints}
 \label{subsec:sprints}
 
-A continuación, vamos a exponer la planificación que se ha pensado para llevar a cabo el desarrollo de este producto piloto para la plataforma twinX, de acuerdo con lo expuesto en la sección ~\ref{subsec:propuesta}:
+A continuación, vamos a exponer la planificación que se ha pensado para llevar a cabo el desarrollo de este producto piloto para la plataforma twinX, de acuerdo con lo expuesto en la sección \ref{subsec:propuesta}:
 
 \subsubsection*{\textbf{Sprint 0: puesta a punto}}
 
 \begin{itemize}
-	\item \textbf{Toma de decisiones acerca del renombramiento de algunas entidades existentes en TWINS:} existen una serie de nombres que pueden ser confusos para una persona que trate de comprender el funcionamiento de TWINS desde cero; si bien esto no ocurre con los usuarios habituales de la aplicación de Access\textregistered, con el desarrollo de twinX estamos, por lo general, facilitando a todo el entorno de la ORI-FyL, y por tanto, se renombrará alguna entidad como por ejemplo «evento». El motivo no es otro que la confusión entre un evento de calendario cotidiano y un \gls{EventoExpedienteTWINS}. Para ello, se tiene que hacer un segundo análisis de la base de datos ya creada y así poder mejorar la comprensión de nuevos usuarios en la plataforma.
-	\item \textbf{Realización de un tutorial de \textit{Yii2 Framework}:} sobre los detalles de la tecnología a usar para el desarrollo de twinX hablaremos en la sección ~\ref{implementacion}. Sin embargo, antes de ponernos manos a la obra con la implementación del sistema web, habrá que adquirir los conocimientos necesarios para la toma de buenas decisiones y el respeto de las buenas prácticas del framework. %PENDIENTE
+	\item \textbf{Toma de decisiones acerca del renombramiento de algunas entidades existentes en TWINS:} existen una serie de nombres que pueden ser confusos para una persona que trate de comprender el funcionamiento de TWINS desde cero; si bien esto no ocurre con los usuarios habituales de la aplicación de Access\textregistered, con el desarrollo de twinX estamos, por lo general, facilitando a todo el entorno de la ORI-FyL, y por tanto, se renombrará alguna entidad, como por ejemplo «evento». El motivo no es otro que la confusión entre un evento de calendario cotidiano y un \gls{EventoExpedienteTWINS}. Para ello, se tiene que hacer un segundo análisis de la base de datos ya creada y así poder mejorar la comprensión de nuevos usuarios en la plataforma.
+	\item \textbf{Realización de un tutorial de \textit{Yii2 Framework}:} sobre los detalles de la tecnología a usar para el desarrollo de twinX hablaremos en la sección \ref{implementacion}. Sin embargo, antes de ponernos manos a la obra con la implementación del sistema web, habrá que adquirir los conocimientos necesarios para la toma de buenas decisiones y el respeto de las buenas prácticas del framework.
 	\item \textbf{Modelado de la base de datos:} realizar el diseño lógico-conceptual de la base de datos es esencial a la hora del desarrollo. Una vez se tiene, podemos crear las tablas necesarias para hacer funcionar la aplicación. Es de suma importancia dedicar el tiempo suficiente a esta tarea, dado que los  errores en el modelo pueden dar lugar a imprevistos temporales en el futuro.
 	\item \textbf{Creación de bocetos:} necesarios para confeccionar las interfaces de usuario sobre un esquema ya pensado, de modo que las decisiones de diseño de importancia tengan lugar en esta fase, y no sobre la marcha, ya que es más costoso en cuanto a tiempo y la consistencia de las vistas puede verse comprometida.	
 \end{itemize}
@@ -263,15 +263,15 @@ A continuación, vamos a exponer la planificación que se ha pensado para llevar
 
 \begin{itemize}
 	\item \textbf{Integración del reconocimiento de créditos:} para los estudiantes salientes, trasladar sus puntuaciones obtenidas en su universidad de destino a calificaciones ponderables en su expediente en la UGR.
-	\item \textbf{Integración de la alteración de matrícula:} proceso mediante el cual los estudiantes entrantes pueden tener asignadas sus asignaturas, confeccionados sus horarios dependiendo de factores como las plazas vacantes o el posible solapado de clases en un tramo horario.
+	\item \textbf{Integración de la alteración de matrícula:} proceso mediante el cual los estudiantes entrantes pueden tener atribuidas sus asignaturas y confeccionados sus horarios dependiendo de factores como las plazas vacantes o el posible solapado de clases en un tramo horario.
 	\item \textbf{Funcionalidad de migración de datos masiva:} desde la sede de la UGR, quien comunica a la ORI-FyL los listados de los estudiantes de movilidad entrantes y salientes.
 \end{itemize}
 
-Todas estas tareas pueden ser, acorde con la metodología Scrum, modificadas y trasladadas a otros sprints. Sobre las subtareas que conllevaría cada épica\footnote{Las épicas son tareas que almacenan dentro de ellos un gran número de subtareas.} (las expuestas anteriormente), hablaremos en la sección ~\ref{diseñoTécnico}. %PENDIENTE
+Todas estas tareas pueden ser, acorde con la metodología Scrum, modificadas y trasladadas a otros sprints. Sobre las subtareas que conllevaría cada épica\footnote{Las épicas son tareas que almacenan dentro de ellos un gran número de subtareas.} (las expuestas anteriormente), hablaremos en la sección \ref{diseñotécnico}.
 
 Independientemente de la división del trabajo en todos estos sprints, no se contempla la realización de más de uno o dos de ellos, con la posibilidad de cambiar los contenidos de los mismos, pues también habría que incluir la realización de las pruebas y la redacción de esta memoria.
 
-En adición a la planificación aquí expuesta, cabe señalar la utilización de un tablero \textbf{Kanban}, característico de las metodologías ágiles y de Scrum. En él, se disponen las tareas en varias columnas. A cada tarea se le puede asignar un color para distinguirlo, por ejemplo, en los distintos sprints. Para la construcción de twinX hemos usado la herramienta \textit{Trello} para la confección de un tablero interactivo (figura \ref{fig:kanban}). Las distintas etiquetas representan distintos sprints, y a cada tarea (consideradas en su mayoría como épicas), se les puede adjuntar una lista de tipo \textit{checkbox} para asegurarnos de que no queda tarea sin hacer dentro de cada épica.
+En adición a la planificación aquí expuesta, cabe señalar la utilización de un tablero \textbf{Kanban}, característico de las metodologías ágiles y de Scrum. En él, se disponen las tareas en varias columnas. A cada tarea se le puede asignar un color para distinguirlo, por ejemplo, en los distintos sprints. Para la construcción de twinX hemos usado la herramienta \textit{Trello} \cite{trello} para la confección de un tablero interactivo (figura \ref{fig:kanban}). Algunas de las etiquetas representan distintos sprints, y a cada tarea (consideradas en su mayoría como épicas), se les puede adjuntar una lista de tipo \textit{checkbox} para asegurarnos de que no queda tarea sin hacer dentro de cada épica.
 
 \begin{figure}
 	\centering
@@ -319,9 +319,9 @@ Más en detalle, el tiempo dedicado a cada tarea en horas, de forma aproximada, 
 			\hline
 			\textbf{Pruebas} & 5 h\\
 			\hline
-			\textbf{Memoria} & 120 h \\
+			\textbf{Memoria} & 130 h \\
 			\hline
-			\textbf{Total del proyecto} & 298 h \\
+			\textbf{Total del proyecto} & 308 h \\
 			\hline
 		\end{tabular}
 		\caption{Estimación horaria por bloques}
@@ -356,7 +356,7 @@ A partir de la información anterior en cuanto al tiempo invertido en el proyect
 			\hline
 			Windows\textregistered 10 Home & 145 €\\
 			\hline
-			Suscripción a Microsoft Office\textregistered 365 (1 año) & 69 €\\
+			Suscripción a Microsoft Office\textregistered~ 365 (1 año) & 69 €\\
 			\hline
 			Servidor AWS (tarifa estándar gratuita)& 0 €\\
 			\hline

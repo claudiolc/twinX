@@ -4,7 +4,7 @@ Una vez hemos definido cuáles son nuestros objetivos, analizado el estado del a
 
 \section{Matriz de tareas de usuario}
 
-Un buen comienzo sería el de definir los roles de usuario en nuestra nueva aplicación. Hemos hablado ya en el capítulo anterior sobre la figura del \gls{gestortwinX} y la del \gls{administradortwinX}. Incluyamos entonces también las de \gls{Tutor}, estudiante y, de forma excepcional, la de coordinador(a) externo/a. Sobre esta última, recordemos que no tenía ningún tipo de interacción en TWINS y que hasta entonces, los usuarios de la plataforma habían establecido intercambios de información por correo electrónico con los coordinadores de otras facultades, que es el método estándar de realizar las \glspl{Nominacion}. Sin embargo, aunque no para sus primeras versiones, se espera que twinX brinde la capacidad de hacer estas nominaciones a través de una interfaz gráfica, de una forma mucho más sencilla y segura que con el envío de un texto libre, donde puede haber errores y/o malas prácticas, dado el amplio uso que se puede hacer de la herramienta.
+Un buen comienzo sería el de definir los roles de usuario en nuestra nueva aplicación. Hemos hablado ya en el capítulo anterior sobre la figura del \gls{gestortwinX} y la del \gls{administradortwinX}. Incluyamos entonces también las de \gls{Tutor}, estudiante y, de forma excepcional, la de coordinador externo. Sobre esta última, recordemos que los usuarios de TWINS habían establecido intercambios de información por correo electrónico con los coordinadores de otras facultades, que es el método estándar de realizar las \glspl{Nominacion}. Sin embargo, aunque no para sus primeras versiones, se espera que twinX brinde la capacidad de hacer estas nominaciones a través de una interfaz gráfica, de una forma mucho más sencilla y segura que con el envío de un texto libre, donde puede haber errores y/o malas prácticas, dado el amplio uso que se puede hacer de la herramienta.
 
 Es precisamente por la necesidad de dejar claras las acciones a llevar a cabo por cada usuario del sistema por la que elaborar una \textbf{matriz de tareas de usuario}. Esta herramienta nos permite establecer cuál es la frecuencia de uso de una característica de nuestra aplicación por un grupo de usuarios en concreto y cuál es la prioridad que debemos darle a la implementación de la misma. De esta forma, nos será más fácil diferenciar aquellas acciones que tan solo se lleven a cabo unas pocas veces al mes (o cada varios meses) y cuales, por el contrario, son ejecutadas casi a diario, de modo que se priorice su integración y su optimización. Sobre estas últimas, cabe decir que el potenciarlas no solo se procurará hacer en términos de procesamiento interno del código, sino también en cuanto a su facilidad de utilización por parte del usuario. Es decir, tendremos que crear más accesos directos o simplificar lo máximo posible el curso de tareas a llevar a cabo para realizar estas acciones y obtener los resultados deseados. En adición a todo esto, podremos observar cuáles son los usuarios que menos usarán la plataforma, de modo que se reste prioridad a la implementación de sus interacciones, en beneficio de las que llevan a cabo los usuarios que, por el contrario, monopolizan el uso de la aplicación \cite{matrizTareas}.
 
@@ -77,7 +77,7 @@ En la figura \ref{fig:sitemap} exponemos el \textit{sitemap} de twinX, diferenci
 
 \section{Iconografía (labelling)}
 
-Resultaría muy extraño navegar hoy en día por una web que no tuviera un icono ofreciendo alguna indicación. Quizás, al pensar en la palabra «icono» nos vengan a la cabeza expresiones faciales que utilizamos a diario para comunicarnos (los famosos emoticonos), pero lejos de adornar, estos símbolos gráficos nos facilitan mucho la navegación por internet con indicaciones visuales que nos hacen ahorrar tiempo para encontrar un menú desplegable, el botón para iniciar sesión o simplemente la salida.
+Resultaría muy extraño navegar hoy en día por una web que no tuviera algún icono ofreciendo indicaciones. Quizás, al pensar en la palabra «icono» nos vengan a la cabeza expresiones faciales que utilizamos a diario para comunicarnos (los famosos emoticonos), pero lejos de adornar, estos símbolos gráficos nos facilitan mucho la navegación por internet con indicaciones visuales que nos hacen ahorrar tiempo para encontrar un menú desplegable, el botón para iniciar sesión o simplemente la salida.
 
 Como no podía ser de otra forma, nuestro portal no es una excepción y también incluye iconos para mejorar la experiencia de navegación. En la tabla \ref{tab:iconografia} presentamos los iconos existentes en twinX.
 
@@ -99,19 +99,19 @@ Como no podía ser de otra forma, nuestro portal no es una excepción y también
 				\hline
 				Papelera & Eliminar una entrada de una lista. & \pbox{4cm}{\bigskip \huge\faTrash}  & \textit{Trash} \\ 
 				\hline
-				Flecha de desplegable (\textit{dropdown}) hacia abajo & Indicador de la dirección del despliegue del menú. \textit{dropdown} & \pbox{4cm}{\bigskip \huge\faCaretDown}  & \textit{Caret down} \\ 
+				Flecha de desplegable (\textit{dropdown}) hacia abajo & Indicador de la dirección del despliegue del menú \textit{dropdown}. & \pbox{4cm}{\bigskip \huge\faCaretDown}  & \textit{Caret down} \\ 
 				\hline
 				 Flecha derecha & Ejecuta el procesamiento de una fase de expediente.  & \pbox{4cm}{\bigskip \huge\faArrowRight}  & \textit{Arrow right}  \\ 
 				\hline
 				Libro & Menú de expedientes & \pbox{4cm}{\bigskip \huge\faBook}  & \textit{Book} \\ 
 				\hline
-				Usuario con corbata & Menú de tutores. & \pbox{4cm}{\bigskip \huge\faUserTie}  & \textit{User tie} \\ 
+				Usuario con corbata & Menú de tutores & \pbox{4cm}{\bigskip \huge\faUserTie}  & \textit{User tie} \\ 
 				\hline
-				Pergamino & Menú de acuerdos de estudios.  & \pbox{4cm}{\bigskip \huge\faScroll}  & \textit{Scroll} \\ 
+				Pergamino & Menú de acuerdos de estudios & \pbox{4cm}{\bigskip \huge\faScroll}  & \textit{Scroll} \\ 
 				\hline
-				Universidad & Menú de convenios.  & \pbox{4cm}{\bigskip \huge\faUniversity}  & \textit{University} \\ 
+				Universidad & Menú de convenios  & \pbox{4cm}{\bigskip \huge\faUniversity}  & \textit{University} \\ 
 				\hline
-				Estudiante graduado & Menú de esutdiantes.  & \pbox{4cm}{\bigskip \huge\faUserGraduate}  & \textit{User graduate} \\ 
+				Estudiante graduado & Menú de estudiantes  & \pbox{4cm}{\bigskip \huge\faUserGraduate}  & \textit{User graduate} \\ 
 				\hline
 				Campana & \begin{itemize}
 					\item Menú de notificaciones.
@@ -144,7 +144,7 @@ Como no podía ser de otra forma, nuestro portal no es una excepción y también
 
 \section{Guía de estilo}
 
-En \hyperref[reunion3]{reunión de presentación de TWINS}, Miguel Ángel comentó los significados del logo de TWINS (figura \ref{fig:logotwins}) y el por qué de los dos colores. Representan la unión de los estudiantes OUT (en color rojo) con los estudiantes IN (en azul), que se engarza en un corazón morado con motivo de la unión de dos universidades. Hemos querido mantener este concepto para la construcción de twinX, y la apuesta por una tipografía más vistosa como es Quicksand \cite{quicksand}. Para la coloración, hemos escogido los dos colores emblemáticos de la aplicación para mezclarlos un morado que va a ser el protagonista de los detalles en toda la web. Como resultado, se tiene el logo de la figura \ref{fig:logotwinX}, el utilizado en la cabecera de la web.
+En \hyperref[reunion3]{reunión de presentación de TWINS}, Miguel Ángel comentó los significados del logo de TWINS (figura \ref{fig:logotwins}) y el por qué de los dos colores. Representan la unión de los estudiantes OUT (en color rojo) con los estudiantes IN (en azul), que se engarza en un corazón morado con motivo de la unión de dos universidades. Hemos querido mantener este concepto para la construcción de twinX, y la apuesta por una tipografía más vistosa como es Quicksand \cite{quicksand}. Para la coloración, hemos escogido los dos colores emblemáticos de la aplicación para mezclarlos en un morado que va a ser el protagonista de los detalles en toda la web. Como resultado, se tiene el logo de la figura \ref{fig:logotwinX}, el utilizado en la cabecera de la web.
 
 \begin{figure}
 	\centering
