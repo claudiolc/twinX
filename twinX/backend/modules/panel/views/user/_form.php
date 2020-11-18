@@ -21,7 +21,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'nombre')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'tipo_usuario')->dropDownList([ 'SUPERUSUARIO' => 'SUPERUSUARIO', 'GESTOR' => 'GESTOR', 'ESTUDIANTE' => 'ESTUDIANTE', 'TUTOR' => 'TUTOR', ], ['prompt' => '']) ?>
+    <?= $form->field($model, 'tipo_usuario')->dropDownList([ 'ADMINISTRADOR' => 'ADMINISTRADOR', 'GESTOR' => 'GESTOR', 'ESTUDIANTE' => 'ESTUDIANTE', 'TUTOR' => 'TUTOR', ], ['prompt' => '']) ?>
 
     <?= $form->field($model, 'telefono')->textInput(['maxlength' => true]) ?>
 

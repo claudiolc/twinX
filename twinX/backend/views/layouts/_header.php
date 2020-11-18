@@ -56,7 +56,7 @@ if (Yii::$app->user->isGuest) {
 
     $menuItems[] = ['label' => 'Gestión', 'url' => ['/gestion'], 'active' => in_array(\Yii::$app->controller->module->id, ['gestion'])];
     $menuItems[] = ['label' => 'Calendario', 'url' => ['/calendario'], 'active' => in_array(\Yii::$app->controller->module->id, ['calendario'])];
-    $menuItems[] = ['label' => 'Panel de control', 'url' => ['/panel'], 'active' => in_array(\Yii::$app->controller->module->id, ['panel'])];
+    $menuItems[] = \common\models\User::findOne(Yii::$app->user->id)->tipo_usuario == 'ADMINISTRADOR' ? ['label' => 'Panel de control', 'url' => ['/panel'], 'active' => in_array(\Yii::$app->controller->module->id, ['panel'])] : '';
     $menuItems[] = ['label' => $mailElement, 'url' => ['/gestion/mensaje/bandeja-entrada'], 'active' => in_array(\Yii::$app->controller->id, ['mensaje']),
         'options' => ['class' => 'ml-auto mr-2'], 'labelOptions' => ['class' => 'd-flex flex-row']];
     $menuItems[] = ['label' => $bellElement, 'url' => ['/calendario/notificaciones'], 'active' => in_array(\Yii::$app->controller->id, ['notificaciones']),
