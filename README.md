@@ -1,4 +1,4 @@
-# twinx
+# twinX
 ## Requisitos para instalar el proyecto
 - Tener instalado [composer](https://getcomposer.org/) y [PHP](https://www.php.net/)
 - Seguir los pasos para la instalación en https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide/start-installation.md
