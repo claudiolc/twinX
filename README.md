@@ -1,5 +1,4 @@
-## twinX
-## Trabajo fin de grado
+## twinX - Trabajo Fin de Grado
 # Memoria
 La [memoria](https://github.com/claudiolc/twinX/blob/master/Memoria/TFG%20-%20Claudio%20L%C3%B3pez%20Carrascosa.pdf) puede encontrarse en su directorio.
 # Requisitos para instalar el proyecto
