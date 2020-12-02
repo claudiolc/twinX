@@ -1,4 +1,6 @@
-## twinX
+## twinX - Trabajo Fin de Grado
+# Memoria
+La [memoria](https://github.com/claudiolc/twinX/blob/master/Memoria/TFG%20-%20Claudio%20L%C3%B3pez%20Carrascosa.pdf) puede encontrarse en su directorio.
 # Requisitos para instalar el proyecto
 - Tener instalado [composer](https://getcomposer.org/) y [PHP](https://www.php.net/)
 - Seguir los pasos para la instalación en https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide/start-installation.md
